@@ -536,23 +536,29 @@ function runAuditFromPaste() {
 }
 
 /* ── Proxy chain ── */
-const PROXIES = url => [
-  'https://api.allorigins.win/get?url=' + encodeURIComponent(url),
-  'https://corsproxy.io/?url=' + encodeURIComponent(url),
-  'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url),
-  'https://thingproxy.freeboard.io/fetch/' + url,
-];
-
 async function tryProxy(url) {
-  const proxies = PROXIES(url);
-  for (const proxy of proxies) {
+  const enc = encodeURIComponent(url);
+  const proxies = [
+    // allorigins — returns JSON with .contents
+    { url: 'https://api.allorigins.win/get?url=' + enc, mode: 'json' },
+    // corsproxy.io — returns raw HTML
+    { url: 'https://corsproxy.io/?url=' + enc, mode: 'text' },
+    // codetabs
+    { url: 'https://api.codetabs.com/v1/proxy?quest=' + enc, mode: 'text' },
+    // htmldriven
+    { url: 'https://cors-anywhere.herokuapp.com/' + url, mode: 'text' },
+  ];
+  for (const p of proxies) {
     try {
-      const r = await fetch(proxy, { signal: AbortSignal.timeout(12000) });
+      const r = await fetch(p.url, { signal: AbortSignal.timeout(10000) });
       if (!r.ok) continue;
-      const json = await r.json().catch(() => null);
-      if (json && json.contents) return json.contents;
-      const text = await r.text().catch(() => null);
-      if (text && text.trim().startsWith('<')) return text;
+      if (p.mode === 'json') {
+        const j = await r.json().catch(() => null);
+        if (j && j.contents && j.contents.trim().length > 100) return j.contents;
+      } else {
+        const t = await r.text().catch(() => null);
+        if (t && t.trim().length > 100) return t;
+      }
     } catch {}
   }
   return null;
@@ -594,8 +600,18 @@ async function runAudit() {
 
   const html = await tryProxy(url);
   if (!html) {
-    setStatus('Could not fetch this URL. The site may block proxy requests. Switch to "Paste HTML" mode or try a different URL.', 'error');
     btn.disabled = false;
+    hideStatus();
+    // Auto-switch to Paste HTML mode with clear instructions
+    switchMode('paste');
+    document.getElementById('urlInput').value = url;
+    const hint = document.createElement('p');
+    hint.id = 'proxyFailHint';
+    hint.style.cssText = 'font-size:.85rem;color:#f59e0b;background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:.6rem;padding:.75rem 1rem;margin-bottom:1rem;text-align:center;';
+    hint.innerHTML = '<i class="fas fa-exclamation-triangle"></i> <strong>' + new URL(url).hostname + '</strong> blocks automated fetching. Please <strong>open the page</strong>, press <kbd style="background:var(--bg-3);padding:1px 5px;border-radius:3px;">Ctrl+U</kbd> (or right-click → View Page Source), copy all, and paste below.';
+    const existing = document.getElementById('proxyFailHint');
+    if (existing) existing.remove();
+    document.getElementById('modePaste').prepend(hint);
     return;
   }
 
