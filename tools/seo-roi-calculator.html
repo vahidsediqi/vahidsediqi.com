@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SEO ROI Calculator 2025 — Is SEO Worth It For Your Business?</title>
+  <meta name="description" content="Free SEO ROI calculator. Enter your current traffic, conversion rate and average order value to instantly see how much extra revenue a 50%, 100% or 200% organic traffic increase is worth."/>
+  <meta name="keywords" content="SEO ROI calculator, is SEO worth it, SEO return on investment, SEO revenue calculator, organic traffic value calculator"/>
+  <link rel="canonical" href="https://www.vahidsediqi.com/tools/seo-roi-calculator.html"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234F7FFF'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>V</text></svg>"/>
+  <link rel="stylesheet" href="../css/style.css?v=4"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SEO ROI Calculator",
+    "description": "Free tool to calculate the return on investment from SEO — see how much extra revenue increased organic traffic is worth for your business.",
+    "url": "https://www.vahidsediqi.com/tools/seo-roi-calculator.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "author": { "@type": "Person", "name": "Vahid Sediqi", "url": "https://www.vahidsediqi.com" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+  <style>
+    /* ── Page layout ── */
+    .tool-hero { padding: 100px 0 50px; text-align: center; }
+    .tool-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+    .tool-hero p  { max-width: 640px; margin: 0 auto 1.5rem; color: var(--text-muted); font-size: 1.05rem; }
+
+    /* ── Two-column layout ── */
+    .roi-wrap {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    @media(max-width:900px){ .roi-wrap { grid-template-columns:1fr; } }
+
+    /* ── Inputs panel ── */
+    .calc-inputs {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 2rem;
+      position: sticky;
+      top: 90px;
+    }
+    .calc-inputs h3 { font-size: 1.05rem; margin-bottom: 1.5rem; }
+    .input-group { margin-bottom: 1.4rem; }
+    .input-group label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .86rem; color: var(--text-muted); margin-bottom: .5rem; font-weight: 500;
+    }
+    .input-group label span { color: var(--accent-2); font-weight: 700; font-size: .95rem; }
+    .input-group input[type=range] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 4px; border-radius: 4px;
+      background: var(--border); outline: none; cursor: pointer;
+    }
+    .input-group input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+      background: var(--accent); cursor: pointer;
+      box-shadow: 0 0 0 3px rgba(79,127,255,.2);
+    }
+    .section-label {
+      font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--accent);
+      margin: 1.5rem 0 1rem; padding-bottom: .4rem; border-bottom: 1px solid var(--border);
+    }
+    .toggle-row {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1rem; font-size: .86rem; color: var(--text-muted);
+    }
+    .toggle { position: relative; width: 40px; height: 22px; }
+    .toggle input { opacity: 0; width: 0; height: 0; }
+    .toggle-slider {
+      position: absolute; cursor: pointer; inset: 0;
+      background: var(--border); border-radius: 22px; transition: .3s;
+    }
+    .toggle-slider:before {
+      content: ''; position: absolute; width: 16px; height: 16px;
+      left: 3px; bottom: 3px; background: white; border-radius: 50%; transition: .3s;
+    }
+    .toggle input:checked + .toggle-slider { background: var(--accent); }
+    .toggle input:checked + .toggle-slider:before { transform: translateX(18px); }
+
+    /* ── Current revenue card ── */
+    .current-card {
+      background: linear-gradient(135deg, rgba(79,127,255,.1), rgba(0,212,255,.07));
+      border: 1px solid rgba(79,127,255,.25);
+      border-radius: var(--r-xl); padding: 1.5rem; margin-bottom: 1.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .current-stat h4 { font-size: .75rem; color: var(--text-muted); font-weight: 500; margin-bottom: .3rem; text-transform: uppercase; letter-spacing: .06em; }
+    .current-stat .val { font-size: 1.5rem; font-weight: 800; background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    /* ── Scenario cards grid ── */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    @media(max-width:640px){ .scenario-grid { grid-template-columns: 1fr; } }
+
+    .scenario-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 1.5rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .scenario-card:hover { border-color: var(--accent); box-shadow: 0 8px 32px rgba(79,127,255,.12); }
+    .scenario-card.highlight {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, rgba(79,127,255,.08), rgba(0,212,255,.04));
+    }
+
+    .scenario-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 1.2rem;
+    }
+    .growth-pill {
+      font-size: .8rem; font-weight: 800; padding: .3rem .8rem;
+      border-radius: 100px; display: inline-flex; align-items: center; gap: .4rem;
+    }
+    .growth-pill.g50  { background: rgba(0,212,255,.12); color: var(--accent-2); }
+    .growth-pill.g100 { background: rgba(79,127,255,.15); color: var(--accent); }
+    .growth-pill.g200 { background: rgba(255,183,0,.12);  color: var(--gold); }
+    .growth-pill.g300 { background: rgba(0,255,136,.1);   color: #00ff88; }
+
+    .scenario-metric {
+      margin-bottom: .85rem;
+      padding-bottom: .85rem;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .scenario-metric:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .scenario-metric .m-label { font-size: .75rem; color: var(--text-muted); margin-bottom: .2rem; }
+    .scenario-metric .m-val   { font-size: 1.3rem; font-weight: 800; color: var(--text); }
+    .scenario-metric .m-val.green { color: #00ff88; }
+    .scenario-metric .m-val.gold  { color: var(--gold); }
+    .scenario-metric .m-val.blue  { background: var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .scenario-metric .m-sub  { font-size: .75rem; color: var(--text-3); margin-top: .1rem; }
+
+    /* ── ROI & breakeven panel ── */
+    .roi-panel {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: var(--r-xl); padding: 2rem; margin-bottom: 1.5rem;
+    }
+    .roi-panel h4 { font-size: 1rem; margin-bottom: 1.5rem; }
+    .roi-bar-row {
+      display: grid; grid-template-columns: 100px 1fr 90px;
+      gap: .75rem; align-items: center; margin-bottom: .75rem;
+    }
+    .roi-bar-label { font-size: .8rem; color: var(--text-muted); }
+    .roi-bar-track { height: 8px; background: rgba(255,255,255,.06); border-radius:100px; overflow:hidden; }
+    .roi-bar-fill  { height:100%; border-radius:100px; transition: width .8s cubic-bezier(.4,0,.2,1); }
+    .roi-bar-fill.c50  { background: linear-gradient(90deg, var(--accent-2), #00a8cc); }
+    .roi-bar-fill.c100 { background: var(--grad); }
+    .roi-bar-fill.c200 { background: linear-gradient(90deg, var(--gold), #ff8c00); }
+    .roi-bar-fill.c300 { background: linear-gradient(90deg, #00ff88, #00cc6a); }
+    .roi-bar-value { font-size: .82rem; font-weight: 700; color: var(--text); text-align:right; }
+
+    /* ── Breakeven strip ── */
+    .breakeven-strip {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: .75rem; margin-bottom: 1.5rem;
+    }
+    @media(max-width:640px){ .breakeven-strip { grid-template-columns: 1fr 1fr; } }
+    .be-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 1rem; text-align: center;
+    }
+    .be-card .be-growth { font-size: .72rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:.06em; margin-bottom:.3rem; }
+    .be-card .be-months { font-size: 1.6rem; font-weight: 800; color: var(--accent-2); line-height:1; }
+    .be-card .be-label  { font-size: .72rem; color: var(--text-3); margin-top:.2rem; }
+
+    /* ── Comparison vs Ads ── */
+    .vs-ads {
+      background: linear-gradient(135deg, rgba(79,127,255,.08), rgba(0,212,255,.04));
+      border: 1px solid rgba(79,127,255,.2);
+      border-radius: var(--r-xl); padding: 2rem;
+    }
+    .vs-ads h4 { margin-bottom: 1.2rem; font-size: 1rem; }
+    .vs-table { width:100%; border-collapse:collapse; }
+    .vs-table th, .vs-table td { padding:.7rem .9rem; font-size:.84rem; border-bottom: 1px solid var(--border); text-align:left; }
+    .vs-table th { color:var(--text-muted); font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.06em; }
+    .vs-table tr:last-child td { border-bottom:none; }
+    .vs-table .seo-col { color: var(--accent-2); font-weight: 700; }
+    .vs-table .ads-col { color: var(--text-muted); }
+
+    /* ── Content ── */
+    .content-block { max-width: 860px; margin-top: 4rem; }
+    .content-block h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+    .content-block p  { color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a>
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="has-mega-menu"><a href="/services/">Services <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-menu-col"><h4>SEO Services</h4><ul><li><a href="../services/seo.html"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li><li><a href="../services/local-seo.html"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li><li><a href="../services/ecom-seo.html"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li></ul></div>
+          <div class="mega-menu-col"><h4>Web Development</h4><ul><li><a href="../services/shopify.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li><li><a href="../services/wordpress.html"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li></ul></div>
+          <div class="mega-menu-col"><h4>Growth & Conversion</h4><ul><li><a href="../services/cro.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li></ul></div>
+          <div class="mega-menu-featured"><div class="badge">Free Audit</div><h5>Not sure where to start?</h5><p>Get a free website & SEO audit.</p><a href="../contact.html" class="btn btn-primary btn-sm">Claim Free Audit</a></div>
+        </div>
+      </li>
+      <li class="has-mega-menu">
+        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu mega-menu--tools">
+          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
+            <li><a href="shopify-vs-woocommerce-calculator.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
+            <li><a href="seo-roi-calculator.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
+            <li><a href="google-ads-budget-calculator.html"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
+            <li><a href="meta-tag-checker.html"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
+            <li><a href="onpage-seo-checker.html"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
+            <li><a href="index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
+            <li><a href="index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
+            <li><a href="index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
+          </ul></div>
+          <div class="mega-menu-featured">
+            <div class="badge">100% Free</div>
+            <h5>No sign-up required</h5>
+            <p>All tools are free — built from real client questions.</p>
+            <a href="/tools/" class="btn btn-primary btn-sm">View All Tools</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="m-link">Home</a>
+  <a href="../about.html" class="m-link">About</a>
+  <div class="m-link has-sub" style="cursor:pointer">Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
+  <div class="m-sub"><a href="../services/seo.html"><i class="fas fa-search"></i> SEO Overview</a><a href="../services/local-seo.html"><i class="fas fa-map-marker-alt"></i> Local SEO</a><a href="../services/ecom-seo.html"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a><a href="../services/shopify.html"><i class="fab fa-shopify"></i> Shopify Creation</a><a href="../services/wordpress.html"><i class="fab fa-wordpress"></i> WordPress Dev</a><a href="../services/cro.html"><i class="fas fa-chart-line"></i> CRO</a></div>
+  <a href="/tools/" class="m-link">Tools</a>
+  <a href="../pricing.html" class="m-link">Pricing</a>
+  <a href="../contact.html" class="m-link">Contact</a>
+  <a href="../contact.html" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
+</div>
+
+<!-- HERO -->
+<section class="tool-hero">
+  <div class="container">
+    <div class="breadcrumb" style="justify-content:center;margin-bottom:1.5rem;">
+      <a href="/">Home</a><i class="fas fa-chevron-right"></i>
+      <a href="/tools/">Tools</a><i class="fas fa-chevron-right"></i>
+      <span>SEO ROI Calculator</span>
+    </div>
+    <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-chart-line"></i> Free Tool</span>
+    <h1>SEO ROI <span class="gradient-text">Calculator</span></h1>
+    <p>See exactly how much extra revenue your business earns from growing organic traffic. Adjust your traffic, conversion rate, and order value to get your personalised SEO return on investment.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem;">
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--text-muted);"><i class="fas fa-check-circle" style="color:var(--accent)"></i> 100% Free</div>
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--text-muted);"><i class="fas fa-check-circle" style="color:var(--accent)"></i> Instant results</div>
+      <div style="display:flex;align-items:center;gap:.5rem;font-size:.86rem;color:var(--text-muted);"><i class="fas fa-check-circle" style="color:var(--accent)"></i> No email required</div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section style="padding-bottom:60px;">
+  <div class="container">
+    <div class="roi-wrap">
+
+      <!-- INPUTS -->
+      <div class="calc-inputs">
+        <h3><i class="fas fa-sliders-h" style="color:var(--accent);margin-right:.5rem;"></i> Your Store Numbers</h3>
+
+        <div class="section-label">Current Traffic & Revenue</div>
+
+        <div class="input-group">
+          <label>Monthly Organic Visitors <span id="traffic-val">1,000</span></label>
+          <input type="range" id="traffic" min="100" max="50000" step="100" value="1000" oninput="syncRoi(this,'traffic-val');recalcRoi()"/>
+        </div>
+
+        <div class="input-group">
+          <label>Conversion Rate <span id="conv-val">2.0%</span></label>
+          <input type="range" id="conv" min="0.1" max="15" step="0.1" value="2" oninput="syncConv();recalcRoi()"/>
+        </div>
+
+        <div class="input-group">
+          <label>Avg. Order / Lead Value <span id="aov-val">€80</span></label>
+          <input type="range" id="aov" min="10" max="5000" step="10" value="80" oninput="syncRoi(this,'aov-val','€');recalcRoi()"/>
+        </div>
+
+        <div class="section-label">SEO Investment (optional)</div>
+
+        <div class="toggle-row">
+          <span>Include monthly SEO cost?<small style="display:block;color:var(--text-3);font-size:.76rem;">Calculates ROI % & breakeven</small></span>
+          <label class="toggle"><input type="checkbox" id="show-invest" onchange="toggleInvest();recalcRoi()"/><span class="toggle-slider"></span></label>
+        </div>
+        <div id="invest-group" style="display:none;">
+          <div class="input-group">
+            <label>Monthly SEO Budget <span id="invest-val">€350</span></label>
+            <input type="range" id="invest" min="50" max="3000" step="50" value="350" oninput="syncRoi(this,'invest-val','€');recalcRoi()"/>
+          </div>
+        </div>
+
+        <div style="margin-top:1.2rem;padding:1rem;background:rgba(79,127,255,.07);border-radius:var(--r-md);border:1px solid rgba(79,127,255,.12);">
+          <div style="font-size:.78rem;color:var(--text-3);line-height:1.6;">
+            <i class="fas fa-info-circle" style="color:var(--accent);"></i>
+            Results show <strong style="color:var(--text);">additional</strong> revenue from SEO growth only. Existing revenue is not included in the gain figures.
+          </div>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div>
+
+        <!-- Current baseline -->
+        <div class="current-card">
+          <div class="current-stat">
+            <h4>Current Monthly Revenue</h4>
+            <div class="val" id="cur-rev">€0</div>
+            <div style="font-size:.75rem;color:var(--text-3);margin-top:.2rem;">from organic traffic</div>
+          </div>
+          <div class="current-stat">
+            <h4>Current Monthly Conversions</h4>
+            <div class="val" id="cur-conv">0</div>
+            <div style="font-size:.75rem;color:var(--text-3);margin-top:.2rem;">orders / leads / month</div>
+          </div>
+        </div>
+
+        <!-- Scenario cards -->
+        <div class="scenario-grid">
+
+          <div class="scenario-card" id="sc50">
+            <div class="scenario-header">
+              <span class="growth-pill g50"><i class="fas fa-arrow-up"></i>+50% Traffic</span>
+              <span style="font-size:.75rem;color:var(--text-3);" id="sc50-extra-v">+0 visitors</span>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Monthly Revenue</div>
+              <div class="m-val blue" id="sc50-rev">€0</div>
+              <div class="m-sub" id="sc50-rev-yr">€0/year</div>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Conversions / Month</div>
+              <div class="m-val" id="sc50-conv">0</div>
+            </div>
+            <div class="scenario-metric" id="sc50-roi-row" style="display:none;">
+              <div class="m-label">Annual ROI</div>
+              <div class="m-val green" id="sc50-roi">0%</div>
+              <div class="m-sub" id="sc50-be">Breakeven in — months</div>
+            </div>
+          </div>
+
+          <div class="scenario-card highlight" id="sc100">
+            <div class="scenario-header">
+              <span class="growth-pill g100"><i class="fas fa-arrow-up"></i>+100% Traffic</span>
+              <span style="font-size:.75rem;color:var(--text-3);" id="sc100-extra-v">+0 visitors</span>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Monthly Revenue</div>
+              <div class="m-val blue" id="sc100-rev">€0</div>
+              <div class="m-sub" id="sc100-rev-yr">€0/year</div>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Conversions / Month</div>
+              <div class="m-val" id="sc100-conv">0</div>
+            </div>
+            <div class="scenario-metric" id="sc100-roi-row" style="display:none;">
+              <div class="m-label">Annual ROI</div>
+              <div class="m-val green" id="sc100-roi">0%</div>
+              <div class="m-sub" id="sc100-be">Breakeven in — months</div>
+            </div>
+          </div>
+
+          <div class="scenario-card" id="sc200">
+            <div class="scenario-header">
+              <span class="growth-pill g200"><i class="fas fa-arrow-up"></i>+200% Traffic</span>
+              <span style="font-size:.75rem;color:var(--text-3);" id="sc200-extra-v">+0 visitors</span>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Monthly Revenue</div>
+              <div class="m-val blue" id="sc200-rev">€0</div>
+              <div class="m-sub" id="sc200-rev-yr">€0/year</div>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Conversions / Month</div>
+              <div class="m-val" id="sc200-conv">0</div>
+            </div>
+            <div class="scenario-metric" id="sc200-roi-row" style="display:none;">
+              <div class="m-label">Annual ROI</div>
+              <div class="m-val green" id="sc200-roi">0%</div>
+              <div class="m-sub" id="sc200-be">Breakeven in — months</div>
+            </div>
+          </div>
+
+          <div class="scenario-card" id="sc300">
+            <div class="scenario-header">
+              <span class="growth-pill g300"><i class="fas fa-arrow-up"></i>+300% Traffic</span>
+              <span style="font-size:.75rem;color:var(--text-3);" id="sc300-extra-v">+0 visitors</span>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Monthly Revenue</div>
+              <div class="m-val blue" id="sc300-rev">€0</div>
+              <div class="m-sub" id="sc300-rev-yr">€0/year</div>
+            </div>
+            <div class="scenario-metric">
+              <div class="m-label">Extra Conversions / Month</div>
+              <div class="m-val" id="sc300-conv">0</div>
+            </div>
+            <div class="scenario-metric" id="sc300-roi-row" style="display:none;">
+              <div class="m-label">Annual ROI</div>
+              <div class="m-val green" id="sc300-roi">0%</div>
+              <div class="m-sub" id="sc300-be">Breakeven in — months</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Revenue bar chart -->
+        <div class="roi-panel">
+          <h4><i class="fas fa-chart-bar" style="color:var(--accent);margin-right:.5rem;"></i>Extra Annual Revenue by Growth Scenario</h4>
+          <div id="roi-bars">
+            <div class="roi-bar-row">
+              <div class="roi-bar-label">+50% Traffic</div>
+              <div class="roi-bar-track"><div class="roi-bar-fill c50" id="rb50" style="width:25%"></div></div>
+              <div class="roi-bar-value" id="rbv50">€0</div>
+            </div>
+            <div class="roi-bar-row">
+              <div class="roi-bar-label">+100% Traffic</div>
+              <div class="roi-bar-track"><div class="roi-bar-fill c100" id="rb100" style="width:50%"></div></div>
+              <div class="roi-bar-value" id="rbv100">€0</div>
+            </div>
+            <div class="roi-bar-row">
+              <div class="roi-bar-label">+200% Traffic</div>
+              <div class="roi-bar-track"><div class="roi-bar-fill c200" id="rb200" style="width:75%"></div></div>
+              <div class="roi-bar-value" id="rbv200">€0</div>
+            </div>
+            <div class="roi-bar-row">
+              <div class="roi-bar-label">+300% Traffic</div>
+              <div class="roi-bar-track"><div class="roi-bar-fill c300" id="rb300" style="width:100%"></div></div>
+              <div class="roi-bar-value" id="rbv300">€0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakeven strip (shown only when investment toggle ON) -->
+        <div id="be-section" style="display:none;">
+          <p style="font-size:.85rem;color:var(--text-muted);margin-bottom:.75rem;"><i class="fas fa-stopwatch" style="color:var(--accent);"></i> <strong style="color:var(--text);">Breakeven time</strong> — months until cumulative SEO revenue exceeds total investment:</p>
+          <div class="breakeven-strip">
+            <div class="be-card">
+              <div class="be-growth">+50%</div>
+              <div class="be-months" id="be50">—</div>
+              <div class="be-label">months</div>
+            </div>
+            <div class="be-card">
+              <div class="be-growth">+100%</div>
+              <div class="be-months" id="be100">—</div>
+              <div class="be-label">months</div>
+            </div>
+            <div class="be-card">
+              <div class="be-growth">+200%</div>
+              <div class="be-months" id="be200">—</div>
+              <div class="be-label">months</div>
+            </div>
+            <div class="be-card">
+              <div class="be-growth">+300%</div>
+              <div class="be-months" id="be300">—</div>
+              <div class="be-label">months</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SEO vs Ads comparison -->
+        <div class="vs-ads">
+          <h4><i class="fas fa-balance-scale" style="color:var(--accent);margin-right:.5rem;"></i>SEO vs Google Ads — Same Traffic Goal</h4>
+          <table class="vs-table">
+            <thead>
+              <tr><th>Factor</th><th>SEO (Organic)</th><th>Google Ads (Paid)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cost per click (avg.)</td><td class="seo-col">€0 — traffic is free</td><td class="ads-col" id="cpc-val">~€1.50/click</td></tr>
+              <tr><td>Monthly cost for your traffic</td><td class="seo-col">€0 ongoing</td><td class="ads-col" id="ads-cost-val">€0/month</td></tr>
+              <tr><td>Traffic after 12 months</td><td class="seo-col">Grows & compounds</td><td class="ads-col">Stops when budget stops</td></tr>
+              <tr><td>3-year total traffic cost</td><td class="seo-col">€0 (free after rankings)</td><td class="ads-col" id="ads-3yr-val">€0</td></tr>
+              <tr><td>Brand authority</td><td class="seo-col">Builds over time</td><td class="ads-col">No long-term benefit</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div><!-- /results -->
+    </div><!-- /roi-wrap -->
+
+    <!-- SEO CONTENT -->
+    <div class="content-block">
+      <h2>How to Use This SEO ROI <span class="gradient-text">Calculator</span></h2>
+      <p>This calculator helps you answer the most important question in digital marketing: <strong style="color:var(--text);">"Is SEO worth it for my business?"</strong> The answer depends entirely on your specific situation — your current traffic levels, how well your website converts visitors, and how much each customer is worth to you.</p>
+      <p>Enter your current monthly organic visitors from Google Analytics or Google Search Console. If you don't know this number, a typical small business gets between 200 and 2,000 organic visits per month from local searches. Enter your conversion rate — for most service businesses this is between 1% and 5%. For eCommerce stores, 1–3% is typical. Enter your average order value or the average value of a lead to your business.</p>
+      <p>The calculator then shows you exactly how much extra revenue your business generates from organic traffic growth of 50%, 100%, 200%, and 300%. <strong style="color:var(--text);">A 100% traffic increase means doubling your organic visitors</strong> — this is a realistic target within 6–12 months of professional SEO work for most businesses starting from a low baseline.</p>
+      <p>If you enable the SEO investment toggle, the calculator also shows you the annual ROI percentage and the breakeven point — the month at which your cumulative SEO returns exceed the total investment you've made. For most businesses, this breakeven arrives within 4–8 months, after which every euro of SEO traffic is pure profit.</p>
+
+      <h2 style="font-size:1.8rem;margin-top:3rem;margin-bottom:1rem;">What Is a Good <span class="gradient-text">SEO ROI?</span></h2>
+      <p>A good SEO ROI is generally considered to be anything above 200% annually — meaning you get back more than three times what you invest. In practice, well-executed SEO campaigns regularly achieve 500–1,000%+ ROI over a 12–24 month period, because the traffic compounds and the cost stays fixed even as rankings improve.</p>
+      <p>Compare this to Google Ads, where you typically pay €1–€5 per click, and the moment your ad budget runs out, all your traffic disappears. With SEO, the traffic you build today continues to arrive next month, next year, and the year after — without you paying for each visitor. This compounding nature of SEO is what makes it the highest-ROI digital marketing channel for most businesses over a 2–3 year horizon.</p>
+      <p>The businesses that get the best SEO ROI are those with: a reasonable conversion rate (above 1%), a meaningful order or lead value (above €50), and enough patience to let SEO compound over 6–18 months. If your numbers fit this profile, the ROI calculator above will show you just how significant the returns can be.</p>
+    </div>
+
+    <!-- FAQ -->
+    <div style="margin-top:3rem;max-width:760px;">
+      <h2 style="font-size:1.8rem;margin-bottom:2rem;">SEO ROI <span class="gradient-text">Questions Answered</span></h2>
+      <div class="faq-item open"><div class="faq-question">How long does SEO take to show ROI? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Most businesses start seeing meaningful traffic improvements within 3–6 months of consistent SEO work. The breakeven point — where cumulative revenue from SEO exceeds the total investment — typically arrives between month 4 and month 9. After breakeven, every subsequent month is pure profit because the traffic cost is zero. The ROI then grows every month as rankings strengthen.</p></div></div></div>
+      <div class="faq-item"><div class="faq-question">Is the calculator accurate? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>The calculator uses your own numbers — your actual traffic, conversion rate, and order value — so the revenue figures are as accurate as the inputs you provide. The growth scenarios (50%, 100%, 200%, 300%) are illustrative — actual results depend on your competition, current domain authority, content quality, and the quality of SEO work. Use the calculator to understand the potential value at stake, not as a guarantee of specific results.</p></div></div></div>
+      <div class="faq-item"><div class="faq-question">What conversion rate should I use? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>If you have Google Analytics set up with goals, use your actual conversion rate. If you don't know it, here are typical benchmarks: eCommerce stores average 1–3%, local service businesses average 2–5% (contact form or phone call), SaaS free trial sign-ups average 3–7%. Start with 2% if you're unsure — this is a reasonable middle-ground estimate for most businesses.</p></div></div></div>
+      <div class="faq-item"><div class="faq-question">What counts as a "conversion" for a service business? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>For a service business, a conversion is any valuable action: a contact form submission, a phone call, a booking request, a quote request, or an email enquiry. For the average order value, use the average revenue you generate from a new customer — not just the first invoice, but the full customer value if they come back. A restaurant booking might be €40, a plumber enquiry might be worth €250, and an SEO client might be worth €3,500+.</p></div></div></div>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:4rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-xl);padding:3rem;text-align:center;" class="reveal">
+      <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-chart-line"></i> Want These Numbers to Be Real?</span>
+      <h2 style="font-size:1.8rem;margin-bottom:1rem;">Let Me Build Your SEO <span class="gradient-text">Growth Plan</span></h2>
+      <p style="color:var(--text-muted);max-width:520px;margin:0 auto 2rem;">I'll audit your website for free, identify your biggest organic traffic opportunities, and show you a realistic roadmap to reach the growth scenario you want.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="../contact.html" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> Get My Free SEO Audit</a>
+        <a href="../services/seo.html" class="btn btn-outline btn-lg"><i class="fas fa-search"></i> SEO Services</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer"><div class="container"><div class="footer-grid">
+  <div class="footer-brand"><a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a><p>Full-stack digital marketing engineer based in Germany.</p><div class="social-links"><a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="https://www.fiverr.com/vahidsediqi_" class="social-link" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a><a href="mailto:contact@vahidsediqi.com" class="social-link"><i class="fas fa-envelope"></i></a></div></div>
+  <div class="footer-col"><h5>Services</h5><ul><li><a href="../services/seo.html">SEO Strategy</a></li><li><a href="../services/local-seo.html">Local SEO</a></li><li><a href="../services/ecom-seo.html">eCommerce SEO</a></li><li><a href="../services/shopify.html">Shopify Creation</a></li><li><a href="../services/cro.html">CRO</a></li><li><a href="../services/wordpress.html">WordPress Dev</a></li></ul></div>
+  <div class="footer-col"><h5>Free Tools</h5><ul><li><a href="shopify-vs-woocommerce-calculator.html">Shopify vs WooCommerce</a></li><li><a href="seo-roi-calculator.html">SEO ROI Calculator</a></li><li><a href="index.html">All Tools</a></li></ul></div>
+  <div class="footer-col"><h5>Contact</h5><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@vahidsediqi.com</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span>+49 176 62521106</span></div><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Germany — Working Globally</span></div></div>
+</div><div class="footer-bottom"><p>© 2025 Vahid Sediqi. All rights reserved.</p><p>Made with <span style="color:var(--danger)">♥</span> in Germany</p></div></div></footer>
+
+<script src="../js/main.js"></script>
+<script>
+  function syncRoi(el, id, prefix) {
+    const v = parseFloat(el.value);
+    const label = document.getElementById(id);
+    if (!label) return;
+    label.textContent = (prefix || '') + Math.round(v).toLocaleString('de-DE');
+  }
+  function syncConv() {
+    const v = parseFloat(document.getElementById('conv').value);
+    document.getElementById('conv-val').textContent = v.toFixed(1) + '%';
+  }
+  function toggleInvest() {
+    const on = document.getElementById('show-invest').checked;
+    document.getElementById('invest-group').style.display = on ? '' : 'none';
+    document.getElementById('be-section').style.display   = on ? '' : 'none';
+    ['50','100','200','300'].forEach(g => {
+      document.getElementById('sc'+g+'-roi-row').style.display = on ? '' : 'none';
+    });
+  }
+  function fmt(n)  { return '€' + Math.round(n).toLocaleString('de-DE'); }
+  function fmtN(n) { return parseFloat(n.toFixed(1)).toLocaleString('de-DE'); }
+
+  function calcBreakeven(extraMonthly, invest) {
+    if (!invest || invest <= 0) return '—';
+    if (extraMonthly <= 0) return '∞';
+    const months = invest / extraMonthly;
+    return months < 1 ? '<1' : Math.ceil(months).toString();
+  }
+
+  function recalcRoi() {
+    const traffic = parseFloat(document.getElementById('traffic').value);
+    const conv    = parseFloat(document.getElementById('conv').value) / 100;
+    const aov     = parseFloat(document.getElementById('aov').value);
+    const invest  = document.getElementById('show-invest').checked
+                  ? parseFloat(document.getElementById('invest').value) : 0;
+
+    // Current baseline
+    const curConv = traffic * conv;
+    const curRev  = curConv * aov;
+    document.getElementById('cur-rev').textContent  = fmt(curRev);
+    document.getElementById('cur-conv').textContent = fmtN(curConv);
+
+    // Ads comparison (avg €1.50 CPC)
+    const cpc = 1.5;
+    const adsCost = traffic * cpc;
+    document.getElementById('ads-cost-val').textContent = fmt(adsCost) + '/month';
+    document.getElementById('ads-3yr-val').textContent  = fmt(adsCost * 36);
+
+    // Scenarios
+    const growths = [50, 100, 200, 300];
+    const annualRevs = [];
+
+    growths.forEach(pct => {
+      const extraVisitors  = traffic * (pct / 100);
+      const extraConv      = extraVisitors * conv;
+      const extraRevMonth  = extraConv * aov;
+      const extraRevYear   = extraRevMonth * 12;
+      annualRevs.push(extraRevYear);
+
+      const annualInvest = invest * 12;
+      const roi = annualInvest > 0 ? ((extraRevYear - annualInvest) / annualInvest * 100) : null;
+      const be  = calcBreakeven(extraRevMonth, invest);
+
+      document.getElementById('sc'+pct+'-extra-v').textContent = '+' + Math.round(extraVisitors).toLocaleString('de-DE') + ' visitors';
+      document.getElementById('sc'+pct+'-rev').textContent     = fmt(extraRevMonth);
+      document.getElementById('sc'+pct+'-rev-yr').textContent  = fmt(extraRevYear) + '/year extra';
+      document.getElementById('sc'+pct+'-conv').textContent    = fmtN(extraConv) + ' extra/month';
+
+      if (document.getElementById('show-invest').checked) {
+        document.getElementById('sc'+pct+'-roi').textContent   = roi !== null ? Math.round(roi).toLocaleString('de-DE') + '%' : '—';
+        document.getElementById('sc'+pct+'-be').textContent    = 'Breakeven in ' + be + ' month' + (be !== '1' ? 's' : '');
+        document.getElementById('be'+pct).textContent          = be;
+      }
+
+      document.getElementById('rbv'+pct).textContent = fmt(extraRevYear);
+    });
+
+    // Bar widths
+    const maxAnn = Math.max(...annualRevs, 1);
+    growths.forEach((pct, i) => {
+      document.getElementById('rb'+pct).style.width = (annualRevs[i] / maxAnn * 100).toFixed(1) + '%';
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', recalcRoi);
+</script>
+</body>
+</html>

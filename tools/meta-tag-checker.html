@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Meta Title & Description Checker — SERP Preview Tool 2025</title>
+  <meta name="description" content="Free meta tag checker. Enter any URL or paste your own meta title and description to see a live Google SERP preview and get instant length feedback."/>
+  <meta name="keywords" content="meta title checker, meta description checker, SERP preview tool, meta tag length checker, SEO title preview"/>
+  <link rel="canonical" href="https://www.vahidsediqi.com/tools/meta-tag-checker.html"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234F7FFF'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>V</text></svg>"/>
+  <link rel="stylesheet" href="../css/style.css?v=4"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Meta Title & Description Checker",
+    "description": "Free tool to check and preview your meta title and meta description as they appear in Google search results.",
+    "url": "https://www.vahidsediqi.com/tools/meta-tag-checker.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "author": { "@type": "Person", "name": "Vahid Sediqi", "url": "https://www.vahidsediqi.com" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+  <style>
+    /* ── Hero ── */
+    .tool-hero { padding: 100px 0 50px; text-align: center; }
+    .tool-hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
+    .tool-hero p  { max-width: 640px; margin: 0 auto 1.5rem; color: var(--text-muted); font-size: 1.05rem; }
+
+    /* ── URL bar ── */
+    .url-bar {
+      display: flex; gap: .75rem; max-width: 700px; margin: 0 auto 3rem;
+    }
+    .url-bar input {
+      flex: 1; padding: .85rem 1.2rem; border-radius: .75rem;
+      border: 1.5px solid var(--border); background: var(--bg-2);
+      color: var(--text); font-size: .95rem; outline: none;
+      transition: border-color .2s;
+    }
+    .url-bar input:focus { border-color: var(--accent); }
+    .url-bar input::placeholder { color: var(--text-muted); }
+    .url-bar button {
+      padding: .85rem 1.5rem; border-radius: .75rem;
+      background: var(--accent); color: #fff; border: none;
+      font-weight: 600; cursor: pointer; white-space: nowrap;
+      transition: opacity .2s; display: flex; align-items: center; gap: .5rem;
+    }
+    .url-bar button:hover { opacity: .88; }
+    .url-bar button:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* ── Main grid ── */
+    .checker-wrap {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+
+    /* ── Input panel ── */
+    .checker-inputs {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: 1.25rem;
+      padding: 2rem;
+      position: sticky;
+      top: calc(var(--nav-h) + 1.5rem);
+    }
+    .checker-inputs h3 { font-size: 1rem; color: var(--text-2); margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: .06em; }
+
+    .field-group { margin-bottom: 1.75rem; }
+    .field-group label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: .82rem; font-weight: 600; color: var(--text-2);
+      text-transform: uppercase; letter-spacing: .06em; margin-bottom: .6rem;
+    }
+    .char-count {
+      font-size: .82rem; font-weight: 700; padding: .15rem .55rem;
+      border-radius: .4rem; transition: background .2s, color .2s;
+    }
+    .char-count.ok    { background: rgba(0,212,100,.15); color: #00d464; }
+    .char-count.warn  { background: rgba(255,183,0,.15);  color: var(--gold); }
+    .char-count.bad   { background: rgba(255,80,80,.15);  color: #ff5050; }
+
+    .field-group textarea, .field-group input[type="text"] {
+      width: 100%; padding: .8rem 1rem; border-radius: .75rem;
+      border: 1.5px solid var(--border); background: var(--bg);
+      color: var(--text); font-size: .9rem; outline: none;
+      resize: vertical; transition: border-color .2s; font-family: inherit;
+      box-sizing: border-box;
+    }
+    .field-group textarea:focus, .field-group input[type="text"]:focus { border-color: var(--accent); }
+    .field-group textarea { min-height: 90px; }
+
+    .field-hint {
+      font-size: .78rem; color: var(--text-muted); margin-top: .45rem;
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .field-hint.hint-ok   { color: #00d464; }
+    .field-hint.hint-warn { color: var(--gold); }
+    .field-hint.hint-bad  { color: #ff5050; }
+
+    .progress-bar-bg {
+      height: 5px; background: var(--border); border-radius: 99px;
+      margin-top: .55rem; overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%; border-radius: 99px; transition: width .3s, background .3s;
+    }
+
+    /* ── Results panel ── */
+    .results-col {}
+
+    /* ── Status badge ── */
+    .fetch-status {
+      display: flex; align-items: center; gap: .6rem;
+      padding: .75rem 1.1rem; border-radius: .75rem;
+      font-size: .88rem; font-weight: 600; margin-bottom: 1.5rem;
+      border: 1px solid var(--border); background: var(--bg-2);
+    }
+    .fetch-status.loading { color: var(--accent); border-color: var(--accent); }
+    .fetch-status.success { color: #00d464; border-color: #00d464; }
+    .fetch-status.error   { color: #ff5050; border-color: #ff5050; }
+    .fetch-status.idle    { color: var(--text-muted); }
+
+    /* ── SERP Preview ── */
+    .serp-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,.18);
+    }
+    .serp-label {
+      font-size: .75rem; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: .75rem;
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .serp-url {
+      font-size: .82rem; color: #202124; margin-bottom: .2rem;
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .serp-url .favicon {
+      width: 18px; height: 18px; border-radius: 3px;
+      background: var(--accent); display: flex; align-items: center;
+      justify-content: center; font-size: .6rem; color: #fff; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .serp-title {
+      font-size: 1.15rem; color: #1a0dab; font-weight: 400;
+      line-height: 1.3; margin-bottom: .3rem;
+      display: -webkit-box; -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical; overflow: hidden;
+      word-break: break-word;
+    }
+    .serp-title.truncated { color: #cc0000; }
+    .serp-desc {
+      font-size: .875rem; color: #4d5156; line-height: 1.55;
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .serp-desc.empty { color: #aaa; font-style: italic; }
+
+    /* Mobile SERP preview */
+    .serp-mobile {
+      background: #fff; border-radius: 1rem; padding: 1.25rem 1.25rem;
+      margin-bottom: 1.5rem; box-shadow: 0 4px 24px rgba(0,0,0,.18);
+      max-width: 400px;
+    }
+    .serp-mobile .serp-title { font-size: 1rem; }
+    .serp-mobile .serp-desc  { font-size: .82rem; -webkit-line-clamp: 3; }
+
+    /* ── Score cards ── */
+    .score-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .score-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 1.25rem 1.5rem;
+    }
+    .score-card .sc-label { font-size: .78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .5rem; }
+    .score-card .sc-val { font-size: 1.6rem; font-weight: 800; margin-bottom: .2rem; }
+    .score-card .sc-status { font-size: .8rem; font-weight: 600; }
+    .score-card.ok   { border-color: rgba(0,212,100,.35); }
+    .score-card.warn { border-color: rgba(255,183,0,.35); }
+    .score-card.bad  { border-color: rgba(255,80,80,.35); }
+    .score-card.ok   .sc-val { color: #00d464; }
+    .score-card.warn .sc-val { color: var(--gold); }
+    .score-card.bad  .sc-val { color: #ff5050; }
+    .score-card.ok   .sc-status { color: #00d464; }
+    .score-card.warn .sc-status { color: var(--gold); }
+    .score-card.bad  .sc-status { color: #ff5050; }
+
+    /* ── Tips ── */
+    .tips-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 1.5rem;
+    }
+    .tips-card h4 { font-size: .9rem; margin-bottom: 1rem; color: var(--text-2); }
+    .tip-item {
+      display: flex; gap: .75rem; align-items: flex-start;
+      padding: .6rem 0; border-bottom: 1px solid var(--border);
+    }
+    .tip-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .tip-icon { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: .7rem; flex-shrink: 0; margin-top: .1rem; }
+    .tip-icon.ok   { background: rgba(0,212,100,.18); color: #00d464; }
+    .tip-icon.warn { background: rgba(255,183,0,.18);  color: var(--gold); }
+    .tip-icon.bad  { background: rgba(255,80,80,.18);  color: #ff5050; }
+    .tip-icon.info { background: rgba(79,127,255,.18); color: var(--accent); }
+    .tip-text { font-size: .85rem; color: var(--text-2); line-height: 1.45; }
+    .tip-text strong { color: var(--text); }
+
+    /* ── Preview toggle ── */
+    .preview-toggle {
+      display: flex; gap: .5rem; margin-bottom: 1rem;
+    }
+    .preview-toggle button {
+      padding: .45rem 1rem; border-radius: .6rem; border: 1.5px solid var(--border);
+      background: transparent; color: var(--text-muted); font-size: .82rem;
+      cursor: pointer; font-weight: 600; transition: all .2s;
+    }
+    .preview-toggle button.active {
+      background: var(--accent); border-color: var(--accent); color: #fff;
+    }
+
+    /* ── Empty state ── */
+    .empty-state {
+      text-align: center; padding: 4rem 2rem;
+      background: var(--bg-2); border: 1px dashed var(--border);
+      border-radius: 1.25rem; color: var(--text-muted);
+    }
+    .empty-state i { font-size: 3rem; margin-bottom: 1rem; opacity: .3; }
+    .empty-state p { font-size: .9rem; }
+
+    @media (max-width: 768px) {
+      .checker-wrap { grid-template-columns: 1fr !important; }
+      .checker-inputs { position: static; }
+      .score-grid { grid-template-columns: 1fr 1fr !important; }
+      .url-bar { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      .score-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a>
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="has-mega-menu">
+        <a href="../services/index.html">Services <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-menu-col"><h4>SEO Services</h4><ul>
+            <li><a href="../services/seo.html"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
+            <li><a href="../services/local-seo.html"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li>
+            <li><a href="../services/ecom-seo.html"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Web Development</h4><ul>
+            <li><a href="../services/shopify.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
+            <li><a href="../services/wordpress.html"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress</a></li>
+            <li><a href="../services/cro.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
+          </ul></div>
+          <div class="mega-menu-featured">
+            <div class="badge">6 Services</div>
+            <h5>Full-Stack Growth</h5>
+            <p>SEO, Web Dev, and CRO — all under one roof.</p>
+            <a href="../services/index.html" class="btn btn-primary btn-sm">All Services</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-mega-menu active">
+        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu mega-menu--tools">
+          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
+            <li><a href="shopify-vs-woocommerce-calculator.html"><span class="icon-wrap"><i class="fas fa-balance-scale"></i></span> Shopify vs WooCommerce</a></li>
+            <li><a href="seo-roi-calculator.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
+            <li><a href="google-ads-budget-calculator.html"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
+            <li><a href="meta-tag-checker.html"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
+            <li><a href="onpage-seo-checker.html"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
+            <li class="coming-soon"><span class="icon-wrap"><i class="fas fa-percentage"></i></span> CRO Revenue Calculator</li>
+            <li class="coming-soon"><span class="icon-wrap"><i class="fas fa-map-pin"></i></span> Local SEO Audit Checklist</li>
+            <li class="coming-soon"><span class="icon-wrap"><i class="fas fa-key"></i></span> Keyword Traffic Estimator</li>
+          </ul></div>
+          <div class="mega-menu-featured">
+            <div class="badge">100% Free</div>
+            <h5>No sign-up required</h5>
+            <p>All tools are free — built from real client questions.</p>
+            <a href="/tools/" class="btn btn-primary btn-sm">View All Tools</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../portfolio.html">Portfolio</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li>
+      <a href="../services/index.html" class="m-has-sub">Services <i class="fas fa-chevron-down"></i></a>
+      <ul class="m-sub">
+        <li><a href="../services/seo.html">SEO Strategy</a></li>
+        <li><a href="../services/local-seo.html">Local SEO</a></li>
+        <li><a href="../services/ecom-seo.html">eCommerce SEO</a></li>
+        <li><a href="../services/shopify.html">Shopify Creation</a></li>
+        <li><a href="../services/wordpress.html">WordPress Dev</a></li>
+        <li><a href="../services/cro.html">CRO</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="index.html" class="m-has-sub">Tools <i class="fas fa-chevron-down"></i></a>
+      <ul class="m-sub">
+        <li><a href="shopify-vs-woocommerce-calculator.html">Shopify vs WooCommerce</a></li>
+        <li><a href="seo-roi-calculator.html">SEO ROI Calculator</a></li>
+        <li><a href="google-ads-budget-calculator.html">Google Ads Budget</a></li>
+        <li><a href="meta-tag-checker.html">Meta Tag Checker</a></li>
+      </ul>
+    </li>
+    <li><a href="../portfolio.html">Portfolio</a></li>
+    <li><a href="../pricing.html">Pricing</a></li>
+    <li><a href="../contact.html">Contact</a></li>
+  </ul>
+  <a href="../contact.html" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
+</div>
+
+<!-- HERO -->
+<section class="tool-hero">
+  <div class="container">
+    <div class="breadcrumb" style="justify-content:center;margin-bottom:1.5rem;">
+      <a href="/">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="/tools/">Tools</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Meta Tag Checker</span>
+    </div>
+    <span class="tag tag-gold" style="margin-bottom:1.2rem;"><i class="fas fa-tags"></i> Free SEO Tool</span>
+    <h1>Meta Title &amp; Description <span class="gradient-text">Checker</span></h1>
+    <p>Enter any URL to instantly fetch and preview your meta tags — exactly as Google sees them. Get length scores and actionable suggestions.</p>
+
+    <div class="url-bar">
+      <input type="url" id="urlInput" placeholder="https://yourwebsite.com/page" autocomplete="off" spellcheck="false"/>
+      <button id="fetchBtn" onclick="fetchMeta()">
+        <i class="fas fa-search" id="fetchIcon"></i>
+        <span id="fetchLabel">Check URL</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- TOOL -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="checker-wrap">
+
+      <!-- LEFT: inputs -->
+      <div class="checker-inputs">
+        <h3><i class="fas fa-edit" style="color:var(--accent);margin-right:.5rem;"></i> Edit & Test</h3>
+
+        <!-- Title -->
+        <div class="field-group">
+          <label>
+            Meta Title
+            <span class="char-count" id="titleCount">0</span>
+          </label>
+          <input type="text" id="titleInput" placeholder="Your page title here…" oninput="update()" maxlength="200"/>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="titleBar" style="width:0%;background:var(--accent);"></div>
+          </div>
+          <div class="field-hint" id="titleHint"><i class="fas fa-info-circle"></i> Ideal: 50–60 characters</div>
+        </div>
+
+        <!-- Description -->
+        <div class="field-group">
+          <label>
+            Meta Description
+            <span class="char-count" id="descCount">0</span>
+          </label>
+          <textarea id="descInput" placeholder="Your meta description here…" oninput="update()" maxlength="400"></textarea>
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="descBar" style="width:0%;background:var(--accent);"></div>
+          </div>
+          <div class="field-hint" id="descHint"><i class="fas fa-info-circle"></i> Ideal: 120–160 characters</div>
+        </div>
+
+        <!-- URL display -->
+        <div class="field-group">
+          <label>Page URL <span style="color:var(--text-muted);font-weight:400;text-transform:none;letter-spacing:0;">(display only)</span></label>
+          <input type="text" id="urlDisplay" placeholder="https://example.com/page" oninput="update()"/>
+        </div>
+
+        <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="resetAll()">
+          <i class="fas fa-redo"></i> Reset
+        </button>
+      </div>
+
+      <!-- RIGHT: results -->
+      <div class="results-col">
+
+        <!-- Fetch status -->
+        <div class="fetch-status idle" id="fetchStatus">
+          <i class="fas fa-circle-info"></i>
+          Enter a URL above and click "Check URL" — or type directly in the fields.
+        </div>
+
+        <!-- Preview toggle -->
+        <div class="preview-toggle">
+          <button class="active" id="btnDesktop" onclick="setView('desktop')"><i class="fas fa-desktop"></i> Desktop</button>
+          <button id="btnMobile" onclick="setView('mobile')"><i class="fas fa-mobile-alt"></i> Mobile</button>
+        </div>
+
+        <!-- Desktop SERP -->
+        <div id="viewDesktop">
+          <div class="serp-card">
+            <div class="serp-label"><i class="fab fa-google"></i> Google — Desktop Preview</div>
+            <div class="serp-url">
+              <div class="favicon" id="faviconD">V</div>
+              <span id="urlPreviewD">example.com</span>
+            </div>
+            <div class="serp-title" id="titlePreviewD">Your meta title will appear here</div>
+            <div class="serp-desc empty" id="descPreviewD">Your meta description will appear here…</div>
+          </div>
+        </div>
+
+        <!-- Mobile SERP -->
+        <div id="viewMobile" style="display:none;">
+          <div class="serp-mobile">
+            <div class="serp-label"><i class="fab fa-google"></i> Google — Mobile Preview</div>
+            <div class="serp-url">
+              <div class="favicon" id="faviconM">V</div>
+              <span id="urlPreviewM">example.com</span>
+            </div>
+            <div class="serp-title" id="titlePreviewM">Your meta title will appear here</div>
+            <div class="serp-desc empty" id="descPreviewM">Your meta description will appear here…</div>
+          </div>
+        </div>
+
+        <!-- Score cards -->
+        <div class="score-grid">
+          <div class="score-card" id="titleScoreCard">
+            <div class="sc-label"><i class="fas fa-heading"></i> Title Length</div>
+            <div class="sc-val" id="titleScoreVal">—</div>
+            <div class="sc-status" id="titleScoreStatus">No title yet</div>
+          </div>
+          <div class="score-card" id="descScoreCard">
+            <div class="sc-label"><i class="fas fa-align-left"></i> Description Length</div>
+            <div class="sc-val" id="descScoreVal">—</div>
+            <div class="sc-status" id="descScoreStatus">No description yet</div>
+          </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="tips-card">
+          <h4><i class="fas fa-lightbulb" style="color:var(--gold);margin-right:.4rem;"></i> Suggestions</h4>
+          <div id="tipsList">
+            <div class="tip-item">
+              <div class="tip-icon info"><i class="fas fa-arrow-up"></i></div>
+              <div class="tip-text">Enter a URL or type your meta tags above to see personalised suggestions.</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /results-col -->
+    </div><!-- /checker-wrap -->
+
+    <!-- Reference guide -->
+    <div style="max-width:760px;margin:0 auto;">
+      <h2 class="reveal" style="text-align:center;margin-bottom:2.5rem;">Meta Tag <span class="gradient-text">Length Guide</span></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
+        <div class="card">
+          <h4 style="margin-bottom:1rem;"><i class="fas fa-heading" style="color:var(--accent);margin-right:.5rem;"></i> Meta Title</h4>
+          <div style="font-size:.85rem;color:var(--text-2);line-height:1.7;">
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span>Too short</span><span style="color:#ff5050;font-weight:600;">&lt; 30 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span>Acceptable</span><span style="color:var(--gold);font-weight:600;">30–49 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:700;color:var(--text);">✓ Ideal</span><span style="color:#00d464;font-weight:600;">50–60 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span>Too long (truncated)</span><span style="color:#ff5050;font-weight:600;">&gt; 60 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;"><span>Pixel limit</span><span style="font-weight:600;">~600px</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <h4 style="margin-bottom:1rem;"><i class="fas fa-align-left" style="color:var(--accent-2);margin-right:.5rem;"></i> Meta Description</h4>
+          <div style="font-size:.85rem;color:var(--text-2);line-height:1.7;">
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span>Too short</span><span style="color:#ff5050;font-weight:600;">&lt; 70 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span>Acceptable</span><span style="color:var(--gold);font-weight:600;">70–119 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span style="font-weight:700;color:var(--text);">✓ Ideal</span><span style="color:#00d464;font-weight:600;">120–160 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);"><span>Too long (truncated)</span><span style="color:#ff5050;font-weight:600;">&gt; 160 chars</span></div>
+            <div style="display:flex;justify-content:space-between;padding:.4rem 0;"><span>Pixel limit</span><span style="font-weight:600;">~920px</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="container" style="max-width:760px;">
+    <div class="section-header reveal"><span class="tag"><i class="fas fa-question-circle"></i> FAQ</span><h2>Common <span class="gradient-text">Questions</span></h2></div>
+    <div class="faq-list reveal">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Does Google always use my meta title? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a">Not always. Google may rewrite your title if it considers it too long, keyword-stuffed, or not representative of the page content. Keeping your title within 50–60 characters and accurately describing the page gives you the best chance it will be used as-is.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Why does my description get truncated in search results? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a">Google truncates descriptions that exceed approximately 160 characters (or ~920 pixels wide). Write your most important information in the first 120–160 characters to ensure it's always visible.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Does the meta description affect my Google ranking? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a">Meta descriptions are not a direct ranking factor. However, a compelling description improves click-through rate (CTR), which signals engagement to Google and can indirectly improve your rankings over time.</div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What if no description is set on my page? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-a">If no meta description is set, Google will automatically pull a snippet from your page content. While this sometimes works fine, you have no control over the message shown — which can hurt your CTR. Always write a custom description.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <span class="tag tag-gold reveal" style="margin-bottom:1.5rem;"><i class="fas fa-fire"></i> Limited Spots Available</span>
+    <h2 class="reveal">Want Your Meta Tags <span class="gradient-text">Professionally Optimised?</span></h2>
+    <p class="reveal">I'll audit your entire website's on-page SEO — titles, descriptions, headings, schema — and fix what's holding your rankings back.</p>
+    <div class="cta-actions reveal">
+      <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary btn-xl" target="_blank" rel="noopener">
+        <i class="fas fa-calendar-check"></i> Book a Free Call
+      </a>
+      <a href="../contact.html" class="btn btn-outline btn-xl">
+        <i class="fas fa-file-alt"></i> Request Free Audit
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a>
+        <p>Full-stack digital marketing and growth engineer based in Germany. I help businesses grow online through SEO, web development, and conversion optimisation.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.fiverr.com/vahidsediqi_" class="social-link" aria-label="Fiverr" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a>
+          <a href="mailto:contact@vahidsediqi.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Services</h5><ul>
+        <li><a href="../services/seo.html">SEO Strategy</a></li>
+        <li><a href="../services/local-seo.html">Local SEO</a></li>
+        <li><a href="../services/ecom-seo.html">eCommerce SEO</a></li>
+        <li><a href="../services/shopify.html">Shopify Creation</a></li>
+        <li><a href="../services/wordpress.html">WordPress Dev</a></li>
+        <li><a href="../services/cro.html">CRO</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Tools</h5><ul>
+        <li><a href="shopify-vs-woocommerce-calculator.html">Shopify vs WooCommerce</a></li>
+        <li><a href="seo-roi-calculator.html">SEO ROI Calculator</a></li>
+        <li><a href="google-ads-budget-calculator.html">Google Ads Budget</a></li>
+        <li><a href="meta-tag-checker.html">Meta Tag Checker</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../about.html">About Vahid</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vahid Sediqi. All rights reserved.</p>
+      <p>Built with passion in Germany 🇩🇪</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+/* ── State ── */
+let currentView = 'desktop';
+
+const TITLE_IDEAL_MIN = 50, TITLE_IDEAL_MAX = 60;
+const DESC_IDEAL_MIN  = 120, DESC_IDEAL_MAX = 160;
+
+/* ── Fetch meta tags via multiple CORS proxies with fallback ── */
+async function tryProxy(proxyUrl, timeout = 10000) {
+  const res = await fetch(proxyUrl, { signal: AbortSignal.timeout(timeout) });
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  const ct = res.headers.get('content-type') || '';
+  // allorigins returns JSON {contents:...}, others return raw HTML
+  if (ct.includes('application/json')) {
+    const data = await res.json();
+    return data.contents || data.body || '';
+  }
+  return await res.text();
+}
+
+function extractMeta(html) {
+  const doc = new DOMParser().parseFromString(html, 'text/html');
+  const title = doc.querySelector('title')?.textContent?.trim() || '';
+  const desc  = doc.querySelector('meta[name="description"]')?.getAttribute('content')?.trim()
+             || doc.querySelector('meta[property="og:description"]')?.getAttribute('content')?.trim()
+             || '';
+  return { title, desc };
+}
+
+async function fetchMeta() {
+  const raw = document.getElementById('urlInput').value.trim();
+  if (!raw) { alert('Please enter a URL first.'); return; }
+
+  let url = raw;
+  if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+
+  setFetchStatus('loading', 'spinner', 'Fetching meta tags…');
+  document.getElementById('fetchBtn').disabled = true;
+
+  const proxies = [
+    'https://api.allorigins.win/get?url='  + encodeURIComponent(url),
+    'https://corsproxy.io/?url='           + encodeURIComponent(url),
+    'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url),
+    'https://thingproxy.freeboard.io/fetch/' + url,
+  ];
+
+  try {
+    let html = '';
+    let lastErr = null;
+    for (const proxyUrl of proxies) {
+      try {
+        setFetchStatus('loading', 'spinner', `Trying proxy ${proxies.indexOf(proxyUrl) + 1} of ${proxies.length}…`);
+        html = await tryProxy(proxyUrl, 10000);
+        if (html && html.length > 200) break; // got a real response
+      } catch (e) { lastErr = e; html = ''; }
+    }
+
+    if (!html || html.length < 200) throw lastErr || new Error('All proxies failed');
+
+    const { title, desc } = extractMeta(html);
+
+    document.getElementById('titleInput').value = title;
+    document.getElementById('descInput').value  = desc;
+    document.getElementById('urlDisplay').value = url;
+
+    update();
+    setFetchStatus('success', 'check-circle', `Meta tags fetched from <strong>${new URL(url).hostname}</strong>`);
+  } catch (e) {
+    setFetchStatus('error', 'exclamation-triangle',
+      'Could not fetch this URL automatically. Some sites block external requests — please paste your title and description manually in the fields below.');
+  } finally {
+    document.getElementById('fetchBtn').disabled = false;
+  }
+}
+
+function setFetchStatus(cls, icon, msg) {
+  const el = document.getElementById('fetchStatus');
+  el.className = 'fetch-status ' + cls;
+  el.innerHTML = `<i class="fas fa-${icon}"></i> ${msg}`;
+}
+
+/* ── Live update ── */
+function update() {
+  const title   = document.getElementById('titleInput').value;
+  const desc    = document.getElementById('descInput').value;
+  const pageUrl = document.getElementById('urlDisplay').value.trim() || 'example.com/page';
+
+  const tLen = title.length;
+  const dLen = desc.length;
+
+  /* character counts */
+  setCount('titleCount', tLen, TITLE_IDEAL_MIN, TITLE_IDEAL_MAX);
+  setCount('descCount',  dLen, DESC_IDEAL_MIN,  DESC_IDEAL_MAX);
+
+  /* progress bars */
+  setBar('titleBar', tLen, 70);
+  setBar('descBar',  dLen, 200);
+
+  /* hints */
+  setHint('titleHint', tLen, TITLE_IDEAL_MIN, TITLE_IDEAL_MAX,
+    ['Too short — add more detail', 'A bit short, try to expand', 'Perfect length!', 'Getting long — consider trimming', 'Too long — Google will truncate this']);
+  setHint('descHint',  dLen, DESC_IDEAL_MIN, DESC_IDEAL_MAX,
+    ['Too short — add more detail', 'A bit short, try to expand', 'Perfect length!', 'Getting long — consider trimming', 'Too long — Google will truncate this']);
+
+  /* score cards */
+  updateScoreCard('titleScoreCard', 'titleScoreVal', 'titleScoreStatus', tLen, TITLE_IDEAL_MIN, TITLE_IDEAL_MAX, 'Title');
+  updateScoreCard('descScoreCard',  'descScoreVal',  'descScoreStatus',  dLen, DESC_IDEAL_MIN,  DESC_IDEAL_MAX,  'Description');
+
+  /* previews */
+  const hostname = (() => { try { return new URL(pageUrl.startsWith('http') ? pageUrl : 'https://' + pageUrl).hostname; } catch { return pageUrl; } })();
+  const faviconLetter = hostname.charAt(0).toUpperCase() || 'V';
+
+  ['D','M'].forEach(v => {
+    document.getElementById('faviconD').textContent = faviconLetter;
+    document.getElementById('faviconM').textContent = faviconLetter;
+    document.getElementById('urlPreviewD').textContent = hostname;
+    document.getElementById('urlPreviewM').textContent = hostname;
+  });
+
+  const titlePreviewD = document.getElementById('titlePreviewD');
+  const titlePreviewM = document.getElementById('titlePreviewM');
+  const descPreviewD  = document.getElementById('descPreviewD');
+  const descPreviewM  = document.getElementById('descPreviewM');
+
+  titlePreviewD.textContent = title || 'Your meta title will appear here';
+  titlePreviewM.textContent = title || 'Your meta title will appear here';
+  titlePreviewD.classList.toggle('truncated', tLen > TITLE_IDEAL_MAX);
+  titlePreviewM.classList.toggle('truncated', tLen > TITLE_IDEAL_MAX);
+
+  const descEmpty = !desc.trim();
+  descPreviewD.textContent = desc || 'Your meta description will appear here…';
+  descPreviewM.textContent = desc || 'Your meta description will appear here…';
+  descPreviewD.classList.toggle('empty', descEmpty);
+  descPreviewM.classList.toggle('empty', descEmpty);
+
+  /* tips */
+  buildTips(title, desc, tLen, dLen);
+}
+
+function setCount(id, len, min, max) {
+  const el = document.getElementById(id);
+  el.textContent = len;
+  el.className = 'char-count ' + getStatus(len, min, max);
+}
+
+function setBar(id, len, total) {
+  const el = document.getElementById(id);
+  const pct = Math.min(100, (len / total) * 100);
+  el.style.width = pct + '%';
+  el.style.background = pct < 50 ? 'var(--gold)' : pct > 90 ? '#ff5050' : '#00d464';
+}
+
+function getStatus(len, min, max) {
+  if (len === 0)       return 'warn';
+  if (len < min - 10)  return 'bad';
+  if (len < min)       return 'warn';
+  if (len <= max)      return 'ok';
+  if (len <= max + 20) return 'warn';
+  return 'bad';
+}
+
+function setHint(id, len, min, max, msgs) {
+  const el = document.getElementById(id);
+  let msg, cls;
+  if (len === 0)            { msg = msgs[0]; cls = 'bad'; }
+  else if (len < min - 10) { msg = msgs[0]; cls = 'bad'; }
+  else if (len < min)      { msg = msgs[1]; cls = 'warn'; }
+  else if (len <= max)     { msg = msgs[2]; cls = 'ok'; }
+  else if (len <= max + 20){ msg = msgs[3]; cls = 'warn'; }
+  else                     { msg = msgs[4]; cls = 'bad'; }
+  el.className = 'field-hint hint-' + cls;
+  const icons = { ok: 'check-circle', warn: 'exclamation-circle', bad: 'times-circle' };
+  el.innerHTML = `<i class="fas fa-${icons[cls]}"></i> ${msg}`;
+}
+
+function updateScoreCard(cardId, valId, statusId, len, min, max, label) {
+  const card   = document.getElementById(cardId);
+  const valEl  = document.getElementById(valId);
+  const statEl = document.getElementById(statusId);
+
+  if (len === 0) {
+    card.className = 'score-card';
+    valEl.textContent = '—';
+    statEl.textContent = 'No ' + label.toLowerCase() + ' yet';
+    return;
+  }
+
+  const st = getStatus(len, min, max);
+  card.className = 'score-card ' + st;
+  valEl.textContent = len + ' chars';
+
+  const labels = {
+    ok:   '✓ Ideal length',
+    warn: len < min ? '↑ Too short' : '↓ Too long',
+    bad:  len < min ? '⚠ Way too short' : '⚠ Will be truncated'
+  };
+  statEl.textContent = labels[st];
+}
+
+function buildTips(title, desc, tLen, dLen) {
+  const tips = [];
+
+  if (tLen === 0) {
+    tips.push({ cls: 'bad',  icon: 'times-circle', text: '<strong>No meta title found.</strong> Every page needs a unique title tag — it\'s the #1 on-page SEO factor.' });
+  } else if (tLen < TITLE_IDEAL_MIN) {
+    tips.push({ cls: 'warn', icon: 'exclamation-circle', text: `<strong>Title is too short</strong> (${tLen} chars). Aim for 50–60 characters to give Google enough context and fill the SERP space.` });
+  } else if (tLen > TITLE_IDEAL_MAX) {
+    tips.push({ cls: 'bad',  icon: 'times-circle', text: `<strong>Title will be truncated</strong> (${tLen} chars). Google cuts off titles around 60 characters — shorten yours to prevent cut-off in search results.` });
+  } else {
+    tips.push({ cls: 'ok',   icon: 'check-circle', text: `<strong>Title length is perfect</strong> (${tLen} chars). Well within Google's 50–60 character sweet spot.` });
+  }
+
+  if (dLen === 0) {
+    tips.push({ cls: 'bad',  icon: 'times-circle', text: '<strong>No meta description found.</strong> Google will auto-generate a snippet — write a custom description to control your message and improve CTR.' });
+  } else if (dLen < DESC_IDEAL_MIN) {
+    tips.push({ cls: 'warn', icon: 'exclamation-circle', text: `<strong>Description is too short</strong> (${dLen} chars). Aim for 120–160 characters to use the full SERP space. Include a call to action.` });
+  } else if (dLen > DESC_IDEAL_MAX) {
+    tips.push({ cls: 'bad',  icon: 'times-circle', text: `<strong>Description will be cut off</strong> (${dLen} chars). Google truncates after ~160 characters. Move your CTA earlier or trim the text.` });
+  } else {
+    tips.push({ cls: 'ok',   icon: 'check-circle', text: `<strong>Description length is perfect</strong> (${dLen} chars). Google will display this in full.` });
+  }
+
+  if (title && desc && title.toLowerCase().split(' ').some(w => w.length > 3 && desc.toLowerCase().includes(w))) {
+    tips.push({ cls: 'ok', icon: 'check-circle', text: '<strong>Keyword consistency detected.</strong> Your title and description share keywords — good for relevance signals.' });
+  }
+
+  if (title.length > 0 && desc.length > 0) {
+    if (!desc.match(/[!?.]$/)) {
+      tips.push({ cls: 'info', icon: 'lightbulb', text: '<strong>Tip:</strong> End your description with a call-to-action like "Learn more.", "Get a free quote." or "Shop now." to increase click-through rate.' });
+    }
+    if (title === title.toUpperCase()) {
+      tips.push({ cls: 'warn', icon: 'exclamation-circle', text: '<strong>All-caps title detected.</strong> Google may rewrite it. Use title-case or sentence-case instead.' });
+    }
+    const brandSeparators = ['|', '–', '-', '—', ':'];
+    const hasBrand = brandSeparators.some(s => title.includes(s));
+    if (!hasBrand && tLen > 0) {
+      tips.push({ cls: 'info', icon: 'lightbulb', text: '<strong>Tip:</strong> Consider adding your brand name at the end of the title (e.g. "… | Your Brand") for recognition in search results.' });
+    }
+  }
+
+  const list = document.getElementById('tipsList');
+  list.innerHTML = tips.map(t => `
+    <div class="tip-item">
+      <div class="tip-icon ${t.cls}"><i class="fas fa-${t.icon}"></i></div>
+      <div class="tip-text">${t.text}</div>
+    </div>`).join('');
+}
+
+/* ── View toggle ── */
+function setView(v) {
+  currentView = v;
+  document.getElementById('viewDesktop').style.display = v === 'desktop' ? '' : 'none';
+  document.getElementById('viewMobile').style.display  = v === 'mobile'  ? '' : 'none';
+  document.getElementById('btnDesktop').classList.toggle('active', v === 'desktop');
+  document.getElementById('btnMobile').classList.toggle('active',  v === 'mobile');
+}
+
+/* ── Reset ── */
+function resetAll() {
+  ['titleInput','descInput','urlDisplay','urlInput'].forEach(id => document.getElementById(id).value = '');
+  update();
+  setFetchStatus('idle', 'circle-info', 'Enter a URL above and click "Check URL" — or type directly in the fields.');
+}
+
+/* ── Enter key on URL input ── */
+document.getElementById('urlInput').addEventListener('keydown', e => { if (e.key === 'Enter') fetchMeta(); });
+
+/* ── FAQ ── */
+function toggleFaq(el) {
+  el.classList.toggle('open');
+}
+
+/* Init */
+update();
+</script>
+</body>
+</html>

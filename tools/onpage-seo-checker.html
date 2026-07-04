@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free On-Page SEO Checker — Full Page Audit Tool | Vahid Sediqi</title>
+  <meta name="description" content="Free on-page SEO checker. Enter any URL to instantly audit title tags, meta descriptions, headings, images, content length, canonical tags and more. Download a PDF report."/>
+  <meta name="keywords" content="on-page SEO checker, SEO audit tool, page SEO analysis, title tag checker, heading checker, meta tag audit"/>
+  <link rel="canonical" href="https://www.vahidsediqi.com/tools/onpage-seo-checker.html"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234F7FFF'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>V</text></svg>"/>
+  <link rel="stylesheet" href="../css/style.css?v=4"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "On-Page SEO Checker",
+    "description": "Free on-page SEO audit tool that checks title tags, meta descriptions, headings, images, and more.",
+    "url": "https://www.vahidsediqi.com/tools/onpage-seo-checker.html",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "author": { "@type": "Person", "name": "Vahid Sediqi", "url": "https://www.vahidsediqi.com" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" }
+  }
+  </script>
+  <style>
+    /* ── Hero ── */
+    .tool-hero { padding: 100px 0 40px; text-align: center; }
+    .tool-hero h1 { font-size: clamp(1.9rem, 4vw, 3rem); margin-bottom: 1rem; }
+    .tool-hero p  { max-width: 640px; margin: 0 auto 1.5rem; color: var(--text-muted); font-size: 1.05rem; }
+
+    /* ── URL bar ── */
+    .url-bar {
+      display: flex; gap: .75rem; max-width: 720px; margin: 0 auto 2.5rem;
+    }
+    .url-bar input {
+      flex: 1; padding: .9rem 1.2rem; border-radius: .75rem;
+      border: 1.5px solid var(--border); background: var(--bg-2);
+      color: var(--text); font-size: .95rem; outline: none;
+      transition: border-color .2s;
+    }
+    .url-bar input:focus { border-color: var(--accent); }
+    .url-bar input::placeholder { color: var(--text-muted); }
+    .url-bar button {
+      padding: .9rem 1.6rem; border-radius: .75rem;
+      background: var(--accent); color: #fff; border: none;
+      font-weight: 600; cursor: pointer; white-space: nowrap;
+      transition: opacity .2s; display: flex; align-items: center; gap: .5rem;
+      font-size: .95rem;
+    }
+    .url-bar button:hover { opacity: .88; }
+    .url-bar button:disabled { opacity: .5; cursor: not-allowed; }
+
+    /* ── Status bar ── */
+    #statusBar {
+      max-width: 720px; margin: -1rem auto 2rem;
+      padding: .75rem 1.2rem; border-radius: .75rem;
+      background: rgba(79,127,255,.1); border: 1px solid rgba(79,127,255,.25);
+      color: var(--accent); font-size: .9rem; display: none;
+      align-items: center; gap: .6rem;
+    }
+    #statusBar.show { display: flex; }
+    #statusBar.error { background: rgba(239,68,68,.1); border-color: rgba(239,68,68,.3); color: #f87171; }
+
+    /* ── Score ring ── */
+    .score-section {
+      display: none; margin-bottom: 2.5rem;
+    }
+    .score-section.show { display: block; }
+    .score-header {
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 1.25rem; padding: 2rem; margin-bottom: 2rem;
+    }
+    .score-ring-wrap {
+      position: relative; width: 120px; height: 120px; flex-shrink: 0;
+    }
+    .score-ring-wrap svg { width: 120px; height: 120px; transform: rotate(-90deg); }
+    .score-ring-wrap .ring-bg { fill: none; stroke: var(--border); stroke-width: 10; }
+    .score-ring-wrap .ring-fg { fill: none; stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 1s ease; }
+    .score-number {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      font-size: 1.8rem; font-weight: 800;
+    }
+    .score-number small { font-size: .65rem; color: var(--text-muted); font-weight: 500; margin-top: -4px; }
+    .score-meta { flex: 1; min-width: 200px; }
+    .score-meta h2 { font-size: 1.3rem; margin-bottom: .4rem; }
+    .score-meta .score-url { font-size: .82rem; color: var(--text-muted); word-break: break-all; margin-bottom: 1rem; }
+    .score-pills { display: flex; gap: .75rem; flex-wrap: wrap; }
+    .score-pill {
+      padding: .3rem .9rem; border-radius: 100px; font-size: .8rem; font-weight: 600;
+      display: flex; align-items: center; gap: .4rem;
+    }
+    .pill-pass  { background: rgba(34,197,94,.1);  color: #4ade80; border: 1px solid rgba(34,197,94,.2); }
+    .pill-warn  { background: rgba(251,191,36,.1); color: #fbbf24; border: 1px solid rgba(251,191,36,.2); }
+    .pill-fail  { background: rgba(239,68,68,.1);  color: #f87171; border: 1px solid rgba(239,68,68,.2); }
+
+    /* ── PDF button ── */
+    .pdf-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .7rem 1.4rem; border-radius: .75rem;
+      background: transparent; border: 1.5px solid var(--accent);
+      color: var(--accent); font-weight: 600; cursor: pointer;
+      transition: background .2s, color .2s; font-size: .9rem; margin-top: 1rem;
+    }
+    .pdf-btn:hover { background: var(--accent); color: #fff; }
+
+    /* ── Report grid ── */
+    .report-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;
+    }
+    .report-card {
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: 1rem; padding: 1.5rem; break-inside: avoid;
+    }
+    .report-card.full { grid-column: 1 / -1; }
+    .report-card-header {
+      display: flex; align-items: center; gap: .75rem; margin-bottom: 1.25rem;
+    }
+    .report-card-icon {
+      width: 38px; height: 38px; border-radius: .6rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+    .icon-pass { background: rgba(34,197,94,.15); color: #4ade80; }
+    .icon-warn { background: rgba(251,191,36,.15); color: #fbbf24; }
+    .icon-fail { background: rgba(239,68,68,.15);  color: #f87171; }
+    .icon-info { background: rgba(79,127,255,.15); color: var(--accent); }
+    .report-card-header h3 { font-size: .95rem; margin: 0; }
+    .report-card-header .rc-status {
+      margin-left: auto; font-size: .78rem; font-weight: 700; padding: .2rem .65rem;
+      border-radius: 100px;
+    }
+    .st-pass { background: rgba(34,197,94,.12); color: #4ade80; }
+    .st-warn { background: rgba(251,191,36,.12); color: #fbbf24; }
+    .st-fail { background: rgba(239,68,68,.12);  color: #f87171; }
+
+    /* ── Check rows ── */
+    .check-row {
+      display: flex; align-items: flex-start; gap: .75rem; padding: .6rem 0;
+      border-bottom: 1px solid var(--border); font-size: .88rem;
+    }
+    .check-row:last-child { border-bottom: none; }
+    .check-icon { flex-shrink: 0; margin-top: 1px; }
+    .check-icon.pass { color: #4ade80; }
+    .check-icon.warn { color: #fbbf24; }
+    .check-icon.fail { color: #f87171; }
+    .check-icon.info { color: var(--accent); }
+    .check-label { font-weight: 600; color: var(--text-2); white-space: nowrap; min-width: 120px; flex-shrink: 0; }
+    .check-value { color: var(--text-muted); word-break: break-word; flex: 1; }
+    .check-value strong { color: var(--text); }
+    .check-value .tag { display: inline-block; background: rgba(79,127,255,.1); color: var(--accent); padding: .1rem .5rem; border-radius: .3rem; font-size: .8rem; margin: 1px; }
+
+    /* ── Headings tree ── */
+    .heading-tree { margin: 0; padding: 0; list-style: none; }
+    .heading-tree li {
+      padding: .45rem .75rem; border-radius: .5rem; font-size: .85rem;
+      margin-bottom: .3rem; display: flex; align-items: baseline; gap: .6rem;
+      background: rgba(255,255,255,.03); border: 1px solid var(--border);
+    }
+    .heading-tree li .h-tag {
+      font-size: .7rem; font-weight: 800; padding: .15rem .45rem; border-radius: .3rem;
+      flex-shrink: 0; letter-spacing: .04em;
+    }
+    .h1-tag { background: rgba(79,127,255,.2); color: var(--accent); }
+    .h2-tag { background: rgba(0,212,255,.15); color: var(--accent-2); }
+    .h3-tag { background: rgba(255,183,0,.15); color: var(--gold); }
+    .h4-tag, .h5-tag, .h6-tag { background: rgba(255,255,255,.05); color: var(--text-muted); }
+    .heading-tree li .h-text { flex: 1; color: var(--text-2); word-break: break-word; }
+    .h-warn { color: #f87171 !important; }
+
+    /* ── Image list ── */
+    .img-list { list-style: none; margin: 0; padding: 0; }
+    .img-list li {
+      display: flex; align-items: flex-start; gap: .6rem;
+      padding: .45rem 0; border-bottom: 1px solid var(--border);
+      font-size: .82rem; word-break: break-all;
+    }
+    .img-list li:last-child { border-bottom: none; }
+    .img-list .img-src { color: var(--text-muted); flex: 1; }
+    .img-list .no-alt { color: #f87171; font-weight: 600; }
+    .img-list .has-alt { color: #4ade80; }
+
+    /* ── Links table ── */
+    .links-list { list-style: none; margin: 0; padding: 0; max-height: 260px; overflow-y: auto; }
+    .links-list li {
+      padding: .4rem 0; border-bottom: 1px solid var(--border);
+      font-size: .82rem; display: flex; gap: .6rem; align-items: center;
+    }
+    .links-list li:last-child { border-bottom: none; }
+    .links-list .lk-type { font-size: .7rem; font-weight: 700; padding: .1rem .4rem; border-radius: .25rem; flex-shrink: 0; }
+    .lk-int { background: rgba(79,127,255,.15); color: var(--accent); }
+    .lk-ext { background: rgba(0,212,255,.15); color: var(--accent-2); }
+    .links-list .lk-text { flex: 1; color: var(--text-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .links-list .lk-href { color: var(--text-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; }
+
+    /* ── Suggestions box ── */
+    .suggestions { list-style: none; margin: 0; padding: 0; }
+    .suggestions li {
+      display: flex; gap: .75rem; padding: .65rem 0;
+      border-bottom: 1px solid var(--border); font-size: .88rem; align-items: flex-start;
+    }
+    .suggestions li:last-child { border-bottom: none; }
+    .sug-icon { flex-shrink: 0; margin-top: 2px; }
+    .sug-icon.fail { color: #f87171; }
+    .sug-icon.warn { color: #fbbf24; }
+    .sug-text { color: var(--text-2); flex: 1; }
+    .sug-text strong { color: var(--text); display: block; margin-bottom: .15rem; font-size: .9rem; }
+
+    /* ── Mode tabs ── */
+    .mode-tabs {
+      display: flex; gap: .5rem; justify-content: center; margin-bottom: 1.25rem;
+      background: var(--bg-2); border: 1px solid var(--border);
+      border-radius: .75rem; padding: .3rem; max-width: 360px; margin-left: auto; margin-right: auto;
+    }
+    .mode-tab {
+      flex: 1; padding: .55rem 1rem; border-radius: .55rem; border: none;
+      background: transparent; color: var(--text-muted); font-weight: 600; font-size: .88rem;
+      cursor: pointer; transition: background .2s, color .2s; display: flex; align-items: center;
+      justify-content: center; gap: .4rem;
+    }
+    .mode-tab.active { background: var(--accent); color: #fff; }
+    #htmlInput:focus { border-color: var(--accent); }
+    #htmlInput::placeholder { color: var(--text-muted); }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .url-bar { flex-direction: column; }
+      .score-header { flex-direction: column; align-items: flex-start; }
+      .report-grid { grid-template-columns: 1fr; }
+      .report-card.full { grid-column: auto; }
+      .check-row { flex-wrap: wrap; }
+      .check-label { min-width: 0; }
+    }
+
+    /* ── Print / PDF styles ── */
+    @media print {
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .navbar, .mobile-menu, .tool-hero, .url-bar, #statusBar, .pdf-btn,
+      .section-cta, footer, .breadcrumb, nav { display: none !important; }
+      body { background: #ffffff !important; color: #1a1a2e !important; font-family: 'Segoe UI', sans-serif; }
+      .score-section { display: block !important; }
+      .print-header {
+        display: flex !important; align-items: center; justify-content: space-between;
+        padding: 20px 0 16px; border-bottom: 2px solid #4F7FFF; margin-bottom: 20px;
+      }
+      .print-header .ph-logo { font-size: 1.2rem; font-weight: 800; color: #4F7FFF; }
+      .print-header .ph-meta { text-align: right; font-size: .8rem; color: #666; }
+      .print-footer {
+        display: flex !important; align-items: center; justify-content: space-between;
+        padding: 14px 0 0; border-top: 1px solid #ddd; margin-top: 24px;
+        font-size: .78rem; color: #666;
+      }
+      .score-header { background: #f8f9fc !important; border: 1px solid #e0e0e0 !important; border-radius: 12px !important; }
+      .score-number { color: #1a1a2e !important; }
+      .report-card { background: #f8f9fc !important; border: 1px solid #e0e0e0 !important; page-break-inside: avoid; }
+      .check-row { border-bottom-color: #e0e0e0 !important; }
+      .heading-tree li { background: #f0f2f8 !important; border-color: #e0e0e0 !important; }
+      .links-list { max-height: none !important; }
+      .img-list li { border-bottom-color: #e0e0e0 !important; }
+      h1,h2,h3 { color: #1a1a2e !important; }
+      .check-value { color: #555 !important; }
+      .check-value strong { color: #1a1a2e !important; }
+      .check-label { color: #333 !important; }
+      .report-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+      .report-card.full { grid-column: 1 / -1 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a>
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li class="has-mega-menu"><a href="/services/">Services <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-menu-col"><h4>SEO Services</h4><ul><li><a href="../services/seo.html"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li><li><a href="../services/local-seo.html"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li><li><a href="../services/ecom-seo.html"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li></ul></div>
+          <div class="mega-menu-col"><h4>Web Development</h4><ul><li><a href="../services/shopify.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li><li><a href="../services/wordpress.html"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li></ul></div>
+          <div class="mega-menu-col"><h4>Growth & Conversion</h4><ul><li><a href="../services/cro.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li></ul></div>
+          <div class="mega-menu-featured"><div class="badge">Free Audit</div><h5>Not sure where to start?</h5><p>Get a free website &amp; SEO audit.</p><a href="../contact.html" class="btn btn-primary btn-sm">Claim Free Audit</a></div>
+        </div>
+      </li>
+      <li class="has-mega-menu active">
+        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu mega-menu--tools">
+          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
+            <li><a href="shopify-vs-woocommerce-calculator.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
+            <li><a href="seo-roi-calculator.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
+            <li><a href="google-ads-budget-calculator.html"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
+            <li><a href="meta-tag-checker.html"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
+            <li><a href="onpage-seo-checker.html"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
+            <li><a href="index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
+            <li><a href="index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
+            <li><a href="index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
+          </ul></div>
+          <div class="mega-menu-featured">
+            <div class="badge">100% Free</div>
+            <h5>No sign-up required</h5>
+            <p>All tools are free — built from real client questions.</p>
+            <a href="/tools/" class="btn btn-primary btn-sm">View All Tools</a>
+          </div>
+        </div>
+      </li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a href="../contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="m-link">Home</a>
+  <a href="../about.html" class="m-link">About</a>
+  <div class="m-link has-sub" style="cursor:pointer">Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
+  <div class="m-sub"><a href="../services/seo.html"><i class="fas fa-search"></i> SEO Overview</a><a href="../services/local-seo.html"><i class="fas fa-map-marker-alt"></i> Local SEO</a><a href="../services/ecom-seo.html"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a><a href="../services/shopify.html"><i class="fab fa-shopify"></i> Shopify Creation</a><a href="../services/wordpress.html"><i class="fab fa-wordpress"></i> WordPress Dev</a><a href="../services/cro.html"><i class="fas fa-chart-line"></i> CRO</a></div>
+  <a href="/tools/" class="m-link">Tools</a>
+  <a href="../pricing.html" class="m-link">Pricing</a>
+  <a href="../contact.html" class="m-link">Contact</a>
+  <a href="../contact.html" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
+</div>
+
+<!-- Print-only header/footer (hidden on screen) -->
+<div class="print-header" style="display:none;">
+  <div class="ph-logo">Vahid Sediqi — On-Page SEO Checker</div>
+  <div class="ph-meta">
+    <div id="printDate"></div>
+    <div>vahidsediqi.com</div>
+  </div>
+</div>
+
+<section class="tool-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><i class="fas fa-chevron-right"></i><a href="/tools/">Tools</a><i class="fas fa-chevron-right"></i><span>On-Page SEO Checker</span></div>
+    <h1>Free <span class="gradient-text">On-Page SEO Checker</span></h1>
+    <p>Enter any public URL or paste your page's HTML source for an instant full SEO audit — title, meta, headings, images, links and more.</p>
+
+    <!-- Mode tabs -->
+    <div class="mode-tabs">
+      <button class="mode-tab active" id="tabUrl" onclick="switchMode('url')"><i class="fas fa-link"></i> Analyze URL</button>
+      <button class="mode-tab" id="tabPaste" onclick="switchMode('paste')"><i class="fas fa-code"></i> Paste HTML</button>
+    </div>
+
+    <!-- URL mode -->
+    <div id="modeUrl">
+      <div class="url-bar">
+        <input type="url" id="urlInput" placeholder="https://example.com/page" autocomplete="off" spellcheck="false"/>
+        <button id="checkBtn" onclick="runAudit()">
+          <i class="fas fa-search"></i> Analyze Page
+        </button>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:-.5rem;margin-bottom:1.5rem;">
+        <i class="fas fa-info-circle"></i> localhost / private URLs can't be fetched — use <strong>Paste HTML</strong> mode instead.
+      </p>
+    </div>
+
+    <!-- Paste HTML mode -->
+    <div id="modePaste" style="display:none;max-width:720px;margin:0 auto;">
+      <textarea id="htmlInput" placeholder="Paste your full page HTML here (Ctrl+A → Ctrl+C from View Source, then paste)…"
+        style="width:100%;height:160px;padding:1rem 1.2rem;border-radius:.75rem;border:1.5px solid var(--border);
+               background:var(--bg-2);color:var(--text);font-size:.88rem;font-family:monospace;outline:none;
+               resize:vertical;transition:border-color .2s;line-height:1.5;"></textarea>
+      <div class="url-bar" style="margin-top:.75rem;">
+        <input type="url" id="pasteUrlInput" placeholder="Page URL (optional — used for link analysis)" autocomplete="off" spellcheck="false" style="font-size:.88rem;"/>
+        <button onclick="runAuditFromPaste()">
+          <i class="fas fa-search"></i> Analyze HTML
+        </button>
+      </div>
+      <p style="font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:-.25rem;margin-bottom:1.5rem;">
+        <i class="fas fa-lightbulb"></i> In Chrome/Firefox: right-click the page → <strong>View Page Source</strong> → select all → paste here.
+      </p>
+    </div>
+
+    <div id="statusBar"><i class="fas fa-circle-notch fa-spin"></i> <span id="statusMsg">Fetching page…</span></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container">
+
+    <!-- Score + download -->
+    <div class="score-section" id="scoreSection">
+
+      <div class="score-header">
+        <div class="score-ring-wrap">
+          <svg viewBox="0 0 120 120">
+            <circle class="ring-bg" cx="60" cy="60" r="52"/>
+            <circle class="ring-fg" id="ringFg" cx="60" cy="60" r="52"
+              stroke-dasharray="326.7"
+              stroke-dashoffset="326.7"/>
+          </svg>
+          <div class="score-number"><span id="scoreNum">0</span><small>/100</small></div>
+        </div>
+        <div class="score-meta">
+          <h2 id="scoreLabel">Analysing…</h2>
+          <div class="score-url" id="scoreUrl"></div>
+          <div class="score-pills">
+            <span class="score-pill pill-pass"><i class="fas fa-check-circle"></i> <span id="pillPass">0</span> Passed</span>
+            <span class="score-pill pill-warn"><i class="fas fa-exclamation-triangle"></i> <span id="pillWarn">0</span> Warnings</span>
+            <span class="score-pill pill-fail"><i class="fas fa-times-circle"></i> <span id="pillFail">0</span> Errors</span>
+          </div>
+          <button class="pdf-btn" onclick="downloadPDF()">
+            <i class="fas fa-file-pdf"></i> Download PDF Report
+          </button>
+        </div>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="report-card full" id="suggestionsCard" style="margin-bottom:1.5rem;">
+        <div class="report-card-header">
+          <div class="report-card-icon icon-fail"><i class="fas fa-exclamation-circle"></i></div>
+          <h3>Issues &amp; Recommendations</h3>
+        </div>
+        <ul class="suggestions" id="suggestionsList"></ul>
+      </div>
+
+      <!-- Report grid -->
+      <div class="report-grid" id="reportGrid"></div>
+
+    </div>
+
+    <!-- FAQ -->
+    <div style="max-width:720px; margin: 0 auto 4rem;">
+      <h2 style="text-align:center; margin-bottom:2rem;">What Does This Tool Check?</h2>
+      <div id="faqList"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Print footer -->
+<div class="print-footer" style="display:none;">
+  <span>Generated by <strong>vahidsediqi.com</strong> — Free On-Page SEO Checker</span>
+  <span id="printUrl2"></span>
+</div>
+
+<section class="section-cta reveal">
+  <div class="container">
+    <h2 class="reveal">Want a <span class="gradient-text">Professional SEO Audit?</span></h2>
+    <p class="reveal delay-1" style="color:var(--text-muted);margin-bottom:2rem;">This tool gives you a quick overview — a full audit goes much deeper. Get a personalised SEO audit with actionable fixes from Vahid.</p>
+    <div class="cta-actions reveal">
+      <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary btn-xl" target="_blank" rel="noopener"><i class="fas fa-calendar-check"></i> Book a Free Call</a>
+      <a href="../contact.html" class="btn btn-outline btn-xl"><i class="fas fa-file-alt"></i> Request Free Audit</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a>
+        <p>Full-stack digital marketing and growth engineer based in Germany. I help businesses grow online through SEO, web development, and conversion optimisation.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.fiverr.com/vahidsediqi_" class="social-link" aria-label="Fiverr" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a>
+          <a href="mailto:contact@vahidsediqi.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Services</h5><ul>
+        <li><a href="../services/seo.html">SEO Strategy</a></li>
+        <li><a href="../services/local-seo.html">Local SEO</a></li>
+        <li><a href="../services/ecom-seo.html">eCommerce SEO</a></li>
+        <li><a href="../services/shopify.html">Shopify Creation</a></li>
+        <li><a href="../services/wordpress.html">WordPress Dev</a></li>
+        <li><a href="../services/cro.html">CRO</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Tools</h5><ul>
+        <li><a href="shopify-vs-woocommerce-calculator.html">Shopify vs WooCommerce</a></li>
+        <li><a href="seo-roi-calculator.html">SEO ROI Calculator</a></li>
+        <li><a href="google-ads-budget-calculator.html">Google Ads Budget</a></li>
+        <li><a href="meta-tag-checker.html">Meta Tag Checker</a></li>
+        <li><a href="onpage-seo-checker.html">On-Page SEO Checker</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../about.html">About Vahid</a></li>
+        <li><a href="../portfolio.html">Portfolio</a></li>
+        <li><a href="../pricing.html">Pricing</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Vahid Sediqi. All rights reserved.</p>
+      <p>Built with passion in Germany 🇩🇪</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+/* ── FAQ data ── */
+const faqs = [
+  { q: 'Title Tag', a: 'Checks if the title exists, is between 50–60 characters, and is not empty or duplicated.' },
+  { q: 'Meta Description', a: 'Checks for presence and ideal length of 120–160 characters.' },
+  { q: 'Heading Structure (H1–H6)', a: 'Verifies there is exactly one H1, and lists all headings in document order.' },
+  { q: 'Word Count', a: 'Counts visible body text words — pages under 300 words are flagged as thin content.' },
+  { q: 'Image Alt Text', a: 'Lists every image and flags those missing alt text, which hurts accessibility and SEO.' },
+  { q: 'Canonical Tag', a: 'Checks for a canonical link element, which prevents duplicate content issues.' },
+  { q: 'Meta Robots', a: 'Warns if the page has noindex or nofollow directives that could block Google.' },
+  { q: 'Open Graph Tags', a: 'Checks og:title, og:description and og:image for social sharing previews.' },
+  { q: 'Schema Markup', a: 'Detects any JSON-LD or microdata structured data on the page.' },
+  { q: 'Viewport & Charset', a: 'Confirms mobile-friendly viewport meta tag and charset declaration are present.' },
+  { q: 'Internal & External Links', a: 'Counts all links and shows anchor text — important for PageRank distribution.' },
+];
+
+faqs.forEach(f => {
+  const d = document.createElement('details');
+  d.style.cssText = 'border:1px solid var(--border);border-radius:.75rem;margin-bottom:.75rem;overflow:hidden;';
+  d.innerHTML = `<summary style="padding:1rem 1.25rem;cursor:pointer;font-weight:600;list-style:none;display:flex;align-items:center;justify-content:space-between;">${f.q} <i class="fas fa-chevron-down" style="transition:.3s;"></i></summary><p style="padding:.25rem 1.25rem 1rem;color:var(--text-muted);font-size:.9rem;margin:0;">${f.a}</p>`;
+  d.addEventListener('toggle', () => {
+    const icon = d.querySelector('.fa-chevron-down');
+    icon.style.transform = d.open ? 'rotate(180deg)' : '';
+  });
+  document.getElementById('faqList').appendChild(d);
+});
+
+/* ── Mode switch ── */
+function switchMode(mode) {
+  document.getElementById('modeUrl').style.display   = mode === 'url'   ? '' : 'none';
+  document.getElementById('modePaste').style.display = mode === 'paste' ? '' : 'none';
+  document.getElementById('tabUrl').classList.toggle('active',   mode === 'url');
+  document.getElementById('tabPaste').classList.toggle('active', mode === 'paste');
+}
+
+/* ── Paste-mode entry ── */
+function runAuditFromPaste() {
+  const html = document.getElementById('htmlInput').value.trim();
+  if (!html) { alert('Please paste some HTML first.'); return; }
+  const url = document.getElementById('pasteUrlInput').value.trim() || 'http://local-page';
+  processHtml(html, url);
+}
+
+/* ── Proxy chain ── */
+const PROXIES = url => [
+  'https://api.allorigins.win/get?url=' + encodeURIComponent(url),
+  'https://corsproxy.io/?url=' + encodeURIComponent(url),
+  'https://api.codetabs.com/v1/proxy?quest=' + encodeURIComponent(url),
+  'https://thingproxy.freeboard.io/fetch/' + url,
+];
+
+async function tryProxy(url) {
+  const proxies = PROXIES(url);
+  for (const proxy of proxies) {
+    try {
+      const r = await fetch(proxy, { signal: AbortSignal.timeout(12000) });
+      if (!r.ok) continue;
+      const json = await r.json().catch(() => null);
+      if (json && json.contents) return json.contents;
+      const text = await r.text().catch(() => null);
+      if (text && text.trim().startsWith('<')) return text;
+    } catch {}
+  }
+  return null;
+}
+
+/* ── Status helpers ── */
+const statusBar = document.getElementById('statusBar');
+function setStatus(msg, type = '') {
+  statusBar.className = 'show ' + type;
+  document.getElementById('statusMsg').textContent = msg;
+  statusBar.querySelector('i').className = type === 'error'
+    ? 'fas fa-exclamation-circle'
+    : 'fas fa-circle-notch fa-spin';
+}
+function hideStatus() { statusBar.className = ''; }
+
+/* ── Main audit ── */
+async function runAudit() {
+  let url = document.getElementById('urlInput').value.trim();
+  if (!url) return;
+  if (!/^https?:\/\//i.test(url)) url = 'https://' + url;
+  document.getElementById('urlInput').value = url;
+
+  // Detect localhost / private URLs
+  const isLocal = /^https?:\/\/(localhost|127\.|192\.168\.|10\.|172\.(1[6-9]|2\d|3[01])\.)/i.test(url);
+  if (isLocal) {
+    setStatus('', 'error');
+    document.getElementById('statusMsg').textContent =
+      'Localhost URLs can\'t be fetched via proxy. Switch to "Paste HTML" mode — view source of the page and paste it there.';
+    document.getElementById('statusBar').querySelector('i').className = 'fas fa-exclamation-circle';
+    document.getElementById('statusBar').className = 'show error';
+    return;
+  }
+
+  const btn = document.getElementById('checkBtn');
+  btn.disabled = true;
+  setStatus('Fetching page via proxy…');
+  document.getElementById('scoreSection').classList.remove('show');
+
+  const html = await tryProxy(url);
+  if (!html) {
+    setStatus('Could not fetch this URL. The site may block proxy requests. Switch to "Paste HTML" mode or try a different URL.', 'error');
+    btn.disabled = false;
+    return;
+  }
+
+  setStatus('Analysing page SEO…');
+  processHtml(html, url);
+  btn.disabled = false;
+}
+
+async function processHtml(html, url) {
+  document.getElementById('scoreSection').classList.remove('show');
+  setStatus('Analysing page SEO…');
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+
+  /* ─ collect signals ─ */
+  const title       = doc.title || '';
+  const metaDesc    = doc.querySelector('meta[name="description"]')?.content || '';
+  const canonical   = doc.querySelector('link[rel="canonical"]')?.href || '';
+  const viewport    = doc.querySelector('meta[name="viewport"]')?.content || '';
+  const charset     = doc.querySelector('meta[charset]')?.getAttribute('charset') || doc.querySelector('meta[http-equiv="Content-Type"]')?.content || '';
+  const robots      = doc.querySelector('meta[name="robots"]')?.content || '';
+  const ogTitle     = doc.querySelector('meta[property="og:title"]')?.content || '';
+  const ogDesc      = doc.querySelector('meta[property="og:description"]')?.content || '';
+  const ogImage     = doc.querySelector('meta[property="og:image"]')?.content || '';
+  const hasSchema   = !!(doc.querySelector('script[type="application/ld+json"]') || doc.querySelector('[itemtype]'));
+
+  /* headings */
+  const headings = [...doc.querySelectorAll('h1,h2,h3,h4,h5,h6')].map(h => ({
+    tag: h.tagName, text: h.innerText || h.textContent || ''
+  }));
+  const h1s = headings.filter(h => h.tag === 'H1');
+
+  /* word count */
+  const bodyText = (doc.body?.innerText || doc.body?.textContent || '').replace(/\s+/g,' ').trim();
+  const wordCount = bodyText.split(' ').filter(w => w.length > 0).length;
+
+  /* images */
+  const images = [...doc.querySelectorAll('img')].map(img => ({
+    src: img.src || img.getAttribute('src') || '',
+    alt: img.getAttribute('alt'),
+    hasAlt: img.hasAttribute('alt') && img.getAttribute('alt').trim() !== ''
+  }));
+  const missingAlt = images.filter(i => !i.hasAlt);
+
+  /* links */
+  const baseHost = (() => { try { return new URL(url).hostname; } catch { return ''; } })();
+  const allLinks = [...doc.querySelectorAll('a[href]')].map(a => {
+    const href = a.getAttribute('href') || '';
+    let isInternal = true;
+    try {
+      const abs = new URL(href, url);
+      isInternal = abs.hostname === baseHost || !href.startsWith('http');
+    } catch { isInternal = !href.startsWith('http'); }
+    return { href, text: (a.innerText || a.textContent || '').trim().slice(0, 80), isInternal };
+  }).filter(l => l.href && l.href !== '#' && !l.href.startsWith('javascript') && !l.href.startsWith('mailto'));
+  const intLinks = allLinks.filter(l => l.isInternal);
+  const extLinks = allLinks.filter(l => !l.isInternal);
+
+  /* ─ score calculation ─ */
+  let pass = 0, warn = 0, fail = 0;
+  const checks = {};
+
+  function mark(key, status) { checks[key] = status; if(status==='pass') pass++; else if(status==='warn') warn++; else fail++; }
+
+  mark('titleExists',   title ? 'pass' : 'fail');
+  mark('titleLen',      title.length >= 50 && title.length <= 60 ? 'pass' : title.length > 0 ? 'warn' : 'fail');
+  mark('descExists',    metaDesc ? 'pass' : 'fail');
+  mark('descLen',       metaDesc.length >= 120 && metaDesc.length <= 160 ? 'pass' : metaDesc.length > 0 ? 'warn' : 'fail');
+  mark('h1Exists',      h1s.length === 1 ? 'pass' : h1s.length === 0 ? 'fail' : 'warn');
+  mark('h1Count',       h1s.length <= 1 ? 'pass' : 'warn');
+  mark('wordCount',     wordCount >= 600 ? 'pass' : wordCount >= 300 ? 'warn' : 'fail');
+  mark('imgAlt',        missingAlt.length === 0 ? 'pass' : missingAlt.length <= 3 ? 'warn' : 'fail');
+  mark('canonical',     canonical ? 'pass' : 'warn');
+  mark('noindex',       robots.toLowerCase().includes('noindex') ? 'fail' : 'pass');
+  mark('nofollow',      robots.toLowerCase().includes('nofollow') ? 'warn' : 'pass');
+  mark('ogTitle',       ogTitle ? 'pass' : 'warn');
+  mark('ogDesc',        ogDesc ? 'pass' : 'warn');
+  mark('ogImage',       ogImage ? 'pass' : 'warn');
+  mark('schema',        hasSchema ? 'pass' : 'warn');
+  mark('viewport',      viewport ? 'pass' : 'fail');
+  mark('charset',       charset ? 'pass' : 'warn');
+  mark('intLinks',      intLinks.length >= 3 ? 'pass' : intLinks.length >= 1 ? 'warn' : 'fail');
+
+  const total = pass + warn + fail;
+  const score = Math.round((pass * 100 + warn * 50) / total);
+
+  /* ─ render score ring ─ */
+  const circumference = 326.7;
+  const offset = circumference - (score / 100) * circumference;
+  const ringFg = document.getElementById('ringFg');
+  ringFg.style.stroke = score >= 80 ? '#4ade80' : score >= 50 ? '#fbbf24' : '#f87171';
+  setTimeout(() => { ringFg.style.strokeDashoffset = offset; }, 50);
+  document.getElementById('scoreNum').textContent = score;
+  document.getElementById('scoreLabel').textContent =
+    score >= 80 ? 'Good SEO Health' : score >= 50 ? 'Needs Improvement' : 'Poor SEO Health';
+  document.getElementById('scoreUrl').textContent = url;
+  document.getElementById('pillPass').textContent = pass;
+  document.getElementById('pillWarn').textContent = warn;
+  document.getElementById('pillFail').textContent = fail;
+
+  /* ─ suggestions ─ */
+  const tips = [];
+  if (!title)                               tips.push({ sev:'fail', title:'Missing title tag', desc:'Add a <title> tag. This is the most important on-page SEO element.' });
+  else if (title.length < 50)               tips.push({ sev:'warn', title:'Title too short ('+title.length+' chars)', desc:'Aim for 50–60 characters to use the full SERP snippet space.' });
+  else if (title.length > 60)               tips.push({ sev:'warn', title:'Title too long ('+title.length+' chars)', desc:'Google truncates titles over ~60 characters in search results.' });
+  if (!metaDesc)                            tips.push({ sev:'fail', title:'Missing meta description', desc:'Add a meta description to control your SERP snippet and improve CTR.' });
+  else if (metaDesc.length < 120)           tips.push({ sev:'warn', title:'Meta description too short ('+metaDesc.length+' chars)', desc:'Aim for 120–160 characters to fill the snippet space.' });
+  else if (metaDesc.length > 160)           tips.push({ sev:'warn', title:'Meta description too long ('+metaDesc.length+' chars)', desc:'Google cuts off descriptions over ~160 chars. Trim it down.' });
+  if (h1s.length === 0)                     tips.push({ sev:'fail', title:'Missing H1 tag', desc:'Every page should have exactly one H1 containing your primary keyword.' });
+  else if (h1s.length > 1)                  tips.push({ sev:'warn', title:'Multiple H1 tags ('+h1s.length+')', desc:'Use only one H1 per page. Demote extra H1s to H2 or H3.' });
+  if (wordCount < 300)                      tips.push({ sev:'fail', title:'Thin content ('+wordCount+' words)', desc:'Google may not rank thin pages well. Aim for at least 600 words for informational content.' });
+  else if (wordCount < 600)                 tips.push({ sev:'warn', title:'Low word count ('+wordCount+' words)', desc:'Consider expanding to 600+ words for better topical depth.' });
+  if (missingAlt.length > 0)               tips.push({ sev:'warn', title:missingAlt.length+' image(s) missing alt text', desc:'Alt text helps search engines understand images and improves accessibility.' });
+  if (!canonical)                           tips.push({ sev:'warn', title:'No canonical tag found', desc:'Add a <link rel="canonical"> to prevent duplicate content issues.' });
+  if (robots.toLowerCase().includes('noindex')) tips.push({ sev:'fail', title:'Page is set to noindex', desc:'Remove noindex from the robots meta tag unless you intentionally want to block this page.' });
+  if (!ogTitle || !ogDesc || !ogImage)      tips.push({ sev:'warn', title:'Incomplete Open Graph tags', desc:'Add og:title, og:description and og:image for better social media previews.' });
+  if (!hasSchema)                           tips.push({ sev:'warn', title:'No schema markup detected', desc:'Add JSON-LD structured data (Article, Product, FAQ, etc.) to improve rich results.' });
+  if (!viewport)                            tips.push({ sev:'fail', title:'Missing viewport meta tag', desc:'Add <meta name="viewport" content="width=device-width, initial-scale=1"> for mobile SEO.' });
+  if (intLinks.length < 3)                  tips.push({ sev:'warn', title:'Few internal links ('+intLinks.length+')', desc:'Add more internal links to help crawlers discover pages and distribute PageRank.' });
+  if (tips.length === 0)                    tips.push({ sev:'pass', title:'No critical issues found', desc:'Great job! Keep monitoring your page regularly for regressions.' });
+
+  const sugList = document.getElementById('suggestionsList');
+  sugList.innerHTML = '';
+  tips.forEach(t => {
+    sugList.insertAdjacentHTML('beforeend', `
+      <li>
+        <span class="sug-icon ${t.sev}"><i class="fas fa-${t.sev==='fail'?'times-circle':t.sev==='warn'?'exclamation-triangle':'check-circle'}"></i></span>
+        <span class="sug-text"><strong>${t.title}</strong>${t.desc}</span>
+      </li>`);
+  });
+
+  /* ─ report cards ─ */
+  const grid = document.getElementById('reportGrid');
+  grid.innerHTML = '';
+
+  function card(title, iconClass, statusClass, statusLabel, content) {
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="report-card">
+        <div class="report-card-header">
+          <div class="report-card-icon ${iconClass}"><i class="fas fa-${
+            iconClass==='icon-pass'?'check':iconClass==='icon-warn'?'exclamation-triangle':iconClass==='icon-fail'?'times':'info-circle'
+          }"></i></div>
+          <h3>${title}</h3>
+          <span class="rc-status ${statusClass}">${statusLabel}</span>
+        </div>
+        ${content}
+      </div>`);
+  }
+  function cardFull(title, iconClass, statusClass, statusLabel, content) {
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="report-card full">
+        <div class="report-card-header">
+          <div class="report-card-icon ${iconClass}"><i class="fas fa-${
+            iconClass==='icon-pass'?'check':iconClass==='icon-warn'?'exclamation-triangle':iconClass==='icon-fail'?'times':'info-circle'
+          }"></i></div>
+          <h3>${title}</h3>
+          <span class="rc-status ${statusClass}">${statusLabel}</span>
+        </div>
+        ${content}
+      </div>`);
+  }
+
+  function rowHtml(status, label, value) {
+    const cls = status === 'pass' ? 'pass' : status === 'warn' ? 'warn' : 'fail';
+    const icon = status === 'pass' ? 'check-circle' : status === 'warn' ? 'exclamation-triangle' : 'times-circle';
+    return `<div class="check-row">
+      <span class="check-icon ${cls}"><i class="fas fa-${icon}"></i></span>
+      <span class="check-label">${label}</span>
+      <span class="check-value">${value}</span>
+    </div>`;
+  }
+
+  const ic = s => s==='pass'?'icon-pass':s==='warn'?'icon-warn':'icon-fail';
+  const sc = s => s==='pass'?'st-pass':s==='warn'?'st-warn':'st-fail';
+  const sl = s => s==='pass'?'Pass':s==='warn'?'Warning':'Error';
+  const ov = (a,b) => a==='fail'||b==='fail'?'fail':a==='warn'||b==='warn'?'warn':'pass';
+
+  /* Title */
+  const titS = ov(checks.titleExists, checks.titleLen);
+  card('Title Tag', ic(titS), sc(titS), sl(titS),
+    rowHtml(checks.titleExists, 'Exists', title ? `<strong>${escH(title)}</strong>` : '<span style="color:#f87171">Missing</span>') +
+    rowHtml(checks.titleLen, 'Length', title ? `<strong>${title.length} chars</strong> <span style="color:var(--text-muted)">(ideal: 50–60)</span>` : 'N/A')
+  );
+
+  /* Meta Desc */
+  const descS = ov(checks.descExists, checks.descLen);
+  card('Meta Description', ic(descS), sc(descS), sl(descS),
+    rowHtml(checks.descExists, 'Exists', metaDesc ? `<strong>${escH(metaDesc.slice(0,120))}${metaDesc.length>120?'…':''}</strong>` : '<span style="color:#f87171">Missing</span>') +
+    rowHtml(checks.descLen, 'Length', metaDesc ? `<strong>${metaDesc.length} chars</strong> <span style="color:var(--text-muted)">(ideal: 120–160)</span>` : 'N/A')
+  );
+
+  /* H1 */
+  const h1S = checks.h1Exists;
+  card('H1 Tag', ic(h1S), sc(h1S), sl(h1S),
+    rowHtml(checks.h1Exists, 'Count', `<strong>${h1s.length}</strong> H1 tag${h1s.length!==1?'s':''} found ${h1s.length===1?'✓':h1s.length===0?'— missing':'— multiple H1s'}`) +
+    (h1s.length ? rowHtml('info', 'Content', `<strong>${escH(h1s[0].text.slice(0,120))}</strong>`) : '')
+  );
+
+  /* Content */
+  const wcS = checks.wordCount;
+  card('Content', ic(wcS), sc(wcS), sl(wcS),
+    rowHtml(checks.wordCount, 'Word Count', `<strong>${wordCount.toLocaleString()} words</strong> <span style="color:var(--text-muted)">(min 600 recommended)</span>`) +
+    rowHtml('info', 'Headings', `<strong>${headings.length}</strong> total headings (H1–H6)`)
+  );
+
+  /* Technical */
+  const techS = [checks.canonical, checks.noindex, checks.viewport, checks.charset].includes('fail') ? 'fail'
+    : [checks.canonical, checks.noindex, checks.viewport, checks.charset].includes('warn') ? 'warn' : 'pass';
+  card('Technical Tags', ic(techS), sc(techS), sl(techS),
+    rowHtml(checks.viewport,   'Viewport',  viewport   ? `<strong>${escH(viewport.slice(0,60))}</strong>` : '<span style="color:#f87171">Missing</span>') +
+    rowHtml(checks.charset?'pass':'warn',   'Charset',   charset    ? `<strong>${escH(charset)}</strong>` : '<span style="color:#fbbf24">Not detected</span>') +
+    rowHtml(checks.canonical,  'Canonical', canonical  ? `<strong>${escH(canonical.slice(0,60))}${canonical.length>60?'…':''}</strong>` : '<span style="color:#fbbf24">Missing</span>') +
+    rowHtml(checks.noindex,    'Robots',    robots      ? `<strong>${escH(robots)}</strong>` : '<span style="color:var(--text-muted)">Not set (default: index, follow)</span>')
+  );
+
+  /* Open Graph */
+  const ogS = (!ogTitle || !ogDesc || !ogImage) ? 'warn' : 'pass';
+  card('Open Graph / Social', ic(ogS), sc(ogS), sl(ogS),
+    rowHtml(ogTitle?'pass':'warn', 'og:title', ogTitle ? `<strong>${escH(ogTitle.slice(0,80))}</strong>` : '<span style="color:#fbbf24">Missing</span>') +
+    rowHtml(ogDesc?'pass':'warn',  'og:desc',  ogDesc  ? `<strong>${escH(ogDesc.slice(0,80))}</strong>`  : '<span style="color:#fbbf24">Missing</span>') +
+    rowHtml(ogImage?'pass':'warn', 'og:image', ogImage ? `<strong>${escH(ogImage.slice(0,80))}</strong>` : '<span style="color:#fbbf24">Missing</span>')
+  );
+
+  /* Schema */
+  card('Schema Markup', ic(checks.schema), sc(checks.schema), sl(checks.schema),
+    rowHtml(checks.schema, 'Detected', hasSchema
+      ? '<strong>Yes</strong> — structured data found on this page'
+      : '<span style="color:#fbbf24">No schema markup found</span>') +
+    rowHtml('info', 'Tip', 'Add JSON-LD schema (Article, Product, FAQ) for rich results')
+  );
+
+  /* Images */
+  const imgS = checks.imgAlt;
+  let imgContent = rowHtml(imgS, 'Total Images', `<strong>${images.length}</strong> image${images.length!==1?'s':''} found`) +
+    rowHtml(imgS, 'Missing Alt', missingAlt.length === 0
+      ? '<strong style="color:#4ade80">None — all images have alt text</strong>'
+      : `<strong style="color:#f87171">${missingAlt.length} image${missingAlt.length!==1?'s':''} missing alt text</strong>`);
+  if (images.length > 0) {
+    imgContent += `<ul class="img-list" style="margin-top:.75rem;">${
+      images.slice(0,12).map(img => `<li>
+        <span class="${img.hasAlt?'has-alt':'no-alt'}"><i class="fas fa-${img.hasAlt?'check':'times'}"></i></span>
+        <span class="img-src">${escH((img.src||'').split('/').pop().slice(0,50) || img.src.slice(0,50))}
+          ${img.hasAlt ? `<span style="color:#4ade80;font-size:.78rem;"> alt: "${escH(img.alt?.slice(0,40)||'')}"</span>` : '<span class="no-alt" style="font-size:.78rem;"> No alt</span>'}
+        </span>
+      </li>`).join('')
+    }${images.length>12?`<li><span class="img-src" style="color:var(--text-muted)">… and ${images.length-12} more images</span></li>`:''}</ul>`;
+  }
+  cardFull('Images', ic(imgS), sc(imgS), sl(imgS), imgContent);
+
+  /* Headings tree */
+  const hTreeS = h1s.length === 1 ? 'pass' : h1s.length === 0 ? 'fail' : 'warn';
+  let hTree = `<ul class="heading-tree">${
+    headings.slice(0,30).map((h,i) => {
+      const lvl = parseInt(h.tag[1]);
+      const tagClass = `h${lvl}-tag`;
+      const warn = (h.tag==='H1' && h1s.length>1 && i>0) ? 'h-warn' : '';
+      return `<li style="margin-left:${(lvl-1)*16}px">
+        <span class="h-tag ${tagClass}">${h.tag}</span>
+        <span class="h-text ${warn}">${escH(h.text.trim().slice(0,100))}</span>
+      </li>`;
+    }).join('')
+  }${headings.length>30?`<li style="color:var(--text-muted);font-size:.8rem">… and ${headings.length-30} more headings</li>`:''}</ul>`;
+  if (!headings.length) hTree = '<p style="color:var(--text-muted);font-size:.9rem;margin:0">No headings found on this page.</p>';
+  cardFull('Heading Structure', ic(hTreeS), sc(hTreeS), sl(hTreeS), hTree);
+
+  /* Links */
+  const lnkS = checks.intLinks;
+  let lnkContent = rowHtml('info', 'Internal Links', `<strong>${intLinks.length}</strong>`) +
+    rowHtml('info', 'External Links', `<strong>${extLinks.length}</strong>`) +
+    `<ul class="links-list" style="margin-top:.75rem;">${
+      allLinks.slice(0,25).map(l => `<li>
+        <span class="lk-type ${l.isInternal?'lk-int':'lk-ext'}">${l.isInternal?'INT':'EXT'}</span>
+        <span class="lk-text">${escH(l.text||'(no text)')}</span>
+        <span class="lk-href">${escH(l.href.slice(0,60))}</span>
+      </li>`).join('')
+    }${allLinks.length>25?`<li><span class="lk-href" style="color:var(--text-muted)">… and ${allLinks.length-25} more links</span></li>`:''}</ul>`;
+  cardFull('Links', ic(lnkS), sc(lnkS), sl(lnkS), lnkContent);
+
+  /* ─ show results ─ */
+  document.getElementById('scoreSection').classList.add('show');
+  document.getElementById('printDate').textContent = 'Report date: ' + new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('printUrl2').textContent = url;
+  hideStatus();
+}
+
+function escH(str) {
+  return (str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function downloadPDF() {
+  window.print();
+}
+
+/* ── Enter key ── */
+document.getElementById('urlInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') runAudit();
+});
+</script>
+</body>
+</html>

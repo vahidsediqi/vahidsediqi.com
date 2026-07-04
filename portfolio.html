@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Shopify & WordPress Projects | Vahid Sediqi</title>
+  <meta name="description" content="Real websites built by Vahid Sediqi — Shopify stores and WordPress sites designed to convert. Browse live projects with results."/>
+  <link rel="canonical" href="https://www.vahidsediqi.com/portfolio.html"/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%234F7FFF'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' fill='white' font-size='18' font-weight='bold' font-family='sans-serif'>V</text></svg>"/>
+  <link rel="stylesheet" href="css/style.css?v=4"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Filter tabs */
+    .filter-bar {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: .55rem 1.4rem;
+      border-radius: 100px;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      transition: all .2s;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Portfolio grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+    }
+
+    /* Project card */
+    .project-card {
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(79,127,255,.25);
+      border-color: rgba(79,127,255,.4);
+    }
+
+    /* Screenshot image */
+    .project-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 230px;
+      background: var(--bg);
+    }
+    .project-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .project-card:hover .project-img-wrap img {
+      transform: scale(1.04);
+    }
+    .project-type-badge {
+      position: absolute;
+      top: .85rem;
+      left: .85rem;
+      padding: .3rem .8rem;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+      backdrop-filter: blur(8px);
+    }
+    .badge-shopify {
+      background: rgba(149,191,71,.18);
+      color: #95BF47;
+      border: 1px solid rgba(149,191,71,.35);
+    }
+    .badge-wordpress {
+      background: rgba(0,112,186,.18);
+      color: #21ABD8;
+      border: 1px solid rgba(0,112,186,.3);
+    }
+
+    /* Card body */
+    .project-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: .75rem;
+    }
+    .project-body h3 {
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    .project-body p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      margin: 0;
+      flex: 1;
+      line-height: 1.6;
+    }
+    .project-tags {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+    .project-tag {
+      background: rgba(79,127,255,.1);
+      color: var(--accent);
+      padding: .2rem .65rem;
+      border-radius: 100px;
+      font-size: .75rem;
+      font-weight: 600;
+    }
+    .project-footer {
+      padding: 1rem 1.5rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+    .btn-visit {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .6rem 1.3rem;
+      border-radius: var(--r-md);
+      background: transparent;
+      border: 1.5px solid var(--accent);
+      color: var(--accent);
+      font-size: .88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .btn-visit:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a>
+    <ul class="nav-menu">
+      <li><a href="/">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="has-mega-menu">
+        <a href="services/index.html">Services <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu">
+          <div class="mega-menu-col"><h4>SEO Services</h4><ul>
+            <li><a href="services/seo.html"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
+            <li><a href="services/local-seo.html"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li>
+            <li><a href="services/ecom-seo.html"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Web Development</h4><ul>
+            <li><a href="services/shopify.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
+            <li><a href="services/wordpress.html"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Growth & Conversion</h4><ul>
+            <li><a href="services/cro.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
+          </ul></div>
+          <div class="mega-menu-featured">
+            <div class="badge">Free Audit</div>
+            <h5>Not sure where to start?</h5>
+            <p>Get a free website & SEO audit — no strings attached.</p>
+            <a href="contact.html" class="btn btn-primary btn-sm">Claim Free Audit</a>
+          </div>
+        </div>
+      </li>
+      <li class="has-mega-menu">
+        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu mega-menu--tools">
+          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
+            <li><a href="/tools/shopify-vs-woocommerce-calculator.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
+            <li><a href="tools/seo-roi-calculator.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
+            <li><a href="tools/google-ads-budget-calculator.html"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
+            <li><a href="tools/meta-tag-checker.html"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
+            <li><a href="tools/onpage-seo-checker.html"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
+            <li><a href="tools/index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
+            <li><a href="tools/index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
+            <li><a href="tools/index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
+          </ul></div>
+          <div class="mega-menu-featured">
+            <div class="badge">100% Free</div>
+            <h5>No sign-up required</h5>
+            <p>All tools are free — built from real client questions.</p>
+            <a href="tools/index.html" class="btn btn-primary btn-sm">View All Tools</a>
+          </div>
+        </div>
+      </li>
+      <li class="active"><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
+    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" class="m-link">Home</a>
+  <a href="about.html" class="m-link">About</a>
+  <div class="m-link has-sub" style="cursor:pointer">Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
+  <div class="m-sub">
+    <a href="services/seo.html"><i class="fas fa-search"></i> SEO Overview</a>
+    <a href="services/local-seo.html"><i class="fas fa-map-marker-alt"></i> Local SEO</a>
+    <a href="services/ecom-seo.html"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a>
+    <a href="services/shopify.html"><i class="fab fa-shopify"></i> Shopify Creation</a>
+    <a href="services/wordpress.html"><i class="fab fa-wordpress"></i> WordPress Dev</a>
+    <a href="services/cro.html"><i class="fas fa-chart-line"></i> CRO</a>
+  </div>
+  <a href="/tools/" class="m-link">Tools</a>
+  <a href="portfolio.html" class="m-link">Portfolio</a>
+  <a href="pricing.html" class="m-link">Pricing</a>
+  <a href="contact.html" class="m-link">Contact</a>
+  <a href="contact.html" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero" style="padding-top:calc(var(--nav-h) + 36px);padding-bottom:36px;">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><i class="fas fa-chevron-right"></i><span>Portfolio</span></div>
+    <span class="tag" style="margin-bottom:1rem;"><i class="fas fa-briefcase"></i> Real Work, Real Results</span>
+    <h1 style="margin-bottom:.6rem;">My <span class="gradient-text">Portfolio</span></h1>
+    <p class="subtitle" style="margin-bottom:0;max-width:520px;">16 live websites — Shopify stores and WordPress sites — all built to convert visitors into customers.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" style="padding-top:2.5rem;">
+  <div class="container">
+
+    <!-- Filter -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects (16)</button>
+      <button class="filter-btn" data-filter="shopify"><i class="fab fa-shopify"></i> Shopify (8)</button>
+      <button class="filter-btn" data-filter="wordpress"><i class="fab fa-wordpress"></i> WordPress (8)</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="portfolio-grid" id="portfolioGrid">
+
+      <!-- ===== SHOPIFY ===== -->
+
+      <div class="project-card reveal" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/zuzunga.png" alt="Zuzunga Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Zuzunga</h3>
+          <p>Children's pyjama brand — full Shopify store build with custom theme, product pages optimised for conversion and mobile-first design.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">eCommerce</span>
+            <span class="project-tag">Fashion</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://zuzunga.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/firexnull.png" alt="Firexnull Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Firexnull</h3>
+          <p>High-performance Shopify store with streamlined product catalogue, fast-loading pages and a clean brand identity built for conversions.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">eCommerce</span>
+            <span class="project-tag">Branding</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://firexnull.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-2" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/zodjewelry.png" alt="Zod Jewelry Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Zod Jewelry</h3>
+          <p>Luxury jewellery Shopify store with elegant product photography layouts, custom collections and a premium checkout experience.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">Jewelry</span>
+            <span class="project-tag">Luxury</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://zodjewelry.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/tavusker.png" alt="Tavusker Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Tavusker</h3>
+          <p>Shopify store built with a focus on mobile UX, fast page speed and structured product data to support organic discovery.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">eCommerce</span>
+            <span class="project-tag">SEO</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://tavusker.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/glinetex.png" alt="Glinetex Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Glinetex</h3>
+          <p>Modern Shopify build with custom sections, branded colour palette and a conversion-optimised homepage built to turn traffic into sales.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">eCommerce</span>
+            <span class="project-tag">CRO</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://glinetex.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-2" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/bayelon.png" alt="Bayelon Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Bayelon</h3>
+          <p>Full Shopify store creation with custom theme development, product collections and on-page SEO foundations baked in from day one.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">eCommerce</span>
+            <span class="project-tag">Theme Dev</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://bayelon.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/tayfus.png" alt="Tayfus Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Tayfus</h3>
+          <p>International Shopify store with multi-language support, clean navigation and a responsive layout optimised for global customers.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">International</span>
+            <span class="project-tag">Multi-lang</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://tayfus.com/en-int" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-type="shopify">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/garisar.png" alt="Garisar Shopify Store" loading="lazy"/>
+          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
+        </div>
+        <div class="project-body">
+          <h3>Garisar</h3>
+          <p>Shopify store with strong visual identity, structured product hierarchy and optimised category pages designed for search visibility.</p>
+          <div class="project-tags">
+            <span class="project-tag">Shopify</span>
+            <span class="project-tag">eCommerce</span>
+            <span class="project-tag">SEO</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://garisar.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <!-- ===== WORDPRESS ===== -->
+
+      <div class="project-card reveal" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/tintsocal.png" alt="Tint SoCal WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>Tint SoCal</h3>
+          <p>Local automotive tinting business site built on WordPress with local SEO structure, service pages and a high-converting contact flow.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Local SEO</span>
+            <span class="project-tag">Automotive</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://tintsocal.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/oldecapeautodetail.png" alt="Olde Cape Auto Detail WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>Olde Cape Auto Detail</h3>
+          <p>Auto detailing business website with service area landing pages, Google review integration and local SEO to capture nearby searches.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Local SEO</span>
+            <span class="project-tag">Automotive</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://oldecapeautodetail.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-2" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/reflectionsautorestoration.png" alt="Reflections Auto Restoration WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>Reflections Auto Restoration</h3>
+          <p>Premium auto restoration studio website with portfolio gallery, service pages and a local SEO setup targeting high-intent keywords.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Local SEO</span>
+            <span class="project-tag">Automotive</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://reflectionsautorestoration.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/hunteysclubhouse.png" alt="Hunteys Clubhouse WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>Huntey's Clubhouse</h3>
+          <p>Community and entertainment venue site built with event listings, membership info and a clean WordPress layout optimised for mobile visitors.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Events</span>
+            <span class="project-tag">Community</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://hunteysclubhouse.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/ljelevate.png" alt="LJ Elevate WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>LJ Elevate</h3>
+          <p>Professional services website with strong personal branding, structured service offerings and SEO-optimised content to drive organic leads.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Services</span>
+            <span class="project-tag">SEO</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://ljelevate.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-2" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/assaltex.png" alt="Assaltex WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>Assaltex</h3>
+          <p>B2B product site with clear service navigation, structured data markup and optimised page speed to improve search rankings and UX.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">B2B</span>
+            <span class="project-tag">SEO</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://assaltex.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/lashedbyromy.png" alt="Lashed by Romy WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>Lashed by Romy</h3>
+          <p>Beauty salon website with online booking integration, service menu, gallery and local SEO setup to attract nearby clients searching for lash artists.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Beauty</span>
+            <span class="project-tag">Local SEO</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://lashedbyromy.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+      <div class="project-card reveal delay-1" data-type="wordpress">
+        <div class="project-img-wrap">
+          <img src="images/portfolio/umzugwiener.png" alt="Umzug Wiener WordPress Site" loading="lazy"/>
+          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
+        </div>
+        <div class="project-body">
+          <h3>Umzug Wiener</h3>
+          <p>Austrian moving company site with local SEO targeting Vienna, service area pages, trust signals and a lead-capture form built to generate enquiries.</p>
+          <div class="project-tags">
+            <span class="project-tag">WordPress</span>
+            <span class="project-tag">Local SEO</span>
+            <span class="project-tag">Services</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://umzug-wiener.at/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
+        </div>
+      </div>
+
+    </div><!-- /portfolio-grid -->
+
+    <!-- CTA -->
+    <div style="margin-top:5rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-xl);padding:3rem;text-align:center;" class="reveal">
+      <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-rocket"></i> Ready to Join Them?</span>
+      <h2 style="font-size:1.8rem;margin-bottom:1rem;">Let's Build Your <span class="gradient-text">Next Project</span></h2>
+      <p style="color:var(--text-muted);max-width:480px;margin:0 auto 2rem;">Whether you need a Shopify store or a WordPress site, I'll build it to look great and rank well.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Start a Project</a>
+        <a href="pricing.html" class="btn btn-ghost btn-lg"><i class="fas fa-tags"></i> See Pricing</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo"><div class="nav-logo-icon">V</div>Vahid<span>Sediqi</span></a>
+        <p>Full-stack digital marketing and growth engineer based in Germany. Working globally.</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.fiverr.com/vahidsediqi_" class="social-link" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a>
+          <a href="mailto:contact@vahidsediqi.com" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Services</h5><ul>
+        <li><a href="services/seo.html">SEO Strategy</a></li>
+        <li><a href="services/local-seo.html">Local SEO</a></li>
+        <li><a href="services/ecom-seo.html">eCommerce SEO</a></li>
+        <li><a href="services/shopify.html">Shopify Creation</a></li>
+        <li><a href="services/cro.html">CRO</a></li>
+        <li><a href="services/wordpress.html">WordPress Dev</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Company</h5><ul>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li class="has-mega-menu">
+        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
+        <div class="mega-menu mega-menu--tools">
+          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
+            <li><a href="/tools/shopify-vs-woocommerce-calculator.html"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
+            <li><a href="tools/seo-roi-calculator.html"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
+            <li><a href="tools/google-ads-budget-calculator.html"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
+            <li><a href="tools/meta-tag-checker.html"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
+            <li><a href="tools/onpage-seo-checker.html"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
+          </ul></div>
+          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
+            <li><a href="tools/index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
+            <li><a href="tools/index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
+            <li><a href="tools/index.html" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
+          </ul></div>
+          <div class="mega-menu-featured">
+            <div class="badge">100% Free</div>
+            <h5>No sign-up required</h5>
+            <p>All tools are free — built from real client questions.</p>
+            <a href="tools/index.html" class="btn btn-primary btn-sm">View All Tools</a>
+          </div>
+        </div>
+      </li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Contact</h5>
+        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@vahidsediqi.com</span></div>
+        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+49 176 62521106</span></div>
+        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Germany — Working Globally</span></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Vahid Sediqi. All rights reserved.</p>
+      <p>Made with <span style="color:var(--danger)">♥</span> in Germany</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  // Filter logic
+  const btns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      cards.forEach(c => {
+        c.style.display = (f === 'all' || c.dataset.type === f) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>
