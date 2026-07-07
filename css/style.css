@@ -294,8 +294,9 @@ p  { color: var(--text-2); font-size:1rem; line-height:1.8; }
   font-size:1rem; color:#fff; font-weight:800;
 }
 .nav-logo-img {
-  height:36px; width:auto; display:block;
+  height:32px; width:auto; display:block;
   object-fit:contain;
+  mix-blend-mode:screen;
 }
 
 .nav-menu { display:flex; align-items:center; gap:0; }
