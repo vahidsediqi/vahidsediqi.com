@@ -1558,3 +1558,17 @@ textarea.form-control { resize:vertical; min-height:140px; }
   /* ─ Border radius ─ */
   :root { --r-xl:24px; }
 }
+
+/* ── Language switcher ───────────────────────────────────────── */
+.lang-switch {
+  display:flex; align-items:center; gap:.3rem;
+  font-size:.8rem; font-weight:700; border-radius:.5rem;
+  overflow:hidden; border:1px solid var(--border); margin-left:.5rem;
+}
+.lang-switch a {
+  padding:.3rem .55rem; color:var(--text-muted);
+  text-decoration:none; transition:background .2s, color .2s;
+}
+.lang-switch a.active, .lang-switch a:hover {
+  background:var(--accent); color:#fff;
+}

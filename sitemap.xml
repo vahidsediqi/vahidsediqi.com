@@ -1,115 +1,298 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Core pages -->
+  <!-- Core pages (EN) -->
   <url>
     <loc>https://vahidsediqi.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/about"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/contact"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/pricing"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/portfolio"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
-  <!-- Services -->
+  <!-- Services (EN) -->
   <url>
     <loc>https://vahidsediqi.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/services/seo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/seo"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/seo"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/services/local-seo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/local-seo"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/local-seo"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/services/ecom-seo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/ecom-seo"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/ecom-seo"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/services/shopify</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/shopify"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/shopify"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/services/wordpress</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/wordpress"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/wordpress"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/services/cro</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/cro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/cro"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Tools -->
+  <!-- Tools (EN) -->
   <url>
     <loc>https://vahidsediqi.com/tools</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/tools/seo-roi-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/seo-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/seo-roi-calculator"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/tools/shopify-vs-woocommerce-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/shopify-vs-woocommerce-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/shopify-vs-woocommerce-calculator"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/tools/google-ads-budget-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/google-ads-budget-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/google-ads-budget-calculator"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/tools/meta-tag-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/meta-tag-checker"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/meta-tag-checker"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vahidsediqi.com/tools/onpage-seo-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/onpage-seo-checker"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/onpage-seo-checker"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- German pages (DE) -->
+  <url>
+    <loc>https://vahidsediqi.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/about"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/about"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/contact"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/pricing"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/portfolio</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/portfolio"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/services/seo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/seo"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/seo"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/services/local-seo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/local-seo"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/local-seo"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/services/ecom-seo</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/ecom-seo"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/ecom-seo"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/services/shopify</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/shopify"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/shopify"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/services/wordpress</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/wordpress"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/wordpress"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/services/cro</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/cro"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/cro"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/tools</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/tools/seo-roi-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/seo-roi-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/seo-roi-calculator"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/tools/shopify-vs-woocommerce-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/shopify-vs-woocommerce-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/shopify-vs-woocommerce-calculator"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/tools/google-ads-budget-calculator</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/google-ads-budget-calculator"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/google-ads-budget-calculator"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/tools/meta-tag-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/meta-tag-checker"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/meta-tag-checker"/>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vahidsediqi.com/de/tools/onpage-seo-checker</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vahidsediqi.com/tools/onpage-seo-checker"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/tools/onpage-seo-checker"/>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
