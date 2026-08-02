@@ -1348,7 +1348,7 @@ textarea.form-control { resize:vertical; min-height:140px; }
   .footer-grid      { grid-template-columns:1fr 1fr; gap:2rem; }
   .pricing-grid     { grid-template-columns:1fr; max-width:500px; margin:0 auto; }
   .pricing-card.featured { transform:none; }
-  .hero-right       { display:none; }
+  .hero-right       { display:none; } /* hidden at tablet, shown again at mobile via override below */
   /* inline two-col grids → stack */
   [style*="grid-template-columns:1fr 520px"],
   [style*="grid-template-columns:380px 1fr"]  { grid-template-columns:1fr !important; }
@@ -1393,11 +1393,34 @@ textarea.form-control { resize:vertical; min-height:140px; }
   .process-steps             { grid-template-columns:repeat(2,1fr); }
 
   /* ─ Hero ─ */
-  .hero       { min-height:auto; padding:calc(var(--nav-h) + 40px) 0 60px; }
-  .hero-actions { flex-direction:column; align-items:flex-start; gap:.75rem; }
+  .hero       { min-height:auto; padding:calc(var(--nav-h) + 16px) 0 60px; }
+  .hero-grid  { display:flex !important; flex-direction:column !important; gap:0 !important; }
+  .hero-right {
+    display:block !important;
+    order:-1;
+    margin:0 -18px 1.75rem;
+  }
+  .hero-right img {
+    width:100% !important;
+    height:320px !important;
+    object-fit:cover !important;
+    object-position:center 15% !important;
+    border-radius:0 !important;
+    display:block !important;
+  }
+  /* hide float badges on mobile — too cramped */
+  .float-badge { display:none !important; }
+  /* shrink the glow box-shadow wrapper */
+  .hero-right > div > div:first-child {
+    border-radius:0 !important;
+    box-shadow:0 8px 32px rgba(0,0,0,.5) !important;
+    animation:none !important;
+  }
+  .hero h1    { font-size:clamp(1.45rem,5.8vw,1.85rem) !important; margin-bottom:.85rem; line-height:1.15; }
+  .hero-actions { flex-direction:column; align-items:stretch; gap:.75rem; }
   .hero-trust   { gap:1rem; flex-wrap:wrap; }
   .trust-divider { display:none; }
-  .hero-desc  { font-size:1rem; margin-bottom:2rem; }
+  .hero-desc  { font-size:.95rem; margin-bottom:1.5rem; }
 
   /* ─ Page hero ─ */
   .page-hero  { padding-top:calc(var(--nav-h) + 40px) !important; padding-bottom:40px !important; }
