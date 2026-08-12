@@ -244,6 +244,60 @@
     .faq-q.open .fa-chevron-down { transform: rotate(180deg); }
     .faq-a { display: none; padding-bottom: 1rem; font-size: .88rem; color: var(--text-muted); line-height: 1.7; }
     .faq-a.open { display: block; }
+
+    /* ── Multi-step Wizard ── */
+    .wz-header { max-width:700px; margin:0 auto 2.5rem; }
+    .wz-steps { display:flex; align-items:flex-start; }
+    .wz-step { display:flex; flex-direction:column; align-items:center; gap:.35rem; flex-shrink:0; }
+    .wz-num {
+      width:40px; height:40px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--border); color:var(--text-muted);
+      font-weight:700; font-size:.88rem; transition:.3s;
+    }
+    .wz-step.active .wz-num { background:var(--accent); color:#fff; box-shadow:0 0 0 4px rgba(79,127,255,.22); }
+    .wz-step.done .wz-num { background:#4ADE80; color:var(--bg); }
+    .wz-lbl { font-size:.68rem; font-weight:600; color:var(--text-muted); white-space:nowrap; }
+    .wz-step.active .wz-lbl { color:var(--accent); }
+    .wz-line { flex:1; height:2px; background:var(--border); margin:0 .6rem 1.5rem; transition:.5s; }
+    .wz-line.done { background:var(--accent); }
+    .wz-panel { display:none; }
+    .wz-panel.active { display:block; animation:fadeUp .3s ease; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .wz-card {
+      background:var(--bg-2); border:1px solid var(--border);
+      border-radius:var(--r-xl); padding:2.5rem;
+      max-width:700px; margin:0 auto 1rem; text-align:center;
+    }
+    .wz-card-icon {
+      width:56px; height:56px; border-radius:var(--r-lg);
+      background:rgba(79,127,255,.1); color:var(--accent);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.4rem; margin:0 auto 1.2rem;
+    }
+    .wz-card h3 { font-size:1.3rem; margin-bottom:.45rem; }
+    .wz-card-sub { color:var(--text-muted); font-size:.9rem; max-width:480px; margin:0 auto 1.8rem; line-height:1.6; }
+    .form-control--lg { font-size:1rem; padding:.85rem 1rem; }
+    .ind-hint {
+      margin-top:1rem; background:rgba(79,127,255,.06);
+      border:1px solid rgba(79,127,255,.2); border-radius:var(--r-md);
+      padding:.7rem 1rem; font-size:.82rem; color:var(--accent-2); text-align:left;
+    }
+    .wz-slider-lbl {
+      display:flex; justify-content:space-between; align-items:center;
+      font-size:.88rem; color:var(--text-muted); margin-bottom:.5rem; font-weight:500; text-align:left;
+    }
+    .wz-slider-lbl strong { color:var(--accent-2); font-size:1.05rem; }
+    .wz-slider-sep { margin:1.6rem 0; border:none; border-top:1px solid var(--border); }
+    .wz-toggle-lbl {
+      display:flex; justify-content:space-between; align-items:center;
+      margin-bottom:.75rem; font-size:.86rem; color:var(--text-muted);
+      background:var(--bg); border:1px solid var(--border); border-radius:var(--r-md); padding:.75rem 1rem;
+    }
+    .wz-nav {
+      max-width:700px; margin:1.5rem auto 3rem;
+      display:flex; justify-content:space-between; align-items:center; gap:1rem;
+    }
   </style>
 </head>
 <body>
@@ -328,154 +382,173 @@
 <!-- CALCULATOR -->
 <section class="section" style="padding-top:0;">
   <div class="container">
-    <div class="ads-wrap">
+    <!-- ── STEP INDICATOR ── -->
+    <div class="wz-header">
+      <div class="wz-steps">
+        <div class="wz-step active" id="wzi-1"><div class="wz-num">1</div><div class="wz-lbl">Industry</div></div>
+        <div class="wz-line"></div>
+        <div class="wz-step" id="wzi-2"><div class="wz-num">2</div><div class="wz-lbl">Traffic & CPC</div></div>
+        <div class="wz-line"></div>
+        <div class="wz-step" id="wzi-3"><div class="wz-num">3</div><div class="wz-lbl">Your Goals</div></div>
+        <div class="wz-line"></div>
+        <div class="wz-step" id="wzi-4"><div class="wz-num"><i class="fas fa-chart-bar"></i></div><div class="wz-lbl">Results</div></div>
+      </div>
+    </div>
 
-      <!-- ── INPUTS ── -->
-      <div class="calc-inputs">
-        <h3><i class="fas fa-sliders-h" style="color:var(--accent);margin-right:.5rem;"></i> Your Settings</h3>
+    <!-- ── STEP 1: INDUSTRY ── -->
+    <div class="wz-panel active" id="wz-1">
+      <div class="wz-card">
+        <div class="wz-card-icon"><i class="fab fa-google"></i></div>
+        <h3>What industry are you in?</h3>
+        <p class="wz-card-sub">We'll pre-fill your CPC and conversion rate with 2025 benchmarks for your industry.</p>
+        <select class="form-control form-control--lg" id="industry" onchange="syncIndustry()">
+          <option value="ecommerce">eCommerce / Retail</option>
+          <option value="legal">Legal Services</option>
+          <option value="finance">Finance / Insurance</option>
+          <option value="realestate">Real Estate</option>
+          <option value="health">Health & Medical</option>
+          <option value="automotive">Automotive</option>
+          <option value="homeservices">Home Services</option>
+          <option value="saas">SaaS / Software</option>
+          <option value="travel">Travel & Tourism</option>
+          <option value="education">Education</option>
+          <option value="fashion">Fashion / Apparel</option>
+          <option value="restaurant">Restaurant / Food</option>
+          <option value="other">Other / Custom</option>
+        </select>
+        <div class="ind-hint"><i class="fas fa-info-circle"></i>&nbsp;<span id="industryHintMain"></span></div>
+      </div>
+    </div>
 
-        <div class="section-label">Industry & Goals</div>
-
+    <!-- ── STEP 2: TRAFFIC & CPC ── -->
+    <div class="wz-panel" id="wz-2">
+      <div class="wz-card">
+        <div class="wz-card-icon"><i class="fas fa-mouse-pointer"></i></div>
+        <h3>How much traffic do you want?</h3>
+        <p class="wz-card-sub">Set your target monthly clicks and cost per click. The CPC has been pre-filled from your industry benchmark — adjust if you have real data.</p>
         <div class="input-group">
-          <label>Industry <span id="industryLabel">eCommerce</span></label>
-          <select class="form-control" id="industry" onchange="syncIndustry()">
-            <option value="ecommerce">eCommerce / Retail</option>
-            <option value="legal">Legal Services</option>
-            <option value="finance">Finance / Insurance</option>
-            <option value="realestate">Real Estate</option>
-            <option value="health">Health & Medical</option>
-            <option value="automotive">Automotive</option>
-            <option value="homeservices">Home Services</option>
-            <option value="saas">SaaS / Software</option>
-            <option value="travel">Travel & Tourism</option>
-            <option value="education">Education</option>
-            <option value="fashion">Fashion / Apparel</option>
-            <option value="restaurant">Restaurant / Food</option>
-            <option value="other">Other / Custom</option>
-          </select>
-        </div>
-
-        <div class="input-group">
-          <label>Target Monthly Clicks <span id="clicksVal">1,000</span></label>
+          <div class="wz-slider-lbl"><span>Monthly Clicks</span><strong id="clicksVal">1,000</strong></div>
           <input type="range" id="clicks" min="100" max="50000" step="100" value="1000"
-            oninput="syncRange('clicks','clicksVal',v=>fmtN(v));recalc()"/>
+            oninput="syncRange('clicks','clicksVal',v=>fmtN(v))"/>
         </div>
-
-        <div class="section-label">Cost Per Click (CPC)</div>
-
+        <hr class="wz-slider-sep"/>
         <div class="input-group">
-          <label>Target CPC <span id="cpcVal">€1.20</span></label>
+          <div class="wz-slider-lbl"><span>Target CPC</span><strong id="cpcVal">€1.20</strong></div>
           <input type="range" id="cpc" min="0.10" max="30" step="0.10" value="1.20"
-            oninput="syncRange('cpc','cpcVal',v=>'€'+parseFloat(v).toFixed(2));recalc()"/>
-          <div id="cpcHint" style="font-size:.75rem;color:var(--text-muted);margin-top:.4rem;"></div>
+            oninput="syncRange('cpc','cpcVal',v=>'€'+parseFloat(v).toFixed(2))"/>
+          <div id="cpcHint" style="font-size:.75rem;color:var(--text-muted);margin-top:.5rem;text-align:left;"></div>
         </div>
+      </div>
+    </div>
 
-        <div class="section-label">Conversion Goals</div>
-
+    <!-- ── STEP 3: GOALS ── -->
+    <div class="wz-panel" id="wz-3">
+      <div class="wz-card">
+        <div class="wz-card-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>What are your conversion goals?</h3>
+        <p class="wz-card-sub">Tell us your expected conversion rate and what each sale or lead is worth to you. We've pre-filled these from your industry too.</p>
         <div class="input-group">
-          <label>Expected Conversion Rate <span id="cvrVal">2.5%</span></label>
+          <div class="wz-slider-lbl"><span>Expected Conversion Rate</span><strong id="cvrVal">2.5%</strong></div>
           <input type="range" id="cvr" min="0.5" max="20" step="0.5" value="2.5"
-            oninput="syncRange('cvr','cvrVal',v=>parseFloat(v).toFixed(1)+'%');recalc()"/>
+            oninput="syncRange('cvr','cvrVal',v=>parseFloat(v).toFixed(1)+'%')"/>
         </div>
-
+        <hr class="wz-slider-sep"/>
         <div class="input-group">
-          <label>Average Order / Lead Value <span id="aovVal">€120</span></label>
+          <div class="wz-slider-lbl"><span>Average Order / Lead Value</span><strong id="aovVal">€120</strong></div>
           <input type="range" id="aov" min="10" max="5000" step="10" value="120"
-            oninput="syncRange('aov','aovVal',v=>'€'+fmtN(v));recalc()"/>
+            oninput="syncRange('aov','aovVal',v=>'€'+fmtN(v))"/>
         </div>
-
-        <div class="section-label">Optional</div>
-
-        <div class="toggle-row">
+        <hr class="wz-slider-sep"/>
+        <p style="font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.75rem;text-align:left;">Optional Add-ons</p>
+        <div class="wz-toggle-lbl">
           <span>Include 20% management fee</span>
-          <label class="toggle"><input type="checkbox" id="mgmtFee" onchange="recalc()"><span class="toggle-slider"></span></label>
+          <label class="toggle"><input type="checkbox" id="mgmtFee"><span class="toggle-slider"></span></label>
         </div>
-        <div class="toggle-row">
+        <div class="wz-toggle-lbl">
           <span>Add 15% budget buffer</span>
-          <label class="toggle"><input type="checkbox" id="buffer" onchange="recalc()"><span class="toggle-slider"></span></label>
+          <label class="toggle"><input type="checkbox" id="buffer"><span class="toggle-slider"></span></label>
         </div>
+      </div>
+    </div>
 
-      </div><!-- /inputs -->
-
-      <!-- ── RESULTS ── -->
+    <!-- ── STEP 4: RESULTS ── -->
+    <div class="wz-panel" id="wz-4">
       <div class="results-panel">
 
-        <!-- Budget summary -->
         <div class="budget-summary">
           <div class="budget-card">
             <div class="card-label">Daily Budget</div>
-            <div class="card-value accent" id="dailyBudget">€39</div>
+            <div class="card-value accent" id="dailyBudget">—</div>
             <div class="card-sub">recommended per day</div>
           </div>
           <div class="budget-card highlight">
             <div class="rec-badge">★ Recommended</div>
             <div class="card-label">Monthly Budget</div>
-            <div class="card-value accent" id="monthlyBudget">€1,200</div>
+            <div class="card-value accent" id="monthlyBudget">—</div>
             <div class="card-sub">total ad spend / month</div>
           </div>
           <div class="budget-card">
             <div class="card-label">Annual Budget</div>
-            <div class="card-value" id="yearlyBudget">€14,400</div>
+            <div class="card-value" id="yearlyBudget">—</div>
             <div class="card-sub">projected full year</div>
           </div>
         </div>
 
-        <!-- Metrics row -->
         <div class="metrics-row">
           <div class="metric-card">
             <div class="m-icon"><i class="fas fa-mouse-pointer"></i></div>
-            <div class="m-val" id="metClicks">1,000</div>
+            <div class="m-val" id="metClicks">—</div>
             <div class="m-lbl">Monthly Clicks</div>
           </div>
           <div class="metric-card">
             <div class="m-icon"><i class="fas fa-user-check"></i></div>
-            <div class="m-val" id="metConversions">25</div>
+            <div class="m-val" id="metConversions">—</div>
             <div class="m-lbl">Monthly Conversions</div>
           </div>
           <div class="metric-card">
             <div class="m-icon"><i class="fas fa-euro-sign"></i></div>
-            <div class="m-val" id="metRevenue">€3,000</div>
+            <div class="m-val" id="metRevenue">—</div>
             <div class="m-lbl">Projected Revenue</div>
           </div>
           <div class="metric-card">
             <div class="m-icon"><i class="fas fa-percentage"></i></div>
-            <div class="m-val" id="metROAS">2.5×</div>
+            <div class="m-val" id="metROAS">—</div>
             <div class="m-lbl">ROAS</div>
           </div>
         </div>
 
-        <!-- Budget bar chart -->
         <div class="bar-chart-wrap">
           <h4><i class="fas fa-chart-bar" style="color:var(--accent);margin-right:.5rem;"></i> Budget Breakdown</h4>
           <div id="barChart"></div>
         </div>
 
-        <!-- Comparison table -->
         <div class="table-wrap">
           <h4><i class="fas fa-table" style="color:var(--accent);margin-right:.5rem;"></i> Monthly Budget Scenarios</h4>
           <table class="comp-table">
             <thead>
               <tr>
-                <th>Scenario</th>
-                <th>Monthly Budget</th>
-                <th>Est. Clicks</th>
-                <th>Est. Conversions</th>
-                <th>Projected Revenue</th>
-                <th>ROAS</th>
+                <th>Scenario</th><th>Monthly Budget</th><th>Est. Clicks</th>
+                <th>Est. Conversions</th><th>Projected Revenue</th><th>ROAS</th>
               </tr>
             </thead>
             <tbody id="scenarioTable"></tbody>
           </table>
         </div>
 
-        <!-- CPC benchmark info -->
         <div class="bar-chart-wrap" id="benchmarkBox">
           <h4><i class="fas fa-info-circle" style="color:var(--accent);margin-right:.5rem;"></i> Industry CPC Benchmarks (2025)</h4>
           <div id="benchmarkContent"></div>
         </div>
 
       </div><!-- /results-panel -->
-    </div><!-- /ads-wrap -->
+    </div><!-- /wz-4 -->
+
+    <!-- ── WIZARD NAVIGATION ── -->
+    <div class="wz-nav">
+      <button class="btn btn-ghost btn-lg" id="wzPrev" onclick="wzNav(-1)" style="display:none"><i class="fas fa-arrow-left"></i> Back</button>
+      <div style="flex:1;"></div>
+      <button class="btn btn-primary btn-lg" id="wzNext" onclick="wzNav(1)">Next Step &nbsp;<i class="fas fa-arrow-right"></i></button>
+    </div>
 
     <!-- Tips -->
     <div style="margin-bottom:3rem;">
@@ -618,17 +691,15 @@ function syncRange(id, labelId, formatter) {
 function syncIndustry() {
   const key = document.getElementById('industry').value;
   const ind = INDUSTRIES[key];
-  document.getElementById('industryLabel').textContent = '';
-  // Update CPC slider to industry default
   const cpcSlider = document.getElementById('cpc');
   cpcSlider.value = Math.min(Math.max(ind.cpc, 0.10), 30);
   document.getElementById('cpcVal').textContent = '€' + parseFloat(cpcSlider.value).toFixed(2);
-  // Update CVR
   const cvrSlider = document.getElementById('cvr');
   cvrSlider.value = Math.min(Math.max(ind.cvr, 0.5), 20);
   document.getElementById('cvrVal').textContent = parseFloat(cvrSlider.value).toFixed(1) + '%';
   document.getElementById('cpcHint').textContent = ind.hint;
-  recalc();
+  const hintEl = document.getElementById('industryHintMain');
+  if (hintEl) hintEl.textContent = ind.hint;
 }
 
 function recalc() {
@@ -737,6 +808,47 @@ function recalc() {
 function toggleFaq(el) {
   el.classList.toggle('open');
   el.nextElementSibling.classList.toggle('open');
+}
+
+// ── Wizard Navigation ──
+let wzCurrent = 1;
+const WZ_TOTAL = 4;
+
+function wzNav(dir) {
+  const next = wzCurrent + dir;
+  if (next < 1 || next > WZ_TOTAL) return;
+
+  document.getElementById('wz-' + wzCurrent).classList.remove('active');
+  wzCurrent = next;
+  document.getElementById('wz-' + wzCurrent).classList.add('active');
+
+  // Update step indicators
+  for (let i = 1; i <= WZ_TOTAL; i++) {
+    const el = document.getElementById('wzi-' + i);
+    el.classList.toggle('active', i === wzCurrent);
+    el.classList.toggle('done', i < wzCurrent);
+  }
+  document.querySelectorAll('.wz-line').forEach((ln, idx) => {
+    ln.classList.toggle('done', idx + 1 < wzCurrent);
+  });
+
+  // Nav buttons
+  const prevBtn = document.getElementById('wzPrev');
+  const nextBtn = document.getElementById('wzNext');
+  prevBtn.style.display = wzCurrent > 1 ? '' : 'none';
+
+  if (wzCurrent === WZ_TOTAL) {
+    nextBtn.style.display = 'none';
+    recalc();
+  } else if (wzCurrent === WZ_TOTAL - 1) {
+    nextBtn.innerHTML = 'Calculate My Budget &nbsp;<i class="fas fa-calculator"></i>';
+    nextBtn.style.display = '';
+  } else {
+    nextBtn.innerHTML = 'Next Step &nbsp;<i class="fas fa-arrow-right"></i>';
+    nextBtn.style.display = '';
+  }
+
+  document.querySelector('.wz-header').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Init
