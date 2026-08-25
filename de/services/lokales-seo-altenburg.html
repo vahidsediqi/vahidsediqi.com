@@ -8,7 +8,7 @@
   <meta name="keywords" content="Lokale SEO Altenburg, SEO Dienstleister Altenburg, lokales SEO Altenburg, Google Business Altenburg, SEO Agentur Altenburg, lokal gefunden werden Altenburg, SEO Thüringen, lokale Suchmaschinenoptimierung Altenburg"/>
   <link rel="canonical" href="https://vahidsediqi.com/de/services/lokales-seo-altenburg"/>
   <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/lokales-seo-altenburg"/>
-  <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/de/services/lokales-seo-altenburg"/>
+  <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/de/"/>
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon.png?v=3"/>
   <link rel="apple-touch-icon" href="../../images/favicon.png?v=3"/>
   <link rel="stylesheet" href="../../css/style.v9.css"/>
@@ -90,6 +90,24 @@
     .pkg-list li { font-size:.84rem; color:var(--text-muted); display:flex; align-items:flex-start; gap:.55rem; }
     .pkg-list li i { color:#4ADE80; flex-shrink:0; margin-top:.15rem; }
     .pkg-card .btn { margin-top:auto; }
+
+    /* Image feature rows */
+    .img-feature { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .img-feature.reverse { direction:rtl; }
+    .img-feature.reverse > * { direction:ltr; }
+    @media(max-width:860px){ .img-feature, .img-feature.reverse { grid-template-columns:1fr; direction:ltr; gap:2.5rem; } }
+    .img-feature-img { position:relative; border-radius:var(--r-xl); overflow:hidden; }
+    .img-feature-img img { width:100%; display:block; height:380px; object-fit:cover; border-radius:var(--r-xl); transition:transform .5s ease; }
+    .img-feature-img:hover img { transform:scale(1.03); }
+    .img-feature-img::after { content:''; position:absolute; inset:0; border-radius:var(--r-xl); border:1px solid var(--border); pointer-events:none; }
+    .img-feature-img .img-badge { position:absolute; bottom:1.2rem; left:1.2rem; background:rgba(4,8,26,.82); backdrop-filter:blur(12px); border:1px solid rgba(79,127,255,.3); border-radius:2rem; padding:.5rem 1.1rem; font-size:.8rem; font-weight:600; color:var(--text); display:flex; align-items:center; gap:.5rem; }
+    .img-feature-img .img-badge i { color:var(--accent); }
+    .img-feature-text .tag { margin-bottom:1.2rem; display:inline-flex; }
+    .img-feature-text h2 { margin-bottom:1.2rem; }
+    .img-feature-text p { color:var(--text-muted); line-height:1.8; margin-bottom:1rem; }
+    .img-feature-text .check-list { list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .img-feature-text .check-list li { font-size:.88rem; color:var(--text-2); display:flex; align-items:flex-start; gap:.6rem; }
+    .img-feature-text .check-list li i { color:var(--accent); margin-top:.15rem; flex-shrink:0; }
   </style>
 </head>
 <body>
@@ -411,6 +429,56 @@
         <div style="font-size:2.2rem;margin-bottom:.75rem;">🌱</div>
         <h4>Dienstleistungen</h4>
         <p style="font-size:.83rem;color:var(--text-muted);">Gartenbau, Reinigungsdienste, Hausmeisterservice und weitere lokale Dienstleister in Altenburg und Umgebung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE FEATURE 1: left image, right text -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="img-feature reveal">
+      <div class="img-feature-img">
+        <img src="../../images/local-seo-city.png" alt="Lokales SEO Altenburg — Unternehmen in der Stadt mit Google Maps Standortpins" loading="lazy" title="Lokale Suchmaschinenoptimierung für Unternehmen in Altenburg"/>
+        <div class="img-badge"><i class="fas fa-map-marker-alt"></i> Google Maps 3-Pack Altenburg</div>
+      </div>
+      <div class="img-feature-text">
+        <span class="tag"><i class="fas fa-city"></i> Sichtbarkeit in Altenburg</span>
+        <h2>Bei Google in Altenburg <span class="gradient-text">ganz oben erscheinen</span></h2>
+        <p>In Altenburg und dem Altenburger Land konkurrieren Handwerker, Dienstleister und Händler täglich um dieselben Suchanfragen. Die drei Einträge im Google Maps Pack bekommen über 40 % aller Klicks — alles darunter bekommt kaum Aufmerksamkeit.</p>
+        <p>Als lokaler SEO-Dienstleister mit Sitz in Altenburg kenne ich den Markt, die Mitbewerber und das Suchverhalten der Region — und optimiere gezielt dafür.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Google Business Profile vollständig optimiert</li>
+          <li><i class="fas fa-check-circle"></i> Lokale Keywords für Altenburg &amp; Altenburger Land</li>
+          <li><i class="fas fa-check-circle"></i> Eintrag in 50+ deutsche Verzeichnisse</li>
+          <li><i class="fas fa-check-circle"></i> Monatliche Ranking-Berichte mit echten Zahlen</li>
+        </ul>
+        <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-calendar-check"></i> Jetzt Termin buchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE FEATURE 2: right image, left text -->
+<section class="section">
+  <div class="container">
+    <div class="img-feature reverse reveal">
+      <div class="img-feature-img">
+        <img src="../../images/local-seo-altenburg.png" alt="Lokales SEO für Kleinunternehmen — Altenburg Marktplatz mit digitalen Standortpins bei Nacht" loading="lazy" title="Lokaler SEO-Dienstleister Altenburg — mehr Kunden aus der Region"/>
+        <div class="img-badge"><i class="fas fa-store"></i> Mehr Kunden in Altenburg</div>
+      </div>
+      <div class="img-feature-text">
+        <span class="tag"><i class="fas fa-handshake"></i> Direkt vor Ort in Altenburg</span>
+        <h2>Lokaler SEO-Dienstleister <span class="gradient-text">mit Ortskenntnis</span></h2>
+        <p>Keine Agentur aus Hamburg oder München kennt den Unterschied zwischen einer Suche nach „Klempner Altenburg" und „Klempner Meuselwitz" — ich schon. Als ansässiger Dienstleister (Pappelstraße 10, 04600) optimiere ich mit echtem lokalen Kontext.</p>
+        <p>Das Ergebnis: mehr Anrufe, mehr Laufkundschaft und mehr Anfragen aus Ihrer direkten Umgebung — ohne teure Google Ads, die aufhören zu wirken, sobald das Budget endet.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Persönlicher Ansprechpartner — direkt aus Altenburg</li>
+          <li><i class="fas fa-check-circle"></i> Kein langer Vertrag — monatlich kündbar</li>
+          <li><i class="fas fa-check-circle"></i> Ergebnisse messbar in Google Search Console</li>
+          <li><i class="fas fa-check-circle"></i> Persönliches Treffen in Altenburg möglich</li>
+        </ul>
+        <a href="/de/contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Direkt anfragen</a>
       </div>
     </div>
   </div>

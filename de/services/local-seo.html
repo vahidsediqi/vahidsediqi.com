@@ -80,6 +80,39 @@
     .pkg-list { list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:.6rem; flex:1; }
     .pkg-list li { font-size:.84rem; color:var(--text-muted); display:flex; align-items:flex-start; gap:.55rem; }
     .pkg-list li i { color:#4ADE80; flex-shrink:0; margin-top:.15rem; }
+
+    /* Image feature rows */
+    .img-feature { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .img-feature.reverse { direction:rtl; }
+    .img-feature.reverse > * { direction:ltr; }
+    @media(max-width:860px){ .img-feature, .img-feature.reverse { grid-template-columns:1fr; direction:ltr; gap:2.5rem; } }
+
+    .img-feature-img { position:relative; border-radius:var(--r-xl); overflow:hidden; }
+    .img-feature-img img {
+      width:100%; display:block; height:380px; object-fit:cover;
+      border-radius:var(--r-xl); transition:transform .5s ease;
+    }
+    .img-feature-img:hover img { transform:scale(1.03); }
+    .img-feature-img::after {
+      content:''; position:absolute; inset:0; border-radius:var(--r-xl);
+      border:1px solid var(--border); pointer-events:none;
+    }
+    .img-feature-img .img-badge {
+      position:absolute; bottom:1.2rem; left:1.2rem;
+      background:rgba(4,8,26,.82); backdrop-filter:blur(12px);
+      border:1px solid rgba(79,127,255,.3); border-radius:2rem;
+      padding:.5rem 1.1rem; font-size:.8rem; font-weight:600;
+      color:var(--text); display:flex; align-items:center; gap:.5rem;
+    }
+    .img-feature-img .img-badge i { color:var(--accent); }
+
+    .img-feature-text {}
+    .img-feature-text .tag { margin-bottom:1.2rem; display:inline-flex; }
+    .img-feature-text h2 { margin-bottom:1.2rem; }
+    .img-feature-text p  { color:var(--text-muted); line-height:1.8; margin-bottom:1rem; }
+    .img-feature-text .check-list { list-style:none; padding:0; margin:0 0 2rem; display:flex; flex-direction:column; gap:.55rem; }
+    .img-feature-text .check-list li { font-size:.88rem; color:var(--text-2); display:flex; align-items:flex-start; gap:.6rem; }
+    .img-feature-text .check-list li i { color:var(--accent); margin-top:.15rem; flex-shrink:0; }
   </style>
 </head>
 <body>
@@ -313,6 +346,56 @@
         <div class="benefit-icon"><i class="fas fa-chart-bar"></i></div>
         <h3>Monatliche Berichte &amp; Strategie</h3>
         <p>Klare Berichte: Google Maps Rankingpositionen, Website-Traffic aus lokalen Suchen, Google Business Profilaufrufe, Anruf-Klicks und Routenanfragen — monatlich. Kein Fachjargon, sondern Zahlen, die zeigen, ob Ihre Investition sich lohnt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE FEATURE 1: left image, right text -->
+<section class="section" style="background:var(--bg-2);">
+  <div class="container">
+    <div class="img-feature reveal">
+      <div class="img-feature-img">
+        <img src="../../images/local-seo-city.png" alt="Lokales SEO — Unternehmen in der Stadt mit Google Maps Pins" loading="lazy" title="Lokale Suchmaschinenoptimierung für Unternehmen in der Stadt"/>
+        <div class="img-badge"><i class="fas fa-map-marker-alt"></i> Google Maps 3-Pack</div>
+      </div>
+      <div class="img-feature-text">
+        <span class="tag"><i class="fas fa-city"></i> Sichtbarkeit in Ihrer Stadt</span>
+        <h2>Ihre Kunden suchen lokal — <span class="gradient-text">finden sie Sie?</span></h2>
+        <p>In jeder Stadt konkurrieren Dutzende Unternehmen um die gleichen Suchanfragen. Wer im Google Maps 3-Pack ganz oben erscheint, gewinnt den Löwenanteil der Klicks, Anrufe und Besucher — die Positionen darunter bekommen kaum noch Aufmerksamkeit.</p>
+        <p>Ich optimiere Ihr Google Business Profile, Ihre Citations und Ihre Website so, dass Google Ihr Unternehmen als die relevanteste Antwort für lokale Suchanfragen in Ihrer Umgebung einstuft.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Google Business Profile vollständig optimiert</li>
+          <li><i class="fas fa-check-circle"></i> Gezielte lokale Keywords für Ihre Branche</li>
+          <li><i class="fas fa-check-circle"></i> Eintrag in 50+ deutschen Verzeichnissen</li>
+          <li><i class="fas fa-check-circle"></i> Monatliche Ranking-Berichte mit echten Zahlen</li>
+        </ul>
+        <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-calendar-check"></i> Kostenloses Audit buchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE FEATURE 2: right image, left text -->
+<section class="section">
+  <div class="container">
+    <div class="img-feature reverse reveal">
+      <div class="img-feature-img">
+        <img src="../../images/local-seo-altenburg.png" alt="Lokales SEO für Kleinunternehmen — Altenburg Marktplatz mit digitalen Standortpins" loading="lazy" title="Lokale SEO-Agentur für Kleinunternehmen in Deutschland"/>
+        <div class="img-badge"><i class="fas fa-store"></i> Mehr Kunden vor Ort</div>
+      </div>
+      <div class="img-feature-text">
+        <span class="tag"><i class="fas fa-handshake"></i> Für Kleinunternehmen &amp; Handwerker</span>
+        <h2>Lokale SEO, die <span class="gradient-text">messbar mehr Kunden bringt</span></h2>
+        <p>Ob Handwerksbetrieb, Zahnarzt, Rechtsanwalt oder Einzelhändler — lokales SEO ist für jedes Unternehmen, das Kunden aus der Region gewinnen will, der kosteneffizienteste Marketingkanal langfristig.</p>
+        <p>Im Gegensatz zu Google Ads, die sofort aufhören zu wirken, wenn das Budget endet, baut lokale Suchmaschinenoptimierung dauerhaftes Ranking-Kapital auf — Ihre Sichtbarkeit wächst mit der Zeit, nicht ab.</p>
+        <ul class="check-list">
+          <li><i class="fas fa-check-circle"></i> Spezifisch auf Ihre Branche &amp; Ihren Ort ausgerichtet</li>
+          <li><i class="fas fa-check-circle"></i> Ergebnisse messbar in Google Search Console</li>
+          <li><i class="fas fa-check-circle"></i> Kein langer Vertrag — monatlich kündbar</li>
+          <li><i class="fas fa-check-circle"></i> Persönlicher Ansprechpartner, kein Agentur-Chaos</li>
+        </ul>
+        <a href="/de/services/lokales-seo-altenburg" class="btn btn-outline"><i class="fas fa-map-marker-alt"></i> Lokales SEO für Altenburg ansehen</a>
       </div>
     </div>
   </div>
