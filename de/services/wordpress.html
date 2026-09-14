@@ -13,6 +13,17 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon.png?v=3"/>
   <link rel="apple-touch-icon" href="../../images/favicon.png?v=3"/>
   <link rel="stylesheet" href="../../css/style.v9.css"/>
+  <style>
+    .wp-img-feature{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .wp-img-feature.reverse{direction:rtl;}
+    .wp-img-feature.reverse>*{direction:ltr;}
+    @media(max-width:860px){.wp-img-feature,.wp-img-feature.reverse{grid-template-columns:1fr;direction:ltr;gap:2.5rem;}}
+    .wp-img-feature-img{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);border:1px solid var(--border);}
+    .wp-img-feature-img img{width:100%;display:block;height:380px;object-fit:cover;transition:transform .5s ease;}
+    .wp-img-feature-img:hover img{transform:scale(1.03);}
+    .wp-img-badge{position:absolute;bottom:1.2rem;left:1.2rem;background:rgba(4,8,26,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:.55rem 1rem;font-size:.8rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:.5rem;}
+    @media(max-width:600px){.wp-img-feature-img img{height:240px;}}
+  </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <script type="application/ld+json">
   {
@@ -127,21 +138,34 @@
 </div>
 
 <!-- HERO -->
-<section class="page-hero">
+<section class="page-hero" style="padding-bottom:0;">
   <div class="container">
-    <div class="breadcrumb"><a href="/de/">Startseite</a><i class="fas fa-chevron-right"></i><a href="/de/services">Leistungen</a><i class="fas fa-chevron-right"></i><span>WordPress Entwicklung</span></div>
-    <span class="tag" style="margin-bottom:1.2rem;"><i class="fab fa-wordpress"></i> WordPress Entwicklung</span>
-    <h1>Eine Website, die Kunden anzieht &amp; <span class="gradient-text">Vertrauen aufbaut</span></h1>
-    <p class="subtitle">Individuelle WordPress-Websites für lokale Unternehmen — professionell gestaltet, SEO-fertig, schnell ladend und darauf ausgelegt, vom ersten Tag an Anfragen und Anrufe zu generieren. Ab €750 Festpreis.</p>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem;justify-content:center;">
-      <a href="/de/contact" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> WordPress-Projekt starten</a>
-      <a href="/de/pricing" class="btn btn-outline btn-lg"><i class="fas fa-tag"></i> €750 Festpreis ansehen</a>
-    </div>
-    <div style="display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;font-size:.85rem;color:var(--text-muted);">
-      <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> Individuelles Design</span>
-      <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> SEO-fertig ab Tag 1</span>
-      <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> In 10 Tagen live</span>
-      <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> €750 Festpreis</span>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;">
+      <div>
+        <div class="breadcrumb" style="justify-content:flex-start;margin-bottom:1.2rem;"><a href="/de/">Startseite</a><i class="fas fa-chevron-right"></i><a href="/de/services">Leistungen</a><i class="fas fa-chevron-right"></i><span>WordPress Entwicklung</span></div>
+        <span class="tag" style="margin-bottom:1.2rem;"><i class="fab fa-wordpress"></i> WordPress Entwicklung</span>
+        <h1 style="text-align:left;">Eine Website, die Kunden anzieht &amp; <span class="gradient-text">Vertrauen aufbaut</span></h1>
+        <p class="subtitle" style="text-align:left;">Individuelle WordPress-Websites für lokale Unternehmen — professionell gestaltet, SEO-fertig, schnell ladend und darauf ausgelegt, vom ersten Tag an Anfragen und Anrufe zu generieren. Ab €750 Festpreis.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem;">
+          <a href="/de/contact" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> WordPress-Projekt starten</a>
+          <a href="/de/pricing" class="btn btn-outline btn-lg"><i class="fas fa-tag"></i> €750 Festpreis</a>
+        </div>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.8rem;font-size:.85rem;color:var(--text-muted);">
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> Individuelles Design</span>
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> SEO-fertig ab Tag 1</span>
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> In 10 Tagen live</span>
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> €750 Festpreis</span>
+        </div>
+      </div>
+      <div class="reveal-right" style="position:relative;">
+        <div style="border-radius:var(--r-xl);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.55);border:1px solid var(--border);">
+          <img src="../../images/wordpress-hero.png" alt="Professionelle WordPress-Website für lokale Unternehmen — Webdesign Altenburg" style="width:100%;display:block;object-fit:cover;"/>
+        </div>
+        <div style="position:absolute;bottom:-1.2rem;left:-1.2rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);padding:.8rem 1.2rem;display:flex;align-items:center;gap:.7rem;box-shadow:0 8px 24px rgba(0,0,0,.4);">
+          <i class="fab fa-wordpress" style="font-size:1.4rem;color:#21759b;"></i>
+          <div><div style="font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">WordPress</div><div style="font-weight:700;font-size:.9rem;">Digital. Regional. Erfolgreich.</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -174,7 +198,7 @@
       </div>
       <div class="reveal-right" style="align-self:stretch;">
         <div style="position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);border:1px solid var(--border);height:100%;min-height:320px;">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=640&q=80&auto=format&fit=crop"
+          <img src="../../images/wordpress-dev-1.png"
                alt="WordPress Entwicklung — professionelle Website für lokale Unternehmen"
                style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;">
           <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(4,8,26,.95),transparent);display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
@@ -231,6 +255,25 @@
   </div>
 </section>
 
+<!-- IMG FEATURE 1: left image, right text -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="wp-img-feature reveal">
+      <div class="wp-img-feature-img">
+        <img src="../../images/wordpress-dev-1.png" alt="WordPress Entwicklung — Themes, Plugins, responsives Webdesign"/>
+        <div class="wp-img-badge"><i class="fab fa-wordpress" style="color:#21759b;"></i> Themes &amp; Plugins</div>
+      </div>
+      <div>
+        <span class="tag" style="margin-bottom:1rem;"><i class="fas fa-puzzle-piece"></i> Maßgeschneiderte Entwicklung</span>
+        <h2 style="margin-bottom:1.2rem;">Kein Template. <span class="gradient-text">Ihre Website, Ihre Marke.</span></h2>
+        <p style="margin-bottom:1rem;">Ich entwickle WordPress-Websites von Grund auf — mit sauberem, schnellem Code, ohne aufgeblähte Page-Builder. Das Ergebnis: eine Website, die sich von der Konkurrenz abhebt, blitzschnell lädt und bei Google besser rankt.</p>
+        <p style="margin-bottom:1.5rem;">Von der Theme-Entwicklung über Plugin-Integration bis zu Custom-Funktionen — jedes Detail wird auf Ihr Unternehmen abgestimmt. Themes, Plugins, Performance und Sicherheit: alles aus einer Hand.</p>
+        <a href="/de/contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Kostenloses Gespräch buchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROCESS -->
 <section class="section">
   <div class="container">
@@ -258,6 +301,25 @@
         <div class="step-num">04</div>
         <h4>Launch &amp; Schulung</h4>
         <p>Ihre Website geht auf Ihrer Domain live. Ich halte eine Schulungssitzung ab und biete 30 Tage Post-Launch-Support für Fragen oder Anpassungen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMG FEATURE 2: right image, left text (reverse) -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="wp-img-feature reverse reveal">
+      <div class="wp-img-feature-img">
+        <img src="../../images/wordpress-dev-2.png" alt="WordPress Website für lokale Unternehmen — Responsive Design auf allen Geräten"/>
+        <div class="wp-img-badge"><i class="fas fa-mobile-alt" style="color:var(--accent-2);"></i> Responsiv &amp; SEO-optimiert</div>
+      </div>
+      <div>
+        <span class="tag" style="margin-bottom:1rem;"><i class="fas fa-chart-line"></i> Lokales SEO &amp; Performance</span>
+        <h2 style="margin-bottom:1.2rem;">Schnell. Sicher. <span class="gradient-text">Auf allen Geräten perfekt.</span></h2>
+        <p style="margin-bottom:1rem;">Jede Website, die ich liefere, ist vollständig mobil optimiert, auf Geschwindigkeit getrimmt und von Tag 1 an für lokale Google-Suchen optimiert. Das bedeutet mehr organische Anfragen — ohne monatliche Werbekosten.</p>
+        <p style="margin-bottom:1.5rem;">Ob auf dem Smartphone, Tablet oder Desktop: Ihre Website sieht überall professionell aus und lädt in unter 2 Sekunden. Ein schneller, mobilfreundlicher Auftritt ist heute kein Bonus mehr — er ist Pflicht.</p>
+        <a href="/de/services/local-seo" class="btn btn-outline"><i class="fas fa-map-marker-alt"></i> Lokales SEO kennenlernen</a>
       </div>
     </div>
   </div>
