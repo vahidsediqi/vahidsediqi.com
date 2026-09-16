@@ -296,12 +296,12 @@ p  { color: var(--text-2); font-size:1rem; line-height:1.8; }
   font-size:1rem; color:#fff; font-weight:800;
 }
 .nav-logo-img {
-  height:28px; max-width:160px; width:auto; display:block;
+  height:40px; max-width:200px; width:auto; display:block;
   object-fit:contain; object-position:left center;
   mix-blend-mode:screen;
 }
 @media(max-width:768px){
-  .nav-logo-img { height:24px; max-width:130px; }
+  .nav-logo-img { height:32px; max-width:160px; }
 }
 
 .nav-menu { display:flex; align-items:center; gap:0; }
