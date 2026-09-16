@@ -35,12 +35,23 @@
   }
   </script>
   <link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/seo"/>
-  <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/seo/"/>
+  <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/seo"/>
   <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/services/seo"/>
   <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon.png?v=3"/>
   <link rel="apple-touch-icon" href="../../images/favicon.png?v=3"/>
   <link rel="stylesheet" href="../../css/style.v9.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .seo-img-feature{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+    .seo-img-feature.reverse{direction:rtl;}
+    .seo-img-feature.reverse>*{direction:ltr;}
+    @media(max-width:860px){.seo-img-feature,.seo-img-feature.reverse{grid-template-columns:1fr;direction:ltr;gap:2.5rem;}}
+    .seo-img-wrap{position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);border:1px solid var(--border);}
+    .seo-img-wrap img{width:100%;display:block;height:380px;object-fit:cover;transition:transform .5s ease;}
+    .seo-img-wrap:hover img{transform:scale(1.03);}
+    .seo-img-badge{position:absolute;bottom:1.2rem;left:1.2rem;background:rgba(4,8,26,.82);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-md);padding:.55rem 1rem;font-size:.8rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:.5rem;}
+    @media(max-width:600px){.seo-img-wrap img{height:240px;}}
+  </style>
 </head>
 <body>
 
@@ -54,16 +65,16 @@
         <a href="/de/">Leistungen <i class="fas fa-chevron-down"></i></a>
         <div class="mega-menu">
           <div class="mega-menu-col"><h4>SEO Leistungen</h4><ul>
-            <li><a href="seo"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
-            <li><a href="local-seo"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Lokales SEO</a></li>
-            <li><a href="ecom-seo"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> E-Commerce-SEO</a></li>
+            <li><a href="/de/services/seo"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
+            <li><a href="/de/services/local-seo"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Lokales SEO</a></li>
+            <li><a href="/de/services/ecom-seo"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> E-Commerce-SEO</a></li>
           </ul></div>
           <div class="mega-menu-col"><h4>Webentwicklung</h4><ul>
-            <li><a href="shopify"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
-            <li><a href="wordpress"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li>
+            <li><a href="/de/services/shopify"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
+            <li><a href="/de/services/wordpress"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li>
           </ul></div>
-          <div class="mega-menu-col"><h4>Wachstum & Conversion</h4><ul>
-            <li><a href="cro"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
+          <div class="mega-menu-col"><h4>Wachstum &amp; Conversion</h4><ul>
+            <li><a href="/de/services/cro"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
           </ul></div>
           <div class="mega-menu-featured">
             <div class="badge">Kostenloses Audit</div>
@@ -108,25 +119,49 @@
   <a href="/de/about" class="m-link">Über mich</a>
   <div class="m-link has-sub" style="cursor:pointer">Leistungen <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
   <div class="m-sub">
-    <a href="seo"><i class="fas fa-search"></i> SEO Overview</a>
-    <a href="local-seo"><i class="fas fa-map-marker-alt"></i> Lokales SEO</a>
-    <a href="ecom-seo"><i class="fas fa-shopping-cart"></i> E-Commerce-SEO</a>
-    <a href="shopify"><i class="fab fa-shopify"></i> Shopify Creation</a>
-    <a href="wordpress"><i class="fab fa-wordpress"></i> WordPress Dev</a>
-    <a href="cro"><i class="fas fa-chart-line"></i> CRO</a>
+    <a href="/de/services/seo"><i class="fas fa-search"></i> SEO Overview</a>
+    <a href="/de/services/local-seo"><i class="fas fa-map-marker-alt"></i> Lokales SEO</a>
+    <a href="/de/services/ecom-seo"><i class="fas fa-shopping-cart"></i> E-Commerce-SEO</a>
+    <a href="/de/services/shopify"><i class="fab fa-shopify"></i> Shopify Creation</a>
+    <a href="/de/services/wordpress"><i class="fab fa-wordpress"></i> WordPress Dev</a>
+    <a href="/de/services/cro"><i class="fas fa-chart-line"></i> CRO</a>
   </div>
   <a href="/de/tools" class="m-link">Tools</a><a href="/de/portfolio" class="m-link">Portfolio</a><a href="/de/pricing" class="m-link">Preise</a>
   <a href="/de/contact" class="m-link">Kontakt</a>
   <a href="/de/contact" class="btn btn-primary m-nav-cta" style="text-align:center">Kostenloses Audit</a>
 </div>
 
-<section class="page-hero">
+<section class="page-hero" style="padding-bottom:0;">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Startseite</a><i class="fas fa-chevron-right"></i><a href="/de/services">Leistungen</a><i class="fas fa-chevron-right"></i><span>SEO</span></div>
-    <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-search"></i> SEO Experte Leipzig</span>
-    <h1>SEO Experte in Leipzig — <span class="gradient-text">auf Seite 1 bei Google</span></h1>
-    <p class="subtitle">Als SEO Freelancer in Leipzig baue ich nachhaltigen organischen Traffic durch technische Exzellenz, clevere Inhalte und wirkungsvolles Linkbuilding — für Unternehmen in Leipzig, Sachsen und ganz Deutschland.</p>
-    <a href="/de/contact" class="btn btn-primary btn-lg" style="margin-top:1.5rem;"><i class="fas fa-rocket"></i> Kostenloses SEO-Audit anfordern</a>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;">
+      <div>
+        <div class="breadcrumb" style="justify-content:flex-start;margin-bottom:1.2rem;"><a href="/de/">Startseite</a><i class="fas fa-chevron-right"></i><a href="/de/services">Leistungen</a><i class="fas fa-chevron-right"></i><span>SEO</span></div>
+        <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-search"></i> SEO Experte Leipzig</span>
+        <h1 style="text-align:left;font-size:clamp(1.8rem,3.2vw,2.6rem);line-height:1.2;">SEO Experte in Leipzig — <span class="gradient-text">auf Seite 1 bei Google</span></h1>
+        <p class="subtitle" style="text-align:left;">Als SEO Freelancer in Leipzig baue ich nachhaltigen organischen Traffic durch technische Exzellenz, clevere Inhalte und wirkungsvolles Linkbuilding — für Unternehmen in Leipzig, Sachsen und ganz Deutschland.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem;">
+          <a href="/de/contact" class="btn btn-primary btn-lg"><i class="fas fa-rocket"></i> Kostenloses SEO-Audit</a>
+          <a href="/de/pricing" class="btn btn-outline btn-lg"><i class="fas fa-tag"></i> Preise ansehen</a>
+        </div>
+        <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:1.8rem;font-size:.85rem;color:var(--text-muted);">
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> Lokale Marktkenntnis</span>
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> White-Hat-Methoden</span>
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> Monatliche Berichte</span>
+          <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> Messbare Ergebnisse</span>
+        </div>
+      </div>
+      <div class="reveal-right" style="position:relative;">
+        <div style="border-radius:var(--r-xl);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.55);border:1px solid var(--border);">
+          <img src="../../images/seo-leipzig-hero.png"
+               alt="SEO Experte Leipzig — Google Search Console Performance Dashboard mit 189% Traffic-Anstieg für Leipziger Unternehmen"
+               style="width:100%;display:block;object-fit:cover;"/>
+        </div>
+        <div style="position:absolute;bottom:-1.2rem;left:-1.2rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);padding:.8rem 1.2rem;display:flex;align-items:center;gap:.7rem;box-shadow:0 8px 24px rgba(0,0,0,.4);">
+          <i class="fas fa-chart-line" style="font-size:1.3rem;color:var(--accent-2);"></i>
+          <div><div style="font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Google Search Console</div><div style="font-weight:700;font-size:.9rem;">+189% Traffic • Leipzig</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -147,8 +182,8 @@
       </div>
       <div class="reveal-right" style="align-self:stretch;">
         <div style="position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);border:1px solid var(--border);height:100%;min-height:320px;">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=640&q=80&auto=format&fit=crop"
-               alt="SEO analytics dashboard — organic search growth"
+          <img src="../../images/seo-leipzig-hero.png"
+               alt="SEO Experte Leipzig — Google Search Console mit starkem organischen Traffic-Anstieg für lokale Unternehmen"
                style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;">
           <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(4,8,26,.95),transparent);display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
             <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="347" data-suffix="%">0%</div><div class="r-label" style="font-size:.75rem;">Traffic-Anstieg</div></div>
@@ -213,10 +248,30 @@
       <h2>Wie ich Rankings aufbaue, die <span class="gradient-text">dauerhaft</span> halten</h2>
     </div>
     <div class="process-steps">
-      <div class="step-card reveal delay-1"><div class="step-num">01</div><h4>Technisches Audit</h4><p>Ich beginne damit, Ihre gesamte Website zu crawlen und jedes technische Problem zu identifizieren, das Ihre Rankings zurückhält — egal ob Sie ein <a href="local-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">lokales Unternehmen</a> oder einen <a href="ecom-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">Onlineshop</a> betreiben.</p></div>
+      <div class="step-card reveal delay-1"><div class="step-num">01</div><h4>Technisches Audit</h4><p>Ich beginne damit, Ihre gesamte Website zu crawlen und jedes technische Problem zu identifizieren, das Ihre Rankings zurückhält — egal ob Sie ein <a href="/de/services/local-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">lokales Unternehmen</a> oder einen <a href="/de/services/ecom-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">Onlineshop</a> betreiben.</p></div>
       <div class="step-card reveal delay-2"><div class="step-num">02</div><h4>Keyword-Strategie</h4><p>Tiefgehende Keyword-Recherche, um Ihre besten Ranking-Möglichkeiten basierend auf Intent, Wettbewerb und Geschäftswert zu finden.</p></div>
       <div class="step-card reveal delay-3"><div class="step-num">03</div><h4>On-Page & Content</h4><p>Bestehende Seiten optimieren und neue Inhalte erstellen, die auf Ihre gewählten Keywords abzielen und den Suchintent befriedigen.</p></div>
       <div class="step-card reveal delay-4"><div class="step-num">04</div><h4>Autoritätsaufbau</h4><p>Aufbau des Zurücklink-Profils und der Domain-Autorität, die nötig ist, um Ihre Wettbewerber bei umkämpften Keywords zu übertreffen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMG FEATURE: right image, left text -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="seo-img-feature reverse reveal">
+      <div class="seo-img-wrap">
+        <img src="../../images/seo-leipzig-results.png"
+             alt="SEO Ergebnisse Leipzig — organisches Wachstum mit Ranking-Charts und lokaler Sichtbarkeit für Unternehmen in Leipzig"/>
+        <div class="seo-img-badge"><i class="fas fa-map-marker-alt" style="color:var(--accent-2);"></i> Leipzig — Mehr Kunden</div>
+      </div>
+      <div>
+        <span class="tag" style="margin-bottom:1rem;"><i class="fas fa-chart-bar"></i> SEO Ergebnisse Leipzig</span>
+        <h2 style="margin-bottom:1.2rem;">Mehr Sichtbarkeit. <span class="gradient-text">Mehr Kunden aus Leipzig.</span></h2>
+        <p style="margin-bottom:1rem;">Als lokaler SEO Experte Leipzig kenne ich den Markt — welche Keywords Ihre Zielkunden verwenden, welche Wettbewerber Sie schlagen müssen und wie Google lokale Suchanfragen in Leipzig bewertet. Das ist der Unterschied zu einer überregionalen Agentur.</p>
+        <p style="margin-bottom:1.5rem;">Steigende Rankings bedeuten mehr Impressionen, mehr Klicks und mehr Anfragen — ohne monatliche Werbekosten. Nachhaltiges SEO ist die beste Investition in die digitale Sichtbarkeit Ihres Unternehmens in Leipzig und Sachsen.</p>
+        <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-calendar-check"></i> Kostenlosen Anruf buchen</a>
+      </div>
     </div>
   </div>
 </section>
@@ -264,30 +319,21 @@
 
 <footer class="footer"><div class="container"><div class="footer-grid">
   <div class="footer-brand"><a href="/" class="nav-logo"><img src="../../images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a><p>Full-Stack Digital-Marketing-Ingenieur aus Deutschland. Weltweit tätig.</p><div class="social-links"><a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="https://www.fiverr.com/vahidsediqi_" class="social-link" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a><a href="mailto:contact@vahidsediqi.com" class="social-link"><i class="fas fa-envelope"></i></a></div></div>
-  <div class="footer-col"><h5>Leistungen</h5><ul><li><a href="seo">SEO Strategy</a></li><li><a href="local-seo">Lokales SEO</a></li><li><a href="ecom-seo">E-Commerce-SEO</a></li><li><a href="shopify">Shopify Creation</a></li><li><a href="cro">CRO</a></li><li><a href="wordpress">WordPress Dev</a></li></ul></div>
-  <div class="footer-col"><h5>Unternehmen</h5><ul><li><a href="/de/about">Über mich</a></li><li class="has-mega-menu">
-        <a href="/de/tools">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Kostenlose Rechner</h4><ul>
-            <li><a href="/de/tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="/de/tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO-ROI-Rechner</a></li>
-            <li><a href="/de/tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="/de/tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta-Tag-Prüfer</a></li>
-            <li><a href="/de/tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page-SEO Prüfer</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Demnächst</h4><ul>
-            <li><a href="/de/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="/de/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Lokales SEO Audit</a></li>
-            <li><a href="/de/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Kostenlos</div>
-            <h5>Keine Anmeldung erforderlich</h5>
-            <p>Alle Tools sind kostenlos — entwickelt aus echten Kundenfragen.</p>
-            <a href="/de/tools" class="btn btn-primary btn-sm">Alle Tools ansehen</a>
-          </div>
-        </div>
-      </li><li><a href="/de/portfolio">Portfolio</a></li><li><a href="/de/pricing">Preise</a></li><li><a href="/de/contact">Kontakt</a></li></ul></div>
+  <div class="footer-col"><h5>Leistungen</h5><ul>
+    <li><a href="/de/services/seo">SEO Strategie</a></li>
+    <li><a href="/de/services/local-seo">Lokales SEO</a></li>
+    <li><a href="/de/services/ecom-seo">E-Commerce-SEO</a></li>
+    <li><a href="/de/services/shopify">Shopify Creation</a></li>
+    <li><a href="/de/services/wordpress">WordPress Dev</a></li>
+    <li><a href="/de/services/cro">CRO</a></li>
+  </ul></div>
+  <div class="footer-col"><h5>Unternehmen</h5><ul>
+    <li><a href="/de/about">Über mich</a></li>
+    <li><a href="/de/tools">Tools</a></li>
+    <li><a href="/de/portfolio">Portfolio</a></li>
+    <li><a href="/de/pricing">Preise</a></li>
+    <li><a href="/de/contact">Kontakt</a></li>
+  </ul></div>
   <div class="footer-col"><h5>Kontakt</h5><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@vahidsediqi.com</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span>+49 176 62521106</span></div><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Germany — Weltweit tätig</span></div></div>
 </div><div class="footer-bottom"><p>© 2025 Vahid Sediqi. Alle Rechte vorbehalten.</p><p>Gemacht mit <span style="color:var(--danger)">♥</span> in Deutschland</p><div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-top:.75rem;"><a href="/impressum" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Impressum</a><a href="/de/privacy" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Datenschutz</a><a href="/de/terms" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">AGB</a></div></div></div></footer>
 <script src="../../js/main.js"></script>
