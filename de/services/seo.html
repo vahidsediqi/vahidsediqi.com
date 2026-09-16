@@ -49,7 +49,7 @@
     .seo-img-wrap{border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);border:1px solid var(--border);}
     .seo-img-wrap img{width:100%;display:block;transition:transform .5s ease;}
     .seo-img-wrap:hover img{transform:scale(1.03);}
-    .seo-img-badge{margin-top:.8rem;display:inline-flex;align-items:center;gap:.5rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-md);padding:.5rem 1rem;font-size:.8rem;font-weight:700;color:var(--text);}
+    .seo-img-badge{position:absolute;bottom:1.2rem;left:1.2rem;display:inline-flex;align-items:center;gap:.5rem;background:rgba(4,8,26,.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:.55rem 1rem;font-size:.8rem;font-weight:700;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.4);}
   </style>
 </head>
 <body>
@@ -149,15 +149,15 @@
           <span><i class="fas fa-check-circle" style="color:var(--accent)"></i> Messbare Ergebnisse</span>
         </div>
       </div>
-      <div class="reveal-right">
+      <div class="reveal-right" style="position:relative;">
         <div style="border-radius:var(--r-xl);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.55);border:1px solid var(--border);">
           <img src="../../images/seo-leipzig-hero.png"
                alt="SEO Experte Leipzig — Google Search Console Performance Dashboard mit 189% Traffic-Anstieg für Leipziger Unternehmen"
                style="width:100%;display:block;"/>
         </div>
-        <div style="margin-top:.8rem;display:inline-flex;align-items:center;gap:.7rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-lg);padding:.7rem 1.2rem;">
+        <div style="position:absolute;bottom:1.2rem;left:1.2rem;display:inline-flex;align-items:center;gap:.7rem;background:rgba(4,8,26,.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:.7rem 1.2rem;box-shadow:0 8px 24px rgba(0,0,0,.4);">
           <i class="fas fa-chart-line" style="font-size:1.2rem;color:var(--accent-2);"></i>
-          <div><div style="font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;">Google Search Console</div><div style="font-weight:700;font-size:.88rem;">+189% Traffic • Leipzig</div></div>
+          <div><div style="font-size:.7rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;">Google Search Console</div><div style="font-weight:700;font-size:.88rem;color:#fff;">+189% Traffic • Leipzig</div></div>
         </div>
       </div>
     </div>
@@ -259,12 +259,14 @@
 <section class="section" style="padding-top:0;">
   <div class="container">
     <div class="seo-img-feature reverse reveal">
-      <div>
+      <div style="position:relative;">
         <div class="seo-img-wrap">
           <img src="../../images/seo-leipzig-results.png"
                alt="SEO Ergebnisse Leipzig — organisches Wachstum mit Ranking-Charts und lokaler Sichtbarkeit für Unternehmen in Leipzig"/>
         </div>
-        <div class="seo-img-badge"><i class="fas fa-map-marker-alt" style="color:var(--accent-2);"></i> Leipzig — Mehr Kunden. Mehr Sichtbarkeit.</div>
+        <div style="position:absolute;bottom:1.2rem;left:1.2rem;display:inline-flex;align-items:center;gap:.5rem;background:rgba(4,8,26,.85);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-md);padding:.55rem 1rem;font-size:.8rem;font-weight:700;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.4);">
+          <i class="fas fa-map-marker-alt" style="color:var(--accent-2);"></i> Leipzig — Mehr Kunden. Mehr Sichtbarkeit.
+        </div>
       </div>
       <div>
         <span class="tag" style="margin-bottom:1rem;"><i class="fas fa-chart-bar"></i> SEO Ergebnisse Leipzig</span>
