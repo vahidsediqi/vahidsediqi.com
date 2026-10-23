@@ -1,677 +1,615 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio — Shopify & WordPress Projects | Vahid Sediqi</title>
-  <meta name="description" content="Real websites built by Vahid Sediqi — Shopify stores and WordPress sites designed to convert. Browse live projects with results."/>
-  <link rel="canonical" href="https://www.vahidsediqi.com/portfolio.html"/>
-  <link rel="alternate" hreflang="en" href="https://vahidsediqi.com/portfolio"/>
-  <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/portfolio/"/>
-  <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/portfolio"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png?v=3"/>
-  <link rel="apple-touch-icon" href="images/favicon.png?v=3"/>
-  <link rel="stylesheet" href="css/style.v9.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    /* Filter tabs */
-    .filter-bar {
-      display: flex;
-      gap: .75rem;
-      justify-content: center;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-    .filter-btn {
-      padding: .55rem 1.4rem;
-      border-radius: 100px;
-      font-size: .9rem;
-      font-weight: 600;
-      cursor: pointer;
-      border: 1.5px solid var(--border);
-      background: transparent;
-      color: var(--text-muted);
-      transition: all .2s;
-    }
-    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-btn.active {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #fff;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio — Case Studies &amp; Projects | Vahid Sediqi</title>
+<meta name="description" content="Selected SEO, Shopify, WordPress and conversion projects by Vahid Sediqi — each with the results to show for it.">
+<link rel="canonical" href="https://vahidsediqi.com/portfolio">
+<link rel="alternate" hreflang="en" href="https://vahidsediqi.com/portfolio">
+<link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/portfolio/">
+<link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/portfolio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F7FB;color:#0B1530;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+@keyframes vsBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+@keyframes vsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-    /* Portfolio grid */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-      gap: 2rem;
-    }
+#progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;background:linear-gradient(90deg,#4F46E5,#7C3AED,#0EA5E9);border-radius:0 3px 3px 0}
+.vs-header{--ink:#0B1530;--ink2:#3A4566;--muted:#5A6480;--brand:#4F46E5;--line:rgba(11,21,48,.08);position:sticky;top:0;z-index:1000;padding:14px 20px 0;font-family:'Geist',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.vs-header *{box-sizing:border-box}
+.vs-header a{text-decoration:none;color:inherit}
+.vs-nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:18px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:all .35s ease}
+.vs-header.is-scrolled .vs-nav,.vs-header.is-open .vs-nav{background:rgba(255,255,255,.85);border-color:var(--line);box-shadow:0 10px 30px -14px rgba(11,21,48,.25)}
+.vs-logo{display:flex;align-items:center}
+.vs-links{display:flex;align-items:center;gap:2px;font-size:14.5px}
+.vs-link,.vs-trigger{display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:10px;border:0;background:transparent;color:var(--ink2);font:inherit;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.vs-link:hover,.vs-trigger:hover,.vs-trigger[aria-expanded="true"]{background:rgba(79,70,229,.08);color:var(--ink)}
+.vs-trigger i{font-size:12px;transition:transform .3s}
+.vs-trigger[aria-expanded="true"] i{transform:rotate(180deg)}
+.vs-actions{display:flex;align-items:center;gap:10px}
+.vs-lang{display:flex;font:12px 'Geist Mono',monospace;border:1px solid rgba(11,21,48,.1);border-radius:9px;overflow:hidden}
+.vs-lang a{padding:6px 8px;color:var(--muted)}
+.vs-lang a.is-active{background:var(--ink);color:#fff}
+.vs-cta{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:var(--ink);color:#fff!important;font-size:14px;font-weight:500;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(11,21,48,.6);transition:transform .25s}
+.vs-cta:hover{transform:translateY(-1px)}
+.vs-burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:20px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center}
+.vs-backdrop{position:fixed;inset:0;z-index:-1;background:rgba(11,21,48,.22);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s}
+.vs-header.is-open .vs-backdrop{opacity:1;pointer-events:auto}
+.vs-panels{position:absolute;left:20px;right:20px;top:100%;padding-top:10px;pointer-events:none}
+.vs-panels-inner{max-width:1200px;margin:0 auto;display:grid}
+.vs-panel{grid-area:1/1;align-self:start;opacity:0;transform:translateY(-8px) scale(.985);pointer-events:none;transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1);max-height:calc(100vh - 110px);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;border-radius:24px;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--line);box-shadow:0 40px 90px -30px rgba(11,21,48,.45)}
+.vs-panel.is-open{opacity:1;transform:none;pointer-events:auto}
+.vs-panel-body{display:flex;flex-wrap:wrap}
+.vs-cols{flex:2 1 520px;padding:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px}
+.vs-col{display:flex;flex-direction:column;gap:4px}
+.vs-col-title{display:flex;align-items:center;gap:8px;padding:0 10px 8px;font:500 11.5px 'Geist Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.vs-col-title::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c)}
+.vs-item{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:14px;transition:background .2s}
+.vs-item:hover{background:#F3F4FA}
+.vs-ico{width:38px;height:38px;flex-shrink:0;border-radius:11px;display:grid;place-items:center;background:var(--t);color:var(--c);font-size:20px}
+.vs-item-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.vs-item-text b{display:flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+.vs-item-text span{font-size:13px;line-height:1.45;color:var(--muted)}
+.vs-badge{font-size:10.5px;font-weight:500;padding:2px 6px;border-radius:6px;background:#EEF0FF;color:#4338CA}
+.vs-side{flex:1 1 280px;padding:14px}
+.vs-feature{position:relative;height:100%;min-height:260px;border-radius:18px;padding:24px;overflow:hidden;display:flex;flex-direction:column;gap:14px}
+.vs-feature.dark{background:#0B1530;color:#fff}
+.vs-feature.dark::before,.vs-feature.dark::after{content:"";position:absolute;border-radius:50%;filter:blur(10px)}
+.vs-feature.dark::before{width:280px;height:280px;right:-90px;top:-110px;background:radial-gradient(circle,rgba(124,58,237,.6),transparent 65%)}
+.vs-feature.dark::after{width:240px;height:240px;left:-90px;bottom:-120px;background:radial-gradient(circle,rgba(14,165,233,.45),transparent 65%)}
+.vs-feature.light{background:linear-gradient(160deg,#EEF0FF,#F3EDFF 55%,#E6F6FE);border:1px solid rgba(79,70,229,.12)}
+.vs-feature > *{position:relative;z-index:1}
+.vs-pill{align-self:flex-start;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:12px}
+.vs-feature.dark .vs-pill{background:rgba(255,255,255,.12);color:#fff}
+.vs-feature.light .vs-pill{background:#fff;color:#4338CA;font-weight:500}
+.vs-feature h4{margin:0;font-size:22px;font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.vs-feature p{margin:0;font-size:14px;line-height:1.55}
+.vs-feature.dark p{color:#B7C0DA}.vs-feature.light p{color:var(--ink2)}
+.vs-feature svg{width:100%;height:64px;margin-top:auto}
+.vs-btn{display:flex;justify-content:center;align-items:center;gap:8px;padding:12px;border-radius:12px;font-weight:600;font-size:14.5px;transition:transform .25s}
+.vs-btn:hover{transform:translateY(-1px)}
+.vs-btn.white{background:#fff;color:var(--ink)!important}
+.vs-btn.grad{margin-top:auto;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff!important;box-shadow:0 12px 24px -12px rgba(79,70,229,.8)}
+.vs-bars{display:flex;align-items:flex-end;gap:8px;height:90px;padding:12px;border-radius:14px;background:#fff}
+.vs-bars i{flex:1;border-radius:5px;background:rgba(79,70,229,var(--o))}
+.vs-bars i:last-child{background:linear-gradient(180deg,#7C3AED,#4F46E5)}
+.vs-roi{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2)}
+.vs-roi b{color:var(--ink);font-family:'Geist Mono',monospace}
+.vs-tools{flex:2 1 520px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.vs-chips{display:flex;flex-wrap:wrap;gap:6px}
+.vs-chip{border:1px solid rgba(11,21,48,.1);cursor:pointer;font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;background:#fff;color:var(--ink2);transition:all .2s}
+.vs-chip.is-active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.vs-tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:4px}
+.vs-tool{display:flex;gap:12px;align-items:center;padding:11px;border-radius:14px;transition:background .2s}
+.vs-tool:hover{background:#F3F4FA}
+.vs-tool[hidden]{display:none}
+.vs-tool .vs-ico{width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 10px -6px rgba(11,21,48,.25)}
+.vs-tool .vs-item-text{flex:1}
+.vs-tool .vs-item-text span{font-size:12.5px}
+.vs-tool > .ph-arrow-up-right{color:#9AA2BC;font-size:15px}
+.vs-panel-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 26px;background:#F6F7FB;border-top:1px solid rgba(11,21,48,.06);font-size:13.5px;color:var(--ink2)}
+.vs-panel-foot span{display:flex;align-items:center;gap:8px}
+.vs-panel-foot span i{font-size:18px}
+.vs-panel-foot a{display:flex;align-items:center;gap:6px;font-weight:500}
+.vs-panel-foot a:hover{color:var(--brand)}
+.vs-panel-foot span a{color:var(--brand)}
+@media (max-width:980px){.vs-links,.vs-lang{display:none}.vs-burger{display:flex}.vs-header.is-mobile .vs-links{display:flex;flex-direction:column;align-items:stretch;position:absolute;left:20px;right:20px;top:100%;margin-top:10px;padding:10px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -24px rgba(11,21,48,.4);font-size:16px}.vs-header.is-mobile .vs-link,.vs-header.is-mobile .vs-trigger{padding:14px;justify-content:space-between}.vs-panels{position:static;padding:0}.vs-header.is-mobile .vs-panels{display:none}}
+@media (max-width:560px){.vs-cta span{display:none}}
+@media (prefers-reduced-motion:reduce){.vs-panel,.vs-backdrop{transition:none}}
 
-    /* Project card */
-    .project-card {
-      background: var(--bg-2);
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform .25s, box-shadow .25s, border-color .25s;
-    }
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 0 1px rgba(79,127,255,.25);
-      border-color: rgba(79,127,255,.4);
-    }
+/* PAGE */
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#4F46E5}
+.italic-accent{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
 
-    /* Screenshot image */
-    .project-img-wrap {
-      position: relative;
-      overflow: hidden;
-      height: 230px;
-      background: var(--bg);
-    }
-    .project-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform .5s ease;
-    }
-    .project-card:hover .project-img-wrap img {
-      transform: scale(1.04);
-    }
-    .project-type-badge {
-      position: absolute;
-      top: .85rem;
-      left: .85rem;
-      padding: .3rem .8rem;
-      border-radius: 100px;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .03em;
-      backdrop-filter: blur(8px);
-    }
-    .badge-shopify {
-      background: rgba(149,191,71,.18);
-      color: #95BF47;
-      border: 1px solid rgba(149,191,71,.35);
-    }
-    .badge-wordpress {
-      background: rgba(0,112,186,.18);
-      color: #21ABD8;
-      border: 1px solid rgba(0,112,186,.3);
-    }
+/* FILTER */
+.filter-bar{display:flex;flex-wrap:wrap;gap:6px;padding:5px;border-radius:14px;background:#fff;border:1px solid rgba(11,21,48,.08)}
+.filter-btn{border:0;cursor:pointer;font:inherit;font-size:14px;padding:9px 16px;border-radius:10px;background:transparent;color:#3A4566;transition:all .25s ease}
+.filter-btn.active{background:#0B1530;color:#fff}
 
-    /* Card body */
-    .project-body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      gap: .75rem;
-    }
-    .project-body h3 {
-      font-size: 1.1rem;
-      margin: 0;
-    }
-    .project-body p {
-      font-size: .88rem;
-      color: var(--text-muted);
-      margin: 0;
-      flex: 1;
-      line-height: 1.6;
-    }
-    .project-tags {
-      display: flex;
-      gap: .5rem;
-      flex-wrap: wrap;
-    }
-    .project-tag {
-      background: rgba(79,127,255,.1);
-      color: var(--accent);
-      padding: .2rem .65rem;
-      border-radius: 100px;
-      font-size: .75rem;
-      font-weight: 600;
-    }
-    .project-footer {
-      padding: 1rem 1.5rem 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-    .btn-visit {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      padding: .6rem 1.3rem;
-      border-radius: var(--r-md);
-      background: transparent;
-      border: 1.5px solid var(--accent);
-      color: var(--accent);
-      font-size: .88rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background .2s, color .2s;
-    }
-    .btn-visit:hover {
-      background: var(--accent);
-      color: #fff;
-    }
+/* PROJECT GRID */
+.project-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));gap:20px}
+.project-card{display:flex;flex-direction:column;border-radius:26px;background:#fff;border:1px solid rgba(11,21,48,.07);overflow:hidden;color:#0B1530;box-shadow:0 14px 34px -24px rgba(11,21,48,.25);transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease,border-color .4s ease;text-decoration:none}
+.project-card:hover{transform:translateY(-6px);border-color:rgba(79,70,229,.3);box-shadow:0 34px 64px -30px rgba(79,70,229,.4)}
+.project-thumb{position:relative;padding:12px 12px 0}
+.project-thumb-inner{position:relative;aspect-ratio:16/10.5;border-radius:18px;overflow:hidden}
+.project-thumb-inner img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.project-card:hover .project-thumb-inner img{transform:scale(1.04)}
+.project-cat-pill{position:absolute;left:12px;top:12px;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);font-size:12.5px;font-weight:500;pointer-events:none}
+.project-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:14px;flex:1}
+.project-client{font-size:13px;color:#5A6480;display:flex;align-items:center;gap:6px}
+.project-title{margin:0;font-size:20px;line-height:1.25;letter-spacing:-.025em;font-weight:600}
+.project-tags{display:flex;flex-wrap:wrap;gap:6px}
+.project-tag{font-size:12px;padding:4px 9px;border-radius:7px;background:#F3F4FA;color:#3A4566}
+.project-foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(11,21,48,.07)}
+.project-metric{font-size:26px;font-weight:600;letter-spacing:-.035em;background:linear-gradient(100deg,#4F46E5,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent}
+.project-metric-label{font-size:13.5px;color:#5A6480}
+.project-arrow{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:#0B1530;color:#fff;font-size:16px;flex-shrink:0}
 
-    @media (max-width: 600px) {
-      .portfolio-grid { grid-template-columns: 1fr; }
-    }
-  </style>
+/* FOOTER */
+footer a{color:#1E2A4A}
+footer a:hover{color:#4F46E5}
+</style>
 </head>
 <body>
 
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a>
-    <ul class="nav-menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="about">About</a></li>
-      <li class="has-mega-menu">
-        <a href="services/index">Services <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu">
-          <div class="mega-menu-col"><h4>SEO Services</h4><ul>
-            <li><a href="/services/seo"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
-            <li><a href="/services/local-seo"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li>
-            <li><a href="/services/ecom-seo"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Web Development</h4><ul>
-            <li><a href="/services/shopify"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
-            <li><a href="/services/wordpress"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Growth & Conversion</h4><ul>
-            <li><a href="/services/cro"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">Free Audit</div>
-            <h5>Not sure where to start?</h5>
-            <p>Get a free website & SEO audit — no strings attached.</p>
-            <a href="contact" class="btn btn-primary btn-sm">Claim Free Audit</a>
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<header class="vs-header" id="vsHeader">
+  <div class="vs-backdrop" data-close></div>
+  <nav class="vs-nav" aria-label="Main">
+    <a href="/" class="vs-logo">
+      <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:38px;width:auto;display:block">
+    </a>
+    <div class="vs-links">
+      <button class="vs-trigger" aria-expanded="false" aria-controls="vs-services">Services <i class="ph ph-caret-down"></i></button>
+      <button class="vs-trigger" aria-expanded="false" aria-controls="vs-tools">Free Tools <i class="ph ph-caret-down"></i></button>
+      <a class="vs-link" href="/portfolio">Portfolio</a>
+      <a class="vs-link" href="/about">About</a>
+      <a class="vs-link" href="/pricing">Pricing</a>
+      <a class="vs-link" href="/contact">Contact</a>
+    </div>
+    <div class="vs-actions">
+      <span class="vs-lang"><a href="/" class="is-active">EN</a><a href="/de/">DE</a></span>
+      <a href="/contact" class="vs-cta"><span>Free Audit</span> <i class="ph ph-arrow-up-right"></i></a>
+      <button class="vs-burger" aria-label="Open menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+    </div>
+  </nav>
+  <div class="vs-panels">
+    <div class="vs-panels-inner">
+      <div class="vs-panel" id="vs-services" role="region" aria-label="Services">
+        <div class="vs-panel-body">
+          <div class="vs-cols">
+            <div class="vs-col" style="--c:#4F46E5;--t:linear-gradient(135deg,#EEF0FF,#E0E4FF)">
+              <span class="vs-col-title">SEO</span>
+              <a class="vs-item" href="/services/seo"><span class="vs-ico"><i class="ph-duotone ph-magnifying-glass"></i></span><span class="vs-item-text"><b>SEO Strategy <em class="vs-badge" style="font-style:normal">Popular</em></b><span>Rank higher, stay there</span></span></a>
+              <a class="vs-item" href="/services/local-seo"><span class="vs-ico"><i class="ph-duotone ph-map-pin"></i></span><span class="vs-item-text"><b>Local SEO</b><span>Own Google Maps locally</span></span></a>
+              <a class="vs-item" href="/services/ecom-seo"><span class="vs-ico"><i class="ph-duotone ph-shopping-cart"></i></span><span class="vs-item-text"><b>eCommerce SEO</b><span>More buyers, more revenue</span></span></a>
+            </div>
+            <div class="vs-col" style="--c:#0284C7;--t:linear-gradient(135deg,#E6F6FE,#D5EFFC)">
+              <span class="vs-col-title">Web Development</span>
+              <a class="vs-item" href="/services/shopify"><span class="vs-ico"><i class="ph-duotone ph-storefront"></i></span><span class="vs-item-text"><b>Shopify Stores <em class="vs-badge" style="font-style:normal">Popular</em></b><span>Fast, high-converting shops</span></span></a>
+              <a class="vs-item" href="/services/wordpress"><span class="vs-ico"><i class="ph-duotone ph-laptop"></i></span><span class="vs-item-text"><b>WordPress Development</b><span>Custom, SEO-ready sites</span></span></a>
+            </div>
+            <div class="vs-col" style="--c:#D97706;--t:linear-gradient(135deg,#FFF7E6,#FFEDC7)">
+              <span class="vs-col-title">Growth</span>
+              <a class="vs-item" href="/services/cro"><span class="vs-ico"><i class="ph-duotone ph-chart-line-up"></i></span><span class="vs-item-text"><b>Conversion Optimisation</b><span>Turn traffic into sales</span></span></a>
+            </div>
+          </div>
+          <div class="vs-side">
+            <div class="vs-feature dark">
+              <span class="vs-pill"><i class="ph-fill ph-gift"></i> Free &middot; 48h delivery</span>
+              <h4>Get a free website &amp; SEO audit</h4>
+              <p>See exactly what&rsquo;s holding your rankings and conversions back.</p>
+              <svg viewBox="0 0 240 70" aria-hidden="true"><defs><linearGradient id="vsA" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#818CF8" stop-opacity=".45"/><stop offset="1" stop-color="#818CF8" stop-opacity="0"/></linearGradient></defs><path d="M0,64 L30,60 L60,56 L90,50 L120,44 L150,34 L180,26 L210,16 L240,6 L240,70 L0,70 Z" fill="url(#vsA)"/><path d="M0,64 L30,60 L60,56 L90,50 L120,44 L150,34 L180,26 L210,16 L240,6" fill="none" stroke="#A5B4FC" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <a href="/contact" class="vs-btn white">Request my audit <i class="ph ph-arrow-right"></i></a>
+            </div>
           </div>
         </div>
-      </li>
-      <li class="has-mega-menu">
-        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="/tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="tools/index" class="btn btn-primary btn-sm">View All Tools</a>
+        <div class="vs-panel-foot">
+          <span><i class="ph-duotone ph-chat-circle-dots" style="color:#4F46E5"></i>Not sure where to start? <a href="https://calendly.com/vahidsediqi/business-growth-session">Book a free 30-min call</a></span>
+          <a href="/services/">View all services <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="vs-panel" id="vs-tools" role="region" aria-label="Free tools">
+        <div class="vs-panel-body">
+          <div class="vs-side">
+            <div class="vs-feature light">
+              <span class="vs-pill"><i class="ph-fill ph-star"></i> Most used tool</span>
+              <h4>SEO ROI Calculator</h4>
+              <p>Estimate the traffic and revenue that ranking higher could bring you.</p>
+              <div class="vs-bars" aria-hidden="true"><i style="height:22%;--o:.18"></i><i style="height:30%;--o:.25"></i><i style="height:38%;--o:.32"></i><i style="height:48%;--o:.39"></i><i style="height:60%;--o:.46"></i><i style="height:74%;--o:.53"></i><i style="height:92%"></i></div>
+              <div class="vs-roi"><span>Projected 12-mo revenue</span><b>+&euro;84,200</b></div>
+              <a href="/tools/seo-roi-calculator" class="vs-btn grad">Calculate my ROI <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="vs-tools">
+            <div class="vs-chips" role="tablist">
+              <button class="vs-chip is-active" data-filter="all">All</button>
+              <button class="vs-chip" data-filter="seo">SEO</button>
+              <button class="vs-chip" data-filter="technical">Technical</button>
+              <button class="vs-chip" data-filter="marketing">Marketing</button>
+            </div>
+            <div class="vs-tool-grid">
+              <a class="vs-tool" data-cat="seo" href="/tools/seo-roi-calculator" style="--c:#4F46E5"><span class="vs-ico"><i class="ph-duotone ph-calculator"></i></span><span class="vs-item-text"><b>SEO ROI Calculator</b><span>Forecast traffic &amp; revenue</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="seo" href="/tools/onpage-seo-checker" style="--c:#4F46E5"><span class="vs-ico"><i class="ph-duotone ph-browser"></i></span><span class="vs-item-text"><b>On-Page SEO Checker</b><span>Audit any page instantly</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="seo" href="/tools/meta-tag-checker" style="--c:#7C3AED"><span class="vs-ico"><i class="ph-duotone ph-tag"></i></span><span class="vs-item-text"><b>Meta Tag Checker</b><span>Titles &amp; descriptions</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="technical" href="/tools/shopify-vs-woocommerce-calculator" style="--c:#0284C7"><span class="vs-ico"><i class="ph-duotone ph-storefront"></i></span><span class="vs-item-text"><b>Shopify vs WooCommerce</b><span>Platform cost calculator</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="marketing" href="/tools/google-ads-budget-calculator" style="--c:#D97706"><span class="vs-ico"><i class="ph-duotone ph-google-logo"></i></span><span class="vs-item-text"><b>Google Ads Budget Calc</b><span>Plan ad spend &amp; ROAS</span></span><i class="ph ph-arrow-up-right"></i></a>
+            </div>
           </div>
         </div>
-      </li>
-      <li class="active"><a href="portfolio">Portfolio</a></li>
-      <li><a href="pricing">Pricing</a></li>
-      <li><a href="contact">Contact</a></li>
-    </ul>
-    <div class="lang-switch"><a href="/portfolio" class="active"><span class="flag">🇺🇸</span> EN</a><span class="lang-sep"></span><a href="/de/portfolio"><span class="flag">🇩🇪</span> DE</a></div>
-    <a href="contact" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
-    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+        <div class="vs-panel-foot">
+          <span><i class="ph-duotone ph-lock-simple-open" style="color:#10B981"></i>All tools are 100% free &mdash; no signup, no credit card.</span>
+          <a href="/tools/">Browse all tools <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index" class="m-link">Home</a>
-  <a href="about" class="m-link">About</a>
-  <div class="m-link has-sub" style="cursor:pointer">Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
-  <div class="m-sub">
-    <a href="/services/seo"><i class="fas fa-search"></i> SEO Overview</a>
-    <a href="/services/local-seo"><i class="fas fa-map-marker-alt"></i> Local SEO</a>
-    <a href="/services/ecom-seo"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a>
-    <a href="/services/shopify"><i class="fab fa-shopify"></i> Shopify Creation</a>
-    <a href="/services/wordpress"><i class="fab fa-wordpress"></i> WordPress Dev</a>
-    <a href="/services/cro"><i class="fas fa-chart-line"></i> CRO</a>
-  </div>
-  <a href="/tools/" class="m-link">Tools</a>
-  <a href="portfolio" class="m-link">Portfolio</a>
-  <a href="pricing" class="m-link">Pricing</a>
-  <a href="contact" class="m-link">Contact</a>
-  <a href="contact" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
-</div>
+</header>
 
 <!-- HERO -->
-<section class="page-hero" style="padding-top:calc(var(--nav-h) + 36px);padding-bottom:36px;">
-  <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><i class="fas fa-chevron-right"></i><span>Portfolio</span></div>
-    <span class="tag" style="margin-bottom:1rem;"><i class="fas fa-briefcase"></i> Real Work, Real Results</span>
-    <h1 style="margin-bottom:.6rem;">My <span class="gradient-text">Portfolio</span></h1>
-    <p class="subtitle" style="margin-bottom:0;max-width:520px;">16 live websites — Shopify stores and WordPress sites — all built to convert visitors into customers.</p>
+<section style="position:relative;margin-top:-76px;padding:150px 24px 64px;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(11,21,48,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(11,21,48,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 20%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 70% at 50% 20%,#000 30%,transparent 75%)"></div>
+    <div style="position:absolute;width:560px;height:560px;left:10%;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.24),transparent 65%);filter:blur(30px);animation:vsBlob 18s ease-in-out infinite"></div>
+    <div style="position:absolute;width:520px;height:520px;right:6%;top:-80px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.22),transparent 65%);filter:blur(30px);animation:vsBlob 22s ease-in-out infinite reverse"></div>
+  </div>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px">
+    <div data-reveal style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5A6480"><a href="/" style="color:#5A6480">Home</a><i class="ph ph-caret-right" style="font-size:11px"></i><span style="color:#0B1530;font-weight:500">Portfolio</span></div>
+    <h1 data-reveal data-delay="80" style="margin:0;max-width:900px;font-size:clamp(42px,6vw,78px);line-height:1;letter-spacing:-.045em;font-weight:600;text-wrap:balance">Work that <span class="italic-accent" style="background:linear-gradient(100deg,#4F46E5,#7C3AED 45%,#0EA5E9);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:6px">moves numbers.</span></h1>
+    <p data-reveal data-delay="160" style="margin:0;max-width:600px;font-size:18.5px;line-height:1.6;color:#3A4566">Selected SEO, Shopify, WordPress and conversion projects — each with the results to show for it.</p>
+    <div data-reveal data-delay="240" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:8px">
+      <span style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;border:1px solid rgba(11,21,48,.08);font-size:14px"><b>150+</b><span style="color:#5A6480">projects</span></span>
+      <span style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;border:1px solid rgba(11,21,48,.08);font-size:14px"><b>12</b><span style="color:#5A6480">countries</span></span>
+      <span style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:#fff;border:1px solid rgba(11,21,48,.08);font-size:14px"><i class="ph-fill ph-star" style="color:#F59E0B"></i><b>5.0</b><span style="color:#5A6480">avg. rating</span></span>
+    </div>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="section" style="padding-top:2.5rem;">
-  <div class="container">
-
-    <!-- Filter -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All Projects (16)</button>
-      <button class="filter-btn" data-filter="shopify"><i class="fab fa-shopify"></i> Shopify (8)</button>
-      <button class="filter-btn" data-filter="wordpress"><i class="fab fa-wordpress"></i> WordPress (8)</button>
+<!-- FEATURED -->
+<section style="padding:0 24px 80px;overflow:hidden">
+  <div data-reveal style="max-width:1200px;margin:0 auto;border-radius:32px;overflow:hidden;background:#0B1530;color:#fff;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));position:relative">
+    <div style="position:absolute;width:520px;height:520px;right:-160px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.5),transparent 65%);filter:blur(30px);pointer-events:none"></div>
+    <div style="position:relative;padding:44px;display:flex;flex-direction:column;gap:22px">
+      <span style="align-self:flex-start;display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);font-size:13px"><i class="ph-fill ph-star" style="color:#FBBF24"></i> Featured case study</span>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="font-size:14px;color:#A5B4FC;font-family:'Geist Mono',monospace">eCommerce SEO · Hamburg</span>
+        <h2 style="margin:0;font-size:clamp(28px,3.4vw,42px);line-height:1.08;letter-spacing:-.035em;font-weight:600">Tripling organic traffic for a fashion store in 3 months</h2>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#B7C0DA">A full technical rebuild of the category structure, product schema and a content plan aimed at high-intent buyer searches.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px">
+        <div style="padding:14px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)"><div style="font-size:28px;font-weight:600;letter-spacing:-.03em">3&times;</div><div style="font-size:12.5px;color:#B7C0DA">Organic traffic</div></div>
+        <div style="padding:14px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)"><div style="font-size:28px;font-weight:600;letter-spacing:-.03em">+280%</div><div style="font-size:12.5px;color:#B7C0DA">Organic revenue</div></div>
+        <div style="padding:14px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1)"><div style="font-size:28px;font-weight:600;letter-spacing:-.03em">142</div><div style="font-size:12.5px;color:#B7C0DA">Top-10 keywords</div></div>
+      </div>
+      <a href="/contact" style="margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:14px;background:#fff;color:#0B1530;font-weight:600;font-size:15px;transition:color .2s" onmouseover="this.style.color='#4F46E5'" onmouseout="this.style.color='#0B1530'">Start a similar project <i class="ph ph-arrow-right"></i></a>
     </div>
-
-    <!-- Grid -->
-    <div class="portfolio-grid" id="portfolioGrid">
-
-      <!-- ===== SHOPIFY ===== -->
-
-      <div class="project-card reveal" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/zuzunga.png" alt="Zuzunga Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Zuzunga</h3>
-          <p>Children's pyjama brand — full Shopify store build with custom theme, product pages optimised for conversion and mobile-first design.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">eCommerce</span>
-            <span class="project-tag">Fashion</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://zuzunga.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-1" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/firexnull.png" alt="Firexnull Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Firexnull</h3>
-          <p>High-performance Shopify store with streamlined product catalogue, fast-loading pages and a clean brand identity built for conversions.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">eCommerce</span>
-            <span class="project-tag">Branding</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://firexnull.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-2" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/zodjewelry.png" alt="Zod Jewelry Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Zod Jewelry</h3>
-          <p>Luxury jewellery Shopify store with elegant product photography layouts, custom collections and a premium checkout experience.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">Jewelry</span>
-            <span class="project-tag">Luxury</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://zodjewelry.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/tavusker.png" alt="Tavusker Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Tavusker</h3>
-          <p>Shopify store built with a focus on mobile UX, fast page speed and structured product data to support organic discovery.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">eCommerce</span>
-            <span class="project-tag">SEO</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://tavusker.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-1" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/glinetex.png" alt="Glinetex Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Glinetex</h3>
-          <p>Modern Shopify build with custom sections, branded colour palette and a conversion-optimised homepage built to turn traffic into sales.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">eCommerce</span>
-            <span class="project-tag">CRO</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://glinetex.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-2" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/bayelon.png" alt="Bayelon Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Bayelon</h3>
-          <p>Full Shopify store creation with custom theme development, product collections and on-page SEO foundations baked in from day one.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">eCommerce</span>
-            <span class="project-tag">Theme Dev</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://bayelon.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/tayfus.png" alt="Tayfus Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Tayfus</h3>
-          <p>International Shopify store with multi-language support, clean navigation and a responsive layout optimised for global customers.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">International</span>
-            <span class="project-tag">Multi-lang</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://tayfus.com/en-int" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-1" data-type="shopify">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/garisar.png" alt="Garisar Shopify Store" loading="lazy"/>
-          <span class="project-type-badge badge-shopify"><i class="fab fa-shopify"></i> Shopify</span>
-        </div>
-        <div class="project-body">
-          <h3>Garisar</h3>
-          <p>Shopify store with strong visual identity, structured product hierarchy and optimised category pages designed for search visibility.</p>
-          <div class="project-tags">
-            <span class="project-tag">Shopify</span>
-            <span class="project-tag">eCommerce</span>
-            <span class="project-tag">SEO</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://garisar.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <!-- ===== WORDPRESS ===== -->
-
-      <div class="project-card reveal" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/tintsocal.png" alt="Tint SoCal WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>Tint SoCal</h3>
-          <p>Local automotive tinting business site built on WordPress with local SEO structure, service pages and a high-converting contact flow.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Local SEO</span>
-            <span class="project-tag">Automotive</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://tintsocal.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-1" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/oldecapeautodetail.png" alt="Olde Cape Auto Detail WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>Olde Cape Auto Detail</h3>
-          <p>Auto detailing business website with service area landing pages, Google review integration and local SEO to capture nearby searches.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Local SEO</span>
-            <span class="project-tag">Automotive</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://oldecapeautodetail.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-2" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/reflectionsautorestoration.png" alt="Reflections Auto Restoration WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>Reflections Auto Restoration</h3>
-          <p>Premium auto restoration studio website with portfolio gallery, service pages and a local SEO setup targeting high-intent keywords.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Local SEO</span>
-            <span class="project-tag">Automotive</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://reflectionsautorestoration.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/hunteysclubhouse.png" alt="Hunteys Clubhouse WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>Huntey's Clubhouse</h3>
-          <p>Community and entertainment venue site built with event listings, membership info and a clean WordPress layout optimised for mobile visitors.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Events</span>
-            <span class="project-tag">Community</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://hunteysclubhouse.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-1" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/ljelevate.png" alt="LJ Elevate WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>LJ Elevate</h3>
-          <p>Professional services website with strong personal branding, structured service offerings and SEO-optimised content to drive organic leads.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Services</span>
-            <span class="project-tag">SEO</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://ljelevate.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-2" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/assaltex.png" alt="Assaltex WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>Assaltex</h3>
-          <p>B2B product site with clear service navigation, structured data markup and optimised page speed to improve search rankings and UX.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">B2B</span>
-            <span class="project-tag">SEO</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://assaltex.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/lashedbyromy.png" alt="Lashed by Romy WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>Lashed by Romy</h3>
-          <p>Beauty salon website with online booking integration, service menu, gallery and local SEO setup to attract nearby clients searching for lash artists.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Beauty</span>
-            <span class="project-tag">Local SEO</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://lashedbyromy.com/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-      <div class="project-card reveal delay-1" data-type="wordpress">
-        <div class="project-img-wrap">
-          <img src="images/portfolio/umzugwiener.png" alt="Umzug Wiener WordPress Site" loading="lazy"/>
-          <span class="project-type-badge badge-wordpress"><i class="fab fa-wordpress"></i> WordPress</span>
-        </div>
-        <div class="project-body">
-          <h3>Umzug Wiener</h3>
-          <p>Austrian moving company site with local SEO targeting Vienna, service area pages, trust signals and a lead-capture form built to generate enquiries.</p>
-          <div class="project-tags">
-            <span class="project-tag">WordPress</span>
-            <span class="project-tag">Local SEO</span>
-            <span class="project-tag">Services</span>
-          </div>
-        </div>
-        <div class="project-footer">
-          <a href="https://umzug-wiener.at/" target="_blank" rel="noopener" class="btn-visit"><i class="fas fa-external-link-alt"></i> Visit Website</a>
-        </div>
-      </div>
-
-    </div><!-- /portfolio-grid -->
-
-    <!-- CTA -->
-    <div style="margin-top:5rem;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-xl);padding:3rem;text-align:center;" class="reveal">
-      <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-rocket"></i> Ready to Join Them?</span>
-      <h2 style="font-size:1.8rem;margin-bottom:1rem;">Let's Build Your <span class="gradient-text">Next Project</span></h2>
-      <p style="color:var(--text-muted);max-width:480px;margin:0 auto 2rem;">Whether you need a Shopify store or a WordPress site, I'll build it to look great and rank well.</p>
-      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Start a Project</a>
-        <a href="pricing" class="btn btn-ghost btn-lg"><i class="fas fa-tags"></i> See Pricing</a>
+    <div style="position:relative;padding:20px;min-height:380px">
+      <div style="width:100%;height:100%;min-height:340px;border-radius:22px;overflow:hidden;background:linear-gradient(135deg,#1e2a4a,#2d3a5e)">
+        <img src="/images/portfolio/umzugwiener.png" alt="Featured project screenshot" style="width:100%;height:100%;object-fit:cover;display:block;opacity:.85">
       </div>
     </div>
-
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="nav-logo"><img src="images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a>
-        <p>Full-stack digital marketing and growth engineer based in Germany. Working globally.</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.fiverr.com/vahidsediqi_" class="social-link" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a>
-          <a href="mailto:contact@vahidsediqi.com" class="social-link"><i class="fas fa-envelope"></i></a>
-        </div>
-      </div>
-      <div class="footer-col"><h5>Services</h5><ul>
-        <li><a href="/services/seo">SEO Strategy</a></li>
-        <li><a href="/services/local-seo">Local SEO</a></li>
-        <li><a href="/services/ecom-seo">eCommerce SEO</a></li>
-        <li><a href="/services/shopify">Shopify Creation</a></li>
-        <li><a href="/services/cro">CRO</a></li>
-        <li><a href="/services/wordpress">WordPress Dev</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Company</h5><ul>
-        <li><a href="about">About Me</a></li>
-        <li><a href="portfolio">Portfolio</a></li>
-        <li class="has-mega-menu">
-        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="/tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="tools/index" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
-        </div>
-      </li>
-        <li><a href="pricing">Pricing</a></li>
-        <li><a href="contact">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Contact</h5>
-        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@vahidsediqi.com</span></div>
-        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+49 176 62521106</span></div>
-        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Leipzig & Altenburg, Germany</span></div>
+<!-- FILTER + GRID -->
+<section style="padding:0 24px 120px">
+  <div class="wrap" style="display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+      <h2 style="margin:0;font-size:clamp(26px,3vw,36px);letter-spacing:-.035em;font-weight:600">All projects <span style="font-family:'Geist Mono',monospace;font-size:15px;color:#5A6480;font-weight:400;letter-spacing:0" id="proj-count">(17)</span></h2>
+      <div class="filter-bar" id="filter-bar">
+        <button class="filter-btn active" data-cat="All">All</button>
+        <button class="filter-btn" data-cat="SEO">SEO</button>
+        <button class="filter-btn" data-cat="Shopify">Shopify</button>
+        <button class="filter-btn" data-cat="WordPress">WordPress</button>
+        <button class="filter-btn" data-cat="CRO">CRO</button>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Vahid Sediqi. All rights reserved.</p>
-      <p>Made with <span style="color:var(--danger)">♥</span> in Germany</p>
-    <div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-top:.75rem;"><a href="impressum" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Impressum</a><a href="privacy" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Privacy Policy</a><a href="terms" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Terms</a></div>
+    <div class="project-grid" id="project-grid">
+
+      <!-- Monas Chocolat — NEW -->
+      <a href="https://monaschocolat.com/" target="_blank" rel="noopener" class="project-card" data-cat="Shopify">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#ECFDF5,#D7F7E8)">
+            <img src="/images/portfolio/monaschocolat.jpg" alt="Monas Chocolat Shopify store">
+            <span class="project-cat-pill" style="color:#059669"><i class="ph-duotone ph-storefront"></i> Shopify</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Artisan chocolates · Turkey</span>
+          <h3 class="project-title">Premium handmade chocolate brand with Shopify eCommerce</h3>
+          <div class="project-tags"><span class="project-tag">Shopify</span><span class="project-tag">Custom theme</span><span class="project-tag">eCommerce</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">1.4s</span> <span class="project-metric-label">load time</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Restaurant Munich -->
+      <a href="#" class="project-card" data-cat="SEO">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#EEF0FF,#E0E4FF)">
+            <img src="/images/portfolio/garisar.png" alt="Restaurant Munich SEO">
+            <span class="project-cat-pill" style="color:#4F46E5"><i class="ph-duotone ph-magnifying-glass"></i> SEO</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Restaurant · Munich</span>
+          <h3 class="project-title">From page 4 to the Google Maps top 3 in six weeks</h3>
+          <div class="project-tags"><span class="project-tag">Local SEO</span><span class="project-tag">Google Business</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">+40%</span> <span class="project-metric-label">bookings</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Fashion Berlin Shopify -->
+      <a href="#" class="project-card" data-cat="Shopify">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#ECFDF5,#D7F7E8)">
+            <img src="/images/portfolio/lashedbyromy.png" alt="Shopify fashion store">
+            <span class="project-cat-pill" style="color:#059669"><i class="ph-duotone ph-storefront"></i> Shopify</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Fashion brand · Berlin</span>
+          <h3 class="project-title">A fast, mobile-first Shopify store built to convert</h3>
+          <div class="project-tags"><span class="project-tag">Shopify</span><span class="project-tag">Custom theme</span><span class="project-tag">CRO</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">1.2s</span> <span class="project-metric-label">load time</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- SaaS CRO Amsterdam -->
+      <a href="#" class="project-card" data-cat="CRO">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#FFF7E6,#FFEDC7)">
+            <img src="/images/portfolio/bayelon.png" alt="CRO funnel redesign">
+            <span class="project-cat-pill" style="color:#D97706"><i class="ph-duotone ph-chart-line-up"></i> CRO</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>SaaS · Amsterdam</span>
+          <h3 class="project-title">Funnel redesign that tripled checkout conversion</h3>
+          <div class="project-tags"><span class="project-tag">A/B testing</span><span class="project-tag">Hotjar</span><span class="project-tag">GA4</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">3.6%</span> <span class="project-metric-label">conv. rate</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Dental WordPress Frankfurt -->
+      <a href="#" class="project-card" data-cat="WordPress">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#E6F6FE,#D5EFFC)">
+            <img src="/images/portfolio/tavusker.png" alt="Dental WordPress site">
+            <span class="project-cat-pill" style="color:#0284C7"><i class="ph-duotone ph-laptop"></i> WordPress</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Dental practice · Frankfurt</span>
+          <h3 class="project-title">Premium practice website ranking for local treatments</h3>
+          <div class="project-tags"><span class="project-tag">WordPress</span><span class="project-tag">Local SEO</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">+65%</span> <span class="project-metric-label">new patients</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- eCommerce London Merchant Center -->
+      <a href="#" class="project-card" data-cat="SEO">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#EEF0FF,#E0E4FF)">
+            <img src="/images/portfolio/zodjewelry.png" alt="Merchant Center SEO fix">
+            <span class="project-cat-pill" style="color:#4F46E5"><i class="ph-duotone ph-magnifying-glass"></i> SEO</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>eCommerce · London</span>
+          <h3 class="project-title">Fixing hundreds of Merchant Center disapprovals</h3>
+          <div class="project-tags"><span class="project-tag">Merchant Center</span><span class="project-tag">Feeds</span><span class="project-tag">Schema</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">100%</span> <span class="project-metric-label">approved</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Cosmetics Vienna Shopify Migration -->
+      <a href="#" class="project-card" data-cat="Shopify">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#ECFDF5,#D7F7E8)">
+            <img src="/images/portfolio/zuzunga.png" alt="WooCommerce to Shopify migration">
+            <span class="project-cat-pill" style="color:#059669"><i class="ph-duotone ph-storefront"></i> Shopify</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Cosmetics · Vienna</span>
+          <h3 class="project-title">Migrating a WooCommerce store to Shopify without losing rankings</h3>
+          <div class="project-tags"><span class="project-tag">Migration</span><span class="project-tag">Technical SEO</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">0%</span> <span class="project-metric-label">traffic lost</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Auto detailing WordPress -->
+      <a href="#" class="project-card" data-cat="WordPress">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#E6F6FE,#D5EFFC)">
+            <img src="/images/portfolio/oldecapeautodetail.png" alt="Auto detailing WordPress">
+            <span class="project-cat-pill" style="color:#0284C7"><i class="ph-duotone ph-laptop"></i> WordPress</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Auto detailing · USA</span>
+          <h3 class="project-title">Local authority site driving bookings for a detailing studio</h3>
+          <div class="project-tags"><span class="project-tag">WordPress</span><span class="project-tag">Local SEO</span><span class="project-tag">Schema</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">+88%</span> <span class="project-metric-label">organic leads</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Tint shop Shopify -->
+      <a href="#" class="project-card" data-cat="Shopify">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#ECFDF5,#D7F7E8)">
+            <img src="/images/portfolio/tintsocal.png" alt="Tint shop Shopify">
+            <span class="project-cat-pill" style="color:#059669"><i class="ph-duotone ph-storefront"></i> Shopify</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Auto tinting · California</span>
+          <h3 class="project-title">Shopify store &amp; booking system for a tinting specialist</h3>
+          <div class="project-tags"><span class="project-tag">Shopify</span><span class="project-tag">Booking</span><span class="project-tag">CRO</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">+55%</span> <span class="project-metric-label">online bookings</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Umzug Wiener -->
+      <a href="#" class="project-card" data-cat="WordPress">
+        <div class="project-thumb">
+          <div class="project-thumb-inner" style="background:linear-gradient(135deg,#E6F6FE,#D5EFFC)">
+            <img src="/images/portfolio/umzugwiener.png" alt="Umzug Wiener website">
+            <span class="project-cat-pill" style="color:#0284C7"><i class="ph-duotone ph-laptop"></i> WordPress</span>
+          </div>
+        </div>
+        <div class="project-body">
+          <span class="project-client"><i class="ph ph-map-pin"></i>Moving company · Austria</span>
+          <h3 class="project-title">Local SEO &amp; WordPress rebuild for a Vienna moving company</h3>
+          <div class="project-tags"><span class="project-tag">WordPress</span><span class="project-tag">Local SEO</span></div>
+          <div class="project-foot">
+            <div><span class="project-metric">+120%</span> <span class="project-metric-label">enquiries</span></div>
+            <span class="project-arrow"><i class="ph ph-arrow-up-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section style="padding:0 24px 110px">
+  <figure data-reveal style="max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center">
+    <i class="ph-fill ph-quotes" style="font-size:44px;color:#C7D2FE"></i>
+    <blockquote style="margin:0;font-family:'Instrument Serif',serif;font-size:clamp(26px,3.4vw,40px);line-height:1.25;letter-spacing:-.01em;text-wrap:balance">&ldquo;Our conversion rate jumped from 1.1% to 3.6%. More than three times the revenue from the same traffic.&rdquo;</blockquote>
+    <figcaption style="display:flex;align-items:center;gap:12px"><span style="width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:14px;font-weight:600;background:linear-gradient(135deg,#F472B6,#DB2777)">DM</span><span style="display:flex;flex-direction:column;text-align:left;line-height:1.3"><b>David M.</b><span style="font-size:13.5px;color:#5A6480">Marketing Director, Amsterdam</span></span></figcaption>
+  </figure>
+</section>
+
+<!-- CTA -->
+<section id="contact" style="padding:0 16px 100px">
+  <div data-reveal style="position:relative;max-width:1200px;margin:0 auto;border-radius:36px;padding:72px 32px;overflow:hidden;background:linear-gradient(135deg,#3730A3,#6D28D9 55%,#0369A1);color:#fff">
+    <div style="position:absolute;width:480px;height:480px;left:-120px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.55),transparent 65%);filter:blur(30px);animation:vsBlob 20s ease-in-out infinite"></div>
+    <div style="position:relative;max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:600px">
+        <h2 style="margin:0;font-size:clamp(30px,4vw,50px);line-height:1.04;letter-spacing:-.045em;font-weight:600">Your project could be <span class="italic-accent">next.</span></h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#E3E6FF">Tell me where you want to grow — I&rsquo;ll show you how to get there.</p>
+      </div>
+      <a href="https://calendly.com/vahidsediqi/business-growth-session" style="display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:14px;background:#fff;color:#0B1530;font-weight:600;font-size:15.5px;transition:color .2s" onmouseover="this.style.color='#4F46E5'" onmouseout="this.style.color='#0B1530'"><i class="ph ph-calendar-check" style="font-size:18px;color:#4F46E5"></i> Start a project</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:0 24px 40px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:300px">
+        <a href="/"><img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:28px;width:auto"></a>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#5A6480">Full-stack digital marketing and growth engineer based in Germany. Working globally.</p>
+        <div style="display:flex;gap:8px">
+          <a href="https://www.linkedin.com/in/vahidsediqi/" style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;border:1px solid rgba(11,21,48,.08);color:#0B1530;font-size:18px"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="https://www.fiverr.com/vahidsediqi_" style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;border:1px solid rgba(11,21,48,.08);color:#0B1530;font-size:18px"><i class="ph ph-briefcase"></i></a>
+          <a href="mailto:contact@vahidsediqi.com" style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;border:1px solid rgba(11,21,48,.08);color:#0B1530;font-size:18px"><i class="ph ph-envelope-simple"></i></a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
+        <span style="font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480">Services</span>
+        <a href="/services/seo">SEO Strategy</a><a href="/services/local-seo">Local SEO</a><a href="/services/ecom-seo">eCommerce SEO</a><a href="/services/shopify">Shopify</a><a href="/services/cro">CRO</a><a href="/services/wordpress">WordPress Dev</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
+        <span style="font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480">Company</span>
+        <a href="/about">About</a><a href="/tools/">Free Tools</a><a href="/portfolio">Portfolio</a><a href="/pricing">Pricing</a><a href="/contact">Contact</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:#1E2A4A">
+        <span style="font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480">Contact</span>
+        <span style="display:flex;gap:8px;align-items:center"><i class="ph ph-phone" style="color:#4F46E5"></i>+49 176 62521106</span>
+        <span style="display:flex;gap:8px;align-items:center"><i class="ph ph-map-pin" style="color:#4F46E5"></i>Leipzig &amp; Altenburg, DE</span>
+        <span style="display:flex;gap:8px;align-items:center"><i class="ph ph-clock" style="color:#4F46E5"></i>Mon&ndash;Fri, 9am&ndash;6pm CET</span>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#5A6480">
+      <span>&copy; 2026 Vahid Sediqi. Made in Germany.</span>
+      <div style="display:flex;gap:20px"><a href="/impressum" style="color:#5A6480">Impressum</a><a href="/privacy" style="color:#5A6480">Privacy</a><a href="/terms" style="color:#5A6480">Terms</a></div>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
 <script>
-  // Filter logic
-  const btns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('active'));
+// Progress bar
+(function(){
+  var bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(bar) bar.style.width = (h>0 ? (window.scrollY/h)*100 : 0)+'%';
+  }, {passive:true});
+})();
+
+// Reveal
+(function(){
+  var ease='cubic-bezier(.2,.7,.2,1)';
+  var els=document.querySelectorAll('[data-reveal]');
+  els.forEach(function(el){el.style.opacity='0';el.style.transform='translateY(28px)';el.style.transition='opacity .9s '+ease+', transform .9s '+ease;el.style.transitionDelay=(el.dataset.delay||0)+'ms';});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);e.target.style.opacity='1';e.target.style.transform='translateY(0)';});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+
+// Filter
+(function(){
+  var btns=document.querySelectorAll('.filter-btn');
+  var cards=document.querySelectorAll('.project-card');
+  var count=document.getElementById('proj-count');
+  btns.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      btns.forEach(function(b){b.classList.remove('active');});
       btn.classList.add('active');
-      const f = btn.dataset.filter;
-      cards.forEach(c => {
-        c.style.display = (f === 'all' || c.dataset.type === f) ? '' : 'none';
+      var cat=btn.dataset.cat;
+      var visible=0;
+      cards.forEach(function(c){
+        var show=cat==='All'||c.dataset.cat===cat;
+        c.style.display=show?'flex':'none';
+        if(show)visible++;
       });
+      if(count)count.textContent='('+visible+')';
     });
   });
+})();
+
+// Mega menu
+(function(){
+  var h=document.getElementById("vsHeader");if(!h)return;
+  var triggers=h.querySelectorAll(".vs-trigger");
+  var burger=h.querySelector(".vs-burger");
+  var hoverOK=window.matchMedia("(hover:hover) and (min-width:981px)");
+  var current=null;
+  function open(id){current=id;h.classList.toggle("is-open",!!id);triggers.forEach(function(t){t.setAttribute("aria-expanded",t.getAttribute("aria-controls")===id?"true":"false");});h.querySelectorAll(".vs-panel").forEach(function(p){p.classList.toggle("is-open",p.id===id);});}
+  function close(){open(null);}
+  triggers.forEach(function(t){
+    var id=t.getAttribute("aria-controls");
+    t.addEventListener("mouseenter",function(){if(hoverOK.matches)open(id);});
+    t.addEventListener("click",function(){if(window.innerWidth<=980){location.href=id==="vs-services"?"/services/":"/tools/";return;}open(current===id?null:id);});
+  });
+  h.addEventListener("mouseleave",function(){if(hoverOK.matches)close();});
+  h.querySelector("[data-close]").addEventListener("click",close);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){close();h.classList.remove("is-mobile");}});
+  burger.addEventListener("click",function(){var on=h.classList.toggle("is-mobile");burger.setAttribute("aria-expanded",on);burger.innerHTML=on?"<i class=\"ph ph-x\"></i>":"<i class=\"ph ph-list\"></i>";});
+  window.addEventListener("scroll",function(){h.classList.toggle("is-scrolled",window.scrollY>12);},{passive:true});
+  h.querySelectorAll(".vs-chip").forEach(function(c){c.addEventListener("click",function(){var f=c.dataset.filter;h.querySelectorAll(".vs-chip").forEach(function(x){x.classList.toggle("is-active",x===c);});h.querySelectorAll(".vs-tool").forEach(function(t){t.hidden=f!=="all"&&t.dataset.cat!==f;});});});
+})();
 </script>
-<script src="//code.tidio.co/ptbza6vc35cswdhqksntfsqky2htkgfm.js" async></script>
 </body>
 </html>

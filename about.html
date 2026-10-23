@@ -1,192 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Vahid Sediqi — Digital Growth Engineer, Germany</title>
-  <meta name="description" content="7+ years helping businesses grow online. SEO, Shopify, WordPress, Google Ads & CRO. Based in Germany. Rated 5.0 on Fiverr."/>
-  <meta name="keywords" content="Vahid Sediqi, digital marketing expert Germany, SEO specialist, Shopify developer, WordPress developer, vahidsediqi"/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Vahid Sediqi",
-    "jobTitle": "Full-Stack Digital Marketing & Growth Engineer",
-    "url": "https://www.vahidsediqi.com",
-    "image": "https://www.vahidsediqi.com/images/vahid-sediqi.png?v=2",
-    "address": { "@type": "PostalAddress", "addressCountry": "DE" },
-    "email": "contact@vahidsediqi.com",
-    "telephone": "+4917662521106",
-    "sameAs": ["https://www.fiverr.com/vahidsediqi_"]
-  }
-  </script>
-  <link rel="canonical" href="https://www.vahidsediqi.com/about.html"/>
-  <link rel="alternate" hreflang="en" href="https://vahidsediqi.com/about"/>
-  <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/about/"/>
-  <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/about"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png?v=3"/>
-  <link rel="apple-touch-icon" href="images/favicon.png?v=3"/>
-  <link rel="stylesheet" href="css/style.v9.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Vahid Sediqi — SEO &amp; Shopify Expert</title>
+<meta name="description" content="Half marketer, half engineer, all growth. Vahid Sediqi helps businesses grow through SEO, Shopify and conversion optimisation.">
+<link rel="canonical" href="https://vahidsediqi.com/about">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#F6F7FB;color:#0B1530;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+*{box-sizing:border-box}
+a{text-decoration:none;color:inherit}
+@keyframes vsBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+@keyframes barGrow{from{width:0}to{width:var(--pct)}}
+
+#progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;background:linear-gradient(90deg,#4F46E5,#7C3AED,#0EA5E9);border-radius:0 3px 3px 0}
+
+/* NAV */
+.vs-header{--ink:#0B1530;--ink2:#3A4566;--muted:#5A6480;--brand:#4F46E5;--line:rgba(11,21,48,.08);position:sticky;top:0;z-index:1000;padding:14px 20px 0;font-family:'Geist',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.vs-header *{box-sizing:border-box}
+.vs-header a{text-decoration:none;color:inherit}
+.vs-nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:18px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:all .35s ease}
+.vs-header.is-scrolled .vs-nav,.vs-header.is-open .vs-nav{background:rgba(255,255,255,.85);border-color:var(--line);box-shadow:0 10px 30px -14px rgba(11,21,48,.25)}
+.vs-logo{display:flex;align-items:center}
+.vs-links{display:flex;align-items:center;gap:2px;font-size:14.5px}
+.vs-link,.vs-trigger{display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:10px;border:0;background:transparent;color:var(--ink2);font:inherit;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.vs-link:hover,.vs-trigger:hover,.vs-trigger[aria-expanded="true"]{background:rgba(79,70,229,.08);color:var(--ink)}
+.vs-trigger i{font-size:12px;transition:transform .3s}
+.vs-trigger[aria-expanded="true"] i{transform:rotate(180deg)}
+.vs-actions{display:flex;align-items:center;gap:10px}
+.vs-lang{display:flex;font:12px 'Geist Mono',monospace;border:1px solid rgba(11,21,48,.1);border-radius:9px;overflow:hidden}
+.vs-lang a{padding:6px 8px;color:var(--muted)}
+.vs-lang a.is-active{background:var(--ink);color:#fff}
+.vs-cta{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:var(--ink);color:#fff!important;font-size:14px;font-weight:500;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(11,21,48,.6);transition:transform .25s}
+.vs-cta:hover{transform:translateY(-1px)}
+.vs-burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:20px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center}
+.vs-backdrop{position:fixed;inset:0;z-index:-1;background:rgba(11,21,48,.22);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s}
+.vs-header.is-open .vs-backdrop{opacity:1;pointer-events:auto}
+.vs-panels{position:absolute;left:20px;right:20px;top:100%;padding-top:10px;pointer-events:none}
+.vs-panels-inner{max-width:1200px;margin:0 auto;display:grid}
+.vs-panel{grid-area:1/1;align-self:start;opacity:0;transform:translateY(-8px) scale(.985);pointer-events:none;transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1);max-height:calc(100vh - 110px);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;border-radius:24px;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border:1px solid var(--line);box-shadow:0 40px 90px -30px rgba(11,21,48,.45)}
+.vs-panel.is-open{opacity:1;transform:none;pointer-events:auto}
+.vs-panel-body{display:flex;flex-wrap:wrap}
+.vs-cols{flex:2 1 520px;padding:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px}
+.vs-col{display:flex;flex-direction:column;gap:4px}
+.vs-col-title{display:flex;align-items:center;gap:8px;padding:0 10px 8px;font:500 11.5px 'Geist Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.vs-col-title::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c)}
+.vs-item{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:14px;transition:background .2s}
+.vs-item:hover{background:#F3F4FA}
+.vs-ico{width:38px;height:38px;flex-shrink:0;border-radius:11px;display:grid;place-items:center;background:var(--t);color:var(--c);font-size:20px}
+.vs-item-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.vs-item-text b{display:flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+.vs-item-text span{font-size:13px;line-height:1.45;color:var(--muted)}
+.vs-badge{font-size:10.5px;font-weight:500;padding:2px 6px;border-radius:6px;background:#EEF0FF;color:#4338CA}
+.vs-side{flex:1 1 280px;padding:14px}
+.vs-feature{position:relative;height:100%;min-height:260px;border-radius:18px;padding:24px;overflow:hidden;display:flex;flex-direction:column;gap:14px}
+.vs-feature.dark{background:#0B1530;color:#fff}
+.vs-feature.dark::before,.vs-feature.dark::after{content:"";position:absolute;border-radius:50%;filter:blur(10px)}
+.vs-feature.dark::before{width:280px;height:280px;right:-90px;top:-110px;background:radial-gradient(circle,rgba(124,58,237,.6),transparent 65%)}
+.vs-feature.dark::after{width:240px;height:240px;left:-90px;bottom:-120px;background:radial-gradient(circle,rgba(14,165,233,.45),transparent 65%)}
+.vs-feature.light{background:linear-gradient(160deg,#EEF0FF,#F3EDFF 55%,#E6F6FE);border:1px solid rgba(79,70,229,.12)}
+.vs-feature > *{position:relative;z-index:1}
+.vs-pill{align-self:flex-start;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:12px}
+.vs-feature.dark .vs-pill{background:rgba(255,255,255,.12);color:#fff}
+.vs-feature.light .vs-pill{background:#fff;color:#4338CA;font-weight:500}
+.vs-feature h4{margin:0;font-size:22px;font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.vs-feature p{margin:0;font-size:14px;line-height:1.55}
+.vs-feature.dark p{color:#B7C0DA}.vs-feature.light p{color:var(--ink2)}
+.vs-feature svg{width:100%;height:64px;margin-top:auto}
+.vs-btn{display:flex;justify-content:center;align-items:center;gap:8px;padding:12px;border-radius:12px;font-weight:600;font-size:14.5px;transition:transform .25s}
+.vs-btn:hover{transform:translateY(-1px)}
+.vs-btn.white{background:#fff;color:var(--ink)!important}
+.vs-btn.grad{margin-top:auto;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff!important;box-shadow:0 12px 24px -12px rgba(79,70,229,.8)}
+.vs-bars{display:flex;align-items:flex-end;gap:8px;height:90px;padding:12px;border-radius:14px;background:#fff}
+.vs-bars i{flex:1;border-radius:5px;background:rgba(79,70,229,var(--o))}
+.vs-bars i:last-child{background:linear-gradient(180deg,#7C3AED,#4F46E5)}
+.vs-roi{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2)}
+.vs-roi b{color:var(--ink);font-family:'Geist Mono',monospace}
+.vs-tools{flex:2 1 520px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.vs-chips{display:flex;flex-wrap:wrap;gap:6px}
+.vs-chip{border:1px solid rgba(11,21,48,.1);cursor:pointer;font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;background:#fff;color:var(--ink2);transition:all .2s}
+.vs-chip.is-active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.vs-tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:4px}
+.vs-tool{display:flex;gap:12px;align-items:center;padding:11px;border-radius:14px;transition:background .2s}
+.vs-tool:hover{background:#F3F4FA}
+.vs-tool[hidden]{display:none}
+.vs-tool .vs-ico{width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 10px -6px rgba(11,21,48,.25)}
+.vs-tool .vs-item-text{flex:1}
+.vs-tool .vs-item-text span{font-size:12.5px}
+.vs-tool > .ph-arrow-up-right{color:#9AA2BC;font-size:15px}
+.vs-panel-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 26px;background:#F6F7FB;border-top:1px solid rgba(11,21,48,.06);font-size:13.5px;color:var(--ink2)}
+.vs-panel-foot span{display:flex;align-items:center;gap:8px}
+.vs-panel-foot span i{font-size:18px}
+.vs-panel-foot a{display:flex;align-items:center;gap:6px;font-weight:500}
+.vs-panel-foot a:hover{color:var(--brand)}
+.vs-panel-foot span a{color:var(--brand)}
+@media (max-width:980px){.vs-links,.vs-lang{display:none}.vs-burger{display:flex}.vs-header.is-mobile .vs-links{display:flex;flex-direction:column;align-items:stretch;position:absolute;left:20px;right:20px;top:100%;margin-top:10px;padding:10px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -24px rgba(11,21,48,.4);font-size:16px}.vs-header.is-mobile .vs-link,.vs-header.is-mobile .vs-trigger{padding:14px;justify-content:space-between}.vs-panels{position:static;padding:0}.vs-header.is-mobile .vs-panels{display:none}}
+@media (max-width:560px){.vs-cta span{display:none}}
+
+/* LAYOUT */
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#4F46E5;margin:0}
+.italic-accent{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.section-title{margin:0;font-size:clamp(28px,3.5vw,44px);line-height:1.08;letter-spacing:-.04em;font-weight:600}
+
+/* SKILL BARS */
+.skill-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.skill-bar-track{grid-column:1/-1;height:6px;border-radius:999px;background:rgba(11,21,48,.08);overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#4F46E5,#7C3AED);width:0;transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;gap:0}
+.timeline-item{display:grid;grid-template-columns:80px 1px 1fr;gap:0 24px;align-items:start}
+.timeline-year{font-family:'Geist Mono',monospace;font-size:13px;font-weight:500;color:#A5B4FC;padding-top:4px;text-align:right}
+.timeline-line{width:1px;background:rgba(255,255,255,.12);position:relative;align-self:stretch}
+.timeline-line::before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:#818CF8;border:2px solid #0B1530}
+.timeline-content{padding:0 0 40px}
+.timeline-content h4{margin:0 0 6px;font-size:17px;font-weight:600;color:#fff}
+.timeline-content p{margin:0;font-size:14.5px;line-height:1.6;color:#B7C0DA}
+
+/* TOOLS GRID */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,120px),1fr));gap:10px}
+.tool-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 10px;border-radius:18px;background:#fff;border:1px solid rgba(11,21,48,.07);text-align:center;transition:transform .3s,box-shadow .3s}
+.tool-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px -14px rgba(79,70,229,.3)}
+.tool-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:22px}
+.tool-name{font-size:12.5px;font-weight:500;color:#3A4566;line-height:1.25}
+
+/* CERT CARDS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:14px}
+.cert-card{display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;background:#fff;border:1px solid rgba(11,21,48,.07)}
+.cert-icon{width:46px;height:46px;border-radius:14px;flex-shrink:0;display:grid;place-items:center;font-size:24px}
+.cert-info{display:flex;flex-direction:column;gap:3px}
+.cert-info b{font-size:15px;font-weight:600}
+.cert-info span{font-size:13px;color:#5A6480}
+
+/* VALUE CARDS */
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:14px}
+.value-card{padding:24px;border-radius:22px;background:#fff;border:1px solid rgba(11,21,48,.07);display:flex;flex-direction:column;gap:14px}
+.value-icon{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:22px}
+.value-card h4{margin:0;font-size:17px;font-weight:600;letter-spacing:-.02em}
+.value-card p{margin:0;font-size:14.5px;line-height:1.6;color:#5A6480}
+
+footer a{color:#1E2A4A}
+footer a:hover{color:#4F46E5}
+</style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a>
-    <ul class="nav-menu">
-      <li><a href="/">Home</a></li>
-      <li class="active"><a href="about">About</a></li>
-      <li class="has-mega-menu">
-        <a href="services/index">Services <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu">
-          <div class="mega-menu-col">
-            <h4>SEO Services</h4>
-            <ul>
-              <li><a href="/services/seo"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
-              <li><a href="/services/local-seo"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li>
-              <li><a href="/services/ecom-seo"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li>
-            </ul>
-          </div>
-          <div class="mega-menu-col">
-            <h4>Web Development</h4>
-            <ul>
-              <li><a href="/services/shopify"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
-              <li><a href="/services/wordpress"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li>
-            </ul>
-          </div>
-          <div class="mega-menu-col">
-            <h4>Growth & Conversion</h4>
-            <ul>
-              <li><a href="/services/cro"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
-            </ul>
-          </div>
-          <div class="mega-menu-featured">
-            <div class="badge">Free Audit</div>
-            <h5>Not sure where to start?</h5>
-            <p>Get a free website & SEO audit — no strings attached.</p>
-            <a href="contact" class="btn btn-primary btn-sm">Claim Free Audit</a>
-          </div>
-        </div>
-      </li>
-      <li class="has-mega-menu">
-        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="/tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="tools/index" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
-        </div>
-      </li><li><a href="portfolio">Portfolio</a></li><li><a href="pricing">Pricing</a></li>
-      <li><a href="contact">Contact</a></li>
-    </ul>
-    <div class="lang-switch"><a href="/about" class="active"><span class="flag">🇺🇸</span> EN</a><span class="lang-sep"></span><a href="/de/about"><span class="flag">🇩🇪</span> DE</a></div>
-    <a href="contact" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
-    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index" class="m-link">Home</a>
-  <a href="about" class="m-link">About</a>
-  <div class="m-link has-sub" style="cursor:pointer">Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
-  <div class="m-sub">
-    <a href="/services/seo"><i class="fas fa-search"></i> SEO Overview</a>
-    <a href="/services/local-seo"><i class="fas fa-map-marker-alt"></i> Local SEO</a>
-    <a href="/services/ecom-seo"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a>
-    <a href="/services/shopify"><i class="fab fa-shopify"></i> Shopify Creation</a>
-    <a href="/services/wordpress"><i class="fab fa-wordpress"></i> WordPress Dev</a>
-    <a href="/services/cro"><i class="fas fa-chart-line"></i> CRO</a>
-  </div>
-  <a href="/tools/" class="m-link">Tools</a><a href="portfolio" class="m-link">Portfolio</a><a href="pricing" class="m-link">Pricing</a>
-  <a href="contact" class="m-link">Contact</a>
-  <a href="contact" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
-</div>
+<div id="progress-bar"></div>
 
-<!-- PAGE HERO -->
-<section class="page-hero" style="padding-top:calc(var(--nav-h) + 40px);padding-bottom:40px;">
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="/">Home</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>About</span>
+<!-- NAV -->
+<header class="vs-header" id="vsHeader">
+  <div class="vs-backdrop" data-close></div>
+  <nav class="vs-nav" aria-label="Main">
+    <a href="/" class="vs-logo">
+      <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:38px;width:auto;display:block">
+    </a>
+    <div class="vs-links">
+      <button class="vs-trigger" aria-expanded="false" aria-controls="vs-services">Services <i class="ph ph-caret-down"></i></button>
+      <button class="vs-trigger" aria-expanded="false" aria-controls="vs-tools">Free Tools <i class="ph ph-caret-down"></i></button>
+      <a class="vs-link" href="/portfolio">Portfolio</a>
+      <a class="vs-link" href="/about">About</a>
+      <a class="vs-link" href="/pricing">Pricing</a>
+      <a class="vs-link" href="/contact">Contact</a>
     </div>
-    <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-user"></i> About Me</span>
-    <h1>About <span class="gradient-text">Vahid Sediqi</span> — Full-Stack Digital Marketing &amp; Growth Engineer</h1>
-    <p class="subtitle" style="margin-bottom:0;">7+ years of turning websites into growth engines for businesses across Germany and the world.</p>
-  </div>
-</section>
-
-<!-- ABOUT MAIN -->
-<section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
-      <div class="reveal-left">
-        <div style="position:relative;padding:2rem 2rem 3rem;">
-
-          <!-- Glow ring behind photo -->
-          <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(79,127,255,.18) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
-
-          <!-- Photo frame -->
-          <div style="position:relative;border-radius:var(--r-xl);overflow:hidden;border:2px solid rgba(79,127,255,.25);box-shadow:0 24px 64px rgba(0,0,0,.55),0 0 0 1px rgba(79,127,255,.1);">
-            <img
-              src="images/vahid-sediqi.png?v=2"
-              alt="Vahid Sediqi — Full-Stack Digital Marketing &amp; Growth Engineer based in Germany"
-              style="width:100%;height:520px;object-fit:cover;object-position:center top;display:block;"
-              loading="eager"
-            />
-            <!-- Name overlay at bottom -->
-            <div style="position:absolute;bottom:0;left:0;right:0;padding:2rem 1.5rem 1.5rem;background:linear-gradient(to top,rgba(4,8,26,.95) 0%,transparent 100%);">
-              <div style="font-family:var(--font-h);font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:.2rem;">Vahid Sediqi</div>
-              <div style="font-size:.82rem;color:var(--text-2);margin-bottom:.6rem;">Full-Stack Digital Marketing &amp; Growth Engineer</div>
-              <div style="display:flex;align-items:center;gap:1.2rem;">
-                <div style="display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--text-3);">
-                  <i class="fas fa-map-marker-alt" style="color:var(--accent);"></i> Germany
-                </div>
-                <div style="display:flex;align-items:center;gap:.3rem;font-size:.78rem;color:var(--gold);">
-                  ★★★★★ <span style="color:var(--text-3);margin-left:.2rem;">5.0 Fiverr</span>
-                </div>
-              </div>
+    <div class="vs-actions">
+      <span class="vs-lang"><a href="/" class="is-active">EN</a><a href="/de/">DE</a></span>
+      <a href="/contact" class="vs-cta"><span>Free Audit</span> <i class="ph ph-arrow-up-right"></i></a>
+      <button class="vs-burger" aria-label="Open menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+    </div>
+  </nav>
+  <div class="vs-panels">
+    <div class="vs-panels-inner">
+      <div class="vs-panel" id="vs-services" role="region" aria-label="Services">
+        <div class="vs-panel-body">
+          <div class="vs-cols">
+            <div class="vs-col" style="--c:#4F46E5;--t:linear-gradient(135deg,#EEF0FF,#E0E4FF)">
+              <span class="vs-col-title">SEO</span>
+              <a class="vs-item" href="/services/seo"><span class="vs-ico"><i class="ph-duotone ph-magnifying-glass"></i></span><span class="vs-item-text"><b>SEO Strategy <em class="vs-badge" style="font-style:normal">Popular</em></b><span>Rank higher, stay there</span></span></a>
+              <a class="vs-item" href="/services/local-seo"><span class="vs-ico"><i class="ph-duotone ph-map-pin"></i></span><span class="vs-item-text"><b>Local SEO</b><span>Own Google Maps locally</span></span></a>
+              <a class="vs-item" href="/services/ecom-seo"><span class="vs-ico"><i class="ph-duotone ph-shopping-cart"></i></span><span class="vs-item-text"><b>eCommerce SEO</b><span>More buyers, more revenue</span></span></a>
+            </div>
+            <div class="vs-col" style="--c:#0284C7;--t:linear-gradient(135deg,#E6F6FE,#D5EFFC)">
+              <span class="vs-col-title">Web Development</span>
+              <a class="vs-item" href="/services/shopify"><span class="vs-ico"><i class="ph-duotone ph-storefront"></i></span><span class="vs-item-text"><b>Shopify Stores <em class="vs-badge" style="font-style:normal">Popular</em></b><span>Fast, high-converting shops</span></span></a>
+              <a class="vs-item" href="/services/wordpress"><span class="vs-ico"><i class="ph-duotone ph-laptop"></i></span><span class="vs-item-text"><b>WordPress Development</b><span>Custom, SEO-ready sites</span></span></a>
+            </div>
+            <div class="vs-col" style="--c:#D97706;--t:linear-gradient(135deg,#FFF7E6,#FFEDC7)">
+              <span class="vs-col-title">Growth</span>
+              <a class="vs-item" href="/services/cro"><span class="vs-ico"><i class="ph-duotone ph-chart-line-up"></i></span><span class="vs-item-text"><b>Conversion Optimisation</b><span>Turn traffic into sales</span></span></a>
             </div>
           </div>
-
-          <!-- Floating stat badges -->
-          <div class="about-badge-card" style="bottom:-16px;right:0;">
-            <div class="ab-num" data-count="150" data-suffix="+">0+</div>
-            <div class="ab-label">Projects Done</div>
+          <div class="vs-side">
+            <div class="vs-feature dark">
+              <span class="vs-pill"><i class="ph-fill ph-gift"></i> Free &middot; 48h delivery</span>
+              <h4>Get a free website &amp; SEO audit</h4>
+              <p>See exactly what&rsquo;s holding your rankings and conversions back.</p>
+              <svg viewBox="0 0 240 70" aria-hidden="true"><defs><linearGradient id="vsA" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#818CF8" stop-opacity=".45"/><stop offset="1" stop-color="#818CF8" stop-opacity="0"/></linearGradient></defs><path d="M0,64 L30,60 L60,56 L90,50 L120,44 L150,34 L180,26 L210,16 L240,6 L240,70 L0,70 Z" fill="url(#vsA)"/><path d="M0,64 L30,60 L60,56 L90,50 L120,44 L150,34 L180,26 L210,16 L240,6" fill="none" stroke="#A5B4FC" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <a href="/contact" class="vs-btn white">Request my audit <i class="ph ph-arrow-right"></i></a>
+            </div>
           </div>
-          <div class="about-badge-card" style="top:28px;left:0;">
-            <div class="ab-num" data-count="7" data-suffix="+">0+</div>
-            <div class="ab-label">Years Exp.</div>
-          </div>
-
+        </div>
+        <div class="vs-panel-foot">
+          <span><i class="ph-duotone ph-chat-circle-dots" style="color:#4F46E5"></i>Not sure where to start? <a href="https://calendly.com/vahidsediqi/business-growth-session">Book a free 30-min call</a></span>
+          <a href="/services/">View all services <i class="ph ph-arrow-right"></i></a>
         </div>
       </div>
+      <div class="vs-panel" id="vs-tools" role="region" aria-label="Free tools">
+        <div class="vs-panel-body">
+          <div class="vs-side">
+            <div class="vs-feature light">
+              <span class="vs-pill"><i class="ph-fill ph-star"></i> Most used tool</span>
+              <h4>SEO ROI Calculator</h4>
+              <p>Estimate the traffic and revenue that ranking higher could bring you.</p>
+              <div class="vs-bars" aria-hidden="true"><i style="height:22%;--o:.18"></i><i style="height:30%;--o:.25"></i><i style="height:38%;--o:.32"></i><i style="height:48%;--o:.39"></i><i style="height:60%;--o:.46"></i><i style="height:74%;--o:.53"></i><i style="height:92%"></i></div>
+              <div class="vs-roi"><span>Projected 12-mo revenue</span><b>+&euro;84,200</b></div>
+              <a href="/tools/seo-roi-calculator" class="vs-btn grad">Calculate my ROI <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="vs-tools">
+            <div class="vs-chips" role="tablist">
+              <button class="vs-chip is-active" data-filter="all">All</button>
+              <button class="vs-chip" data-filter="seo">SEO</button>
+              <button class="vs-chip" data-filter="technical">Technical</button>
+              <button class="vs-chip" data-filter="marketing">Marketing</button>
+            </div>
+            <div class="vs-tool-grid">
+              <a class="vs-tool" data-cat="seo" href="/tools/seo-roi-calculator" style="--c:#4F46E5"><span class="vs-ico"><i class="ph-duotone ph-calculator"></i></span><span class="vs-item-text"><b>SEO ROI Calculator</b><span>Forecast traffic &amp; revenue</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="seo" href="/tools/onpage-seo-checker" style="--c:#4F46E5"><span class="vs-ico"><i class="ph-duotone ph-browser"></i></span><span class="vs-item-text"><b>On-Page SEO Checker</b><span>Audit any page instantly</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="seo" href="/tools/meta-tag-checker" style="--c:#7C3AED"><span class="vs-ico"><i class="ph-duotone ph-tag"></i></span><span class="vs-item-text"><b>Meta Tag Checker</b><span>Titles &amp; descriptions</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="technical" href="/tools/shopify-vs-woocommerce-calculator" style="--c:#0284C7"><span class="vs-ico"><i class="ph-duotone ph-storefront"></i></span><span class="vs-item-text"><b>Shopify vs WooCommerce</b><span>Platform cost calculator</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="marketing" href="/tools/google-ads-budget-calculator" style="--c:#D97706"><span class="vs-ico"><i class="ph-duotone ph-google-logo"></i></span><span class="vs-item-text"><b>Google Ads Budget Calc</b><span>Plan ad spend &amp; ROAS</span></span><i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="vs-panel-foot">
+          <span><i class="ph-duotone ph-lock-simple-open" style="color:#10B981"></i>All tools are 100% free &mdash; no signup, no credit card.</span>
+          <a href="/tools/">Browse all tools <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-      <div class="reveal-right">
-        <span class="tag mb-3"><i class="fas fa-star"></i> My Story</span>
-        <h2 style="margin-bottom:1.5rem;">Vahid Sediqi Helps Businesses <span class="gradient-text">Win Online</span></h2>
-        <p style="margin-bottom:1.2rem;">Hi, I'm Vahid Sediqi — a full-stack digital marketing and growth engineer based in Germany. For over 7 years, I've been helping businesses of all sizes build a powerful online presence, attract more customers, and grow their revenue.</p>
-        <p style="margin-bottom:1.2rem;">My journey began with a deep love for understanding how search engines work. I was fascinated by the idea that the right combination of strategy and technical knowledge could take a website from invisible to dominating the first page of Google. That curiosity turned into a career, and that career turned into a passion for delivering real, measurable results.</p>
-        <p style="margin-bottom:1.2rem;">Over the years, I've expanded my expertise beyond SEO to include full web development on <a href="/services/shopify" style="color:var(--accent-2);text-decoration:none;font-weight:600;">Shopify</a> and <a href="/services/wordpress" style="color:var(--accent-2);text-decoration:none;font-weight:600;">WordPress</a>, <a href="/services/cro" style="color:var(--accent-2);text-decoration:none;font-weight:600;">conversion rate optimisation</a>, and Google Ads management. This combination of skills is rare — and it's what makes me uniquely effective. I can see the full picture of your online presence and fix problems at every level, from technical code to marketing copy.</p>
-        <p style="margin-bottom:2rem;">Based in Germany and working globally, I've had the privilege of helping restaurants <a href="/services/local-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">rank on Google Maps</a>, <a href="/services/ecom-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">eCommerce brands</a> triple their organic traffic, and <a href="/services/local-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">local businesses</a> go from zero online presence to market leader in their area.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="contact" class="btn btn-primary"><i class="fas fa-rocket"></i> Work With Me</a>
-          <a href="services/index" class="btn btn-outline"><i class="fas fa-eye"></i> My Services</a>
+<!-- HERO -->
+<section style="position:relative;margin-top:-76px;padding:150px 24px 80px;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(11,21,48,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(11,21,48,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 20%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 70% at 50% 20%,#000 30%,transparent 75%)"></div>
+    <div style="position:absolute;width:560px;height:560px;left:5%;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.22),transparent 65%);filter:blur(30px);animation:vsBlob 18s ease-in-out infinite"></div>
+    <div style="position:absolute;width:500px;height:500px;right:5%;top:-80px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.18),transparent 65%);filter:blur(30px);animation:vsBlob 22s ease-in-out infinite reverse"></div>
+  </div>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,500px),1fr));gap:64px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <div data-reveal style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5A6480"><a href="/" style="color:#5A6480">Home</a><i class="ph ph-caret-right" style="font-size:11px"></i><span style="color:#0B1530;font-weight:500">About</span></div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <p class="eyebrow" data-reveal>The person behind the projects</p>
+        <h1 data-reveal data-delay="80" style="margin:0;font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.045em;font-weight:600;text-wrap:balance">Half marketer. Half engineer. <span class="italic-accent" style="background:linear-gradient(100deg,#4F46E5,#7C3AED 45%,#0EA5E9);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:6px">All growth.</span></h1>
+        <p data-reveal data-delay="160" style="margin:0;font-size:18px;line-height:1.7;color:#3A4566;max-width:520px">I help businesses grow through search, speed and conversion — combining technical precision with data-driven strategy to build traffic that actually converts.</p>
+      </div>
+      <div data-reveal data-delay="240" style="display:flex;flex-wrap:wrap;gap:10px">
+        <a href="https://calendly.com/vahidsediqi/business-growth-session" style="display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:14px;background:#0B1530;color:#fff;font-weight:600;font-size:15px;transition:transform .25s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''"><i class="ph ph-calendar-check" style="font-size:18px;color:#818CF8"></i> Book a free call</a>
+        <a href="/portfolio" style="display:inline-flex;align-items:center;gap:9px;padding:14px 20px;border-radius:14px;background:#fff;border:1px solid rgba(11,21,48,.1);color:#0B1530;font-weight:600;font-size:15px;transition:all .25s" onmouseover="this.style.borderColor='#4F46E5';this.style.color='#4F46E5'" onmouseout="this.style.borderColor='rgba(11,21,48,.1)';this.style.color='#0B1530'">View my work <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div data-reveal data-delay="320" style="display:flex;flex-wrap:wrap;gap:10px;padding-top:8px">
+        <span style="display:flex;align-items:center;gap:8px;font-size:14px;color:#5A6480"><i class="ph-fill ph-map-pin" style="color:#4F46E5"></i>Leipzig &amp; Altenburg, Germany</span>
+        <span style="display:flex;align-items:center;gap:8px;font-size:14px;color:#5A6480"><i class="ph-fill ph-globe" style="color:#7C3AED"></i>Working globally</span>
+      </div>
+    </div>
+    <div data-reveal data-delay="100" style="position:relative">
+      <div style="position:relative;border-radius:30px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(135deg,#1E2A4A,#2D3A5E);box-shadow:0 40px 80px -30px rgba(79,70,229,.4)">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#2d3a5e,#3d4e7a,#1e2a4a);display:flex;align-items:center;justify-content:center">
+          <i class="ph ph-user-circle" style="font-size:140px;color:rgba(165,180,252,.3)"></i>
+        </div>
+        <div style="position:absolute;bottom:20px;left:20px;right:20px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:16px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15)">
+            <span style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#4F46E5,#7C3AED);display:grid;place-items:center;flex-shrink:0"><i class="ph-fill ph-map-pin" style="font-size:20px;color:#fff"></i></span>
+            <span style="display:flex;flex-direction:column;gap:2px"><b style="color:#fff;font-size:14px">Currently based in</b><span style="color:#A5B4FC;font-size:13px">Leipzig, Germany</span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:16px;background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.15)">
+            <span style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#F59E0B,#D97706);display:grid;place-items:center;flex-shrink:0"><i class="ph-fill ph-star" style="font-size:20px;color:#fff"></i></span>
+            <span style="display:flex;flex-direction:column;gap:2px"><b style="color:#fff;font-size:14px">5.0 avg. rating</b><span style="color:#A5B4FC;font-size:13px">150+ completed projects</span></span>
+          </div>
         </div>
       </div>
     </div>
@@ -194,222 +293,305 @@
 </section>
 
 <!-- STATS -->
-<div class="stats-section">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item reveal"><span class="num" data-count="150" data-suffix="+">0+</span><span class="label">Projects Completed</span></div>
-      <div class="stat-item reveal delay-1"><span class="num" data-count="7" data-suffix="+">0+</span><span class="label">Years Experience</span></div>
-      <div class="stat-item reveal delay-2"><span class="num" data-count="25" data-suffix="+">0+</span><span class="label">Countries Served</span></div>
-      <div class="stat-item reveal delay-3"><span class="num" data-count="98" data-suffix="%">0%</span><span class="label">Client Satisfaction</span></div>
+<section style="padding:0 24px 90px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px">
+    <div data-reveal style="padding:28px;border-radius:24px;background:#fff;border:1px solid rgba(11,21,48,.07);display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:clamp(36px,4vw,52px);font-weight:600;letter-spacing:-.04em;background:linear-gradient(100deg,#4F46E5,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent">7+</span>
+      <span style="font-size:15px;font-weight:500">Years of experience</span>
+      <span style="font-size:14px;color:#5A6480">Full-time digital marketing &amp; development</span>
+    </div>
+    <div data-reveal data-delay="80" style="padding:28px;border-radius:24px;background:#fff;border:1px solid rgba(11,21,48,.07);display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:clamp(36px,4vw,52px);font-weight:600;letter-spacing:-.04em;background:linear-gradient(100deg,#4F46E5,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent">150+</span>
+      <span style="font-size:15px;font-weight:500">Projects delivered</span>
+      <span style="font-size:14px;color:#5A6480">SEO, Shopify, WordPress and CRO</span>
+    </div>
+    <div data-reveal data-delay="160" style="padding:28px;border-radius:24px;background:#fff;border:1px solid rgba(11,21,48,.07);display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:clamp(36px,4vw,52px);font-weight:600;letter-spacing:-.04em;background:linear-gradient(100deg,#4F46E5,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent">12</span>
+      <span style="font-size:15px;font-weight:500">Countries served</span>
+      <span style="font-size:14px;color:#5A6480">Clients across Europe, USA and Asia</span>
+    </div>
+    <div data-reveal data-delay="240" style="padding:28px;border-radius:24px;background:#fff;border:1px solid rgba(11,21,48,.07);display:flex;flex-direction:column;gap:6px">
+      <span style="font-size:clamp(36px,4vw,52px);font-weight:600;letter-spacing:-.04em;background:linear-gradient(100deg,#4F46E5,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent">24h</span>
+      <span style="font-size:15px;font-weight:500">Response time</span>
+      <span style="font-size:14px;color:#5A6480">Mon&ndash;Fri, clear communication always</span>
     </div>
   </div>
-</div>
+</section>
 
-<!-- MY STORY / PHILOSOPHY -->
-<section class="section" style="background:var(--bg-2);">
-  <div class="container">
-    <div style="max-width:800px;margin:0 auto;">
-      <div class="section-header reveal" style="text-align:left;margin-bottom:3rem;">
-        <span class="tag"><i class="fas fa-lightbulb"></i> My Philosophy</span>
-        <h2>Digital Marketing Should <span class="gradient-text">Deliver ROI</span></h2>
+<!-- STORY -->
+<section style="padding:0 24px 100px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:72px;align-items:center">
+    <div data-reveal style="display:flex;flex-direction:column;gap:24px">
+      <p class="eyebrow">My story</p>
+      <h2 class="section-title">Started with a slow website. Stayed for the growth.</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;font-size:16px;line-height:1.75;color:#3A4566">
+        <p style="margin:0">I started in digital marketing when I was frustrated by a client&rsquo;s site that was losing thousands of euros a month simply because it was too slow and invisible on Google. Fixing that turned a $500 budget into $12,000 in monthly organic revenue — and I was hooked.</p>
+        <p style="margin:0">Since then I&rsquo;ve worked with restaurants, eCommerce brands, SaaS companies and local service businesses across Europe and beyond — building the technical and strategic foundations that make search engines and customers trust a site.</p>
+        <p style="margin:0">I work at the intersection of code and marketing — writing clean HTML and structured data in the morning and analysing keyword gaps in the afternoon. That dual focus is why my results last.</p>
       </div>
-      <div class="reveal">
-        <p style="margin-bottom:1.2rem;">I've seen too many businesses waste money on digital marketing that produces beautiful reports but no real results. Impressive-looking dashboards full of vanity metrics that don't translate into more customers or more revenue.</p>
-        <p style="margin-bottom:1.2rem;">My philosophy is simple: every euro spent on marketing should come back multiplied. Every strategy I create starts with this question: "How does this make money for my client?" If I can't answer that clearly, I don't do it.</p>
-        <p style="margin-bottom:1.2rem;">This results-first thinking is backed by a technical foundation that most marketers simply don't have. I can <a href="tools/onpage-seo-checker" style="color:var(--accent-2);text-decoration:none;font-weight:600;">audit a website</a>'s code, fix speed issues, implement structured data, and optimise for Core Web Vitals — all while building the content and link strategy that drives rankings.</p>
-        <p style="margin-bottom:2rem;">When you work with me, you don't just get a freelancer — you get a growth partner who is genuinely invested in your success. Your wins are my wins. Your growth is my portfolio. That's the standard I hold myself to every single day.</p>
-      </div>
+      <blockquote style="margin:0;padding:20px 20px 20px 24px;border-left:3px solid #4F46E5;border-radius:0 14px 14px 0;background:#F3F4FA;font-family:'Instrument Serif',serif;font-size:19px;line-height:1.5;color:#0B1530">&ldquo;If it doesn&rsquo;t move traffic, leads or revenue, it isn&rsquo;t worth your budget.&rdquo;</blockquote>
+    </div>
+    <div data-reveal data-delay="120" style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+      <div style="padding:24px;border-radius:22px;background:#fff;border:1px solid rgba(11,21,48,.07)"><div style="font-size:28px;font-weight:600;letter-spacing:-.03em;background:linear-gradient(100deg,#4F46E5,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent">+280%</div><div style="font-size:14px;color:#5A6480;margin-top:4px">Avg. organic revenue growth for eCommerce clients</div></div>
+      <div style="padding:24px;border-radius:22px;background:#fff;border:1px solid rgba(11,21,48,.07)"><div style="font-size:28px;font-weight:600;letter-spacing:-.03em;background:linear-gradient(100deg,#4F46E5,#7C3AED);-webkit-background-clip:text;background-clip:text;color:transparent">92%</div><div style="font-size:14px;color:#5A6480;margin-top:4px">Local SEO clients reaching top-3 Google Maps</div></div>
+      <div style="padding:24px;border-radius:22px;background:#0B1530;border:1px solid rgba(255,255,255,.06);grid-column:span 2"><div style="font-size:15px;font-weight:500;color:#fff;margin-bottom:10px">Most common client transformation:</div><div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><span style="padding:8px 14px;border-radius:10px;background:rgba(255,255,255,.1);font-size:14px;color:#B7C0DA">"We had no visibility"</span><i class="ph ph-arrow-right" style="color:#818CF8"></i><span style="padding:8px 14px;border-radius:10px;background:rgba(79,70,229,.3);font-size:14px;color:#C7D2FE;font-weight:500">"We rank #1 locally"</span></div></div>
+    </div>
+  </div>
+</section>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;" class="reveal">
-        <div class="card">
-          <i class="fas fa-heart" style="color:var(--danger);font-size:1.5rem;margin-bottom:.75rem;"></i>
-          <h4>What I Love</h4>
-          <p style="font-size:.88rem;">Solving complex digital challenges, building things that work beautifully, and seeing a client's business transform.</p>
-        </div>
-        <div class="card">
-          <i class="fas fa-ban" style="color:var(--accent);font-size:1.5rem;margin-bottom:.75rem;"></i>
-          <h4>What I Avoid</h4>
-          <p style="font-size:.88rem;">Black-hat shortcuts, overpromising, and agencies that hide behind jargon instead of showing real results.</p>
-        </div>
+<!-- JOURNEY (dark) -->
+<section style="background:#0B1530;padding:80px 24px 100px;overflow:hidden;position:relative">
+  <div style="position:absolute;width:600px;height:600px;right:-200px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.35),transparent 65%);filter:blur(40px);pointer-events:none"></div>
+  <div style="position:absolute;width:500px;height:500px;left:-200px;bottom:-200px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.25),transparent 65%);filter:blur(40px);pointer-events:none"></div>
+  <div style="position:relative;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <div style="display:flex;flex-direction:column;gap:12px;max-width:600px">
+      <p class="eyebrow" style="color:#818CF8" data-reveal>My journey</p>
+      <h2 data-reveal data-delay="80" style="margin:0;font-size:clamp(28px,3.5vw,44px);line-height:1.08;letter-spacing:-.04em;font-weight:600;color:#fff">How I got to where I am today</h2>
+    </div>
+    <div class="timeline" data-reveal data-delay="160">
+      <div class="timeline-item">
+        <span class="timeline-year">2018</span>
+        <div class="timeline-line"></div>
+        <div class="timeline-content"><h4>WordPress &amp; Web Development</h4><p>Built my first client websites on WordPress — fast, SEO-ready sites that ranked. Discovered that code and content had to work together to perform.</p></div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2019</span>
+        <div class="timeline-line"></div>
+        <div class="timeline-content"><h4>Full SEO Practice</h4><p>Went all-in on search: technical audits, keyword research, link building. First major win — tripling a client&rsquo;s organic traffic in 90 days with on-page and content overhaul.</p></div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2021</span>
+        <div class="timeline-line"></div>
+        <div class="timeline-content"><h4>Shopify &amp; eCommerce</h4><p>Expanded into Shopify builds and eCommerce SEO. Specialised in fast theme development, Merchant Center feeds and product schema that drives Google Shopping impressions.</p></div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2023</span>
+        <div class="timeline-line"></div>
+        <div class="timeline-content"><h4>CRO &amp; Paid Acquisition</h4><p>Added conversion rate optimisation and Google Ads to the stack. Started running full-funnel growth strategies — organic and paid working in parallel to maximise ROI.</p></div>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">Today</span>
+        <div class="timeline-line"></div>
+        <div class="timeline-content"><h4>Full-Stack Growth Partner</h4><p>Working with clients in DE, AT, CH, UK, US and beyond as a full-stack digital partner — strategy, implementation, and ongoing optimisation under one roof.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-tools"></i> Skills & Expertise</span>
-      <h2>A Full Stack of <span class="gradient-text">Digital Skills</span></h2>
-      <p>From technical SEO to front-end development — I bring a rare combination of skills that covers your entire digital growth stack.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
-      <div class="reveal-left">
-        <h3 style="margin-bottom:2rem;">Marketing & Growth</h3>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Technical SEO</span><span class="skill-pct">96%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="96" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Local SEO & Google Business</span><span class="skill-pct">95%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">eCommerce SEO</span><span class="skill-pct">93%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="93" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Google Ads / PPC</span><span class="skill-pct">88%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="88" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Conversion Rate Optimisation</span><span class="skill-pct">90%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="90" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">AI Content Creation</span><span class="skill-pct">92%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="92" style="width:0"></div></div>
-          </div>
+<section style="padding:80px 24px 100px">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:72px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <p class="eyebrow" data-reveal>Skills</p>
+        <h2 class="section-title" data-reveal data-delay="80">Where I spend most of my time</h2>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px" id="skill-bars">
+        <div class="skill-row" data-reveal data-delay="120">
+          <span style="font-size:14.5px;font-weight:500">SEO Strategy &amp; Technical SEO</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#5A6480">96%</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:96%"></div></div>
+        </div>
+        <div class="skill-row" data-reveal data-delay="160">
+          <span style="font-size:14.5px;font-weight:500">Shopify Development</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#5A6480">92%</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:92%"></div></div>
+        </div>
+        <div class="skill-row" data-reveal data-delay="200">
+          <span style="font-size:14.5px;font-weight:500">WordPress Development</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#5A6480">94%</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:94%"></div></div>
+        </div>
+        <div class="skill-row" data-reveal data-delay="240">
+          <span style="font-size:14.5px;font-weight:500">Conversion Rate Optimisation</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#5A6480">88%</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:88%"></div></div>
+        </div>
+        <div class="skill-row" data-reveal data-delay="280">
+          <span style="font-size:14.5px;font-weight:500">Google Ads &amp; Paid Search</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#5A6480">84%</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:84%"></div></div>
+        </div>
+        <div class="skill-row" data-reveal data-delay="320">
+          <span style="font-size:14.5px;font-weight:500">Analytics &amp; Data</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#5A6480">90%</span>
+          <div class="skill-bar-track"><div class="skill-bar-fill" style="--pct:90%"></div></div>
         </div>
       </div>
-      <div class="reveal-right">
-        <h3 style="margin-bottom:2rem;">Development & Technical</h3>
-        <div class="skills-grid">
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Shopify Development</span><span class="skill-pct">94%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="94" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">WordPress Development</span><span class="skill-pct">92%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="92" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">HTML / CSS / JavaScript</span><span class="skill-pct">89%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="89" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Google Analytics & Search Console</span><span class="skill-pct">95%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Google Merchant Center / Shopping</span><span class="skill-pct">91%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="91" style="width:0"></div></div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-header"><span class="skill-name">Page Speed & Core Web Vitals</span><span class="skill-pct">93%</span></div>
-            <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="93" style="width:0"></div></div>
-          </div>
-        </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <p class="eyebrow" data-reveal>Tools</p>
+        <h2 class="section-title" data-reveal data-delay="80">What I use every day</h2>
+      </div>
+      <div class="tools-grid" data-reveal data-delay="120">
+        <div class="tool-card"><div class="tool-icon" style="background:#EEF0FF;color:#4F46E5"><i class="ph-duotone ph-magnifying-glass"></i></div><span class="tool-name">Search Console</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#FFF7E6;color:#D97706"><i class="ph-duotone ph-chart-line-up"></i></div><span class="tool-name">GA4</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#ECFDF5;color:#059669"><i class="ph-duotone ph-tag"></i></div><span class="tool-name">Tag Manager</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#E6F6FE;color:#0284C7"><i class="ph-duotone ph-anchor"></i></div><span class="tool-name">Ahrefs</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#EEF0FF;color:#4F46E5"><i class="ph-duotone ph-magnifying-glass"></i></div><span class="tool-name">SEMrush</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#FEF2F2;color:#DC2626"><i class="ph-duotone ph-bug"></i></div><span class="tool-name">Screaming Frog</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#ECFDF5;color:#059669"><i class="ph-duotone ph-storefront"></i></div><span class="tool-name">Shopify</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#E6F6FE;color:#0284C7"><i class="ph-duotone ph-laptop"></i></div><span class="tool-name">WordPress</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#FDF4FF;color:#9333EA"><i class="ph-duotone ph-pencil-ruler"></i></div><span class="tool-name">Figma</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#FFF7E6;color:#D97706"><i class="ph-duotone ph-flame"></i></div><span class="tool-name">Hotjar</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#EEF0FF;color:#4F46E5"><i class="ph-duotone ph-code"></i></div><span class="tool-name">HTML/CSS/JS</span></div>
+        <div class="tool-card"><div class="tool-icon" style="background:#ECFDF5;color:#059669"><i class="ph-duotone ph-shopping-cart"></i></div><span class="tool-name">Merchant Center</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOOLS -->
-<section class="section" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-wrench"></i> Tools I Use</span>
-      <h2>Premium Tools for <span class="gradient-text">Professional Results</span></h2>
+<!-- CERTIFICATIONS -->
+<section style="padding:0 24px 100px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <p class="eyebrow" data-reveal>Certifications</p>
+      <h2 class="section-title" data-reveal data-delay="80">Accredited by the platforms I work on</h2>
     </div>
-    <div class="tools-grid reveal">
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#4285F4;">G</div><div class="t-name">Google Analytics</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#34A853;">G</div><div class="t-name">Search Console</div></div>
-      <div class="tool-card"><div class="t-icon"><i class="fab fa-shopify" style="color:#96BF48;font-size:1.8rem;"></i></div><div class="t-name">Shopify</div></div>
-      <div class="tool-card"><div class="t-icon"><i class="fab fa-wordpress" style="color:#21759B;font-size:1.8rem;"></i></div><div class="t-name">WordPress</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#FF6933;">A</div><div class="t-name">Ahrefs</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#FF8C00;">S</div><div class="t-name">SEMrush</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#4F7FFF;">SF</div><div class="t-name">Screaming Frog</div></div>
-      <div class="tool-card"><div class="t-icon"><i class="fab fa-google" style="color:#4285F4;font-size:1.8rem;"></i></div><div class="t-name">Google Ads</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#10B981;">D</div><div class="t-name">DataForSEO</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#6C63FF;">H</div><div class="t-name">Hotjar</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#FF6B6B;">C</div><div class="t-name">Canva</div></div>
-      <div class="tool-card"><div class="t-icon" style="font-size:1.8rem;color:#00D4FF;">AI</div><div class="t-name">AI Tools</div></div>
+    <div class="cert-grid" data-reveal data-delay="120">
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#EEF0FF;color:#4F46E5"><i class="ph-duotone ph-google-logo"></i></div>
+        <div class="cert-info"><b>Google Ads</b><span>Certified — Search &amp; Shopping</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#FFF7E6;color:#D97706"><i class="ph-duotone ph-chart-line-up"></i></div>
+        <div class="cert-info"><b>Google Analytics</b><span>GA4 Certified</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#ECFDF5;color:#059669"><i class="ph-duotone ph-storefront"></i></div>
+        <div class="cert-info"><b>Shopify Partner</b><span>Shopify Partner Program</span></div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon" style="background:#E6F6FE;color:#0284C7"><i class="ph-duotone ph-star"></i></div>
+        <div class="cert-info"><b>Fiverr Top Rated Seller</b><span>Top 1% of platform sellers</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section style="padding:0 24px 110px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <p class="eyebrow" data-reveal>My promises</p>
+      <h2 class="section-title" data-reveal data-delay="80">What every engagement looks like</h2>
+    </div>
+    <div class="values-grid" data-reveal data-delay="120">
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#EEF0FF,#E0E4FF);color:#4F46E5"><i class="ph-duotone ph-trend-up"></i></div>
+        <h4>Results first</h4>
+        <p>Every strategy is tied to a measurable outcome — traffic, leads or revenue. If it can&rsquo;t be tracked, it isn&rsquo;t worth doing.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#ECFDF5,#D7F7E8);color:#059669"><i class="ph-duotone ph-eye"></i></div>
+        <h4>Full transparency</h4>
+        <p>You always know what I&rsquo;m working on, what it has achieved and what the plan is for next month. No black boxes.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#FFF7E6,#FFEDC7);color:#D97706"><i class="ph-duotone ph-shield-check"></i></div>
+        <h4>White-hat only</h4>
+        <p>I build for the long term. Every tactic I use follows Google&rsquo;s guidelines — no shortcuts that could cost you your rankings overnight.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon" style="background:linear-gradient(135deg,#E6F6FE,#D5EFFC);color:#0284C7"><i class="ph-duotone ph-handshake"></i></div>
+        <h4>Long-term partner</h4>
+        <p>I don&rsquo;t disappear after delivery. Growth compounds, and so does the work — many clients have been with me for three or more years.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
-  <div class="container">
-    <span class="tag reveal" style="margin-bottom:1.5rem;"><i class="fas fa-handshake"></i> Let's Work Together</span>
-    <h2 class="reveal">Ready to Start Your <span class="gradient-text">Growth Journey?</span></h2>
-    <p class="reveal">Let's have a conversation about your goals. I'll tell you honestly what I can achieve for you and how long it will take.</p>
-        <div class="cta-actions reveal">
-      <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary btn-xl" target="_blank" rel="noopener">
-        <i class="fas fa-calendar-check"></i> Book a Free Call
-      </a>
-      <a href="contact" class="btn btn-outline btn-xl">
-        <i class="fas fa-file-alt"></i> Request Free Audit
-      </a>
+<section style="padding:0 16px 100px">
+  <div data-reveal style="position:relative;max-width:1200px;margin:0 auto;border-radius:36px;padding:72px 32px;overflow:hidden;background:linear-gradient(135deg,#3730A3,#6D28D9 55%,#0369A1);color:#fff">
+    <div style="position:absolute;width:480px;height:480px;left:-120px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.55),transparent 65%);filter:blur(30px);animation:vsBlob 20s ease-in-out infinite;pointer-events:none"></div>
+    <div style="position:relative;max-width:1040px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:28px">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:600px">
+        <h2 style="margin:0;font-size:clamp(30px,4vw,50px);line-height:1.04;letter-spacing:-.045em;font-weight:600">Let&rsquo;s build something worth <span class="italic-accent">ranking.</span></h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#E3E6FF">Tell me where you want to grow — I&rsquo;ll show you exactly how to get there.</p>
+      </div>
+      <a href="https://calendly.com/vahidsediqi/business-growth-session" style="display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:14px;background:#fff;color:#0B1530;font-weight:600;font-size:15.5px;transition:color .2s" onmouseover="this.style.color='#4F46E5'" onmouseout="this.style.color='#0B1530'"><i class="ph ph-calendar-check" style="font-size:18px;color:#4F46E5"></i> Book a free strategy call</a>
     </div>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="nav-logo"><img src="images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a>
-        <p>Full-stack digital marketing and growth engineer based in Germany. Working globally to help businesses grow online.</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.fiverr.com/vahidsediqi_" class="social-link" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a>
-          <a href="mailto:contact@vahidsediqi.com" class="social-link"><i class="fas fa-envelope"></i></a>
+<!-- FOOTER -->
+<footer style="padding:0 24px 40px">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:40px">
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:300px">
+        <a href="/"><img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:28px;width:auto"></a>
+        <p style="margin:0;font-size:14.5px;line-height:1.6;color:#5A6480">Full-stack digital marketing and growth engineer based in Germany. Working globally.</p>
+        <div style="display:flex;gap:8px">
+          <a href="https://www.linkedin.com/in/vahidsediqi/" style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;border:1px solid rgba(11,21,48,.08);color:#0B1530;font-size:18px"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="https://www.fiverr.com/vahidsediqi_" style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;border:1px solid rgba(11,21,48,.08);color:#0B1530;font-size:18px"><i class="ph ph-briefcase"></i></a>
+          <a href="mailto:contact@vahidsediqi.com" style="width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;border:1px solid rgba(11,21,48,.08);color:#0B1530;font-size:18px"><i class="ph ph-envelope-simple"></i></a>
         </div>
       </div>
-      <div class="footer-col"><h5>Services</h5><ul>
-        <li><a href="/services/seo">SEO Strategy</a></li>
-        <li><a href="/services/local-seo">Local SEO</a></li>
-        <li><a href="/services/ecom-seo">eCommerce SEO</a></li>
-        <li><a href="/services/shopify">Shopify Creation</a></li>
-        <li><a href="/services/cro">CRO</a></li>
-        <li><a href="/services/wordpress">WordPress Dev</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Company</h5><ul>
-        <li><a href="about">About Me</a></li>
-        <li class="has-mega-menu">
-        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="/tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="tools/index" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
-        </div>
-      </li><li><a href="portfolio">Portfolio</a></li><li><a href="pricing">Pricing</a></li>
-        <li><a href="contact">Contact</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Contact</h5>
-        <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@vahidsediqi.com</span></div>
-        <div class="footer-contact-item"><i class="fas fa-phone"></i><span>+49 176 62521106</span></div>
-        <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Leipzig & Altenburg, Germany</span></div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
+        <span style="font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480">Services</span>
+        <a href="/services/seo">SEO Strategy</a><a href="/services/local-seo">Local SEO</a><a href="/services/ecom-seo">eCommerce SEO</a><a href="/services/shopify">Shopify</a><a href="/services/cro">CRO</a><a href="/services/wordpress">WordPress Dev</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
+        <span style="font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480">Company</span>
+        <a href="/about">About</a><a href="/tools/">Free Tools</a><a href="/portfolio">Portfolio</a><a href="/pricing">Pricing</a><a href="/contact">Contact</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:#1E2A4A">
+        <span style="font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480">Contact</span>
+        <span style="display:flex;gap:8px;align-items:center"><i class="ph ph-phone" style="color:#4F46E5"></i>+49 176 62521106</span>
+        <span style="display:flex;gap:8px;align-items:center"><i class="ph ph-map-pin" style="color:#4F46E5"></i>Leipzig &amp; Altenburg, DE</span>
+        <span style="display:flex;gap:8px;align-items:center"><i class="ph ph-clock" style="color:#4F46E5"></i>Mon&ndash;Fri, 9am&ndash;6pm CET</span>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Vahid Sediqi. All rights reserved.</p>
-      <p>Made with <span style="color:var(--danger)">♥</span> in Germany</p>
-    <div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-top:.75rem;"><a href="impressum" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Impressum</a><a href="privacy" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Privacy Policy</a><a href="terms" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Terms</a></div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#5A6480">
+      <span>&copy; 2026 Vahid Sediqi. Made in Germany.</span>
+      <div style="display:flex;gap:20px"><a href="/impressum" style="color:#5A6480">Impressum</a><a href="/privacy" style="color:#5A6480">Privacy</a><a href="/terms" style="color:#5A6480">Terms</a></div>
     </div>
   </div>
 </footer>
-<script src="js/main.js"></script>
-<script src="//code.tidio.co/ptbza6vc35cswdhqksntfsqky2htkgfm.js" async></script>
+
+<script>
+// Progress bar
+(function(){
+  var bar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(bar) bar.style.width = (h>0 ? (window.scrollY/h)*100 : 0)+'%';
+  }, {passive:true});
+})();
+
+// Reveal
+(function(){
+  var ease='cubic-bezier(.2,.7,.2,1)';
+  var els=document.querySelectorAll('[data-reveal]');
+  els.forEach(function(el){el.style.opacity='0';el.style.transform='translateY(28px)';el.style.transition='opacity .9s '+ease+', transform .9s '+ease;el.style.transitionDelay=(el.dataset.delay||0)+'ms';});
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;io.unobserve(e.target);e.target.style.opacity='1';e.target.style.transform='translateY(0)';// trigger skill bars
+if(e.target.id==='skill-bars'){e.target.querySelectorAll('.skill-bar-fill').forEach(function(b){b.style.width=b.style.getPropertyValue('--pct')||b.style.cssText.match(/--pct:([^;]+)/)?.[1]||'0%';});}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();
+
+// Mega menu
+(function(){
+  var h=document.getElementById("vsHeader");if(!h)return;
+  var triggers=h.querySelectorAll(".vs-trigger");
+  var burger=h.querySelector(".vs-burger");
+  var hoverOK=window.matchMedia("(hover:hover) and (min-width:981px)");
+  var current=null;
+  function open(id){current=id;h.classList.toggle("is-open",!!id);triggers.forEach(function(t){t.setAttribute("aria-expanded",t.getAttribute("aria-controls")===id?"true":"false");});h.querySelectorAll(".vs-panel").forEach(function(p){p.classList.toggle("is-open",p.id===id);});}
+  function close(){open(null);}
+  triggers.forEach(function(t){
+    var id=t.getAttribute("aria-controls");
+    t.addEventListener("mouseenter",function(){if(hoverOK.matches)open(id);});
+    t.addEventListener("click",function(){if(window.innerWidth<=980){location.href=id==="vs-services"?"/services/":"/tools/";return;}open(current===id?null:id);});
+  });
+  h.addEventListener("mouseleave",function(){if(hoverOK.matches)close();});
+  h.querySelector("[data-close]").addEventListener("click",close);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){close();h.classList.remove("is-mobile");}});
+  burger.addEventListener("click",function(){var on=h.classList.toggle("is-mobile");burger.setAttribute("aria-expanded",on);burger.innerHTML=on?"<i class=\"ph ph-x\"></i>":"<i class=\"ph ph-list\"></i>";});
+  window.addEventListener("scroll",function(){h.classList.toggle("is-scrolled",window.scrollY>12);},{passive:true});
+  h.querySelectorAll(".vs-chip").forEach(function(c){c.addEventListener("click",function(){var f=c.dataset.filter;h.querySelectorAll(".vs-chip").forEach(function(x){x.classList.toggle("is-active",x===c);});h.querySelectorAll(".vs-tool").forEach(function(t){t.hidden=f!=="all"&&t.dataset.cat!==f;});});});
+})();
+</script>
 </body>
 </html>
