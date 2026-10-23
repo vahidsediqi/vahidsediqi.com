@@ -1,181 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>eCommerce SEO — Triple Your Organic Store Traffic</title>
-  <meta name="description" content="eCommerce SEO from €550/mo. Product & category page SEO, Google Merchant fixes, technical audits and link building for online stores."/>
-  <link rel="canonical" href="https://www.vahidsediqi.com/services/ecom-seo.html"/>
-  <link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/ecom-seo"/>
-  <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/ecom-seo/"/>
-  <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/services/ecom-seo"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png?v=3"/>
-  <link rel="apple-touch-icon" href="../images/favicon.png?v=3"/>
-  <link rel="stylesheet" href="../css/style.v9.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eCommerce SEO — Drive Organic Revenue for Your Online Store | Vahid Sediqi</title>
+<meta name="description" content="eCommerce SEO services from €550/mo. Rank your products on Google, grow organic traffic and increase revenue without paid ads. Category, product and technical SEO.">
+<link rel="canonical" href="https://vahidsediqi.com/services/ecom-seo">
+<link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/ecom-seo">
+<link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/ecom-seo">
+<link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/services/ecom-seo">
+<link rel="icon" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:#F6F7FB;color:#0B1530;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#4F46E5;text-decoration:none}
+a:hover{color:#0B1530}
+img{max-width:100%;display:block}
+@keyframes vsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes vsBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+
+#progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:60;background:linear-gradient(90deg,#4F46E5,#7C3AED,#0EA5E9)}
+.site-header{position:sticky;top:0;z-index:50;padding:14px 20px 0}
+.nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:18px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:all .35s ease}
+.nav-wrap.stuck{background:rgba(255,255,255,.78);border-color:rgba(11,21,48,.08);box-shadow:0 10px 30px -14px rgba(11,21,48,.25)}
+.nav-logo{display:flex;align-items:center}
+.nav-links{display:flex;align-items:center;gap:4px;font-size:14.5px}
+.nav-links a{padding:8px 12px;border-radius:10px;color:#3A4566;transition:background .2s,color .2s}
+.nav-links a:hover,.nav-links a.active{background:rgba(79,70,229,.08);color:#0B1530}
+.nav-links a.active{font-weight:500}
+.nav-cta{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:#0B1530;color:#fff !important;font-size:14px;font-weight:500;transition:transform .25s}
+.nav-cta:hover{transform:translateY(-1px)}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#4F46E5}
+.eyebrow-light{color:#A5B4FC}
+.section-title{margin:0;font-size:clamp(32px,4.2vw,52px);line-height:1.05;letter-spacing:-.04em;font-weight:600;text-wrap:balance}
+.italic-accent{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.section-desc{margin:0;color:#3A4566;font-size:16.5px;line-height:1.6}
+
+.hero{position:relative;margin-top:-76px;padding:150px 24px 90px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(11,21,48,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(11,21,48,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
+.hero-blob1{position:absolute;width:560px;height:560px;left:-160px;top:-60px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.26),transparent 65%);filter:blur(30px);animation:vsBlob 18s ease-in-out infinite}
+.hero-blob2{position:absolute;width:600px;height:600px;right:-180px;top:60px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.22),transparent 65%);filter:blur(30px);animation:vsBlob 22s ease-in-out infinite reverse}
+.hero-inner{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:60px;align-items:center}
+.hero-left{display:flex;flex-direction:column;gap:26px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5A6480}
+.breadcrumb a{color:#5A6480;transition:color .2s}
+.breadcrumb a:hover{color:#4F46E5}
+.hero-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;padding:7px 14px 7px 10px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#3A4566}
+.hero-h1{margin:0;font-size:clamp(40px,5.6vw,72px);line-height:1;letter-spacing:-.045em;font-weight:600;text-wrap:balance}
+.hero-gradient{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;background:linear-gradient(100deg,#4F46E5,#7C3AED 45%,#0EA5E9);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:6px}
+.hero-desc{margin:0;font-size:18.5px;line-height:1.6;color:#3A4566;max-width:540px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff !important;font-weight:500;font-size:15.5px;box-shadow:0 14px 30px -12px rgba(79,70,229,.8);transition:transform .25s}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:rgba(255,255,255,.8);border:1px solid rgba(11,21,48,.1);color:#0B1530 !important;font-weight:500;font-size:15.5px;transition:all .25s}
+.btn-secondary:hover{background:#fff;border-color:rgba(79,70,229,.35)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:#3A4566}
+.trust-item{display:flex;align-items:center;gap:7px}
+
+.hero-right{position:relative}
+.dash-glow{position:absolute;inset:6% -4% -6% 6%;border-radius:32px;background:linear-gradient(135deg,rgba(79,70,229,.4),rgba(14,165,233,.35));filter:blur(48px);opacity:.7}
+.dash-card{position:relative;border-radius:26px;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.9);box-shadow:0 40px 80px -40px rgba(11,21,48,.45);padding:22px;display:flex;flex-direction:column;gap:18px}
+.dash-dots{display:flex;justify-content:space-between;align-items:center}
+.dash-dots-left{display:flex;align-items:center;gap:10px}
+.dash-dot{width:10px;height:10px;border-radius:50%}
+.dash-label{margin-left:8px;font-size:13px;color:#5A6480;font-family:'Geist Mono',monospace}
+.dash-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dash-stat{padding:12px;border-radius:14px;background:#F6F7FB}
+.dash-stat-label{font-size:11.5px;color:#5A6480}
+.dash-stat-n{font-size:22px;font-weight:600;letter-spacing:-.03em}
+.dash-stat-change{font-size:11.5px;color:#059669}
+.hero-rank{position:absolute;left:-26px;bottom:-26px;animation:vsFloat 6s ease-in-out infinite}
+.rank-card{display:flex;align-items:center;gap:12px;padding:12px 16px 12px 12px;border-radius:16px;background:#fff;box-shadow:0 20px 40px -18px rgba(11,21,48,.35);border:1px solid rgba(11,21,48,.06)}
+.rank-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-size:20px}
+.rank-text{display:flex;flex-direction:column;line-height:1.25}
+.rank-query{font-size:12px;color:#5A6480}
+.rank-pos{font-size:15px;font-weight:600}
+
+.stats-strip{padding:0 0 100px}
+.stats-strip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
+.stat-card{padding:26px;border-radius:22px;background:#fff;border:1px solid rgba(11,21,48,.07);display:flex;flex-direction:column;gap:8px;box-shadow:0 14px 34px -24px rgba(11,21,48,.25)}
+.stat-icon{font-size:26px;color:#4F46E5}
+.stat-n{font-size:42px;font-weight:600;letter-spacing:-.04em;line-height:1}
+.stat-l{font-size:14.5px;color:#3A4566}
+
+.compare-section{padding:0 0 120px;overflow:hidden}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:64px;align-items:center}
+.compare-left{display:flex;flex-direction:column;gap:20px}
+.compare-body{margin:0;font-size:17px;line-height:1.7;color:#3A4566}
+.compare-dark{padding:28px;border-radius:26px;background:#0B1530;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:20px}
+.cmp-blob{position:absolute;width:360px;height:360px;right:-120px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.5),transparent 65%);filter:blur(20px);pointer-events:none}
+.cmp-head{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.cmp-badge{padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.15);color:#6EE7B7;font-size:13px}
+.cmp-bars{position:relative;display:flex;align-items:flex-end;gap:12px;height:200px;padding-top:10px}
+.cmp-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end}
+.cmp-bar-group{width:100%;display:flex;gap:4px;align-items:flex-end;height:100%}
+.cmp-bar{flex:1;border-radius:6px 6px 2px 2px}
+.cmp-legend{position:relative;display:flex;gap:16px;font-size:12.5px;color:#B7C0DA;flex-wrap:wrap}
+.cmp-leg-item{display:flex;align-items:center;gap:6px}
+.cmp-leg-dot{width:10px;height:10px;border-radius:3px}
+
+.included-section{padding:0 0 120px}
+.included-head{display:flex;flex-direction:column;gap:14px;max-width:680px;margin-bottom:48px}
+.included-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.inc-card{display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:24px;background:rgba(255,255,255,.75);border:1px solid rgba(11,21,48,.07);transition:transform .35s,border-color .35s,box-shadow .35s}
+.inc-card:hover{transform:translateY(-5px);border-color:rgba(79,70,229,.3);box-shadow:0 30px 60px -28px rgba(79,70,229,.35)}
+.inc-icon{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#EEF0FF,#E0E4FF);color:#4F46E5;font-size:25px}
+.inc-card h3{margin:0;font-size:20px;letter-spacing:-.025em;font-weight:600}
+.inc-card p{margin:0;font-size:15px;line-height:1.6;color:#3A4566}
+
+.process-dark-section{padding:0 16px 120px;overflow:hidden}
+.process-dark{position:relative;max-width:1320px;margin:0 auto;border-radius:36px;background:#0B1530;color:#fff;overflow:hidden;padding:90px 24px}
+.pd-blob1{position:absolute;width:600px;height:600px;left:-200px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.5),transparent 65%);filter:blur(40px);pointer-events:none}
+.pd-blob2{position:absolute;width:500px;height:500px;right:-160px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.38),transparent 65%);filter:blur(40px);pointer-events:none}
+.pd-inner{position:relative;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:52px}
+.pd-steps{display:flex;flex-direction:column}
+.pd-step{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:24px;align-items:start;padding:28px 0;border-top:1px solid rgba(255,255,255,.12)}
+.pd-num{font-family:'Instrument Serif',serif;font-size:52px;line-height:.9;color:#A5B4FC}
+.pd-body{display:flex;flex-direction:column;gap:8px}
+.pd-body h3{margin:0;font-size:22px;letter-spacing:-.025em;font-weight:600}
+.pd-body p{margin:0;font-size:15.5px;line-height:1.6;color:#B7C0DA;max-width:620px}
+.pd-time{padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:13px;color:#D7DCEC;white-space:nowrap;align-self:flex-start}
+
+.pricing-section{padding:0 0 120px}
+.pricing-head{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;margin-bottom:48px}
+.pricing-toggle{display:flex;padding:4px;border-radius:12px;background:#fff;border:1px solid rgba(11,21,48,.08);font-size:14px}
+.pricing-toggle button{border:0;cursor:pointer;padding:9px 16px;border-radius:9px;font:inherit;transition:background .2s,color .2s}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;align-items:stretch}
+.plan-card{position:relative;display:flex;flex-direction:column;gap:22px;padding:30px;border-radius:26px;border:1px solid rgba(11,21,48,.08);background:#fff;box-shadow:0 14px 34px -24px rgba(11,21,48,.25)}
+.plan-card.featured{background:linear-gradient(160deg,#4F46E5,#6D28D9);color:#fff;border-color:transparent;box-shadow:0 30px 60px -24px rgba(79,70,229,.6)}
+.plan-badge{position:absolute;top:22px;right:22px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.18);font-size:12px;font-weight:500}
+.plan-name{font-size:18px;font-weight:600}
+.plan-tag{font-size:14.5px;opacity:.75}
+.plan-price{display:flex;align-items:baseline;gap:6px}
+.plan-price-n{font-size:48px;font-weight:600;letter-spacing:-.045em}
+.plan-price-per{font-size:14.5px;opacity:.7}
+.plan-items{display:flex;flex-direction:column;gap:11px;font-size:14.5px}
+.plan-item{display:flex;gap:10px;align-items:flex-start}
+.plan-check{font-size:18px;flex-shrink:0;margin-top:1px}
+.plan-cta{margin-top:auto;display:flex;justify-content:center;align-items:center;gap:8px;padding:14px;border-radius:13px;font-weight:500;font-size:15px;transition:transform .25s}
+.plan-cta:hover{transform:translateY(-2px)}
+.plan-cta-dark{background:#0B1530;color:#fff !important}
+.plan-cta-white{background:#fff;color:#0B1530 !important}
+
+.faq-section{padding:0 0 120px}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:56px;align-items:start}
+.faq-left{display:flex;flex-direction:column;gap:16px}
+.faq-items{display:flex;flex-direction:column;gap:10px}
+.faq-item{border-radius:18px;background:#fff;border:1px solid rgba(11,21,48,.08);overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:rgba(79,70,229,.35)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;border:0;background:none;cursor:pointer;font:inherit;font-size:16.5px;font-weight:500;color:#0B1530;text-align:left}
+.faq-icon{width:30px;height:30px;flex-shrink:0;border-radius:9px;display:grid;place-items:center;background:#F1F2F8;color:#0B1530;transition:all .3s}
+.faq-item.open .faq-icon{background:#4F46E5;color:#fff;transform:rotate(45deg)}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a p{margin:0;padding:0 22px 22px;font-size:15px;line-height:1.65;color:#3A4566}
+
+.cta-section{padding:0 16px 100px;overflow:hidden}
+.cta-dark{position:relative;max-width:1200px;margin:0 auto;border-radius:36px;padding:80px 32px;overflow:hidden;background:linear-gradient(135deg,#3730A3,#6D28D9 55%,#0369A1);color:#fff}
+.cta-blob1{position:absolute;width:480px;height:480px;left:-120px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.55),transparent 65%);filter:blur(30px);animation:vsBlob 20s ease-in-out infinite;pointer-events:none}
+.cta-blob2{position:absolute;width:420px;height:420px;right:-80px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.35),transparent 65%);filter:blur(30px);pointer-events:none}
+.cta-inner{position:relative;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px;align-items:center}
+.cta-left{display:flex;flex-direction:column;gap:18px}
+.cta-title{margin:0;font-size:clamp(32px,4.4vw,54px);line-height:1.03;letter-spacing:-.045em;font-weight:600;text-wrap:balance}
+.cta-desc{margin:0;font-size:17.5px;line-height:1.6;color:#E3E6FF}
+.btn-glass{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff !important;font-weight:500;transition:background .25s}
+.btn-glass:hover{background:rgba(255,255,255,.2)}
+.cta-form{padding:24px;border-radius:24px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:12px}
+.cta-form-title{font-weight:600;font-size:17px}
+.cta-input{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.95);font:inherit;font-size:15px;color:#0B1530;outline:none;width:100%}
+.cta-submit{padding:15px;border-radius:12px;border:0;background:#0B1530;color:#fff;font:inherit;font-weight:500;font-size:15.5px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:8px;transition:transform .2s}
+.cta-submit:hover{transform:translateY(-1px)}
+.cta-note{font-size:12.5px;color:#D7DCF5;display:flex;align-items:center;gap:6px}
+
+.footer{padding:0 24px 40px}
+.footer-btm{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#5A6480}
+.footer-btm-links{display:flex;gap:20px}
+.footer-btm-links a{color:#5A6480;transition:color .2s}
+.footer-btm-links a:hover{color:#0B1530}
+.footer-logo{display:flex;align-items:center;gap:10px}
+
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+
+@media(max-width:768px){
+  .hero{padding:110px 16px 64px}
+  .nav-links{display:none}
+  .pd-step{grid-template-columns:60px 1fr;gap:16px}
+  .pd-time{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}
+  .hero-blob1,.hero-blob2,.cta-blob1,.hero-rank{animation:none}
+}
+</style>
 </head>
 <body>
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="../images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a>
-    <ul class="nav-menu">
-      <li><a href="/">Home</a></li><li><a href="/about">About</a></li>
-      <li class="has-mega-menu active"><a href="/services">Services <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu">
-          <div class="mega-menu-col"><h4>SEO Services</h4><ul><li><a href="/services/seo"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li><li><a href="/services/local-seo"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li><li><a href="/services/ecom-seo"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li></ul></div>
-          <div class="mega-menu-col"><h4>Web Development</h4><ul><li><a href="/services/shopify"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li><li><a href="/services/wordpress"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li></ul></div>
-          <div class="mega-menu-col"><h4>Growth & Conversion</h4><ul><li><a href="/services/cro"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li></ul></div>
-          <div class="mega-menu-featured"><div class="badge">Free Audit</div><h5>Not sure where to start?</h5><p>Get a free website & SEO audit.</p><a href="/contact" class="btn btn-primary btn-sm">Claim Free Audit</a></div>
-        </div>
-      </li>
-      <li class="has-mega-menu">
-        <a href="/tools">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="../tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="../tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="../tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="../tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="../tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="/tools" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
-        </div>
-      </li><li><a href="../portfolio">Portfolio</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Contact</a></li>
-    </ul>
-    <div class="lang-switch"><a href="/services/ecom-seo" class="active"><span class="flag">🇺🇸</span> EN</a><span class="lang-sep"></span><a href="/de/services/ecom-seo"><span class="flag">🇩🇪</span> DE</a></div>
-    <a href="/contact" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
-    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/" class="m-link">Home</a><a href="/about" class="m-link">About</a>
-  <div class="m-link has-sub" style="cursor:pointer">Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
-  <div class="m-sub"><a href="/services/seo"><i class="fas fa-search"></i> SEO Overview</a><a href="/services/local-seo"><i class="fas fa-map-marker-alt"></i> Local SEO</a><a href="/services/ecom-seo"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a><a href="/services/shopify"><i class="fab fa-shopify"></i> Shopify Creation</a><a href="/services/wordpress"><i class="fab fa-wordpress"></i> WordPress Dev</a><a href="/services/cro"><i class="fas fa-chart-line"></i> CRO</a></div>
-  <a href="/tools" class="m-link">Tools</a><a href="../portfolio" class="m-link">Portfolio</a><a href="/pricing" class="m-link">Pricing</a><a href="/contact" class="m-link">Contact</a>
-  <a href="/contact" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
-</div>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><i class="fas fa-chevron-right"></i><a href="/services">Services</a><i class="fas fa-chevron-right"></i><span>eCommerce SEO</span></div>
-    <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-shopping-cart"></i> eCommerce SEO</span>
-    <h1>Drive Qualified Buyers to Your <span class="gradient-text">Online Store</span></h1>
-    <p class="subtitle">Strategic eCommerce SEO that increases organic traffic, boosts product visibility, and grows your revenue month after month — from €550/month.</p>
-    <a href="/contact" class="btn btn-primary btn-lg" style="margin-top:1.5rem;"><i class="fas fa-rocket"></i> Get Free Store Audit</a>
-  </div>
-</section>
+<div id="progress-bar"></div>
 
-<section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
-      <div class="reveal-left">
-        <span class="tag mb-3"><i class="fas fa-shopping-bag"></i> Why eCommerce SEO?</span>
-        <h2 style="margin-bottom:1.5rem;">Stop Paying for Every Visitor — <span class="gradient-text">Earn Them Instead</span></h2>
-        <p style="margin-bottom:1.2rem;">Running an online store without SEO is like having a shop with no sign on the street. You might have the best products in the world, but if people can't find you when they're searching on Google, those sales go to your competitors.</p>
-        <p style="margin-bottom:1.2rem;">eCommerce SEO is one of the highest-ROI investments you can make for your store. Unlike Google Ads, where you pay for every single click and the traffic stops the moment your budget runs out, organic search traffic is free and compounds over time. The rankings you build today continue generating sales for years.</p>
-        <p style="margin-bottom:1.2rem;">I specialise in eCommerce SEO for Shopify and WooCommerce stores. I've helped online retailers go from virtually zero organic traffic to thousands of qualified visitors per month — visitors who are actively searching for exactly what you're selling.</p>
-        <p style="margin-bottom:2rem;">My service also covers Google Merchant Center feed fixes, which is critical for stores running Google Shopping campaigns. Disapproved products mean lost impressions and lost sales.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="/contact" class="btn btn-primary"><i class="fas fa-shopping-cart"></i> Audit My Store</a>
-          <a href="/pricing" class="btn btn-outline"><i class="fas fa-tag"></i> €550/month</a>
-        </div>
+<header class="site-header">
+  <nav class="nav-wrap" id="main-nav">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:38px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#services" class="active">Services</a>
+      <a href="#included">What's included</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#cta" class="nav-cta">Free SEO Audit <i class="ph ph-arrow-up-right"></i></a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-blob1"></div>
+    <div class="hero-blob2"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="breadcrumb" data-reveal>
+        <a href="/">Home</a><i class="ph ph-caret-right" style="font-size:11px"></i>
+        <a href="/#services">Services</a><i class="ph ph-caret-right" style="font-size:11px"></i>
+        <span style="color:#0B1530;font-weight:500">eCommerce SEO</span>
       </div>
-      <div class="reveal-right" style="align-self:stretch;">
-        <div style="position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);border:1px solid var(--border);height:100%;min-height:320px;">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=640&q=80&auto=format&fit=crop"
-               alt="eCommerce store product page SEO optimisation"
-               style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;">
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(4,8,26,.95),transparent);display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="347" data-suffix="%">0%</div><div class="r-label" style="font-size:.75rem;">Traffic Increase</div></div>
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="280" data-suffix="%">0%</div><div class="r-label" style="font-size:.75rem;">Revenue from Organic</div></div>
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="10" data-suffix="+">0+</div><div class="r-label" style="font-size:.75rem;">Products / Package</div></div>
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="98" data-suffix="%">0%</div><div class="r-label" style="font-size:.75rem;">Feed Fix Success</div></div>
-          </div>
-        </div>
+      <span class="hero-badge" data-reveal data-delay="60"><i class="ph-duotone ph-storefront" style="font-size:18px;color:#4F46E5"></i> eCommerce SEO from €550/mo</span>
+      <h1 class="hero-h1" data-reveal data-delay="120">
+        Rank your products. Sell more — <span class="hero-gradient">without paid ads.</span>
+      </h1>
+      <p class="hero-desc" data-reveal data-delay="200">
+        eCommerce SEO that gets your products to the top of Google. More organic traffic, more sales, and a sustainable revenue stream that doesn't depend on paid advertising.
+      </p>
+      <div class="hero-actions" data-reveal data-delay="280">
+        <a href="#cta" class="btn-primary">Get free store audit <i class="ph ph-arrow-right"></i></a>
+        <a href="#pricing" class="btn-secondary">View pricing</a>
+      </div>
+      <div class="hero-trust" data-reveal data-delay="340">
+        <span class="trust-item"><i class="ph-fill ph-check-circle" style="color:#10B981;font-size:18px"></i>Shopify & WooCommerce</span>
+        <span class="trust-item"><i class="ph-fill ph-check-circle" style="color:#10B981;font-size:18px"></i>Product & category SEO</span>
+        <span class="trust-item"><i class="ph-fill ph-check-circle" style="color:#10B981;font-size:18px"></i>No lock-in contracts</span>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="section" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="section-header reveal"><span class="tag"><i class="fas fa-list"></i> What's Included</span><h2>Full eCommerce SEO <span class="gradient-text">Management</span></h2></div>
-    <div class="grid-3">
-      <div class="benefit-card reveal delay-1"><div class="benefit-icon"><i class="fas fa-tag"></i></div><h3>Product Page SEO</h3><p>Optimise every product page with keyword-rich titles, meta descriptions, unique descriptions, structured data, and internal linking — turning product pages into ranking machines.</p></div>
-      <div class="benefit-card reveal delay-2"><div class="benefit-icon"><i class="fas fa-th-large"></i></div><h3>Category Page SEO</h3><p>Category pages are often the biggest traffic opportunity for eCommerce stores. I optimise each category with proper content, faceted navigation, and canonical tags.</p></div>
-      <div class="benefit-card reveal delay-3"><div class="benefit-icon"><i class="fas fa-cogs"></i></div><h3>Technical eCommerce SEO</h3><p>Fix duplicate content issues, crawl budget waste, site speed, Core Web Vitals, mobile usability, and all other technical factors that hold eCommerce stores back.</p></div>
-      <div class="benefit-card reveal delay-1"><div class="benefit-icon"><i class="fab fa-google"></i></div><h3>Google Merchant Feed Fix</h3><p>Fix disapproved products, GTIN errors, image issues, and policy violations. Get your products fully approved and running at maximum performance in Google Shopping.</p></div>
-      <div class="benefit-card reveal delay-2"><div class="benefit-icon"><i class="fas fa-code"></i></div><h3>Schema Markup</h3><p>Implement Product, Review, BreadcrumbList, and Offer schema to get rich snippets in search results — price, stock, ratings — that dramatically increase click-through rates.</p></div>
-      <div class="benefit-card reveal delay-3"><div class="benefit-icon"><i class="fas fa-link"></i></div><h3>Link Building</h3><p>Build authority with high-quality backlinks from relevant publications, bloggers, and industry websites. Authority is what separates page 1 stores from page 5 stores. Not sure which platform is right for your store? Try our <a href="../tools/shopify-vs-woocommerce-calculator" style="color:var(--accent-2);text-decoration:none;font-weight:600;">Shopify vs WooCommerce cost calculator</a>.</p></div>
+    <div class="hero-right" data-reveal data-delay="180">
+      <div class="dash-glow"></div>
+      <div class="dash-card">
+        <div class="dash-dots">
+          <div class="dash-dots-left">
+            <span class="dash-dot" style="background:#F87171"></span>
+            <span class="dash-dot" style="background:#FBBF24"></span>
+            <span class="dash-dot" style="background:#34D399"></span>
+            <span class="dash-label">organic traffic · 12 months</span>
+          </div>
+          <i class="ph ph-dots-three" style="color:#5A6480;font-size:20px"></i>
+        </div>
+        <div class="dash-stats">
+          <div class="dash-stat"><div class="dash-stat-label">Organic Sessions</div><div class="dash-stat-n">48.2k</div><div class="dash-stat-change">▲ +347%</div></div>
+          <div class="dash-stat"><div class="dash-stat-label">Organic Revenue</div><div class="dash-stat-n">€82k</div><div class="dash-stat-change">▲ +280%</div></div>
+          <div class="dash-stat"><div class="dash-stat-label">Keywords Top 10</div><div class="dash-stat-n">1,240</div><div class="dash-stat-change">▲ new</div></div>
+        </div>
+        <svg viewBox="0 0 500 140" style="width:100%;height:auto;display:block" aria-hidden="true">
+          <g stroke="rgba(11,21,48,.06)"><line x1="0" x2="500" y1="10" y2="10"/><line x1="0" x2="500" y1="50" y2="50"/><line x1="0" x2="500" y1="90" y2="90"/><line x1="0" x2="500" y1="130" y2="130"/></g>
+          <polyline points="0,128 60,122 120,115 180,105 240,90 300,72 360,50 420,28 500,10" fill="none" stroke="#4F46E5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M0,128 60,122 120,115 180,105 240,90 300,72 360,50 420,28 500,10 L500,130 L0,130Z" fill="url(#ecomGrad)" opacity=".25"/>
+          <defs><linearGradient id="ecomGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4F46E5"/><stop offset="100%" stop-color="#4F46E5" stop-opacity="0"/></linearGradient></defs>
+          <circle cx="500" cy="10" r="5" fill="#4F46E5"/>
+          <text x="20" y="145" font-size="10" fill="#5A6480" font-family="Geist,sans-serif">Jan</text>
+          <text x="110" y="145" font-size="10" fill="#5A6480" font-family="Geist,sans-serif">Mar</text>
+          <text x="220" y="145" font-size="10" fill="#5A6480" font-family="Geist,sans-serif">May</text>
+          <text x="340" y="145" font-size="10" fill="#5A6480" font-family="Geist,sans-serif">Sep</text>
+          <text x="460" y="145" font-size="10" fill="#5A6480" font-family="Geist,sans-serif">Dec</text>
+        </svg>
+      </div>
+      <div class="hero-rank">
+        <div class="rank-card">
+          <span class="rank-icon"><i class="ph ph-shopping-bag"></i></span>
+          <div class="rank-text"><span class="rank-query">"buy running shoes"</span><span class="rank-pos">#1 Google</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal"><span class="tag"><i class="fas fa-question-circle"></i> FAQ</span><h2>eCommerce SEO <span class="gradient-text">Questions</span></h2></div>
-    <div style="max-width:760px;margin:0 auto;" class="reveal">
-      <div class="faq-item open"><div class="faq-question">Does the €550/month package cover all my products? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>The standard package covers up to 10 active products per month plus all category pages and technical work. For larger catalogues, I offer custom pricing. The Merchant Feed Fix service (€350 per 100 products) is a separate one-time service for fixing disapproved products.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">Which platforms do you work with? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>I work primarily with <a href="/services/shopify" style="color:var(--accent-2);text-decoration:none;font-weight:600;">Shopify</a> and <a href="/services/wordpress" style="color:var(--accent-2);text-decoration:none;font-weight:600;">WooCommerce/WordPress</a> stores. I also have experience with BigCommerce and custom-built stores. If you're not sure whether your platform is supported, just get in touch.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">What is Google Merchant Center feed fixing? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>Google Merchant Center is the platform that powers Google Shopping ads. When products are disapproved, they don't appear in Shopping results — costing you impressions and revenue. I identify every disapproval reason, fix the root cause in the product feed, and get every product approved and running.</p></div></div></div>
-      <div class="faq-item"><div class="faq-question">How long until my store sees more organic traffic? <span class="faq-icon"><i class="fas fa-plus"></i></span></div><div class="faq-answer"><div class="faq-answer-inner"><p>For established stores with existing traffic, improvements often show within 4–8 weeks. For newer stores starting from scratch, it typically takes 3–6 months to build meaningful organic traffic. The results then compound every month from there.</p></div></div></div>
+<!-- STATS STRIP -->
+<section class="stats-strip">
+  <div class="wrap">
+    <div class="stats-strip-grid">
+      <div class="stat-card" data-reveal><i class="ph-duotone ph-trend-up stat-icon"></i><span class="stat-n" data-count="347" data-suffix="%">347%</span><span class="stat-l">Average traffic increase</span></div>
+      <div class="stat-card" data-reveal data-delay="80"><i class="ph-duotone ph-currency-eur stat-icon"></i><span class="stat-n" data-count="280" data-suffix="%">280%</span><span class="stat-l">Organic revenue growth</span></div>
+      <div class="stat-card" data-reveal data-delay="160"><i class="ph-duotone ph-package stat-icon"></i><span class="stat-n" data-count="10" data-suffix="+">10+</span><span class="stat-l">New products ranked/month</span></div>
+      <div class="stat-card" data-reveal data-delay="240"><i class="ph-duotone ph-storefront stat-icon"></i><span class="stat-n" data-count="98" data-suffix="%">98%</span><span class="stat-l">Merchant feed fix rate</span></div>
     </div>
   </div>
 </section>
 
-<section class="cta-section"><div class="container">
-  <span class="tag reveal" style="margin-bottom:1.5rem;"><i class="fas fa-shopping-cart"></i> eCommerce SEO — €550/month</span>
-  <h2 class="reveal">Ready to Grow Your Store's <span class="gradient-text">Organic Revenue?</span></h2>
-  <p class="reveal">Get a free eCommerce SEO audit. I'll identify your biggest opportunities and show you exactly how to grow your store's organic traffic.</p>
-      <div class="cta-actions reveal">
-      <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary btn-xl" target="_blank" rel="noopener">
-        <i class="fas fa-calendar-check"></i> Book a Free Call
-      </a>
-      <a href="/contact" class="btn btn-outline btn-xl">
-        <i class="fas fa-file-alt"></i> Request Free Audit
-      </a>
-    </div>
-</div></section>
-
-<footer class="footer"><div class="container"><div class="footer-grid">
-  <div class="footer-brand"><a href="/" class="nav-logo"><img src="../images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a><p>Full-stack digital marketing engineer based in Germany.</p><div class="social-links"><a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="https://www.fiverr.com/vahidsediqi_" class="social-link" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a><a href="mailto:contact@vahidsediqi.com" class="social-link"><i class="fas fa-envelope"></i></a></div></div>
-  <div class="footer-col"><h5>Services</h5><ul><li><a href="/services/seo">SEO Strategy</a></li><li><a href="/services/local-seo">Local SEO</a></li><li><a href="/services/ecom-seo">eCommerce SEO</a></li><li><a href="/services/shopify">Shopify Creation</a></li><li><a href="/services/cro">CRO</a></li><li><a href="/services/wordpress">WordPress Dev</a></li></ul></div>
-  <div class="footer-col"><h5>Company</h5><ul><li><a href="/about">About Me</a></li><li class="has-mega-menu">
-        <a href="/tools">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="../tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="../tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="../tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="../tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="../tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="/tools" class="btn btn-primary btn-sm">View All Tools</a>
+<!-- COMPARE -->
+<section class="compare-section" id="compare">
+  <div class="wrap">
+    <div class="compare-grid">
+      <div class="compare-left">
+        <span class="eyebrow" data-reveal>Why organic matters</span>
+        <h2 class="section-title" data-reveal data-delay="80">Paid ads stop the moment you <span class="italic-accent">stop paying.</span></h2>
+        <p class="compare-body" data-reveal data-delay="140">Google Shopping and paid search deliver traffic while your budget is live. But every click costs money, and the moment you pause the campaign, the traffic disappears. SEO builds a permanent asset that compounds over time.</p>
+        <p class="compare-body" data-reveal data-delay="180">eCommerce SEO targets buyers who are ready to purchase — they searched for exactly what you sell. These visitors convert at 4–6x the rate of social media traffic. And unlike paid ads, organic rankings keep working every day without ongoing spend.</p>
+        <a href="#cta" class="btn-primary" data-reveal data-delay="240" style="align-self:flex-start">Get free store audit <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="compare-dark" data-reveal data-delay="100">
+        <div class="cmp-blob"></div>
+        <div class="cmp-head">
+          <div>
+            <div style="font-size:13px;color:#B7C0DA;margin-bottom:6px">Traffic channel comparison (12 months)</div>
+            <div style="font-size:22px;font-weight:600">Organic vs. Paid Traffic</div>
+          </div>
+          <span class="cmp-badge">Organic wins</span>
+        </div>
+        <div class="cmp-bars">
+          <div class="cmp-col">
+            <div class="cmp-bar-group">
+              <div class="cmp-bar" style="background:linear-gradient(180deg,#A5B4FC,#4F46E5)" data-bar="height" data-target="95%"></div>
+            </div>
+            <div style="font-size:12px;color:#B7C0DA;text-align:center">Organic<br><span style="font-size:11px;opacity:.7">+347% growth</span></div>
+          </div>
+          <div class="cmp-col">
+            <div class="cmp-bar-group">
+              <div class="cmp-bar" style="background:#F87171" data-bar="height" data-target="45%"></div>
+            </div>
+            <div style="font-size:12px;color:#B7C0DA;text-align:center">Paid Ads<br><span style="font-size:11px;opacity:.7">paused = 0</span></div>
+          </div>
+          <div class="cmp-col">
+            <div class="cmp-bar-group">
+              <div class="cmp-bar" style="background:linear-gradient(180deg,#FCD34D,#F59E0B)" data-bar="height" data-target="30%"></div>
+            </div>
+            <div style="font-size:12px;color:#B7C0DA;text-align:center">Social<br><span style="font-size:11px;opacity:.7">low intent</span></div>
           </div>
         </div>
-      </li><li><a href="../portfolio">Portfolio</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Contact</a></li></ul></div>
-  <div class="footer-col"><h5>Contact</h5><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@vahidsediqi.com</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span>+49 176 62521106</span></div><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Leipzig & Altenburg, Germany</span></div></div>
-</div><div class="footer-bottom"><p>© 2025 Vahid Sediqi. All rights reserved.</p><p>Made with <span style="color:var(--danger)">♥</span> in Germany</p><div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-top:.75rem;"><a href="/impressum" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Impressum</a><a href="/privacy" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Privacy Policy</a><a href="/terms" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Terms</a></div></div></div></footer>
-<script src="../js/main.js"></script>
-<script src="//code.tidio.co/ptbza6vc35cswdhqksntfsqky2htkgfm.js" async></script>
+        <div class="cmp-legend">
+          <span class="cmp-leg-item"><span class="cmp-leg-dot" style="background:#4F46E5"></span>Organic SEO</span>
+          <span class="cmp-leg-item"><span class="cmp-leg-dot" style="background:#F87171"></span>Paid ads</span>
+          <span class="cmp-leg-item"><span class="cmp-leg-dot" style="background:#F59E0B"></span>Social</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="included-section" id="included">
+  <div class="wrap">
+    <div class="included-head">
+      <span class="eyebrow" data-reveal>What's included</span>
+      <h2 class="section-title" data-reveal data-delay="80">Everything in your eCommerce SEO service.</h2>
+      <p class="section-desc" data-reveal data-delay="140">A full-stack approach: technical fixes, product content, category strategy and link building — all coordinated.</p>
+    </div>
+    <div class="included-grid">
+      <div class="inc-card" data-reveal>
+        <div class="inc-icon"><i class="ph-duotone ph-package"></i></div>
+        <h3>Product Page SEO</h3>
+        <p>Optimised titles, descriptions, schema markup and image alt text for every product. More keywords, higher click-through rates, and product rich results in Google.</p>
+      </div>
+      <div class="inc-card" data-reveal data-delay="60">
+        <div class="inc-icon"><i class="ph-duotone ph-list-dashes"></i></div>
+        <h3>Category Page Optimisation</h3>
+        <p>Category pages rank for the highest-volume commercial keywords. I optimise headings, content, filters and internal links to make them dominant in search.</p>
+      </div>
+      <div class="inc-card" data-reveal data-delay="120">
+        <div class="inc-icon"><i class="ph-duotone ph-gear-six"></i></div>
+        <h3>Technical SEO</h3>
+        <p>Fix crawl errors, duplicate content from faceted navigation, slow page speed, and Core Web Vitals issues that stop your store from ranking.</p>
+      </div>
+      <div class="inc-card" data-reveal data-delay="60">
+        <div class="inc-icon"><i class="ph-duotone ph-magnifying-glass"></i></div>
+        <h3>Keyword Research</h3>
+        <p>Find the exact search terms your buyers use — from product-level keywords to category terms. Prioritised by volume, competition and commercial intent.</p>
+      </div>
+      <div class="inc-card" data-reveal data-delay="120">
+        <div class="inc-icon"><i class="ph-duotone ph-link"></i></div>
+        <h3>Link Building</h3>
+        <p>Earn high-authority backlinks from relevant industry sites, press and directories. Domain authority is the single biggest ranking factor — I build it systematically.</p>
+      </div>
+      <div class="inc-card" data-reveal data-delay="180">
+        <div class="inc-icon"><i class="ph-duotone ph-chart-bar"></i></div>
+        <h3>Monthly Reporting</h3>
+        <p>Clear monthly reports showing rankings, organic traffic, and revenue growth. You always know exactly what's been done and what impact it's had.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-dark-section" id="process">
+  <div class="process-dark">
+    <div class="pd-blob1"></div>
+    <div class="pd-blob2"></div>
+    <div class="pd-inner">
+      <div data-reveal>
+        <span class="eyebrow eyebrow-light">My process</span>
+        <h2 class="section-title" style="color:#fff;margin-top:12px">How I grow eCommerce organic revenue.</h2>
+      </div>
+      <div class="pd-steps">
+        <div class="pd-step" data-reveal>
+          <span class="pd-num">01</span>
+          <div class="pd-body">
+            <h3>Store Audit</h3>
+            <p>Full technical and content audit of your store. I find crawl errors, duplicate content, speed issues and content gaps that are costing you organic rankings.</p>
+          </div>
+          <span class="pd-time">Week 1</span>
+        </div>
+        <div class="pd-step" data-reveal data-delay="80">
+          <span class="pd-num">02</span>
+          <div class="pd-body">
+            <h3>Keyword Strategy</h3>
+            <p>Map every product and category to the right keywords. Build a content architecture that targets buyers at every stage: from research to purchase.</p>
+          </div>
+          <span class="pd-time">Week 2</span>
+        </div>
+        <div class="pd-step" data-reveal data-delay="160">
+          <span class="pd-num">03</span>
+          <div class="pd-body">
+            <h3>On-page & Technical Implementation</h3>
+            <p>Optimise product pages, categories, metadata and schema. Fix technical issues. Build supporting content to boost authority on your core commercial pages.</p>
+          </div>
+          <span class="pd-time">Weeks 3–8</span>
+        </div>
+        <div class="pd-step" data-reveal data-delay="240">
+          <span class="pd-num">04</span>
+          <div class="pd-body">
+            <h3>Link Building & Growth</h3>
+            <p>Earn authoritative backlinks that push your products above competitors. Expand into new keyword clusters as rankings establish and compound.</p>
+          </div>
+          <span class="pd-time">Ongoing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="wrap">
+    <div class="pricing-head">
+      <span class="eyebrow" data-reveal>Pricing</span>
+      <h2 class="section-title" data-reveal data-delay="80">eCommerce SEO plans.</h2>
+      <p class="section-desc" data-reveal data-delay="140">Starting from €550/mo. Free store audit included. Cancel any time.</p>
+      <div class="pricing-toggle" data-reveal data-delay="200">
+        <button id="btn-monthly" onclick="setPricing('monthly')" style="background:#0B1530;color:#fff">Monthly</button>
+        <button id="btn-yearly" onclick="setPricing('yearly')" style="background:transparent;color:#3A4566">Yearly (save 10%)</button>
+      </div>
+    </div>
+    <div class="pricing-grid" data-reveal data-delay="80">
+      <div class="plan-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-tag">For growing stores</div>
+        <div class="plan-price">
+          <span class="plan-price-n"><span data-price="550">€550</span></span>
+          <span class="plan-price-per">/mo</span>
+        </div>
+        <div class="plan-items">
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Up to 30 product pages</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Keyword research</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Technical SEO fixes</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Monthly report</span></div>
+        </div>
+        <a href="#cta" class="plan-cta plan-cta-dark">Get started <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="plan-card featured">
+        <span class="plan-badge">Most popular</span>
+        <div class="plan-name">Growth</div>
+        <div class="plan-tag">For serious stores</div>
+        <div class="plan-price">
+          <span class="plan-price-n"><span data-price="850">€850</span></span>
+          <span class="plan-price-per">/mo</span>
+        </div>
+        <div class="plan-items">
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#A5B4FC"></i></span><span>Up to 100 product pages</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#A5B4FC"></i></span><span>Category page optimisation</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#A5B4FC"></i></span><span>Link building (3/mo)</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#A5B4FC"></i></span><span>Merchant feed optimisation</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#A5B4FC"></i></span><span>Bi-weekly calls</span></div>
+        </div>
+        <a href="#cta" class="plan-cta plan-cta-white">Get started <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="plan-card">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-tag">For large catalogues</div>
+        <div class="plan-price">
+          <span class="plan-price-n">Custom</span>
+        </div>
+        <div class="plan-items">
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Unlimited products</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Full technical ownership</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Dedicated SEO strategist</span></div>
+          <div class="plan-item"><span class="plan-check"><i class="ph-fill ph-check-circle" style="color:#4F46E5"></i></span><span>Weekly reporting</span></div>
+        </div>
+        <a href="#cta" class="plan-cta plan-cta-dark">Contact me <i class="ph ph-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-left">
+        <span class="eyebrow" data-reveal>FAQ</span>
+        <h2 class="section-title" data-reveal data-delay="80">eCommerce SEO questions.</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:#3A4566" data-reveal data-delay="140">More questions? <a href="#cta">Ask me directly</a>.</p>
+      </div>
+      <div class="faq-items" data-reveal data-delay="80">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">How long before I see results?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>Quick wins (technical fixes, thin content improvements) are visible within 4–6 weeks. Significant ranking improvements for competitive keywords typically take 3–6 months. SEO is a long-term investment — but the results compound and become a lasting competitive advantage.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">Do you work with Shopify and WooCommerce?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>Yes — I specialise in both platforms. Shopify and WooCommerce have specific technical SEO challenges (faceted navigation, duplicate content, canonical issues) that I know how to fix and optimise for.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">What's the difference between eCommerce SEO and regular SEO?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>eCommerce SEO requires a different approach: optimising thousands of product and category pages at scale, handling duplicate content from filters, managing out-of-stock pages, and targeting commercial keywords with purchase intent — not just informational traffic.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">Can I keep my current agency and add your service?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>Yes. I can work alongside your existing team as a specialist eCommerce SEO layer, or run the full programme independently. I'll coordinate with whoever else is involved to avoid conflicts.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-dark" data-reveal>
+    <div class="cta-blob1"></div>
+    <div class="cta-blob2"></div>
+    <div class="cta-inner">
+      <div class="cta-left">
+        <h2 class="cta-title">Ready to turn Google into your best <span class="italic-accent">sales channel?</span></h2>
+        <p class="cta-desc">Send me your store URL and I'll review it for free — highlighting the top organic growth opportunities for your products.</p>
+        <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn-glass" target="_blank" rel="noopener"><i class="ph ph-calendar-check"></i> Or book a free call</a>
+      </div>
+      <div class="cta-form">
+        <span class="cta-form-title">Request your free store audit</span>
+        <input class="cta-input" type="url" placeholder="Your store URL" autocomplete="url">
+        <input class="cta-input" type="email" placeholder="Email address" autocomplete="email">
+        <button class="cta-submit">Send me my audit <i class="ph ph-paper-plane-tilt"></i></button>
+        <span class="cta-note"><i class="ph ph-lock-simple"></i> No spam. Delivered within 48 hours.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="footer-btm">
+      <span class="footer-logo">
+        <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:28px;width:auto;display:block">
+        © 2026 Vahid Sediqi · Leipzig &amp; Altenburg, Germany
+      </span>
+      <div class="footer-btm-links">
+        <a href="/">Home</a>
+        <a href="/impressum">Impressum</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const bar=document.getElementById('progress-bar');
+  const nav=document.getElementById('main-nav');
+  window.addEventListener('scroll',function(){
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    if(bar)bar.style.width=(h>0?(scrollY/h)*100:0)+'%';
+    nav.classList.toggle('stuck',scrollY>12);
+  },{passive:true});
+  const ease='cubic-bezier(.2,.7,.2,1)';
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    el.style.opacity='0';el.style.transform='translateY(28px)';
+    el.style.transition='opacity .9s '+ease+', transform .9s '+ease;
+    el.style.transitionDelay=(el.dataset.delay||0)+'ms';
+  });
+  const io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      e.target.style.opacity='1';e.target.style.transform='translateY(0)';
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
+  const bIO=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;bIO.unobserve(e.target);
+      e.target.style.transition='height 1.3s '+ease;
+      e.target.style.height=e.target.dataset.target;
+    });
+  },{threshold:0.2});
+  document.querySelectorAll('[data-bar="height"]').forEach(function(el){el.style.height='0%';bIO.observe(el);});
+  const cIO=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;cIO.unobserve(e.target);
+      var to=parseFloat(e.target.dataset.count),suf=e.target.dataset.suffix||'',t0=performance.now();
+      (function step(t){var k=Math.min(1,(t-t0)/1600);e.target.textContent=Math.round(to*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(step);})(t0);
+    });
+  },{threshold:0.2});
+  document.querySelectorAll('[data-count]').forEach(function(el){cIO.observe(el);});
+})();
+var yearly=false;
+function setPricing(mode){
+  yearly=mode==='yearly';
+  document.getElementById('btn-monthly').style.background=yearly?'transparent':'#0B1530';
+  document.getElementById('btn-monthly').style.color=yearly?'#3A4566':'#fff';
+  document.getElementById('btn-yearly').style.background=yearly?'#0B1530':'transparent';
+  document.getElementById('btn-yearly').style.color=yearly?'#fff':'#3A4566';
+  var disc=yearly?0.9:1;
+  document.querySelectorAll('[data-price]').forEach(function(el){
+    var base=parseInt(el.dataset.price);
+    el.textContent='€'+Math.round(base*disc).toLocaleString('de');
+  });
+}
+function toggleFaq(item){
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
 </body>
 </html>

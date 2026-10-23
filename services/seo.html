@@ -1,268 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SEO Services — Get to Page 1 of Google | Vahid Sediqi</title>
-  <meta name="description" content="Professional SEO that gets you to page 1 of Google. Technical SEO, on-page optimisation, content & link building. Working globally."/>
-  <link rel="canonical" href="https://www.vahidsediqi.com/services/seo.html"/>
-  <link rel="alternate" hreflang="en" href="https://vahidsediqi.com/services/seo"/>
-  <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/services/seo/"/>
-  <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/services/seo"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png?v=3"/>
-  <link rel="apple-touch-icon" href="../images/favicon.png?v=3"/>
-  <link rel="stylesheet" href="../css/style.v9.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEO Services — Get to Page 1 of Google | Vahid Sediqi</title>
+<meta name="description" content="A complete SEO service that builds sustainable organic traffic through technical excellence, smart content and powerful link building. Free audit available.">
+<link rel="canonical" href="https://vahidsediqi.com/services/seo">
+<link rel="icon" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:#F6F7FB;color:#0B1530;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#4F46E5;text-decoration:none}
+a:hover{color:#0B1530}
+img{max-width:100%;display:block}
+@keyframes vsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes vsBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+
+#progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:60;background:linear-gradient(90deg,#4F46E5,#7C3AED,#0EA5E9)}
+.site-header{position:sticky;top:0;z-index:50;padding:14px 20px 0}
+.nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:18px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:all .35s ease}
+.nav-wrap.stuck{background:rgba(255,255,255,.78);border-color:rgba(11,21,48,.08);box-shadow:0 10px 30px -14px rgba(11,21,48,.25)}
+.nav-logo{display:flex;align-items:center;gap:10px;color:#0B1530}
+.nav-logo-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-weight:600;font-size:14px;box-shadow:0 6px 16px -6px rgba(79,70,229,.7)}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-weight:600;font-size:15px}
+.nav-logo-sub{font-size:11.5px;color:#5A6480}
+.nav-links{display:flex;align-items:center;gap:4px;font-size:14.5px}
+.nav-links a{padding:8px 12px;border-radius:10px;color:#3A4566;transition:background .2s,color .2s}
+.nav-links a:hover,.nav-links a.active{background:rgba(79,70,229,.08);color:#0B1530}
+.nav-links a.active{font-weight:500}
+.nav-cta{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:#0B1530;color:#fff !important;font-size:14px;font-weight:500;transition:transform .25s}
+.nav-cta:hover{transform:translateY(-1px)}
+
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#4F46E5}
+.eyebrow-light{color:#A5B4FC}
+.section-title{margin:0;font-size:clamp(32px,4.2vw,52px);line-height:1.05;letter-spacing:-.04em;font-weight:600;text-wrap:balance}
+.italic-accent{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.section-desc{margin:0;color:#3A4566;font-size:16.5px;line-height:1.6}
+
+/* HERO */
+.hero{position:relative;margin-top:-76px;padding:150px 24px 90px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(11,21,48,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(11,21,48,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
+.hero-blob1{position:absolute;width:560px;height:560px;left:-160px;top:-60px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.26),transparent 65%);filter:blur(30px);animation:vsBlob 18s ease-in-out infinite}
+.hero-blob2{position:absolute;width:600px;height:600px;right:-180px;top:60px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.22),transparent 65%);filter:blur(30px);animation:vsBlob 22s ease-in-out infinite reverse}
+.hero-inner{position:relative;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:60px;align-items:center}
+.hero-left{display:flex;flex-direction:column;gap:26px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#5A6480}
+.breadcrumb a{color:#5A6480;transition:color .2s}
+.breadcrumb a:hover{color:#4F46E5}
+.hero-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:8px;padding:7px 14px 7px 10px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#3A4566}
+.hero-h1{margin:0;font-size:clamp(40px,5.6vw,72px);line-height:1;letter-spacing:-.045em;font-weight:600;text-wrap:balance}
+.hero-gradient{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;background:linear-gradient(100deg,#4F46E5,#7C3AED 45%,#0EA5E9);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:6px}
+.hero-desc{margin:0;font-size:18.5px;line-height:1.6;color:#3A4566;max-width:540px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff !important;font-weight:500;font-size:15.5px;box-shadow:0 14px 30px -12px rgba(79,70,229,.8);transition:transform .25s}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:rgba(255,255,255,.8);border:1px solid rgba(11,21,48,.1);color:#0B1530 !important;font-weight:500;font-size:15.5px;transition:all .25s}
+.btn-secondary:hover{background:#fff;border-color:rgba(79,70,229,.35)}
+.hero-trust{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:#3A4566}
+.trust-item{display:flex;align-items:center;gap:7px}
+
+/* DASHBOARD MOCK */
+.hero-right{position:relative}
+.dash-glow{position:absolute;inset:6% -4% -6% 6%;border-radius:32px;background:linear-gradient(135deg,rgba(79,70,229,.4),rgba(14,165,233,.35));filter:blur(48px);opacity:.7}
+.dash-card{position:relative;border-radius:26px;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.9);box-shadow:0 40px 80px -40px rgba(11,21,48,.45);padding:22px;display:flex;flex-direction:column;gap:18px}
+.dash-dots{display:flex;justify-content:space-between;align-items:center}
+.dash-dots-left{display:flex;align-items:center;gap:10px}
+.dash-dot{width:10px;height:10px;border-radius:50%}
+.dash-label{margin-left:8px;font-size:13px;color:#5A6480;font-family:'Geist Mono',monospace}
+.dash-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.dash-stat{padding:12px;border-radius:14px;background:#F6F7FB}
+.dash-stat-label{font-size:11.5px;color:#5A6480}
+.dash-stat-n{font-size:22px;font-weight:600;letter-spacing:-.03em}
+.dash-stat-change{font-size:11.5px;color:#059669}
+.dash-legend{display:flex;gap:16px;font-size:12.5px;color:#5A6480}
+.dash-legend-item{display:flex;align-items:center;gap:6px}
+.dash-legend-dot{width:14px;height:3px;border-radius:2px}
+.hero-rank{position:absolute;left:-26px;bottom:-26px;animation:vsFloat 6s ease-in-out infinite}
+.rank-card{display:flex;align-items:center;gap:12px;padding:12px 16px 12px 12px;border-radius:16px;background:#fff;box-shadow:0 20px 40px -18px rgba(11,21,48,.35);border:1px solid rgba(11,21,48,.06)}
+.rank-icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,#10B981,#059669);color:#fff;font-size:20px}
+.rank-text{display:flex;flex-direction:column;line-height:1.25}
+.rank-query{font-size:12px;color:#5A6480}
+.rank-pos{font-size:15px;font-weight:600}
+
+/* STATS STRIP */
+.stats-strip{padding:0 0 100px}
+.stats-strip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px}
+.stat-card{padding:26px;border-radius:22px;background:#fff;border:1px solid rgba(11,21,48,.07);display:flex;flex-direction:column;gap:8px;box-shadow:0 14px 34px -24px rgba(11,21,48,.25)}
+.stat-icon{font-size:26px;color:#4F46E5}
+.stat-n{font-size:42px;font-weight:600;letter-spacing:-.04em;line-height:1}
+.stat-l{font-size:14.5px;color:#3A4566}
+
+/* SEO vs ADS */
+.compare-section{padding:0 0 120px;overflow:hidden}
+.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:64px;align-items:center}
+.compare-left{display:flex;flex-direction:column;gap:20px}
+.compare-body{margin:0;font-size:17px;line-height:1.7;color:#3A4566}
+.compare-dark{padding:28px;border-radius:26px;background:#0B1530;color:#fff;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:20px}
+.cmp-blob{position:absolute;width:360px;height:360px;right:-120px;top:-160px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.5),transparent 65%);filter:blur(20px);pointer-events:none}
+.cmp-head{position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.cmp-badge{padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.15);color:#6EE7B7;font-size:13px}
+.cmp-bars{position:relative;display:flex;align-items:flex-end;gap:12px;height:200px;padding-top:10px}
+.cmp-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end}
+.cmp-bar-group{width:100%;display:flex;gap:4px;align-items:flex-end;height:100%}
+.cmp-bar{flex:1;border-radius:6px 6px 2px 2px}
+.cmp-legend{position:relative;display:flex;gap:16px;font-size:12.5px;color:#B7C0DA}
+.cmp-leg-item{display:flex;align-items:center;gap:6px}
+.cmp-leg-dot{width:10px;height:10px;border-radius:3px}
+
+/* INCLUDED */
+.included-section{padding:0 0 120px}
+.included-head{display:flex;flex-direction:column;gap:14px;max-width:680px;margin-bottom:48px}
+.included-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.inc-card{display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:24px;background:rgba(255,255,255,.75);border:1px solid rgba(11,21,48,.07);transition:transform .35s,border-color .35s,box-shadow .35s}
+.inc-card:hover{transform:translateY(-5px);border-color:rgba(79,70,229,.3);box-shadow:0 30px 60px -28px rgba(79,70,229,.35)}
+.inc-icon{width:50px;height:50px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#EEF0FF,#E0E4FF);color:#4F46E5;font-size:25px}
+.inc-card h3{margin:0;font-size:20px;letter-spacing:-.025em;font-weight:600}
+.inc-card p{margin:0;font-size:15px;line-height:1.6;color:#3A4566}
+
+/* PROCESS DARK */
+.process-dark-section{padding:0 16px 120px;overflow:hidden}
+.process-dark{position:relative;max-width:1320px;margin:0 auto;border-radius:36px;background:#0B1530;color:#fff;overflow:hidden;padding:90px 24px}
+.pd-blob1{position:absolute;width:600px;height:600px;left:-200px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.5),transparent 65%);filter:blur(40px);pointer-events:none}
+.pd-blob2{position:absolute;width:500px;height:500px;right:-160px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.38),transparent 65%);filter:blur(40px);pointer-events:none}
+.pd-inner{position:relative;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:52px}
+.pd-steps{display:flex;flex-direction:column}
+.pd-step{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:24px;align-items:start;padding:28px 0;border-top:1px solid rgba(255,255,255,.12)}
+.pd-num{font-family:'Instrument Serif',serif;font-size:52px;line-height:.9;color:#A5B4FC}
+.pd-body{display:flex;flex-direction:column;gap:8px}
+.pd-body h3{margin:0;font-size:22px;letter-spacing:-.025em;font-weight:600}
+.pd-body p{margin:0;font-size:15.5px;line-height:1.6;color:#B7C0DA;max-width:620px}
+.pd-time{padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.18);font-size:13px;color:#D7DCEC;white-space:nowrap;align-self:flex-start}
+
+/* PRICING */
+.pricing-section{padding:0 0 120px}
+.pricing-head{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;margin-bottom:48px}
+.pricing-toggle{display:flex;padding:4px;border-radius:12px;background:#fff;border:1px solid rgba(11,21,48,.08);font-size:14px}
+.pricing-toggle button{border:0;cursor:pointer;padding:9px 16px;border-radius:9px;font:inherit;transition:background .2s,color .2s}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;align-items:stretch}
+.plan-card{position:relative;display:flex;flex-direction:column;gap:22px;padding:30px;border-radius:26px;border:1px solid rgba(11,21,48,.08);background:#fff;box-shadow:0 14px 34px -24px rgba(11,21,48,.25)}
+.plan-card.featured{background:linear-gradient(160deg,#4F46E5,#6D28D9);color:#fff;border-color:transparent;box-shadow:0 30px 60px -24px rgba(79,70,229,.6)}
+.plan-badge{position:absolute;top:22px;right:22px;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.18);font-size:12px;font-weight:500}
+.plan-name{font-size:18px;font-weight:600}
+.plan-tag{font-size:14.5px;opacity:.75}
+.plan-price{display:flex;align-items:baseline;gap:6px}
+.plan-price-n{font-size:48px;font-weight:600;letter-spacing:-.045em}
+.plan-price-per{font-size:14.5px;opacity:.7}
+.plan-items{display:flex;flex-direction:column;gap:11px;font-size:14.5px}
+.plan-item{display:flex;gap:10px;align-items:flex-start}
+.plan-check{font-size:18px;flex-shrink:0;margin-top:1px}
+.plan-cta{margin-top:auto;display:flex;justify-content:center;align-items:center;gap:8px;padding:14px;border-radius:13px;font-weight:500;font-size:15px;transition:transform .25s}
+.plan-cta:hover{transform:translateY(-2px)}
+.plan-cta-dark{background:#0B1530;color:#fff !important}
+.plan-cta-white{background:#fff;color:#0B1530 !important}
+
+/* FAQ */
+.faq-section{padding:0 0 120px}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:56px;align-items:start}
+.faq-left{display:flex;flex-direction:column;gap:16px}
+.faq-items{display:flex;flex-direction:column;gap:10px}
+.faq-item{border-radius:18px;background:#fff;border:1px solid rgba(11,21,48,.08);overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:rgba(79,70,229,.35)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 22px;border:0;background:none;cursor:pointer;font:inherit;font-size:16.5px;font-weight:500;color:#0B1530;text-align:left}
+.faq-icon{width:30px;height:30px;flex-shrink:0;border-radius:9px;display:grid;place-items:center;background:#F1F2F8;color:#0B1530;transition:all .3s}
+.faq-item.open .faq-icon{background:#4F46E5;color:#fff;transform:rotate(45deg)}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .4s ease}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a p{margin:0;padding:0 22px 22px;font-size:15px;line-height:1.65;color:#3A4566}
+
+/* CTA */
+.cta-section{padding:0 16px 100px;overflow:hidden}
+.cta-dark{position:relative;max-width:1200px;margin:0 auto;border-radius:36px;padding:80px 32px;overflow:hidden;background:linear-gradient(135deg,#3730A3,#6D28D9 55%,#0369A1);color:#fff}
+.cta-blob1{position:absolute;width:480px;height:480px;left:-120px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.55),transparent 65%);filter:blur(30px);animation:vsBlob 20s ease-in-out infinite;pointer-events:none}
+.cta-blob2{position:absolute;width:420px;height:420px;right:-80px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.35),transparent 65%);filter:blur(30px);pointer-events:none}
+.cta-inner{position:relative;max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:48px;align-items:center}
+.cta-left{display:flex;flex-direction:column;gap:18px}
+.cta-title{margin:0;font-size:clamp(32px,4.4vw,54px);line-height:1.03;letter-spacing:-.045em;font-weight:600;text-wrap:balance}
+.cta-desc{margin:0;font-size:17.5px;line-height:1.6;color:#E3E6FF}
+.btn-glass{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff !important;font-weight:500;transition:background .25s}
+.btn-glass:hover{background:rgba(255,255,255,.2)}
+.cta-form{padding:24px;border-radius:24px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);backdrop-filter:blur(12px);display:flex;flex-direction:column;gap:12px}
+.cta-form-title{font-weight:600;font-size:17px}
+.cta-input{padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.95);font:inherit;font-size:15px;color:#0B1530;outline:none;width:100%}
+.cta-submit{padding:15px;border-radius:12px;border:0;background:#0B1530;color:#fff;font:inherit;font-weight:500;font-size:15.5px;cursor:pointer;display:flex;justify-content:center;align-items:center;gap:8px;transition:transform .2s}
+.cta-submit:hover{transform:translateY(-1px)}
+.cta-note{font-size:12.5px;color:#D7DCF5;display:flex;align-items:center;gap:6px}
+
+/* FOOTER */
+.footer{padding:0 24px 40px}
+.footer-btm{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#5A6480}
+.footer-btm-links{display:flex;gap:20px}
+.footer-btm-links a{color:#5A6480;transition:color .2s}
+.footer-btm-links a:hover{color:#0B1530}
+.footer-logo{display:flex;align-items:center;gap:10px}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+
+@media(max-width:768px){
+  .hero{padding:110px 16px 64px}
+  .nav-links{display:none}
+  .pd-step{grid-template-columns:60px 1fr;gap:16px}
+  .pd-time{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}
+  .hero-blob1,.hero-blob2,.cta-blob1,.cta-blob2,.hero-rank{animation:none}
+}
+</style>
 </head>
 <body>
 
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo"><img src="../images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a>
-    <ul class="nav-menu">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li class="has-mega-menu active">
-        <a href="/services">Services <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu">
-          <div class="mega-menu-col"><h4>SEO Services</h4><ul>
-            <li><a href="/services/seo"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
-            <li><a href="/services/local-seo"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li>
-            <li><a href="/services/ecom-seo"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Web Development</h4><ul>
-            <li><a href="/services/shopify"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
-            <li><a href="/services/wordpress"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Growth & Conversion</h4><ul>
-            <li><a href="/services/cro"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">Free Audit</div>
-            <h5>Not sure where to start?</h5>
-            <p>Get a free website & SEO audit — no strings attached.</p>
-            <a href="/contact" class="btn btn-primary btn-sm">Claim Free Audit</a>
-          </div>
-        </div>
-      </li>
-      <li class="has-mega-menu">
-        <a href="/tools">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="../tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="../tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="../tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="../tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="../tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="/tools" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
-        </div>
-      </li><li><a href="../portfolio">Portfolio</a></li><li><a href="/pricing">Pricing</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-    <div class="lang-switch"><a href="/services/seo" class="active"><span class="flag">🇺🇸</span> EN</a><span class="lang-sep"></span><a href="/de/services/seo"><span class="flag">🇩🇪</span> DE</a></div>
-    <a href="/contact" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
-    <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/" class="m-link">Home</a>
-  <a href="/about" class="m-link">About</a>
-  <div class="m-link has-sub" style="cursor:pointer">Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i></div>
-  <div class="m-sub">
-    <a href="/services/seo"><i class="fas fa-search"></i> SEO Overview</a>
-    <a href="/services/local-seo"><i class="fas fa-map-marker-alt"></i> Local SEO</a>
-    <a href="/services/ecom-seo"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a>
-    <a href="/services/shopify"><i class="fab fa-shopify"></i> Shopify Creation</a>
-    <a href="/services/wordpress"><i class="fab fa-wordpress"></i> WordPress Dev</a>
-    <a href="/services/cro"><i class="fas fa-chart-line"></i> CRO</a>
-  </div>
-  <a href="/tools" class="m-link">Tools</a><a href="../portfolio" class="m-link">Portfolio</a><a href="/pricing" class="m-link">Pricing</a>
-  <a href="/contact" class="m-link">Contact</a>
-  <a href="/contact" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
-</div>
+<div id="progress-bar"></div>
 
-<section class="page-hero">
-  <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><i class="fas fa-chevron-right"></i><a href="/services">Services</a><i class="fas fa-chevron-right"></i><span>SEO</span></div>
-    <span class="tag" style="margin-bottom:1.2rem;"><i class="fas fa-search"></i> SEO Services</span>
-    <h1>Get to Page 1 of Google — <span class="gradient-text">And Stay There</span></h1>
-    <p class="subtitle">A full SEO service that builds sustainable organic traffic through technical excellence, smart content, and powerful link building.</p>
-    <a href="/contact" class="btn btn-primary btn-lg" style="margin-top:1.5rem;"><i class="fas fa-rocket"></i> Get Free SEO Audit</a>
-  </div>
-</section>
+<header class="site-header">
+  <nav class="nav-wrap" id="main-nav">
+    <a href="/" class="nav-logo">
+      <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:38px;width:auto;display:block">
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#services" class="active">Services</a>
+      <a href="#included">What's included</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#cta" class="nav-cta">Free SEO Audit <i class="ph ph-arrow-up-right"></i></a>
+  </nav>
+</header>
 
-<!-- WHAT IS SEO -->
-<section class="section">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
-      <div class="reveal-left">
-        <span class="tag mb-3"><i class="fas fa-question-circle"></i> What Is SEO?</span>
-        <h2 style="margin-bottom:1.5rem;">Organic Traffic Is the <span class="gradient-text">Best Investment</span> You Can Make</h2>
-        <p style="margin-bottom:1.2rem;">Search Engine Optimisation (SEO) is the process of improving your website so that it appears at the top of Google and other search engines when people search for your products or services. Unlike paid ads, the traffic you earn through SEO is free — and it compounds over time. Use our <a href="../tools/seo-roi-calculator" style="color:var(--accent-2);text-decoration:none;font-weight:600;">SEO ROI calculator</a> to see what that growth is worth for your business.</p>
-        <p style="margin-bottom:1.2rem;">A well-executed SEO strategy means that while your competitors are spending thousands every month on ads just to stay visible, you are getting a constant stream of high-quality visitors for free. That's why the best businesses in every industry invest in SEO as their primary growth channel.</p>
-        <p style="margin-bottom:2rem;">My SEO service is comprehensive and transparent. I handle everything from the deep technical foundation of your website to the content that attracts readers and the links that build authority. You get monthly reports showing exactly what's moving and why.</p>
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="/contact" class="btn btn-primary"><i class="fas fa-search"></i> Get Free Audit</a>
-          <a href="/pricing" class="btn btn-outline"><i class="fas fa-tag"></i> View Pricing</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-blob1"></div>
+    <div class="hero-blob2"></div>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="breadcrumb" data-reveal>
+        <a href="/">Home</a><i class="ph ph-caret-right" style="font-size:11px"></i>
+        <a href="/#services">Services</a><i class="ph ph-caret-right" style="font-size:11px"></i>
+        <span style="color:#0B1530;font-weight:500">SEO</span>
+      </div>
+      <span class="hero-badge" data-reveal data-delay="60"><i class="ph-duotone ph-magnifying-glass" style="font-size:18px;color:#4F46E5"></i> SEO Services</span>
+      <h1 class="hero-h1" data-reveal data-delay="120">
+        Get to page 1 of Google — <span class="hero-gradient">and stay there.</span>
+      </h1>
+      <p class="hero-desc" data-reveal data-delay="200">
+        A complete SEO service that builds sustainable organic traffic through technical excellence, smart content and powerful link building.
+      </p>
+      <div class="hero-actions" data-reveal data-delay="280">
+        <a href="#cta" class="btn-primary">Get free SEO audit <i class="ph ph-arrow-right"></i></a>
+        <a href="#pricing" class="btn-secondary">View pricing</a>
+      </div>
+      <div class="hero-trust" data-reveal data-delay="340">
+        <span class="trust-item"><i class="ph-fill ph-check-circle" style="color:#10B981;font-size:18px"></i>White-hat only</span>
+        <span class="trust-item"><i class="ph-fill ph-check-circle" style="color:#10B981;font-size:18px"></i>Monthly reporting</span>
+        <span class="trust-item"><i class="ph-fill ph-check-circle" style="color:#10B981;font-size:18px"></i>No lock-in contracts</span>
+      </div>
+    </div>
+
+    <div class="hero-right" data-reveal data-delay="180">
+      <div class="dash-glow"></div>
+      <div class="dash-card">
+        <div class="dash-dots">
+          <div class="dash-dots-left">
+            <span class="dash-dot" style="background:#F87171"></span>
+            <span class="dash-dot" style="background:#FBBF24"></span>
+            <span class="dash-dot" style="background:#34D399"></span>
+            <span class="dash-label">search-console · 12 months</span>
+          </div>
+          <i class="ph ph-dots-three" style="color:#5A6480;font-size:20px"></i>
+        </div>
+        <div class="dash-stats">
+          <div class="dash-stat"><div class="dash-stat-label">Clicks</div><div class="dash-stat-n">48.2k</div><div class="dash-stat-change">▲ 214%</div></div>
+          <div class="dash-stat"><div class="dash-stat-label">Impressions</div><div class="dash-stat-n">1.3M</div><div class="dash-stat-change">▲ 168%</div></div>
+          <div class="dash-stat"><div class="dash-stat-label">Avg. position</div><div class="dash-stat-n">6.4</div><div class="dash-stat-change">▲ from 31</div></div>
+        </div>
+        <svg viewBox="0 0 500 180" style="width:100%;height:auto;display:block" aria-hidden="true">
+          <defs><linearGradient id="sa" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4F46E5" stop-opacity=".28"/><stop offset="1" stop-color="#4F46E5" stop-opacity="0"/></linearGradient></defs>
+          <g stroke="rgba(11,21,48,.06)"><line x1="0" x2="500" y1="20" y2="20"/><line x1="0" x2="500" y1="70" y2="70"/><line x1="0" x2="500" y1="120" y2="120"/><line x1="0" x2="500" y1="165" y2="165"/></g>
+          <path d="M0,160 L45,156 L90,150 L135,146 L180,134 L225,128 L270,112 L315,98 L360,84 L405,62 L450,46 L500,24 L500,165 L0,165 Z" fill="url(#sa)"/>
+          <path d="M0,162 L45,160 L90,157 L135,155 L180,150 L225,146 L270,138 L315,130 L360,121 L405,110 L450,100 L500,88" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="4 5" stroke-linecap="round"/>
+          <path d="M0,160 L45,156 L90,150 L135,146 L180,134 L225,128 L270,112 L315,98 L360,84 L405,62 L450,46 L500,24" fill="none" stroke="#4F46E5" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="dash-legend">
+          <span class="dash-legend-item"><span class="dash-legend-dot" style="background:#4F46E5"></span>Clicks</span>
+          <span class="dash-legend-item"><span class="dash-legend-dot" style="background:#38BDF8"></span>Impressions</span>
         </div>
       </div>
-      <div class="reveal-right" style="align-self:stretch;">
-        <div style="position:relative;border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.5);border:1px solid var(--border);height:100%;min-height:320px;">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=640&q=80&auto=format&fit=crop"
-               alt="SEO analytics dashboard — organic search growth"
-               style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;top:0;left:0;">
-          <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(4,8,26,.95),transparent);display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="347" data-suffix="%">0%</div><div class="r-label" style="font-size:.75rem;">Traffic Increase</div></div>
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="89" data-suffix="%">0%</div><div class="r-label" style="font-size:.75rem;">Top 10 Keywords</div></div>
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="4" data-suffix=" mo">0 mo</div><div class="r-label" style="font-size:.75rem;">First Results</div></div>
-            <div class="result-card" style="padding:.8rem;"><div class="r-num" style="font-size:1.6rem;" data-count="150" data-suffix="+">0+</div><div class="r-label" style="font-size:.75rem;">Clients Served</div></div>
-          </div>
+      <div class="hero-rank">
+        <div class="rank-card">
+          <span class="rank-icon"><i class="ph ph-trophy"></i></span>
+          <div class="rank-text"><span class="rank-query">"seo agentur leipzig"</span><span class="rank-pos">Position #1</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- WHAT'S INCLUDED -->
-<section class="section" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-list"></i> What's Included</span>
-      <h2>A Complete SEO Service — <span class="gradient-text">Nothing Missing</span></h2>
-      <p>SEO has many moving parts. I cover all of them so you don't have to worry about which pieces your strategy is missing.</p>
+<!-- STATS STRIP -->
+<section class="stats-strip">
+  <div class="wrap">
+    <div class="stats-strip-grid">
+      <div class="stat-card" data-reveal><i class="ph-duotone ph-trend-up stat-icon"></i><span class="stat-n" data-count="250" data-suffix="%">250%</span><span class="stat-l">Average traffic increase</span></div>
+      <div class="stat-card" data-reveal data-delay="80"><i class="ph-duotone ph-list-numbers stat-icon"></i><span class="stat-n" data-count="85" data-suffix="%">85%</span><span class="stat-l">Keywords in the top 10</span></div>
+      <div class="stat-card" data-reveal data-delay="160"><i class="ph-duotone ph-timer stat-icon"></i><span class="stat-n">3 mo</span><span class="stat-l">To first clear results</span></div>
+      <div class="stat-card" data-reveal data-delay="240"><i class="ph-duotone ph-users-three stat-icon"></i><span class="stat-n" data-count="150" data-suffix="+">150+</span><span class="stat-l">Clients served</span></div>
     </div>
-    <div class="grid-3">
-      <div class="benefit-card reveal delay-1">
-        <div class="benefit-icon"><i class="fas fa-cogs"></i></div>
+  </div>
+</section>
+
+<!-- SEO vs ADS -->
+<section class="compare-section">
+  <div class="wrap">
+    <div class="compare-grid">
+      <div class="compare-left">
+        <span class="eyebrow" data-reveal>What is SEO?</span>
+        <h2 class="section-title" data-reveal data-delay="80">Organic traffic is the best investment you can make.</h2>
+        <p class="compare-body" data-reveal data-delay="140">SEO improves your website so it appears at the top of Google when people search for what you sell. Unlike paid ads, the traffic you earn is free — and it compounds over time.</p>
+        <p class="compare-body" data-reveal data-delay="180">While competitors spend thousands every month just to stay visible, you get a constant stream of high-quality visitors.</p>
+      </div>
+      <div class="compare-dark" data-reveal data-delay="120">
+        <div class="cmp-blob"></div>
+        <div class="cmp-head">
+          <div>
+            <div style="font-size:13px;color:#B7C0DA">Monthly cost per visitor</div>
+            <div style="font-size:24px;font-weight:600;letter-spacing:-.03em">SEO vs. paid ads</div>
+          </div>
+          <span class="cmp-badge">−78% by month 12</span>
+        </div>
+        <div class="cmp-bars">
+          <div class="cmp-col"><div class="cmp-bar-group"><div class="cmp-bar" style="height:62%;background:rgba(255,255,255,.18)" data-bar="height" data-target="62%"></div><div class="cmp-bar" style="height:70%;background:linear-gradient(180deg,#818CF8,#4F46E5)" data-bar="height" data-target="70%"></div></div><span style="font-size:11.5px;color:#8B95B5;font-family:'Geist Mono',monospace">M1</span></div>
+          <div class="cmp-col"><div class="cmp-bar-group"><div class="cmp-bar" style="height:64%;background:rgba(255,255,255,.18)" data-bar="height" data-target="64%"></div><div class="cmp-bar" style="height:52%;background:linear-gradient(180deg,#818CF8,#4F46E5)" data-bar="height" data-target="52%"></div></div><span style="font-size:11.5px;color:#8B95B5;font-family:'Geist Mono',monospace">M3</span></div>
+          <div class="cmp-col"><div class="cmp-bar-group"><div class="cmp-bar" style="height:66%;background:rgba(255,255,255,.18)" data-bar="height" data-target="66%"></div><div class="cmp-bar" style="height:38%;background:linear-gradient(180deg,#818CF8,#4F46E5)" data-bar="height" data-target="38%"></div></div><span style="font-size:11.5px;color:#8B95B5;font-family:'Geist Mono',monospace">M5</span></div>
+          <div class="cmp-col"><div class="cmp-bar-group"><div class="cmp-bar" style="height:68%;background:rgba(255,255,255,.18)" data-bar="height" data-target="68%"></div><div class="cmp-bar" style="height:26%;background:linear-gradient(180deg,#818CF8,#4F46E5)" data-bar="height" data-target="26%"></div></div><span style="font-size:11.5px;color:#8B95B5;font-family:'Geist Mono',monospace">M7</span></div>
+          <div class="cmp-col"><div class="cmp-bar-group"><div class="cmp-bar" style="height:70%;background:rgba(255,255,255,.18)" data-bar="height" data-target="70%"></div><div class="cmp-bar" style="height:19%;background:linear-gradient(180deg,#818CF8,#4F46E5)" data-bar="height" data-target="19%"></div></div><span style="font-size:11.5px;color:#8B95B5;font-family:'Geist Mono',monospace">M9</span></div>
+          <div class="cmp-col"><div class="cmp-bar-group"><div class="cmp-bar" style="height:72%;background:rgba(255,255,255,.18)" data-bar="height" data-target="72%"></div><div class="cmp-bar" style="height:15%;background:linear-gradient(180deg,#818CF8,#4F46E5)" data-bar="height" data-target="15%"></div></div><span style="font-size:11.5px;color:#8B95B5;font-family:'Geist Mono',monospace">M12</span></div>
+        </div>
+        <div class="cmp-legend">
+          <span class="cmp-leg-item"><span class="cmp-leg-dot" style="background:rgba(255,255,255,.3)"></span>Paid ads</span>
+          <span class="cmp-leg-item"><span class="cmp-leg-dot" style="background:#6366F1"></span>SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="included-section" id="included">
+  <div class="wrap">
+    <div class="included-head">
+      <span class="eyebrow" data-reveal>What's included</span>
+      <h2 class="section-title" data-reveal data-delay="80">A complete SEO service — <span class="italic-accent">nothing missing.</span></h2>
+    </div>
+    <div class="included-grid">
+      <div class="inc-card" data-reveal>
+        <span class="inc-icon"><i class="ph-duotone ph-wrench"></i></span>
         <h3>Technical SEO</h3>
-        <p>Full technical audit and fixes: site speed, Core Web Vitals, crawlability, indexation, schema markup, canonical tags, XML sitemaps, and more. A solid technical foundation is non-negotiable.</p>
+        <p>Site speed, Core Web Vitals, crawlability, indexation, schema markup, canonicals and XML sitemaps. A solid foundation is non-negotiable.</p>
       </div>
-      <div class="benefit-card reveal delay-2">
-        <div class="benefit-icon"><i class="fas fa-file-alt"></i></div>
-        <h3>On-Page Optimisation</h3>
-        <p>Every page is optimised for the right keywords: title tags, meta descriptions, headings, internal linking, content depth. You can <a href="../tools/onpage-seo-checker" style="color:var(--accent-2);text-decoration:none;font-weight:600;">audit your on-page SEO</a> for free with our checker tool, and user experience signals that Google tracks closely.</p>
+      <div class="inc-card" data-reveal data-delay="90">
+        <span class="inc-icon"><i class="ph-duotone ph-file-text"></i></span>
+        <h3>On-page optimisation</h3>
+        <p>Title tags, meta descriptions, headings, internal linking and content depth — every page tuned for the right keywords.</p>
       </div>
-      <div class="benefit-card reveal delay-3">
-        <div class="benefit-icon"><i class="fas fa-pen-nib"></i></div>
-        <h3>Content Strategy</h3>
-        <p>I research what your customers are searching for and create a content plan that answers those questions better than any competitor. Content that ranks and converts.</p>
+      <div class="inc-card" data-reveal data-delay="180">
+        <span class="inc-icon"><i class="ph-duotone ph-pen-nib"></i></span>
+        <h3>Content strategy</h3>
+        <p>Research into what your customers search for, and content that answers it better than any competitor.</p>
       </div>
-      <div class="benefit-card reveal delay-1">
-        <div class="benefit-icon"><i class="fas fa-link"></i></div>
-        <h3>Link Building</h3>
-        <p>High-quality backlinks from relevant, authoritative websites. I use white-hat outreach, guest posting, and digital PR — no spammy link farms that will eventually hurt you.</p>
+      <div class="inc-card" data-reveal>
+        <span class="inc-icon"><i class="ph-duotone ph-link"></i></span>
+        <h3>Link building</h3>
+        <p>High-quality backlinks through white-hat outreach, guest posting and digital PR. No spammy link farms.</p>
       </div>
-      <div class="benefit-card reveal delay-2">
-        <div class="benefit-icon"><i class="fas fa-chart-bar"></i></div>
-        <h3>Keyword Research</h3>
-        <p>Deep keyword research using Ahrefs, SEMrush, and Google's own data. I identify the keywords with the best balance of search volume, competition, and commercial intent for your business.</p>
+      <div class="inc-card" data-reveal data-delay="90">
+        <span class="inc-icon"><i class="ph-duotone ph-key"></i></span>
+        <h3>Keyword research</h3>
+        <p>Ahrefs, SEMrush and Google data to find the best balance of volume, competition and commercial intent.</p>
       </div>
-      <div class="benefit-card reveal delay-3">
-        <div class="benefit-icon"><i class="fas fa-file-chart-line"></i></div>
-        <h3>Monthly Reporting</h3>
-        <p>Clear, easy-to-understand monthly reports showing rankings, traffic, conversions, and what work was done. You'll always know exactly what's happening and why.</p>
+      <div class="inc-card" data-reveal data-delay="180">
+        <span class="inc-icon"><i class="ph-duotone ph-chart-bar"></i></span>
+        <h3>Monthly reporting</h3>
+        <p>Clear reports on rankings, traffic, conversions and the work done. You always know what's moving and why.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-map"></i> My SEO Process</span>
-      <h2>How I Build Rankings That <span class="gradient-text">Last</span></h2>
+<!-- PROCESS DARK -->
+<section class="process-dark-section">
+  <div class="process-dark">
+    <div class="pd-blob1"></div>
+    <div class="pd-blob2"></div>
+    <div class="pd-inner">
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
+        <span class="eyebrow eyebrow-light" data-reveal>My SEO process</span>
+        <h2 style="margin:0;font-size:clamp(30px,4vw,48px);line-height:1.05;letter-spacing:-.04em;font-weight:600" data-reveal data-delay="80">How I build rankings that last.</h2>
+      </div>
+      <div class="pd-steps">
+        <div class="pd-step" data-reveal>
+          <span class="pd-num">01</span>
+          <div class="pd-body"><h3>Technical audit</h3><p>A full crawl of your website to identify every technical issue holding your rankings back.</p></div>
+          <span class="pd-time">Week 1–2</span>
+        </div>
+        <div class="pd-step" data-reveal data-delay="100">
+          <span class="pd-num">02</span>
+          <div class="pd-body"><h3>Keyword strategy</h3><p>In-depth research to find your best ranking opportunities by intent, competition and business value.</p></div>
+          <span class="pd-time">Week 2–3</span>
+        </div>
+        <div class="pd-step" data-reveal data-delay="200">
+          <span class="pd-num">03</span>
+          <div class="pd-body"><h3>On-page &amp; content</h3><p>Optimise existing pages and create new content that targets your chosen keywords and satisfies search intent.</p></div>
+          <span class="pd-time">Month 1–3</span>
+        </div>
+        <div class="pd-step" data-reveal data-delay="300">
+          <span class="pd-num">04</span>
+          <div class="pd-body"><h3>Authority building</h3><p>Build the backlink profile and domain authority needed to outrank competitors on competitive terms.</p></div>
+          <span class="pd-time">Ongoing</span>
+        </div>
+      </div>
     </div>
-    <div class="process-steps">
-      <div class="step-card reveal delay-1"><div class="step-num">01</div><h4>Technical Audit</h4><p>I start by crawling your entire website to identify every technical issue that's holding your rankings back — whether you run a <a href="/services/local-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">local business</a> or an <a href="/services/ecom-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">eCommerce store</a>.</p></div>
-      <div class="step-card reveal delay-2"><div class="step-num">02</div><h4>Keyword Strategy</h4><p>In-depth keyword research to find your best ranking opportunities based on intent, competition, and business value.</p></div>
-      <div class="step-card reveal delay-3"><div class="step-num">03</div><h4>On-Page & Content</h4><p>Optimise existing pages and create new content that targets your chosen keywords and satisfies search intent.</p></div>
-      <div class="step-card reveal delay-4"><div class="step-num">04</div><h4>Authority Building</h4><p>Build the backlink profile and domain authority needed to outrank your competitors on competitive keywords.</p></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="wrap">
+    <div class="pricing-head">
+      <span class="eyebrow" data-reveal>SEO packages</span>
+      <h2 class="section-title" data-reveal data-delay="80">Transparent monthly pricing.</h2>
+      <div class="pricing-toggle" data-reveal data-delay="140" id="pricing-toggle">
+        <button id="btn-monthly" onclick="setPricing('monthly')" style="background:#0B1530;color:#fff">Monthly</button>
+        <button id="btn-yearly" onclick="setPricing('yearly')" style="background:transparent;color:#3A4566">6 months · save 10%</button>
+      </div>
+    </div>
+    <div class="pricing-grid">
+      <div class="plan-card" data-reveal>
+        <div class="plan-name">Starter</div>
+        <div class="plan-tag">Local &amp; small businesses</div>
+        <div class="plan-price"><span class="plan-price-n" data-price="490">€490</span><span class="plan-price-per">/ month</span></div>
+        <div class="plan-items">
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Technical audit &amp; fixes</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Up to 15 target keywords</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>On-page optimisation</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Google Business Profile</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Monthly report</span>
+        </div>
+        <a href="#cta" class="plan-cta plan-cta-dark">Get started <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="plan-card featured" data-reveal data-delay="100">
+        <span class="plan-badge">Most popular</span>
+        <div class="plan-name">Growth</div>
+        <div class="plan-tag">Growing brands &amp; eCommerce</div>
+        <div class="plan-price"><span class="plan-price-n" data-price="990">€990</span><span class="plan-price-per">/ month</span></div>
+        <div class="plan-items">
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#C7D2FE"></i>Everything in Starter</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#C7D2FE"></i>Up to 40 target keywords</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#C7D2FE"></i>4 SEO articles / month</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#C7D2FE"></i>White-hat link building</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#C7D2FE"></i>Bi-weekly strategy calls</span>
+        </div>
+        <a href="#cta" class="plan-cta plan-cta-white">Get started <i class="ph ph-arrow-right"></i></a>
+      </div>
+      <div class="plan-card" data-reveal data-delay="200">
+        <div class="plan-name">Scale</div>
+        <div class="plan-tag">Competitive markets</div>
+        <div class="plan-price"><span class="plan-price-n" data-price="1890">€1,890</span><span class="plan-price-per">/ month</span></div>
+        <div class="plan-items">
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Everything in Growth</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Unlimited keywords</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>8 SEO articles / month</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Digital PR campaigns</span>
+          <span class="plan-item"><i class="ph-fill ph-check-circle plan-check" style="color:#4F46E5"></i>Dedicated Slack channel</span>
+        </div>
+        <a href="#cta" class="plan-cta plan-cta-dark">Get started <i class="ph ph-arrow-right"></i></a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="section-header reveal"><span class="tag"><i class="fas fa-question-circle"></i> FAQ</span><h2>Common SEO <span class="gradient-text">Questions</span></h2></div>
-    <div style="max-width:760px;margin:0 auto;" class="reveal">
-      <div class="faq-item open">
-        <div class="faq-question">How long does SEO take to work? <span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer"><div class="faq-answer-inner"><p>Most clients see meaningful improvements within 2–3 months, with strong results by months 4–6. Highly competitive markets can take 6–12 months. SEO compounds over time — the results keep growing long after the initial work.</p></div></div>
+<section class="faq-section" id="faq">
+  <div class="wrap">
+    <div class="faq-grid">
+      <div class="faq-left">
+        <span class="eyebrow" data-reveal>FAQ</span>
+        <h2 class="section-title" data-reveal data-delay="80">Common SEO questions.</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:#3A4566" data-reveal data-delay="140">Something else on your mind? <a href="#cta">Ask me directly</a> — I reply within 24 hours.</p>
       </div>
-      <div class="faq-item">
-        <div class="faq-question">Can you guarantee #1 rankings on Google? <span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer"><div class="faq-answer-inner"><p>No ethical SEO professional can guarantee specific rankings — Google's algorithm is complex and constantly changing. What I can guarantee is high-quality work, white-hat methods, full transparency, and a track record of delivering strong results for my clients.</p></div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Do you use safe, white-hat SEO methods? <span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer"><div class="faq-answer-inner"><p>Absolutely. Every strategy I use follows Google's Webmaster Guidelines. I never use black-hat techniques like keyword stuffing, link farms, or PBNs. These shortcuts lead to Google penalties that can destroy a website's visibility overnight.</p></div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What do I need to provide to get started? <span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer"><div class="faq-answer-inner"><p>Just access to your Google Analytics and Search Console accounts, your website login, and a good conversation about your business goals and target customers. I handle everything else.</p></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="container">
-    <span class="tag reveal" style="margin-bottom:1.5rem;"><i class="fas fa-search"></i> Free SEO Audit</span>
-    <h2 class="reveal">Ready to Climb to the <span class="gradient-text">Top of Google?</span></h2>
-    <p class="reveal">I'll analyse your website for free and show you exactly what's holding your rankings back — and how to fix it.</p>
-        <div class="cta-actions reveal">
-      <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary btn-xl" target="_blank" rel="noopener">
-        <i class="fas fa-calendar-check"></i> Book a Free Call
-      </a>
-      <a href="/contact" class="btn btn-outline btn-xl">
-        <i class="fas fa-file-alt"></i> Request Free Audit
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer"><div class="container"><div class="footer-grid">
-  <div class="footer-brand"><a href="/" class="nav-logo"><img src="../images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/></a><p>Full-stack digital marketing engineer based in Germany. Working globally.</p><div class="social-links"><a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a><a href="https://www.fiverr.com/vahidsediqi_" class="social-link" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a><a href="mailto:contact@vahidsediqi.com" class="social-link"><i class="fas fa-envelope"></i></a></div></div>
-  <div class="footer-col"><h5>Services</h5><ul><li><a href="/services/seo">SEO Strategy</a></li><li><a href="/services/local-seo">Local SEO</a></li><li><a href="/services/ecom-seo">eCommerce SEO</a></li><li><a href="/services/shopify">Shopify Creation</a></li><li><a href="/services/cro">CRO</a></li><li><a href="/services/wordpress">WordPress Dev</a></li></ul></div>
-  <div class="footer-col"><h5>Company</h5><ul><li><a href="/about">About Me</a></li><li class="has-mega-menu">
-        <a href="/tools">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="../tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="../tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="../tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="../tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="../tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="/tools" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="/tools" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
+      <div class="faq-items" data-reveal data-delay="80">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">How long does SEO take to work?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>Most clients see meaningful improvements within 2–3 months, with strong results by months 4–6. Highly competitive markets can take 6–12 months. SEO compounds — results keep growing long after the initial work.</p></div>
         </div>
-      </li><li><a href="../portfolio">Portfolio</a></li><li><a href="/pricing">Pricing</a></li><li><a href="/contact">Contact</a></li></ul></div>
-  <div class="footer-col"><h5>Contact</h5><div class="footer-contact-item"><i class="fas fa-envelope"></i><span>contact@vahidsediqi.com</span></div><div class="footer-contact-item"><i class="fas fa-phone"></i><span>+49 176 62521106</span></div><div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Leipzig & Altenburg, Germany</span></div></div>
-</div><div class="footer-bottom"><p>© 2025 Vahid Sediqi. All rights reserved.</p><p>Made with <span style="color:var(--danger)">♥</span> in Germany</p><div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-top:.75rem;"><a href="/impressum" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Impressum</a><a href="/privacy" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Privacy Policy</a><a href="/terms" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Terms</a></div></div></div></footer>
-<script src="../js/main.js"></script>
-<script src="//code.tidio.co/ptbza6vc35cswdhqksntfsqky2htkgfm.js" async></script>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">Can you guarantee #1 rankings on Google?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>No ethical SEO can guarantee specific rankings — Google's algorithm is complex and always changing. What I guarantee is high-quality work, white-hat methods, full transparency and a strong track record.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">Do you use safe, white-hat methods?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>Always. Every strategy follows Google's guidelines. No keyword stuffing, link farms or PBNs — shortcuts like these lead to penalties that can wipe out visibility overnight.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <button class="faq-q">What do I need to provide to get started?<span class="faq-icon"><i class="ph ph-plus"></i></span></button>
+          <div class="faq-a"><p>Access to Google Analytics and Search Console, your website login, and a conversation about your goals and customers. I handle everything else.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-dark" data-reveal>
+    <div class="cta-blob1"></div>
+    <div class="cta-blob2"></div>
+    <div class="cta-inner">
+      <div class="cta-left">
+        <h2 class="cta-title">Ready to climb to the top of <span class="italic-accent">Google?</span></h2>
+        <p class="cta-desc">I'll analyse your website for free and show you exactly what's holding your rankings back — and how to fix it.</p>
+        <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn-glass" target="_blank" rel="noopener"><i class="ph ph-calendar-check"></i> Or book a free call</a>
+      </div>
+      <div class="cta-form">
+        <span class="cta-form-title">Request your free SEO audit</span>
+        <input class="cta-input" type="url" placeholder="Your website URL" autocomplete="url">
+        <input class="cta-input" type="email" placeholder="Email address" autocomplete="email">
+        <button class="cta-submit">Send me my audit <i class="ph ph-paper-plane-tilt"></i></button>
+        <span class="cta-note"><i class="ph ph-lock-simple"></i> No spam. Delivered within 48 hours.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="footer-btm">
+      <span class="footer-logo">
+        <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:28px;width:auto;display:block">
+        © 2026 Vahid Sediqi · Leipzig &amp; Altenburg, Germany
+      </span>
+      <div class="footer-btm-links">
+        <a href="/">Home</a>
+        <a href="/impressum">Impressum</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const bar = document.getElementById('progress-bar');
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll',function(){
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    if(bar) bar.style.width = (h>0?(scrollY/h)*100:0)+'%';
+    nav.classList.toggle('stuck',scrollY>12);
+  },{passive:true});
+
+  const ease='cubic-bezier(.2,.7,.2,1)';
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    el.style.opacity='0';el.style.transform='translateY(28px)';
+    el.style.transition='opacity .9s '+ease+', transform .9s '+ease;
+    el.style.transitionDelay=(el.dataset.delay||0)+'ms';
+  });
+  const io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;io.unobserve(e.target);
+      e.target.style.opacity='1';e.target.style.transform='translateY(0)';
+      setTimeout(function(){e.target.style.transition='';e.target.style.transitionDelay='';},1000++(e.target.dataset.delay||0));
+    });
+  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
+
+  // Animated bars (height)
+  const bIO=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;bIO.unobserve(e.target);
+      var t=e.target.dataset.target;
+      e.target.style.transition='height 1.3s '+ease;
+      e.target.style.height=t;
+    });
+  },{threshold:0.2});
+  document.querySelectorAll('[data-bar="height"]').forEach(function(el){el.style.height='0%';bIO.observe(el);});
+
+  // Counter
+  const cIO=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting)return;cIO.unobserve(e.target);
+      var to=parseFloat(e.target.dataset.count),suf=e.target.dataset.suffix||'',t0=performance.now();
+      (function step(t){var k=Math.min(1,(t-t0)/1600);e.target.textContent=Math.round(to*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(step);})(t0);
+    });
+  },{threshold:0.2});
+  document.querySelectorAll('[data-count]').forEach(function(el){cIO.observe(el);});
+})();
+
+// Pricing toggle
+var yearly=false;
+function setPricing(mode){
+  yearly=mode==='yearly';
+  document.getElementById('btn-monthly').style.background=yearly?'transparent':'#0B1530';
+  document.getElementById('btn-monthly').style.color=yearly?'#3A4566':'#fff';
+  document.getElementById('btn-yearly').style.background=yearly?'#0B1530':'transparent';
+  document.getElementById('btn-yearly').style.color=yearly?'#fff':'#3A4566';
+  var disc=yearly?0.9:1;
+  document.querySelectorAll('[data-price]').forEach(function(el){
+    var base=parseInt(el.dataset.price);
+    var v=Math.round(base*disc);
+    el.textContent='€'+v.toLocaleString('de');
+  });
+}
+
+// FAQ accordion
+function toggleFaq(item){
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
 </body>
 </html>

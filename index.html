@@ -1,661 +1,876 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vahid Sediqi — Digital Marketing & Growth Engineer</title>
-  <meta name="description" content="Full-stack digital marketing engineer in Germany. SEO, Shopify, WordPress, Google Ads & CRO — grow your business with proven strategies."/>
-  <meta name="keywords" content="digital marketing Germany, SEO expert, Shopify developer, WordPress developer, CRO specialist, local SEO, ecommerce SEO, Google Ads"/>
-  <meta name="robots" content="index, follow"/>
-  <link rel="canonical" href="https://www.vahidsediqi.com/"/>
-  <link rel="alternate" hreflang="en" href="https://vahidsediqi.com/"/>
-  <link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de/"/>
-  <link rel="alternate" hreflang="x-default" href="https://vahidsediqi.com/"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vahid Sediqi — Digital Growth Engineer</title>
+<meta name="description" content="Full-stack digital marketing and growth engineer based in Germany. SEO, Shopify, WordPress and conversion optimisation for businesses worldwide.">
+<link rel="canonical" href="https://vahidsediqi.com">
+<link rel="alternate" hreflang="de" href="https://vahidsediqi.com/de">
+<link rel="alternate" hreflang="en" href="https://vahidsediqi.com">
+<link rel="icon" href="/images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:#F6F7FB;color:#0B1530;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#4F46E5;text-decoration:none}
+a:hover{color:#0B1530}
+img{max-width:100%;display:block}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Vahid Sediqi — Full-Stack Digital Marketing & Growth Engineer"/>
-  <meta property="og:description" content="SEO, Shopify, WordPress, CRO & Google Ads expert based in Germany. Working globally."/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://www.vahidsediqi.com/"/>
+@keyframes vsFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes vsBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
+@keyframes vsMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes vsPulse{0%{box-shadow:0 0 0 0 rgba(16,185,129,.55)}70%{box-shadow:0 0 0 10px rgba(16,185,129,0)}100%{box-shadow:0 0 0 0 rgba(16,185,129,0)}}
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png?v=3"/>
-  <link rel="apple-touch-icon" href="images/favicon.png?v=3"/>
+/* NAV */
+#progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:60;background:linear-gradient(90deg,#4F46E5,#7C3AED,#0EA5E9);border-radius:0 3px 3px 0}
+.site-header{position:sticky;top:0;z-index:50;padding:14px 20px 0}
+.nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:18px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:none;transition:all .35s ease}
+.nav-wrap.stuck{background:rgba(255,255,255,.78);border-color:rgba(11,21,48,.08);box-shadow:0 10px 30px -14px rgba(11,21,48,.25)}
+.nav-logo{display:flex;align-items:center;gap:10px;color:#0B1530}
+.nav-logo-icon{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-weight:600;font-size:14px;letter-spacing:-.02em;box-shadow:0 6px 16px -6px rgba(79,70,229,.7)}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-weight:600;font-size:15px;letter-spacing:-.01em}
+.nav-logo-sub{font-size:11.5px;color:#5A6480}
+.nav-links{display:flex;align-items:center;gap:4px;flex-wrap:wrap;font-size:14.5px}
+.nav-links a{padding:8px 12px;border-radius:10px;color:#3A4566;transition:background .2s,color .2s}
+.nav-links a:hover{background:rgba(79,70,229,.07);color:#0B1530}
+.nav-cta{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:#0B1530;color:#fff !important;font-size:14px;font-weight:500;box-shadow:0 8px 20px -8px rgba(11,21,48,.6);transition:transform .25s ease}
+.nav-cta:hover{transform:translateY(-1px)}
+.lang-switcher{display:flex;font-size:12px;font-family:'Geist Mono',monospace;border:1px solid rgba(11,21,48,.1);border-radius:9px;overflow:hidden}
+.lang-switcher span{padding:6px 8px}
+.lang-active{background:#0B1530;color:#fff}
+.lang-inactive{color:#5A6480}
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/style.v9.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Vahid Sediqi",
-    "url": "https://vahidsediqi.com/",
-    "image": "https://vahidsediqi.com/images/vahid-sediqi.png?v=2",
-    "jobTitle": "Digital Marketing Specialist",
-    "sameAs": [
-      "https://www.linkedin.com/in/vahidsediqi/",
-      "https://x.com/vahidsediqi___",
-      "https://www.wikidata.org/wiki/Q140674415"
-    ]
-  }
-  </script>
+/* HERO */
+.hero{position:relative;padding:150px 24px 96px;margin-top:-76px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(11,21,48,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(11,21,48,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 30%,#000 30%,transparent 75%)}
+.hero-blob1{position:absolute;width:560px;height:560px;left:-140px;top:-80px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,.28),transparent 65%);filter:blur(30px);animation:vsBlob 18s ease-in-out infinite}
+.hero-blob2{position:absolute;width:620px;height:620px;right:-160px;top:40px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.24),transparent 65%);filter:blur(30px);animation:vsBlob 22s ease-in-out infinite reverse}
+.hero-blob3{position:absolute;width:420px;height:420px;right:22%;bottom:-120px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.18),transparent 65%);filter:blur(30px);animation:vsBlob 26s ease-in-out infinite}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:64px;align-items:center}
+.hero-left{display:flex;flex-direction:column;gap:28px}
+.hero-badge{display:inline-flex;align-self:flex-start;align-items:center;gap:10px;padding:7px 14px 7px 10px;border-radius:999px;background:rgba(255,255,255,.75);border:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#3A4566;backdrop-filter:blur(10px)}
+.hero-pulse{width:8px;height:8px;border-radius:50%;background:#10B981;animation:vsPulse 2s infinite}
+.hero-intro{font-size:17px;color:#5A6480;margin:0}
+.hero-h1{margin:0;font-size:clamp(42px,6vw,76px);line-height:1;letter-spacing:-.045em;font-weight:600;text-wrap:balance}
+.hero-gradient{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;letter-spacing:-.02em;background:linear-gradient(100deg,#4F46E5,#7C3AED 45%,#0EA5E9);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:6px}
+.hero-desc{margin:0;font-size:18.5px;line-height:1.6;color:#3A4566;max-width:540px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff !important;font-weight:500;font-size:15.5px;box-shadow:0 14px 30px -12px rgba(79,70,229,.8),inset 0 1px 0 rgba(255,255,255,.25);transition:transform .25s ease,box-shadow .25s ease}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 40px -14px rgba(79,70,229,.9)}
+.btn-secondary{display:inline-flex;align-items:center;gap:10px;padding:15px 22px;border-radius:14px;background:rgba(255,255,255,.8);border:1px solid rgba(11,21,48,.1);color:#0B1530 !important;font-weight:500;font-size:15.5px;transition:all .25s ease}
+.btn-secondary:hover{background:#fff;border-color:rgba(79,70,229,.35)}
+.hero-social{display:flex;flex-wrap:wrap;align-items:center;gap:22px;padding-top:10px;border-top:1px solid rgba(11,21,48,.08)}
+.hero-avatars{display:flex}
+.hero-avatar{width:32px;height:32px;border-radius:50%;border:2px solid #F6F7FB;color:#fff;font-size:11px;display:grid;place-items:center;font-weight:600}
+.hero-avatar:not(:first-child){margin-left:-8px}
+.hero-rating{display:flex;flex-direction:column;font-size:13px;line-height:1.3;margin-left:10px}
+.hero-stars{color:#F59E0B;letter-spacing:1px}
+.hero-rating-text{color:#3A4566}
+.hero-global{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#3A4566;margin-top:14px}
+
+/* HERO RIGHT */
+.hero-right{position:relative;max-width:540px;width:100%;justify-self:center}
+.hero-glow{position:absolute;inset:8% -6% -6% 8%;border-radius:36px;background:linear-gradient(135deg,rgba(79,70,229,.45),rgba(14,165,233,.35),rgba(245,158,11,.3));filter:blur(48px);opacity:.75}
+.hero-photo-frame{position:relative;padding:1px;border-radius:32px;background:linear-gradient(140deg,rgba(255,255,255,.9),rgba(79,70,229,.35),rgba(255,255,255,.6))}
+.hero-photo-inner{border-radius:31px;overflow:hidden;aspect-ratio:1/1.05;background:#1B2440;position:relative}
+.hero-photo-inner img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-photo-overlay{position:absolute;inset:auto 0 0 0;height:40%;background:linear-gradient(to top,rgba(11,21,48,.55),transparent)}
+.hero-photo-label{position:absolute;left:20px;bottom:18px;display:flex;align-items:center;gap:10px;color:#fff}
+.hero-card{position:absolute;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.9);box-shadow:0 20px 40px -18px rgba(11,21,48,.35)}
+.hero-card-traffic{width:210px;left:-28px;top:9%;animation:vsFloat 6s ease-in-out infinite}
+.hero-card-cr{width:196px;right:-22px;bottom:16%;animation:vsFloat 7s ease-in-out -2s infinite}
+.hc-label{font-size:12px;color:#5A6480}
+.hc-number{font-size:26px;font-weight:600;letter-spacing:-.03em;margin:2px 0 6px}
+.hc-bars{display:flex;align-items:flex-end;gap:10px;height:54px}
+.hc-bar-wrap{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;height:100%;justify-content:flex-end}
+.hc-bar{width:100%;border-radius:6px}
+
+/* MARQUEE */
+.marquee-section{padding:0 0 88px;overflow:hidden}
+.marquee-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.marquee-fade{position:relative;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee-track{display:flex;gap:56px;width:max-content;animation:vsMarquee 34s linear infinite;color:#5A6480;font-size:15px;font-weight:500}
+.marquee-item{display:flex;align-items:center;gap:10px;white-space:nowrap}
+.marquee-icon{font-size:22px;color:#4F46E5}
+
+/* UTILS */
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#4F46E5}
+.eyebrow-light{color:#A5B4FC}
+.section-title{margin:0;font-size:clamp(32px,4.2vw,52px);line-height:1.05;letter-spacing:-.04em;font-weight:600;text-wrap:balance}
+.italic-accent{font-family:'Instrument Serif',serif;font-style:italic;font-weight:400}
+.section-desc{margin:0;color:#3A4566;font-size:16.5px;line-height:1.6}
+
+/* SERVICES */
+.services-section{padding:40px 0 110px;position:relative}
+.services-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:52px}
+.services-head-left{display:flex;flex-direction:column;gap:14px;max-width:640px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.svc-card{position:relative;display:flex;flex-direction:column;gap:18px;padding:28px;border-radius:24px;background:rgba(255,255,255,.72);border:1px solid rgba(11,21,48,.07);box-shadow:0 1px 2px rgba(11,21,48,.04),0 14px 34px -18px rgba(11,21,48,.18);color:#0B1530;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,border-color .35s ease}
+.svc-card:hover{transform:translateY(-6px);border-color:rgba(79,70,229,.3);box-shadow:0 1px 2px rgba(11,21,48,.04),0 30px 60px -24px rgba(79,70,229,.35)}
+.svc-glow{position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;pointer-events:none}
+.svc-header{display:flex;justify-content:space-between;align-items:flex-start;position:relative}
+.svc-icon{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;font-size:26px;border:1px solid rgba(255,255,255,.8)}
+.svc-cat{font-family:'Geist Mono',monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480;padding:5px 9px;border-radius:8px;background:rgba(11,21,48,.04)}
+.svc-body{display:flex;flex-direction:column;gap:8px;position:relative}
+.svc-body h3{margin:0;font-size:21px;letter-spacing:-.025em;font-weight:600}
+.svc-body p{margin:0;font-size:15px;line-height:1.6;color:#3A4566}
+.svc-link{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:500;color:#4F46E5;position:relative}
+
+/* RESULTS */
+.results-section{padding:0 16px;overflow:hidden}
+.results-dark{position:relative;max-width:1320px;margin:0 auto;border-radius:36px;background:#0B1530;color:#fff;overflow:hidden;padding:96px 24px}
+.results-blob1{position:absolute;width:640px;height:640px;left:-200px;top:-260px;border-radius:50%;background:radial-gradient(circle,rgba(79,70,229,.55),transparent 65%);filter:blur(40px);pointer-events:none}
+.results-blob2{position:absolute;width:520px;height:520px;right:-160px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.4),transparent 65%);filter:blur(40px);pointer-events:none}
+.results-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:24px 24px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);mask-image:linear-gradient(180deg,#000,transparent 70%);pointer-events:none}
+.results-inner{position:relative;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:56px}
+.results-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;background:rgba(255,255,255,.1);border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.stat-cell{background:#0E1A3A;padding:28px 26px;display:flex;flex-direction:column;gap:6px}
+.stat-n{font-size:46px;font-weight:600;letter-spacing:-.04em;line-height:1}
+.stat-l{font-size:14.5px;color:#B7C0DA}
+.results-charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:20px}
+.chart-card{padding:28px;border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:20px}
+.chart-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.chart-tag{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:rgba(16,185,129,.15);color:#6EE7B7;font-size:13px;font-weight:500}
+.outcome-row{display:flex;flex-direction:column;gap:8px}
+.outcome-labels{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.outcome-label{color:#D7DCEC}
+.outcome-value{font-family:'Geist Mono',monospace;color:#fff;font-weight:500}
+.outcome-bar-bg{height:10px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
+.outcome-bar{height:100%;border-radius:999px;background:linear-gradient(90deg,#4F46E5,#7C3AED,#38BDF8)}
+
+/* ABOUT */
+.about-section{padding:120px 0}
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:64px;align-items:center}
+.about-cards-wrap{position:relative;display:grid;gap:16px;padding:8px}
+.about-glow{position:absolute;inset:10%;background:radial-gradient(circle,rgba(124,58,237,.22),transparent 70%);filter:blur(30px)}
+.about-cards{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px}
+.about-card{padding:24px;border-radius:22px;background:#fff;border:1px solid rgba(11,21,48,.07);box-shadow:0 20px 40px -24px rgba(11,21,48,.25);display:flex;flex-direction:column;gap:14px}
+.about-card-title{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px}
+.about-checklist{display:flex;flex-direction:column;gap:9px;font-size:14.5px;color:#3A4566}
+.about-check{display:flex;gap:8px;align-items:center}
+.about-banner{position:relative;display:flex;align-items:center;gap:16px;padding:20px 24px;border-radius:22px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;box-shadow:0 24px 50px -24px rgba(79,70,229,.8)}
+.about-banner-icon{font-size:30px}
+.about-banner-text{display:flex;flex-direction:column;gap:2px}
+.about-banner-title{font-weight:600;font-size:16.5px}
+.about-banner-sub{font-size:14px;color:#E0E3FF}
+.about-right{display:flex;flex-direction:column;gap:22px}
+.about-body{margin:0;font-size:17px;line-height:1.7;color:#3A4566}
+.about-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-dark{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:14px;background:#0B1530;color:#fff !important;font-weight:500;font-size:15px;transition:transform .25s ease}
+.btn-dark:hover{transform:translateY(-2px)}
+.btn-outline{display:inline-flex;align-items:center;gap:10px;padding:14px 20px;border-radius:14px;background:#fff;border:1px solid rgba(11,21,48,.1);color:#0B1530 !important;font-weight:500;font-size:15px;transition:border-color .25s}
+.btn-outline:hover{border-color:rgba(79,70,229,.35)}
+
+/* WHY */
+.why-section{padding:0 0 120px}
+.why-head{display:flex;flex-direction:column;gap:14px;max-width:680px;margin-bottom:52px}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));column-gap:40px;row-gap:44px}
+.why-item{display:flex;flex-direction:column;gap:12px;padding-top:24px;border-top:1px solid rgba(11,21,48,.1)}
+.why-icon{font-size:30px;color:#4F46E5}
+.why-item h3{margin:0;font-size:19px;letter-spacing:-.02em;font-weight:600}
+.why-item p{margin:0;font-size:15px;line-height:1.65;color:#3A4566}
+
+/* PROCESS */
+.process-section{padding:0 0 120px;overflow:hidden}
+.process-wrap{padding:56px 40px;border-radius:32px;background:linear-gradient(160deg,#fff,#EEF0FB);border:1px solid rgba(11,21,48,.06);display:flex;flex-direction:column;gap:48px;position:relative;overflow:hidden}
+.process-blob{position:absolute;right:-120px;top:-120px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(14,165,233,.18),transparent 70%);pointer-events:none}
+.process-head{position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px}
+.process-steps{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:20px}
+.p-step{display:flex;flex-direction:column;gap:14px;padding:24px;border-radius:20px;background:rgba(255,255,255,.8);border:1px solid rgba(11,21,48,.06)}
+.p-num{font-family:'Instrument Serif',serif;font-size:48px;line-height:1;background:linear-gradient(135deg,#4F46E5,#0EA5E9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.p-step h3{margin:0;font-size:18.5px;letter-spacing:-.02em;font-weight:600}
+.p-step p{margin:0;font-size:14.5px;line-height:1.6;color:#3A4566}
+
+/* REVIEWS */
+.reviews-section{padding:0 0 120px}
+.reviews-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:52px}
+.reviews-score{display:flex;align-items:center;gap:14px;padding:12px 18px;border-radius:16px;background:#fff;border:1px solid rgba(11,21,48,.07)}
+.reviews-score-n{font-size:32px;font-weight:600;letter-spacing:-.03em}
+.reviews-score-detail{display:flex;flex-direction:column;font-size:13px;color:#5A6480}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));gap:18px}
+.review-card{display:flex;flex-direction:column;gap:18px;padding:26px;border-radius:22px;background:#fff;border:1px solid rgba(11,21,48,.07);box-shadow:0 14px 34px -22px rgba(11,21,48,.22);transition:transform .35s ease}
+.review-card:hover{transform:translateY(-4px)}
+.review-top{display:flex;justify-content:space-between;align-items:center}
+.review-stars{color:#F59E0B;font-size:15px}
+.review-tag{font-size:12.5px;font-weight:500;padding:5px 10px;border-radius:999px;background:#EEF0FF;color:#4338CA}
+.review-quote{margin:0;font-size:15.5px;line-height:1.65;color:#1E2A4A}
+.review-author{margin-top:auto;display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(11,21,48,.07)}
+.review-avatar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:600;flex-shrink:0}
+.review-name{font-weight:600;font-size:14.5px}
+.review-role{font-size:13px;color:#5A6480}
+
+/* CTA */
+.cta-section{padding:0 16px 100px;overflow:hidden}
+.cta-dark{position:relative;max-width:1200px;margin:0 auto;border-radius:36px;padding:80px 32px;overflow:hidden;background:linear-gradient(135deg,#3730A3,#6D28D9 55%,#0369A1);color:#fff;text-align:center}
+.cta-blob1{position:absolute;width:480px;height:480px;left:-120px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.55),transparent 65%);filter:blur(30px);animation:vsBlob 20s ease-in-out infinite;pointer-events:none}
+.cta-blob2{position:absolute;width:420px;height:420px;right:-80px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(251,191,36,.35),transparent 65%);filter:blur(30px);animation:vsBlob 24s ease-in-out infinite reverse;pointer-events:none}
+.cta-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:radial-gradient(ellipse at center,#000,transparent 70%);mask-image:radial-gradient(ellipse at center,#000,transparent 70%);pointer-events:none}
+.cta-inner{position:relative;max-width:720px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:22px}
+.cta-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);font-size:13.5px}
+.cta-title{margin:0;font-size:clamp(34px,5vw,60px);line-height:1.02;letter-spacing:-.045em;font-weight:600;text-wrap:balance}
+.cta-desc{margin:0;font-size:18px;line-height:1.6;color:#E3E6FF}
+.cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding-top:6px}
+.btn-white{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:14px;background:#fff;color:#0B1530 !important;font-weight:600;font-size:15.5px;box-shadow:0 14px 30px -12px rgba(0,0,0,.4);transition:transform .25s ease}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-glass{display:inline-flex;align-items:center;gap:10px;padding:16px 24px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff !important;font-weight:500;font-size:15.5px;transition:background .25s}
+.btn-glass:hover{background:rgba(255,255,255,.2)}
+
+/* FOOTER */
+.footer{padding:0 24px 40px}
+.footer-top{display:grid;grid-template-columns:3fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px}
+.footer-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.footer-brand-desc{font-size:14.5px;line-height:1.6;color:#5A6480;max-width:280px}
+.footer-socials{display:flex;gap:8px;margin-top:16px}
+.footer-social{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#fff;border:1px solid rgba(11,21,48,.08);color:#0B1530;font-size:18px;transition:color .2s}
+.footer-social:hover{color:#4F46E5}
+.footer-col h5{font-weight:600;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#5A6480;margin:0 0 12px}
+.footer-col ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
+.footer-col a{font-size:14.5px;color:#1E2A4A;transition:color .2s}
+.footer-col a:hover{color:#4F46E5}
+.footer-btm{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid rgba(11,21,48,.08);font-size:13.5px;color:#5A6480}
+.footer-btm-links{display:flex;gap:20px}
+.footer-btm-links a{color:#5A6480;transition:color .2s}
+.footer-btm-links a:hover{color:#0B1530}
+
+/* REVEAL */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hero{padding:110px 16px 64px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem}
+  .nav-links{display:none}
+  .process-wrap{padding:32px 20px}
+}
+@media(max-width:480px){
+  .footer-top{grid-template-columns:1fr}
+  .hero-card{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-reveal]{opacity:1 !important;transform:none !important;transition:none !important}
+  .hero-blob1,.hero-blob2,.hero-blob3,.cta-blob1,.cta-blob2,.hero-card-traffic,.hero-card-cr{animation:none}
+  .marquee-track{animation:none}
+}
+</style>
 </head>
 <body>
 
-<!-- ── NAVBAR ─────────────────────────────────────────────── -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+<header class="site-header">
+  <nav class="nav-wrap" id="main-nav">
     <a href="/" class="nav-logo">
-      <img src="images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/>
+      <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:38px;width:auto;display:block">
     </a>
-
-    <ul class="nav-menu">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="about">About</a></li>
-      <li class="has-mega-menu">
-        <a href="services/index">Services <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu">
-          <div class="mega-menu-col">
-            <h4>SEO Services</h4>
-            <ul>
-              <li><a href="/services/seo"><span class="icon-wrap"><i class="fas fa-search"></i></span> SEO Overview</a></li>
-              <li><a href="/services/local-seo"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO</a></li>
-              <li><a href="/services/ecom-seo"><span class="icon-wrap"><i class="fas fa-shopping-cart"></i></span> eCommerce SEO</a></li>
-            </ul>
-          </div>
-          <div class="mega-menu-col">
-            <h4>Web Development</h4>
-            <ul>
-              <li><a href="/services/shopify"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify Creation</a></li>
-              <li><a href="/services/wordpress"><span class="icon-wrap"><i class="fab fa-wordpress"></i></span> WordPress Dev</a></li>
-            </ul>
-          </div>
-          <div class="mega-menu-col">
-            <h4>Growth & Conversion</h4>
-            <ul>
-              <li><a href="/services/cro"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> CRO</a></li>
-            </ul>
-          </div>
-          <div class="mega-menu-featured">
-            <div class="badge">Free Audit</div>
-            <h5>Not sure where to start?</h5>
-            <p>Get a free website & SEO audit — no strings attached.</p>
-            <a href="contact" class="btn btn-primary btn-sm">Claim Free Audit</a>
-          </div>
-        </div>
-      </li>
-      <li class="has-mega-menu">
-        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="/tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="tools/index" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
-        </div>
-      </li><li><a href="portfolio">Portfolio</a></li><li><a href="pricing">Pricing</a></li>
-      <li><a href="contact">Contact</a></li>
-    </ul>
-
-    <div class="lang-switch"><a href="/" class="active"><span class="flag">🇺🇸</span> EN</a><span class="lang-sep"></span><a href="/de/"><span class="flag">🇩🇪</span> DE</a></div>
-    <a href="contact" class="btn btn-primary btn-sm nav-cta">Get Free Audit</a>
-
-    <div class="nav-toggle" id="navToggle">
-      <span></span><span></span><span></span>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
     </div>
-  </div>
-</nav>
+    <div style="display:flex;align-items:center;gap:10px">
+      <span class="lang-switcher"><span class="lang-active">EN</span><a href="/de" class="lang-inactive" style="padding:6px 8px">DE</a></span>
+      <a href="#contact" class="nav-cta">Free Audit <i class="ph ph-arrow-up-right"></i></a>
+    </div>
+  </nav>
+</header>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index" class="m-link">Home</a>
-  <a href="about" class="m-link">About</a>
-  <div class="m-link has-sub" style="cursor:pointer">
-    Services <i class="fas fa-chevron-down m-arrow" style="transition:.3s"></i>
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="hero-grid"></div>
+    <div class="hero-blob1"></div>
+    <div class="hero-blob2"></div>
+    <div class="hero-blob3"></div>
   </div>
-  <div class="m-sub">
-    <a href="/services/seo"><i class="fas fa-search"></i> SEO Overview</a>
-    <a href="/services/local-seo"><i class="fas fa-map-marker-alt"></i> Local SEO</a>
-    <a href="/services/ecom-seo"><i class="fas fa-shopping-cart"></i> eCommerce SEO</a>
-    <a href="/services/shopify"><i class="fab fa-shopify"></i> Shopify Creation</a>
-    <a href="/services/wordpress"><i class="fab fa-wordpress"></i> WordPress Dev</a>
-    <a href="/services/cro"><i class="fas fa-chart-line"></i> CRO</a>
-  </div>
-  <a href="/tools/" class="m-link">Tools</a><a href="portfolio" class="m-link">Portfolio</a><a href="pricing" class="m-link">Pricing</a>
-  <a href="contact" class="m-link">Contact</a>
-  <a href="contact" class="btn btn-primary m-nav-cta" style="text-align:center">Get Free Audit</a>
-</div>
-
-<!-- ── HERO ───────────────────────────────────────────────── -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <canvas id="heroCanvas" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.6;"></canvas>
-
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 520px;gap:4rem;align-items:center;">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="dot"></span>
-          Available for New Projects — Based in Germany
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge" data-reveal>
+        <span class="hero-pulse"></span>
+        Available for new projects · Based in Germany
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <p class="hero-intro" data-reveal data-delay="80">Hi, I'm Vahid Sediqi —</p>
+        <h1 class="hero-h1" data-reveal data-delay="140">
+          Your full-stack digital <span class="hero-gradient">growth</span> engineer.
+        </h1>
+      </div>
+      <p class="hero-desc" data-reveal data-delay="220">
+        I help businesses grow online with SEO that ranks, websites that convert and marketing backed by data — from local shops to global eCommerce brands.
+      </p>
+      <div class="hero-actions" data-reveal data-delay="300">
+        <a href="#contact" class="btn-primary">Start growing today <i class="ph ph-arrow-right"></i></a>
+        <a href="#services" class="btn-secondary">Explore services</a>
+      </div>
+      <div class="hero-social" data-reveal data-delay="380">
+        <div style="display:flex;align-items:center;gap:10px;padding-top:14px">
+          <div class="hero-avatars">
+            <span class="hero-avatar" style="background:linear-gradient(135deg,#818CF8,#4F46E5)">MR</span>
+            <span class="hero-avatar" style="background:linear-gradient(135deg,#38BDF8,#0EA5E9)">SK</span>
+            <span class="hero-avatar" style="background:linear-gradient(135deg,#C084FC,#7C3AED)">TH</span>
+            <span class="hero-avatar" style="background:linear-gradient(135deg,#FBBF24,#F59E0B)">EL</span>
+          </div>
+          <div class="hero-rating">
+            <span class="hero-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span>
+            <span class="hero-rating-text"><b style="color:#0B1530">5.0</b> from 150+ clients</span>
+          </div>
         </div>
-        <p style="font-size:1.15rem;font-weight:600;color:var(--text-muted);margin-bottom:.5rem;letter-spacing:.02em;">Hi, I'm <span style="color:var(--accent-2);font-weight:700;">Vahid Sediqi</span></p>
-        <h1>Your Full-Stack <span class="gradient-text">Digital Growth</span> Engineer</h1>
-        <p class="hero-desc">I help businesses grow online with powerful <a href="/services/seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">SEO strategies</a>, high-converting websites, and data-driven marketing. From <a href="/services/local-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">local shops</a> to global <a href="/services/ecom-seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">eCommerce brands</a> — I deliver results that matter.</p>
-        <div class="hero-actions">
-          <a href="contact" class="btn btn-primary btn-lg">
-            <i class="fas fa-rocket"></i> Start Growing Today
-          </a>
-          <a href="services/index" class="btn btn-outline btn-lg">
-            <i class="fas fa-eye"></i> Explore Services
-          </a>
+        <div class="hero-global" style="padding-top:14px">
+          <i class="ph-duotone ph-globe-hemisphere-west" style="font-size:22px;color:#4F46E5"></i>
+          Working globally
         </div>
-        <div class="hero-trust">
-          <!-- Vahid photo + name -->
-          <div class="trust-item" style="gap:.75rem;">
-            <img src="images/vahid-sediqi.png?v=2"
-                 alt="Vahid Sediqi"
-                 style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid rgba(79,127,255,.4);flex-shrink:0;">
-            <div>
-              <div style="font-size:.85rem;font-weight:700;color:var(--text);line-height:1.2;">Vahid Sediqi</div>
-              <div style="font-size:.75rem;color:var(--text-3);">Growth Engineer</div>
-            </div>
-          </div>
-          <div class="trust-divider"></div>
-          <div class="trust-item">
-            <span class="stars">★★★★★</span>
-            <span>5.0 on Fiverr</span>
-          </div>
-          <div class="trust-divider"></div>
-          <div class="trust-item">
-            <i class="fas fa-users" style="color:var(--accent)"></i>
-            <span>150+ Happy Clients</span>
-          </div>
-          <div class="trust-divider"></div>
-          <div class="trust-item">
-            <i class="fas fa-globe" style="color:var(--accent)"></i>
-            <span>Working Globally</span>
+      </div>
+    </div>
+
+    <div class="hero-right" data-reveal data-delay="200">
+      <div class="hero-glow"></div>
+      <div class="hero-photo-frame">
+        <div class="hero-photo-inner">
+          <img src="/images/vahid-sediqi-desk.webp" alt="Vahid Sediqi working at his desk" loading="eager">
+          <div class="hero-photo-overlay"></div>
+          <div class="hero-photo-label">
+            <i class="ph-duotone ph-seal-check" style="font-size:22px;color:#A5B4FC"></i>
+            <span style="font-size:14px;font-weight:500">Top Rated · Fiverr Verified</span>
           </div>
         </div>
       </div>
-
-      <div class="hero-right">
-        <div style="position:relative;">
-          <!-- Premium photo frame -->
-          <div style="
-            position:relative;
-            border-radius:var(--r-xl);
-            overflow:hidden;
-            box-shadow:
-              0 0 0 1px rgba(79,127,255,.35),
-              0 0 0 4px rgba(79,127,255,.08),
-              0 32px 80px rgba(0,0,0,.7),
-              0 0 60px rgba(79,127,255,.15);
-            animation: heroImgFloat 6s ease-in-out infinite;
-          ">
-            <img
-              src="images/vahid-sediqi.png?v=2"
-              alt="Vahid Sediqi — Full-Stack Digital Marketing & Growth Engineer"
-              style="width:100%;height:520px;object-fit:cover;object-position:center 20%;display:block;"
-              loading="eager"
-            />
-            <!-- subtle gradient overlay at bottom -->
-            <div style="
-              position:absolute;bottom:0;left:0;right:0;height:120px;
-              background:linear-gradient(to top, rgba(4,8,26,.6) 0%, transparent 100%);
-              pointer-events:none;
-            "></div>
-            <!-- accent glow line at bottom -->
-            <div style="
-              position:absolute;bottom:0;left:10%;right:10%;height:2px;
-              background:var(--grad);border-radius:100px;
-            "></div>
-          </div>
-
-          <!-- Mobile-only overlap badge — after image so it falls below if absolute fails -->
-          <div class="hero-mobile-badge">
-            <span class="hero-mobile-badge__dot"></span>
-            Available for New Projects &nbsp;·&nbsp; Germany
-          </div>
-
-          <div class="float-badge float-1">
-            <div class="icon"><i class="fas fa-trophy"></i></div>
-            <div class="text-wrap">
-              <div class="top">Top Rated Seller</div>
-              <div class="bot">Fiverr Verified</div>
-            </div>
-          </div>
-          <div class="float-badge float-2">
-            <div class="icon gold"><i class="fas fa-star"></i></div>
-            <div class="text-wrap">
-              <div class="top">5.0 ★ Rating</div>
-              <div class="bot">150+ Reviews</div>
-            </div>
-          </div>
+      <div class="hero-card hero-card-traffic">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span class="hc-label">Organic traffic</span>
+          <i class="ph ph-trend-up" style="color:#10B981"></i>
+        </div>
+        <div class="hc-number">3.0<span style="font-size:16px;color:#5A6480">×</span></div>
+        <svg viewBox="0 0 180 48" style="width:100%;height:44px;display:block" aria-hidden="true">
+          <defs><linearGradient id="hs1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#4F46E5" stop-opacity=".3"/><stop offset="1" stop-color="#4F46E5" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0,44 L20,42 L40,40 L60,36 L80,33 L100,27 L120,22 L140,16 L160,11 L180,4 L180,48 L0,48 Z" fill="url(#hs1)"/>
+          <path d="M0,44 L20,42 L40,40 L60,36 L80,33 L100,27 L120,22 L140,16 L160,11 L180,4" fill="none" stroke="#4F46E5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="hero-card hero-card-cr">
+        <div class="hc-label" style="margin-bottom:8px">Conversion rate</div>
+        <div class="hc-bars">
+          <div class="hc-bar-wrap"><div class="hc-bar" style="height:30%;background:#E2E5F0"></div><span style="font-size:11px;color:#5A6480;font-family:'Geist Mono',monospace">1.1%</span></div>
+          <div class="hc-bar-wrap"><div class="hc-bar" style="height:100%;background:linear-gradient(180deg,#7C3AED,#4F46E5)"></div><span style="font-size:11px;color:#0B1530;font-weight:600;font-family:'Geist Mono',monospace">3.6%</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── TRUST BAR ───────────────────────────────────────────── -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-bar-inner">
-      <div class="trust-bar-item"><i class="fas fa-shield-alt"></i> Google Certified</div>
-      <div class="trust-bar-item"><i class="fab fa-shopify"></i> Shopify Partner</div>
-      <div class="trust-bar-item"><i class="fab fa-wordpress"></i> WordPress Expert</div>
-      <div class="trust-bar-item"><i class="fas fa-star"></i> 5.0 Fiverr Rating</div>
-      <div class="trust-bar-item"><i class="fas fa-globe"></i> Global Clients</div>
-      <div class="trust-bar-item"><i class="fas fa-clock"></i> 24h Response Time</div>
-    </div>
-  </div>
-</div>
-
-<!-- ── SERVICES OVERVIEW ────────────────────────────────────── -->
-<section class="section" id="services">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-bolt"></i> What I Do</span>
-      <h2>Services That Drive <span class="gradient-text">Real Results</span></h2>
-      <p>Every service is built around one goal: growing your business online. No fluff, no guesswork — just proven strategies that deliver measurable outcomes.</p>
-    </div>
-    <div class="grid-3">
-      <div class="service-card reveal delay-1">
-        <div class="service-icon"><i class="fas fa-search"></i></div>
-        <h3>SEO Strategy</h3>
-        <p>From technical audits to on-page optimisation and link building — I create SEO campaigns that push your website to the top of Google and keep it there.</p>
-        <a href="/services/seo" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card reveal delay-2">
-        <div class="service-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <h3>Local SEO</h3>
-        <p>Dominate your local area on Google Maps and search results. Perfect for restaurants, clinics, shops, and any business that serves a local community.</p>
-        <a href="/services/local-seo" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card reveal delay-3">
-        <div class="service-icon"><i class="fas fa-shopping-cart"></i></div>
-        <h3>eCommerce SEO</h3>
-        <p>Increase your online store's organic visibility, drive qualified buyers, and grow revenue with strategic eCommerce SEO tailored to your products.</p>
-        <a href="/services/ecom-seo" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card reveal delay-1">
-        <div class="service-icon"><i class="fab fa-shopify"></i></div>
-        <h3>Shopify Website Creation</h3>
-        <p>Get a stunning, high-performance Shopify store built from scratch. Mobile-first, fast-loading, and designed to convert browsers into buyers.</p>
-        <a href="/services/shopify" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card reveal delay-2">
-        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
-        <h3>CRO — Conversion Rate Optimisation</h3>
-        <p>Turn more of your existing traffic into customers. I analyse user behaviour, run A/B tests, and optimise every step of the funnel to maximise revenue.</p>
-        <a href="/services/cro" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="service-card reveal delay-3">
-        <div class="service-icon"><i class="fab fa-wordpress"></i></div>
-        <h3>WordPress Development</h3>
-        <p>Beautiful, fast, and SEO-ready WordPress websites for local businesses. Custom design, plugin setup, speed optimisation, and ongoing support.</p>
-        <a href="/services/wordpress" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:3rem;" class="reveal">
-      <a href="services/index" class="btn btn-outline btn-lg">View All Services <i class="fas fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ── STATS ───────────────────────────────────────────────── -->
-<div class="stats-section">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <span class="num" data-count="150" data-suffix="+">0+</span>
-        <span class="label">Projects Completed</span>
-      </div>
-      <div class="stat-item reveal delay-1">
-        <span class="num" data-count="7" data-suffix="+">0+</span>
-        <span class="label">Years Experience</span>
-      </div>
-      <div class="stat-item reveal delay-2">
-        <span class="num" data-count="98" data-suffix="%">0%</span>
-        <span class="label">Client Satisfaction</span>
-      </div>
-      <div class="stat-item reveal delay-3">
-        <span class="num" data-count="25" data-suffix="+">0+</span>
-        <span class="label">Countries Served</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── MEET VAHID (photo strip) ────────────────────────────── -->
-<section class="section" style="background:var(--bg-2);padding:80px 0;">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:380px 1fr;gap:4rem;align-items:center;">
-      <!-- Photo -->
-      <div class="reveal-left" style="position:relative;">
-        <div style="border-radius:var(--r-xl);overflow:hidden;border:2px solid rgba(79,127,255,.2);box-shadow:0 24px 64px rgba(0,0,0,.5);">
-          <img src="images/vahid-sediqi-office.png?v=2"
-               alt="Vahid Sediqi — Digital Marketing Expert Germany"
-               style="width:100%;height:420px;object-fit:cover;object-position:center top;display:block;">
-        </div>
-        <!-- Accent line -->
-        <div style="position:absolute;bottom:-12px;left:24px;right:24px;height:3px;background:var(--grad);border-radius:100px;"></div>
-      </div>
-      <!-- Text -->
-      <div class="reveal-right">
-        <span class="tag mb-3"><i class="fas fa-user-circle"></i> Hi, I'm Vahid</span>
-        <h2 style="margin-bottom:1.2rem;">I'm <span class="gradient-text">Vahid Sediqi</span> — Your Digital Growth Partner</h2>
-        <p style="margin-bottom:1rem;">I'm a full-stack digital marketing and growth engineer based in Germany. For over 7 years I've helped businesses of every size grow their online revenue through <a href="/services/seo" style="color:var(--accent-2);text-decoration:none;font-weight:600;">SEO</a>, beautiful <a href="/services/shopify" style="color:var(--accent-2);text-decoration:none;font-weight:600;">Shopify</a> and <a href="/services/wordpress" style="color:var(--accent-2);text-decoration:none;font-weight:600;">WordPress</a> websites, and smart <a href="/services/cro" style="color:var(--accent-2);text-decoration:none;font-weight:600;">conversion strategies</a>.</p>
-        <p style="margin-bottom:1.5rem;">What makes me different? I don't just do marketing — I also build and fix the technical side of your website. That means faster execution, better results, and no excuses. When your traffic grows, your website is already ready to convert it.</p>
-        <div style="display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:600;color:var(--text);">
-            <div style="width:36px;height:36px;background:rgba(79,127,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);"><i class="fas fa-check"></i></div>
-            7+ Years Experience
-          </div>
-          <div style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:600;color:var(--text);">
-            <div style="width:36px;height:36px;background:rgba(79,127,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--accent);"><i class="fas fa-check"></i></div>
-            150+ Projects Delivered
-          </div>
-          <div style="display:flex;align-items:center;gap:.6rem;font-size:.9rem;font-weight:600;color:var(--text);">
-            <div style="width:36px;height:36px;background:rgba(255,183,0,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);"><i class="fas fa-star"></i></div>
-            5.0 ★ on Fiverr
-          </div>
-        </div>
-        <a href="about" class="btn btn-primary"><i class="fas fa-user"></i> More About Me</a>
+<!-- MARQUEE -->
+<section class="marquee-section" aria-hidden="true">
+  <div class="marquee-inner">
+    <div class="marquee-fade">
+      <div class="marquee-track">
+        <span class="marquee-item"><i class="ph-duotone ph-certificate marquee-icon"></i>Google Certified</span>
+        <span class="marquee-item"><i class="ph-duotone ph-storefront marquee-icon"></i>Shopify Partner</span>
+        <span class="marquee-item"><i class="ph-duotone ph-wordpress-logo marquee-icon"></i>WordPress Expert</span>
+        <span class="marquee-item"><i class="ph-duotone ph-seal-check marquee-icon"></i>Fiverr Top Rated</span>
+        <span class="marquee-item"><i class="ph-duotone ph-clock marquee-icon"></i>24h Response Time</span>
+        <span class="marquee-item"><i class="ph-duotone ph-globe-hemisphere-west marquee-icon"></i>Clients in DE · UK · US · AU</span>
+        <span class="marquee-item"><i class="ph-duotone ph-certificate marquee-icon"></i>Google Certified</span>
+        <span class="marquee-item"><i class="ph-duotone ph-storefront marquee-icon"></i>Shopify Partner</span>
+        <span class="marquee-item"><i class="ph-duotone ph-wordpress-logo marquee-icon"></i>WordPress Expert</span>
+        <span class="marquee-item"><i class="ph-duotone ph-seal-check marquee-icon"></i>Fiverr Top Rated</span>
+        <span class="marquee-item"><i class="ph-duotone ph-clock marquee-icon"></i>24h Response Time</span>
+        <span class="marquee-item"><i class="ph-duotone ph-globe-hemisphere-west marquee-icon"></i>Clients in DE · UK · US · AU</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── WHY CHOOSE VAHID ────────────────────────────────────── -->
-<section class="section" id="why">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-star"></i> Why Choose Me</span>
-      <h2>A Partner Who Cares About <span class="gradient-text">Your Growth</span></h2>
-      <p>I don't just deliver a service — I deliver outcomes. Every strategy is tailored, every result is tracked, and every client is treated like a long-term partner.</p>
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="wrap">
+    <div class="services-head">
+      <div class="services-head-left">
+        <span class="eyebrow" data-reveal>What I do</span>
+        <h2 class="section-title" data-reveal data-delay="80">Services that drive <span class="italic-accent">real</span> results.</h2>
+      </div>
+      <p class="section-desc" style="max-width:400px" data-reveal data-delay="140">Every service is built around one goal — growing your business online. No fluff, no guesswork.</p>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit-card reveal delay-1">
-        <div class="benefit-icon"><i class="fas fa-bullseye"></i></div>
-        <h3>Results-Driven Approach</h3>
-        <p>Everything I do is measured by outcomes: more traffic, more leads, more revenue. Vanity metrics don't interest me — real growth does.</p>
-      </div>
-      <div class="benefit-card reveal delay-2">
-        <div class="benefit-icon"><i class="fas fa-code"></i></div>
-        <h3>Technical + Marketing Combined</h3>
-        <p>Most marketers can't code, and most developers don't understand SEO. I bridge the gap — which means faster execution and better results.</p>
-      </div>
-      <div class="benefit-card reveal delay-3">
-        <div class="benefit-icon"><i class="fas fa-comments"></i></div>
-        <h3>Clear Communication</h3>
-        <p>No jargon, no confusion. I explain everything in plain language and keep you updated at every step. You always know exactly what's happening.</p>
-      </div>
-      <div class="benefit-card reveal delay-1">
-        <div class="benefit-icon"><i class="fas fa-globe"></i></div>
-        <h3>Global Experience</h3>
-        <p>I've worked with clients from Germany, UK, USA, Australia, and more. I understand different markets and adapt strategies accordingly.</p>
-      </div>
-      <div class="benefit-card reveal delay-2">
-        <div class="benefit-icon"><i class="fas fa-clock"></i></div>
-        <h3>Fast Turnaround</h3>
-        <p>I respect your time. Projects are delivered on schedule, communications are answered within 24 hours, and I never ghost a client.</p>
-      </div>
-      <div class="benefit-card reveal delay-3">
-        <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3>100% White-Hat Methods</h3>
-        <p>All strategies follow Google's guidelines. No shortcuts, no black-hat tricks — just sustainable, long-term growth that won't put your website at risk.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROCESS ─────────────────────────────────────────────── -->
-<section class="section" style="background:var(--bg-2);">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-map"></i> My Process</span>
-      <h2>How I Turn Your Vision Into <span class="gradient-text">Online Success</span></h2>
-      <p>A clear, proven process that keeps you informed and in control at every stage.</p>
-    </div>
-    <div class="process-steps">
-      <div class="step-card reveal delay-1">
-        <div class="step-num">01</div>
-        <h4>Discovery & Audit</h4>
-        <p>I start by deeply understanding your business, goals, and competitors. A thorough audit reveals exactly where the opportunities are.</p>
-      </div>
-      <div class="step-card reveal delay-2">
-        <div class="step-num">02</div>
-        <h4>Strategy & Planning</h4>
-        <p>I build a custom roadmap with clear milestones, priorities, and KPIs. No one-size-fits-all solutions — every strategy is unique to you.</p>
-      </div>
-      <div class="step-card reveal delay-3">
-        <div class="step-num">03</div>
-        <h4>Execution & Optimisation</h4>
-        <p>I implement the strategy with precision, continuously testing and refining to maximise performance and ROI.</p>
-      </div>
-      <div class="step-card reveal delay-4">
-        <div class="step-num">04</div>
-        <h4>Report & Scale</h4>
-        <p>You get detailed monthly reports showing exactly what's working. Then we scale what's winning and eliminate what isn't.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── TESTIMONIALS ────────────────────────────────────────── -->
-<section class="section" id="testimonials">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="tag"><i class="fas fa-quote-left"></i> Client Reviews</span>
-      <h2>What Clients Say About <span class="gradient-text">Working With Me</span></h2>
-      <p>Real results. Real people. Here's what clients from around the world have to say about their experience.</p>
-    </div>
-
-    <div class="testimonials-slider reveal">
-      <div class="testimonials-track">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Vahid is simply outstanding. Our local restaurant jumped from page 4 to the top 3 on Google Maps in just 6 weeks. Bookings have increased by 40%. I couldn't be happier!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">MR</div>
-            <div class="reviewer-info">
-              <div class="name">Michael R.</div>
-              <div class="title">Restaurant Owner, Munich</div>
-            </div>
-          </div>
+    <div class="services-grid">
+      <a href="/services/seo" class="svc-card" data-reveal>
+        <div class="svc-glow" style="background:radial-gradient(circle,rgba(79,70,229,.14),transparent 70%)"></div>
+        <div class="svc-header">
+          <span class="svc-icon" style="background:linear-gradient(135deg,#EEF0FF,#E0E4FF);color:#4F46E5"><i class="ph-duotone ph-magnifying-glass"></i></span>
+          <span class="svc-cat">SEO</span>
         </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Our new Shopify store is absolutely beautiful and it converts incredibly well. Vahid understood our brand from day one and delivered far beyond our expectations. 100% recommended!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">SK</div>
-            <div class="reviewer-info">
-              <div class="name">Sarah K.</div>
-              <div class="title">eCommerce Brand Owner, Berlin</div>
-            </div>
-          </div>
+        <div class="svc-body">
+          <h3>SEO Strategy</h3>
+          <p>Technical audits, on-page optimisation and link building that push you to the top of Google — and keep you there.</p>
         </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"After 3 months of eCommerce SEO with Vahid, our organic traffic tripled. Our revenue from organic search went up by 280%. He knows exactly what he's doing."</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">TH</div>
-            <div class="reviewer-info">
-              <div class="name">Thomas H.</div>
-              <div class="title">Online Store Manager, Hamburg</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Vahid fixed our Google Merchant Center feed issues in record time. Hundreds of products were disapproved and he resolved every single one. Professional and reliable!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">EL</div>
-            <div class="reviewer-info">
-              <div class="name">Emma L.</div>
-              <div class="title">E-Commerce Director, London</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"The WordPress website Vahid built for my dental practice has brought us so many new patients. It loads fast, looks premium, and ranks well locally. Worth every euro!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">AW</div>
-            <div class="reviewer-info">
-              <div class="name">Dr. Anna W.</div>
-              <div class="title">Dentist & Practice Owner, Frankfurt</div>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p>"Our conversion rate jumped from 1.1% to 3.6% after Vahid's CRO work. That's more than 3x the revenue from the same amount of traffic. Absolutely incredible ROI!"</p>
-          <div class="reviewer">
-            <div class="reviewer-avatar">DM</div>
-            <div class="reviewer-info">
-              <div class="name">David M.</div>
-              <div class="title">Marketing Director, Amsterdam</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="slider-controls">
-        <button class="slider-btn slider-prev"><i class="fas fa-arrow-left"></i></button>
-        <div class="slider-dots"></div>
-        <button class="slider-btn slider-next"><i class="fas fa-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── CTA ─────────────────────────────────────────────────── -->
-<section class="cta-section">
-  <div class="container">
-    <span class="tag tag-gold reveal" style="margin-bottom:1.5rem;"><i class="fas fa-fire"></i> Limited Spots Available</span>
-    <h2 class="reveal">Ready to Grow Your Business <span class="gradient-text">Online?</span></h2>
-    <p class="reveal">Let's have a free, no-obligation strategy call. I'll review your current situation and tell you exactly what's holding your business back — and how to fix it.</p>
-        <div class="cta-actions reveal">
-      <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn btn-primary btn-xl" target="_blank" rel="noopener">
-        <i class="fas fa-calendar-check"></i> Book a Free Call
+        <span class="svc-link">Learn more <i class="ph ph-arrow-right"></i></span>
       </a>
-      <a href="contact" class="btn btn-outline btn-xl">
-        <i class="fas fa-file-alt"></i> Request Free Audit
+      <a href="/services/local-seo" class="svc-card" data-reveal data-delay="90">
+        <div class="svc-glow" style="background:radial-gradient(circle,rgba(124,58,237,.14),transparent 70%)"></div>
+        <div class="svc-header">
+          <span class="svc-icon" style="background:linear-gradient(135deg,#F3EDFF,#E9DEFF);color:#7C3AED"><i class="ph-duotone ph-map-pin"></i></span>
+          <span class="svc-cat">SEO</span>
+        </div>
+        <div class="svc-body">
+          <h3>Local SEO</h3>
+          <p>Dominate Google Maps and local search. Ideal for restaurants, clinics, shops and service businesses.</p>
+        </div>
+        <span class="svc-link">Learn more <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a href="/services/ecom-seo" class="svc-card" data-reveal data-delay="180">
+        <div class="svc-glow" style="background:radial-gradient(circle,rgba(14,165,233,.14),transparent 70%)"></div>
+        <div class="svc-header">
+          <span class="svc-icon" style="background:linear-gradient(135deg,#E6F6FE,#D5EFFC);color:#0284C7"><i class="ph-duotone ph-shopping-cart"></i></span>
+          <span class="svc-cat">SEO</span>
+        </div>
+        <div class="svc-body">
+          <h3>eCommerce SEO</h3>
+          <p>More organic visibility, more qualified buyers and more revenue — tailored to your product catalogue.</p>
+        </div>
+        <span class="svc-link">Learn more <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a href="/services/shopify" class="svc-card" data-reveal>
+        <div class="svc-glow" style="background:radial-gradient(circle,rgba(16,185,129,.14),transparent 70%)"></div>
+        <div class="svc-header">
+          <span class="svc-icon" style="background:linear-gradient(135deg,#ECFDF5,#D7F7E8);color:#059669"><i class="ph-duotone ph-storefront"></i></span>
+          <span class="svc-cat">Web Dev</span>
+        </div>
+        <div class="svc-body">
+          <h3>Shopify Stores</h3>
+          <p>High-performance Shopify stores built from scratch. Mobile-first, fast-loading and designed to convert.</p>
+        </div>
+        <span class="svc-link">Learn more <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a href="/services/cro" class="svc-card" data-reveal data-delay="90">
+        <div class="svc-glow" style="background:radial-gradient(circle,rgba(245,158,11,.16),transparent 70%)"></div>
+        <div class="svc-header">
+          <span class="svc-icon" style="background:linear-gradient(135deg,#FFF7E6,#FFEDC7);color:#D97706"><i class="ph-duotone ph-chart-line-up"></i></span>
+          <span class="svc-cat">Growth</span>
+        </div>
+        <div class="svc-body">
+          <h3>Conversion Optimisation</h3>
+          <p>Behaviour analysis, A/B testing and funnel optimisation that turns existing traffic into revenue.</p>
+        </div>
+        <span class="svc-link">Learn more <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a href="/services/wordpress" class="svc-card" data-reveal data-delay="180">
+        <div class="svc-glow" style="background:radial-gradient(circle,rgba(79,70,229,.14),transparent 70%)"></div>
+        <div class="svc-header">
+          <span class="svc-icon" style="background:linear-gradient(135deg,#EEF0FF,#E0E4FF);color:#4338CA"><i class="ph-duotone ph-wordpress-logo"></i></span>
+          <span class="svc-cat">Web Dev</span>
+        </div>
+        <div class="svc-body">
+          <h3>WordPress Development</h3>
+          <p>Fast, SEO-ready WordPress sites with custom design, speed optimisation and ongoing support.</p>
+        </div>
+        <span class="svc-link">Learn more <i class="ph ph-arrow-right"></i></span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<!-- RESULTS -->
+<section class="results-section" id="results">
+  <div class="results-dark">
+    <div class="results-blob1"></div>
+    <div class="results-blob2"></div>
+    <div class="results-dots"></div>
+    <div class="results-inner">
+      <div class="results-head">
+        <div style="display:flex;flex-direction:column;gap:14px;max-width:620px">
+          <span class="eyebrow eyebrow-light" data-reveal>Results</span>
+          <h2 class="section-title" data-reveal data-delay="80">Growth you can <span class="italic-accent" style="color:#A5B4FC">measure</span>, month after month.</h2>
+        </div>
+        <p style="margin:0;max-width:380px;color:#B7C0DA;font-size:16.5px;line-height:1.6" data-reveal data-delay="140">Vanity metrics don't interest me. Traffic, leads and revenue do.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-cell" data-reveal><span class="stat-n" data-count="150" data-suffix="+">150+</span><span class="stat-l">Projects delivered</span></div>
+        <div class="stat-cell" data-reveal data-delay="80"><span class="stat-n" data-count="7" data-suffix="+">7+</span><span class="stat-l">Years of experience</span></div>
+        <div class="stat-cell" data-reveal data-delay="160"><span class="stat-n">5.0★</span><span class="stat-l">Average client rating</span></div>
+        <div class="stat-cell" data-reveal data-delay="240"><span class="stat-n">24h</span><span class="stat-l">Response time</span></div>
+      </div>
+
+      <div class="results-charts">
+        <div class="chart-card" data-reveal>
+          <div class="chart-header">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <span style="font-size:13px;color:#B7C0DA">Organic sessions · eCommerce client, Hamburg</span>
+              <span style="font-size:28px;font-weight:600;letter-spacing:-.03em">Traffic tripled</span>
+            </div>
+            <span class="chart-tag"><i class="ph ph-trend-up"></i> +280% revenue</span>
+          </div>
+          <svg viewBox="0 0 600 250" style="width:100%;height:auto;display:block;overflow:visible" aria-hidden="true">
+            <defs>
+              <linearGradient id="ra" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#818CF8" stop-opacity=".45"/><stop offset="1" stop-color="#818CF8" stop-opacity="0"/></linearGradient>
+              <linearGradient id="rl" x1="0" x2="1"><stop offset="0" stop-color="#818CF8"/><stop offset="1" stop-color="#38BDF8"/></linearGradient>
+            </defs>
+            <g stroke="rgba(255,255,255,.08)" stroke-width="1"><line x1="0" x2="600" y1="30" y2="30"/><line x1="0" x2="600" y1="93" y2="93"/><line x1="0" x2="600" y1="157" y2="157"/><line x1="0" x2="600" y1="220" y2="220"/></g>
+            <path d="M0,220 L50,215 L100,211 L150,202 L200,188 L250,177 L300,162 L350,145 L400,129 L450,110 L500,92 L550,68 L600,40 L600,220 L0,220 Z" fill="url(#ra)"/>
+            <path d="M0,220 L50,215 L100,211 L150,202 L200,188 L250,177 L300,162 L350,145 L400,129 L450,110 L500,92 L550,68 L600,40" fill="none" stroke="url(#rl)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="600" cy="40" r="6" fill="#38BDF8" stroke="#0B1530" stroke-width="3"/>
+            <g fill="#8B95B5" font-size="12" font-family="monospace"><text x="0" y="244">Jan</text><text x="145" y="244">Apr</text><text x="295" y="244">Jul</text><text x="445" y="244">Oct</text><text x="570" y="244">Dec</text></g>
+          </svg>
+        </div>
+        <div class="chart-card" data-reveal data-delay="120">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-size:13px;color:#B7C0DA">Client outcomes</span>
+            <span style="font-size:28px;font-weight:600;letter-spacing:-.03em">Real numbers, real clients</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div class="outcome-row">
+              <div class="outcome-labels"><span class="outcome-label">Conversion rate · Amsterdam</span><span class="outcome-value">1.1% → 3.6%</span></div>
+              <div class="outcome-bar-bg"><div class="outcome-bar" data-bar="width" data-target="100%"></div></div>
+            </div>
+            <div class="outcome-row">
+              <div class="outcome-labels"><span class="outcome-label">Organic revenue · Hamburg</span><span class="outcome-value">+280%</span></div>
+              <div class="outcome-bar-bg"><div class="outcome-bar" data-bar="width" data-target="86%"></div></div>
+            </div>
+            <div class="outcome-row">
+              <div class="outcome-labels"><span class="outcome-label">Organic traffic · Hamburg</span><span class="outcome-value">3×</span></div>
+              <div class="outcome-bar-bg"><div class="outcome-bar" data-bar="width" data-target="68%"></div></div>
+            </div>
+            <div class="outcome-row">
+              <div class="outcome-labels"><span class="outcome-label">Restaurant bookings · Munich</span><span class="outcome-value">+40%</span></div>
+              <div class="outcome-bar-bg"><div class="outcome-bar" data-bar="width" data-target="34%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-cards-wrap" data-reveal>
+        <div class="about-glow"></div>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="about-card-title"><i class="ph-duotone ph-megaphone" style="font-size:24px;color:#7C3AED"></i>Marketing</div>
+            <div class="about-checklist">
+              <span class="about-check"><i class="ph ph-check" style="color:#7C3AED"></i>SEO &amp; Local SEO</span>
+              <span class="about-check"><i class="ph ph-check" style="color:#7C3AED"></i>Conversion optimisation</span>
+              <span class="about-check"><i class="ph ph-check" style="color:#7C3AED"></i>Google Ads</span>
+              <span class="about-check"><i class="ph ph-check" style="color:#7C3AED"></i>Content strategy</span>
+            </div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-title"><i class="ph-duotone ph-code" style="font-size:24px;color:#0EA5E9"></i>Engineering</div>
+            <div class="about-checklist">
+              <span class="about-check"><i class="ph ph-check" style="color:#0EA5E9"></i>Shopify stores</span>
+              <span class="about-check"><i class="ph ph-check" style="color:#0EA5E9"></i>WordPress builds</span>
+              <span class="about-check"><i class="ph ph-check" style="color:#0EA5E9"></i>Core Web Vitals</span>
+              <span class="about-check"><i class="ph ph-check" style="color:#0EA5E9"></i>Schema &amp; feeds</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-banner">
+          <i class="ph-duotone ph-lightning about-banner-icon"></i>
+          <div class="about-banner-text">
+            <span class="about-banner-title">One partner, both sides</span>
+            <span class="about-banner-sub">Faster execution. No hand-offs. No excuses.</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <span class="eyebrow" data-reveal>About me</span>
+        <h2 class="section-title" data-reveal data-delay="80">Most marketers can't code. Most developers don't get SEO. <span class="italic-accent" style="color:#4F46E5">I do both.</span></h2>
+        <p class="about-body" data-reveal data-delay="140">I'm a full-stack digital marketing and growth engineer based in Germany. For over 7 years I've helped businesses of every size grow online revenue through SEO, Shopify and WordPress websites, and smart conversion strategies. When your traffic grows, your website is already ready to convert it.</p>
+        <div class="about-actions" data-reveal data-delay="200">
+          <a href="/about" class="btn-dark">More about me <i class="ph ph-arrow-right"></i></a>
+          <a href="https://www.linkedin.com/in/vahidsediqi/" class="btn-outline" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo" style="font-size:18px;color:#0A66C2"></i> LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why-section">
+  <div class="wrap">
+    <div class="why-head">
+      <span class="eyebrow" data-reveal>Why work with me</span>
+      <h2 class="section-title" data-reveal data-delay="80">A partner who cares about your growth.</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item" data-reveal>
+        <i class="ph-duotone ph-target why-icon"></i>
+        <h3>Results-driven</h3>
+        <p>Everything is measured by outcomes: more traffic, more leads, more revenue.</p>
+      </div>
+      <div class="why-item" data-reveal data-delay="90">
+        <i class="ph-duotone ph-code why-icon"></i>
+        <h3>Technical + marketing</h3>
+        <p>I bridge the gap between code and growth — faster execution, better results.</p>
+      </div>
+      <div class="why-item" data-reveal data-delay="180">
+        <i class="ph-duotone ph-chat-circle-text why-icon"></i>
+        <h3>Clear communication</h3>
+        <p>No jargon. Plain-language updates at every step, so you always know what's happening.</p>
+      </div>
+      <div class="why-item" data-reveal>
+        <i class="ph-duotone ph-globe-hemisphere-west why-icon"></i>
+        <h3>Global experience</h3>
+        <p>Clients across Germany, the UK, USA, Australia and more — strategies adapted to each market.</p>
+      </div>
+      <div class="why-item" data-reveal data-delay="90">
+        <i class="ph-duotone ph-lightning why-icon"></i>
+        <h3>Fast turnaround</h3>
+        <p>Projects delivered on schedule, replies within 24 hours. I never ghost a client.</p>
+      </div>
+      <div class="why-item" data-reveal data-delay="180">
+        <i class="ph-duotone ph-shield-check why-icon"></i>
+        <h3>100% white-hat</h3>
+        <p>Every strategy follows Google's guidelines. Sustainable growth that never puts you at risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="process">
+  <div class="wrap">
+    <div class="process-wrap">
+      <div class="process-blob"></div>
+      <div class="process-head">
+        <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
+          <span class="eyebrow" data-reveal>My process</span>
+          <h2 class="section-title" data-reveal data-delay="80">From vision to online success in four steps.</h2>
+        </div>
+        <p class="section-desc" style="max-width:340px;font-size:16px" data-reveal data-delay="140">A clear process that keeps you informed and in control at every stage.</p>
+      </div>
+      <div class="process-steps">
+        <div class="p-step" data-reveal>
+          <span class="p-num">01</span>
+          <i class="ph-duotone ph-magnifying-glass" style="font-size:26px;color:#5A6480"></i>
+          <h3>Discovery &amp; audit</h3>
+          <p>Understanding your business, goals and competitors — and finding where the opportunities are.</p>
+        </div>
+        <div class="p-step" data-reveal data-delay="110">
+          <span class="p-num">02</span>
+          <i class="ph-duotone ph-map-trifold" style="font-size:26px;color:#5A6480"></i>
+          <h3>Strategy &amp; planning</h3>
+          <p>A custom roadmap with clear milestones, priorities and KPIs. Never one-size-fits-all.</p>
+        </div>
+        <div class="p-step" data-reveal data-delay="220">
+          <span class="p-num">03</span>
+          <i class="ph-duotone ph-gear-six" style="font-size:26px;color:#5A6480"></i>
+          <h3>Execution</h3>
+          <p>Precise implementation, continuously tested and refined to maximise ROI.</p>
+        </div>
+        <div class="p-step" data-reveal data-delay="330">
+          <span class="p-num">04</span>
+          <i class="ph-duotone ph-presentation-chart" style="font-size:26px;color:#5A6480"></i>
+          <h3>Report &amp; scale</h3>
+          <p>Monthly reports showing what works. We scale the winners and cut the rest.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="wrap">
+    <div class="reviews-head">
+      <div style="display:flex;flex-direction:column;gap:14px;max-width:640px">
+        <span class="eyebrow" data-reveal>Client reviews</span>
+        <h2 class="section-title" data-reveal data-delay="80">What clients say about working with me.</h2>
+      </div>
+      <div class="reviews-score" data-reveal data-delay="140">
+        <span class="reviews-score-n">5.0</span>
+        <div class="reviews-score-detail">
+          <span style="color:#F59E0B"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span>
+          150+ reviews on Fiverr
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <figure class="review-card" data-reveal>
+        <div class="review-top"><span class="review-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><span class="review-tag">Top 3 on Maps</span></div>
+        <blockquote class="review-quote">"Our local restaurant jumped from page 4 to the top 3 on Google Maps in just 6 weeks. Bookings have increased by 40%."</blockquote>
+        <figcaption class="review-author"><span class="review-avatar" style="background:linear-gradient(135deg,#818CF8,#4F46E5)">MR</span><div><div class="review-name">Michael R.</div><div class="review-role">Restaurant Owner, Munich</div></div></figcaption>
+      </figure>
+      <figure class="review-card" data-reveal data-delay="90">
+        <div class="review-top"><span class="review-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><span class="review-tag">Shopify build</span></div>
+        <blockquote class="review-quote">"Our new Shopify store is beautiful and converts incredibly well. Vahid understood our brand from day one."</blockquote>
+        <figcaption class="review-author"><span class="review-avatar" style="background:linear-gradient(135deg,#38BDF8,#0EA5E9)">SK</span><div><div class="review-name">Sarah K.</div><div class="review-role">eCommerce Brand Owner, Berlin</div></div></figcaption>
+      </figure>
+      <figure class="review-card" data-reveal data-delay="180">
+        <div class="review-top"><span class="review-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><span class="review-tag">3× traffic</span></div>
+        <blockquote class="review-quote">"After 3 months of eCommerce SEO our organic traffic tripled and revenue from organic search went up 280%."</blockquote>
+        <figcaption class="review-author"><span class="review-avatar" style="background:linear-gradient(135deg,#C084FC,#7C3AED)">TH</span><div><div class="review-name">Thomas H.</div><div class="review-role">Online Store Manager, Hamburg</div></div></figcaption>
+      </figure>
+      <figure class="review-card" data-reveal>
+        <div class="review-top"><span class="review-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><span class="review-tag">Feed fixed</span></div>
+        <blockquote class="review-quote">"Hundreds of disapproved products in Merchant Center — he resolved every single one in record time."</blockquote>
+        <figcaption class="review-author"><span class="review-avatar" style="background:linear-gradient(135deg,#FBBF24,#F59E0B)">EL</span><div><div class="review-name">Emma L.</div><div class="review-role">E-Commerce Director, London</div></div></figcaption>
+      </figure>
+      <figure class="review-card" data-reveal data-delay="90">
+        <div class="review-top"><span class="review-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><span class="review-tag">New patients</span></div>
+        <blockquote class="review-quote">"The WordPress site Vahid built for my practice loads fast, looks premium and ranks well locally. Worth every euro."</blockquote>
+        <figcaption class="review-author"><span class="review-avatar" style="background:linear-gradient(135deg,#34D399,#059669)">AW</span><div><div class="review-name">Dr. Anna W.</div><div class="review-role">Dentist, Frankfurt</div></div></figcaption>
+      </figure>
+      <figure class="review-card" data-reveal data-delay="180">
+        <div class="review-top"><span class="review-stars"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></span><span class="review-tag">3.6% CR</span></div>
+        <blockquote class="review-quote">"Our conversion rate jumped from 1.1% to 3.6%. More than 3× the revenue from the same traffic."</blockquote>
+        <figcaption class="review-author"><span class="review-avatar" style="background:linear-gradient(135deg,#F472B6,#DB2777)">DM</span><div><div class="review-name">David M.</div><div class="review-role">Marketing Director, Amsterdam</div></div></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-dark" data-reveal>
+    <div class="cta-blob1"></div>
+    <div class="cta-blob2"></div>
+    <div class="cta-grid"></div>
+    <div class="cta-inner">
+      <span class="cta-badge"><i class="ph ph-clock"></i> Limited spots available</span>
+      <h2 class="cta-title">Ready to grow your business <span class="italic-accent">online?</span></h2>
+      <p class="cta-desc">A free, no-obligation strategy call. I'll review your current situation and show you exactly what's holding you back — and how to fix it.</p>
+      <div class="cta-actions">
+        <a href="https://calendly.com/vahidsediqi/business-growth-session" class="btn-white" target="_blank" rel="noopener"><i class="ph ph-calendar-check" style="font-size:18px;color:#4F46E5"></i> Book a free call</a>
+        <a href="/contact" class="btn-glass">Request free audit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="nav-logo">
-          <img src="images/logo.png" alt="Vahid Sediqi" class="nav-logo-img"/>
-        </a>
-        <p>Full-stack digital marketing and growth engineer based in Germany. I help businesses grow online through SEO, web development, and conversion optimisation.</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/vahidsediqi/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.fiverr.com/vahidsediqi_" class="social-link" aria-label="Fiverr" target="_blank" rel="noopener"><i class="fas fa-briefcase"></i></a>
-          <a href="mailto:contact@vahidsediqi.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-logo">
+          <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:32px;width:auto;display:block">
+        </div>
+        <p class="footer-brand-desc">Full-stack digital marketing and growth engineer based in Germany. Working globally.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/vahidsediqi/" class="footer-social" target="_blank" rel="noopener"><i class="ph ph-linkedin-logo"></i></a>
+          <a href="https://www.fiverr.com/vahidsediqi_" class="footer-social" target="_blank" rel="noopener"><i class="ph ph-briefcase"></i></a>
+          <a href="/contact" class="footer-social"><i class="ph ph-envelope-simple"></i></a>
         </div>
       </div>
-
       <div class="footer-col">
         <h5>Services</h5>
         <ul>
           <li><a href="/services/seo">SEO Strategy</a></li>
           <li><a href="/services/local-seo">Local SEO</a></li>
           <li><a href="/services/ecom-seo">eCommerce SEO</a></li>
-          <li><a href="/services/shopify">Shopify Creation</a></li>
+          <li><a href="/services/shopify">Shopify Stores</a></li>
           <li><a href="/services/cro">CRO</a></li>
           <li><a href="/services/wordpress">WordPress Dev</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h5>Company</h5>
         <ul>
-          <li><a href="about">About Me</a></li>
-          <li class="has-mega-menu">
-        <a href="/tools/">Tools <i class="fas fa-chevron-down"></i></a>
-        <div class="mega-menu mega-menu--tools">
-          <div class="mega-menu-col"><h4>Free Calculators</h4><ul>
-            <li><a href="/tools/shopify-vs-woocommerce-calculator"><span class="icon-wrap"><i class="fab fa-shopify"></i></span> Shopify vs WooCommerce</a></li>
-            <li><a href="tools/seo-roi-calculator"><span class="icon-wrap"><i class="fas fa-chart-line"></i></span> SEO ROI Calculator</a></li>
-            <li><a href="tools/google-ads-budget-calculator"><span class="icon-wrap"><i class="fab fa-google"></i></span> Google Ads Budget</a></li>
-            <li><a href="tools/meta-tag-checker"><span class="icon-wrap"><i class="fas fa-tags"></i></span> Meta Tag Checker</a></li>
-            <li><a href="tools/onpage-seo-checker"><span class="icon-wrap"><i class="fas fa-search-plus"></i></span> On-Page SEO Checker</a></li>
-          </ul></div>
-          <div class="mega-menu-col"><h4>Coming Soon</h4><ul>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-mouse-pointer"></i></span> CRO Revenue Calculator</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-map-marker-alt"></i></span> Local SEO Audit</a></li>
-            <li><a href="tools/index" style="opacity:.5;cursor:default;pointer-events:none;"><span class="icon-wrap"><i class="fas fa-search-dollar"></i></span> Keyword Estimator</a></li>
-          </ul></div>
-          <div class="mega-menu-featured">
-            <div class="badge">100% Free</div>
-            <h5>No sign-up required</h5>
-            <p>All tools are free — built from real client questions.</p>
-            <a href="tools/index" class="btn btn-primary btn-sm">View All Tools</a>
-          </div>
-        </div>
-      </li><li><a href="portfolio">Portfolio</a></li><li><a href="pricing">Pricing</a></li>
-          <li><a href="contact">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/pricing">Pricing</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h5>Contact</h5>
-        <div class="footer-contact-item">
-          <i class="fas fa-envelope"></i>
-          <span>contact@vahidsediqi.com</span>
-        </div>
-        <div class="footer-contact-item">
-          <i class="fas fa-phone"></i>
-          <span>+49 176 62521106</span>
-        </div>
-        <div class="footer-contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Leipzig & Altenburg, Germany</span>
-        </div>
-        <div class="footer-contact-item">
-          <i class="fas fa-clock"></i>
-          <span>Mon–Fri, 9am–6pm CET</span>
-        </div>
+        <ul>
+          <li style="color:#1E2A4A;font-size:14.5px;display:flex;gap:8px;align-items:center"><i class="ph ph-phone" style="color:#4F46E5"></i>+49 176 62521106</li>
+          <li style="color:#1E2A4A;font-size:14.5px;display:flex;gap:8px;align-items:center"><i class="ph ph-map-pin" style="color:#4F46E5"></i>Leipzig &amp; Altenburg, DE</li>
+          <li style="color:#1E2A4A;font-size:14.5px;display:flex;gap:8px;align-items:center"><i class="ph ph-clock" style="color:#4F46E5"></i>Mon–Fri, 9am–6pm CET</li>
+        </ul>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <p>© 2025 Vahid Sediqi. All rights reserved.</p>
-      <p>Made with <span style="color:var(--danger)">♥</span> in Germany</p>
-    <div style="display:flex;gap:1.2rem;flex-wrap:wrap;justify-content:center;margin-top:.75rem;"><a href="impressum" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Impressum</a><a href="privacy" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Privacy Policy</a><a href="terms" style="color:var(--text-muted);text-decoration:none;font-size:.85rem;">Terms</a></div>
+    <div class="footer-btm">
+      <span>© 2026 Vahid Sediqi. Made in Germany.</span>
+      <div class="footer-btm-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js"></script>
-<script src="//code.tidio.co/ptbza6vc35cswdhqksntfsqky2htkgfm.js" async></script>
+<script>
+(function(){
+  // Progress bar + nav scroll
+  const bar = document.getElementById('progress-bar');
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function(){
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    if(bar) bar.style.width = (h > 0 ? (scrollY/h)*100 : 0)+'%';
+    nav.classList.toggle('stuck', scrollY > 12);
+  }, {passive:true});
+
+  // Scroll reveal
+  const ease = 'cubic-bezier(.2,.7,.2,1)';
+  document.querySelectorAll('[data-reveal]').forEach(function(el){
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(28px)';
+    el.style.transition = 'opacity .9s '+ease+', transform .9s '+ease;
+    el.style.transitionDelay = (el.dataset.delay || 0)+'ms';
+  });
+
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      io.unobserve(e.target);
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      // clean up after animation
+      const delay = +(e.target.dataset.delay||0);
+      setTimeout(function(){ e.target.style.transition = ''; e.target.style.transitionDelay = ''; }, 1000+delay);
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
+
+  // Animated bars
+  const barIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      barIO.unobserve(e.target);
+      var target = e.target.dataset.target;
+      e.target.style.transition = 'width 1.4s cubic-bezier(.2,.7,.2,1)';
+      e.target.style.width = target;
+    });
+  }, {threshold:0.2});
+  document.querySelectorAll('[data-bar]').forEach(function(el){
+    el.style.width = '0%';
+    barIO.observe(el);
+  });
+
+  // Animated counters
+  const cntIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      cntIO.unobserve(e.target);
+      var to = parseFloat(e.target.dataset.count);
+      var suf = e.target.dataset.suffix||'';
+      var t0 = performance.now();
+      (function step(t){
+        var k = Math.min(1,(t-t0)/1600);
+        e.target.textContent = Math.round(to*(1-Math.pow(1-k,3)))+suf;
+        if(k<1) requestAnimationFrame(step);
+      })(t0);
+    });
+  }, {threshold:0.2});
+  document.querySelectorAll('[data-count]').forEach(function(el){ cntIO.observe(el); });
+})();
+</script>
 </body>
 </html>
