@@ -26,17 +26,87 @@ img{max-width:100%;display:block}
 @keyframes vsBlob{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,20px) scale(.95)}}
 
 #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:60;background:linear-gradient(90deg,#4F46E5,#7C3AED,#0EA5E9)}
-.site-header{position:sticky;top:0;z-index:50;padding:14px 20px 0}
-.nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:18px;background:rgba(255,255,255,.35);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:all .35s ease}
-.nav-wrap.stuck{background:rgba(255,255,255,.78);border-color:rgba(11,21,48,.08);box-shadow:0 10px 30px -14px rgba(11,21,48,.25)}
-.nav-logo{display:flex;align-items:center}
-.nav-links{display:flex;align-items:center;gap:4px;font-size:14.5px}
-.nav-links a{padding:8px 12px;border-radius:10px;color:#3A4566;transition:background .2s,color .2s}
-.nav-links a:hover,.nav-links a.active{background:rgba(79,70,229,.08);color:#0B1530}
-.nav-links a.active{font-weight:500}
-.nav-cta{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:#0B1530;color:#fff !important;font-size:14px;font-weight:500;transition:transform .25s}
-.nav-cta:hover{transform:translateY(-1px)}
-
+.vs-header{--ink:#0B1530;--ink2:#3A4566;--muted:#5A6480;--brand:#4F46E5;--line:rgba(11,21,48,.08);position:sticky;top:0;z-index:1000;padding:14px 20px 0;font-family:'Geist',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+.vs-header *{box-sizing:border-box}
+.vs-header a{text-decoration:none;color:inherit}
+.vs-nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 18px;border-radius:18px;background:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:all .35s ease}
+.vs-header.is-scrolled .vs-nav,.vs-header.is-open .vs-nav{background:rgba(255,255,255,.85);border-color:var(--line);box-shadow:0 10px 30px -14px rgba(11,21,48,.25)}
+.vs-logo{display:flex;align-items:center}
+.vs-links{display:flex;align-items:center;gap:2px;font-size:14.5px}
+.vs-link,.vs-trigger{display:flex;align-items:center;gap:6px;padding:8px 10px;border-radius:10px;border:0;background:transparent;color:var(--ink2);font:inherit;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.vs-link:hover,.vs-trigger:hover,.vs-trigger[aria-expanded="true"]{background:rgba(79,70,229,.08);color:var(--ink)}
+.vs-trigger i{font-size:12px;transition:transform .3s}
+.vs-trigger[aria-expanded="true"] i{transform:rotate(180deg)}
+.vs-actions{display:flex;align-items:center;gap:10px}
+.vs-lang{display:flex;font:12px 'Geist Mono',monospace;border:1px solid rgba(11,21,48,.1);border-radius:9px;overflow:hidden}
+.vs-lang a{padding:6px 8px;color:var(--muted)}
+.vs-lang a.is-active{background:var(--ink);color:#fff}
+.vs-cta{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:12px;background:var(--ink);color:#fff!important;font-size:14px;font-weight:500;white-space:nowrap;box-shadow:0 8px 20px -8px rgba(11,21,48,.6);transition:transform .25s}
+.vs-cta:hover{transform:translateY(-1px)}
+.vs-burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:20px;cursor:pointer;color:var(--ink);align-items:center;justify-content:center}
+.vs-backdrop{position:fixed;inset:0;z-index:-1;background:rgba(11,21,48,.22);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s}
+.vs-header.is-open .vs-backdrop{opacity:1;pointer-events:auto}
+.vs-panels{position:absolute;left:20px;right:20px;top:100%;padding-top:10px;pointer-events:none}
+.vs-panels-inner{max-width:1200px;margin:0 auto;display:grid}
+.vs-panel{grid-area:1/1;align-self:start;opacity:0;transform:translateY(-8px) scale(.985);pointer-events:none;transition:opacity .3s ease,transform .4s cubic-bezier(.2,.7,.2,1);max-height:calc(100vh - 110px);overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;border-radius:24px;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--line);box-shadow:0 40px 90px -30px rgba(11,21,48,.45)}
+.vs-panel.is-open{opacity:1;transform:none;pointer-events:auto}
+.vs-panel-body{display:flex;flex-wrap:wrap}
+.vs-cols{flex:2 1 520px;padding:26px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:24px}
+.vs-col{display:flex;flex-direction:column;gap:4px}
+.vs-col-title{display:flex;align-items:center;gap:8px;padding:0 10px 8px;font:500 11.5px 'Geist Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:var(--c)}
+.vs-col-title::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--c)}
+.vs-item{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:14px;transition:background .2s}
+.vs-item:hover{background:#F3F4FA}
+.vs-ico{width:38px;height:38px;flex-shrink:0;border-radius:11px;display:grid;place-items:center;background:var(--t);color:var(--c);font-size:20px}
+.vs-item-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+.vs-item-text b{display:flex;align-items:center;gap:6px;font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+.vs-item-text span{font-size:13px;line-height:1.45;color:var(--muted)}
+.vs-badge{font-size:10.5px;font-weight:500;padding:2px 6px;border-radius:6px;background:#EEF0FF;color:#4338CA}
+.vs-side{flex:1 1 280px;padding:14px}
+.vs-feature{position:relative;height:100%;min-height:260px;border-radius:18px;padding:24px;overflow:hidden;display:flex;flex-direction:column;gap:14px}
+.vs-feature.dark{background:#0B1530;color:#fff}
+.vs-feature.dark::before,.vs-feature.dark::after{content:"";position:absolute;border-radius:50%;filter:blur(10px)}
+.vs-feature.dark::before{width:280px;height:280px;right:-90px;top:-110px;background:radial-gradient(circle,rgba(124,58,237,.6),transparent 65%)}
+.vs-feature.dark::after{width:240px;height:240px;left:-90px;bottom:-120px;background:radial-gradient(circle,rgba(14,165,233,.45),transparent 65%)}
+.vs-feature.light{background:linear-gradient(160deg,#EEF0FF,#F3EDFF 55%,#E6F6FE);border:1px solid rgba(79,70,229,.12)}
+.vs-feature > *{position:relative;z-index:1}
+.vs-pill{align-self:flex-start;display:flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;font-size:12px}
+.vs-feature.dark .vs-pill{background:rgba(255,255,255,.12);color:#fff}
+.vs-feature.light .vs-pill{background:#fff;color:#4338CA;font-weight:500}
+.vs-feature h4{margin:0;font-size:22px;font-weight:600;letter-spacing:-.03em;line-height:1.15}
+.vs-feature p{margin:0;font-size:14px;line-height:1.55}
+.vs-feature.dark p{color:#B7C0DA}.vs-feature.light p{color:var(--ink2)}
+.vs-feature svg{width:100%;height:64px;margin-top:auto}
+.vs-btn{display:flex;justify-content:center;align-items:center;gap:8px;padding:12px;border-radius:12px;font-weight:600;font-size:14.5px;transition:transform .25s}
+.vs-btn:hover{transform:translateY(-1px)}
+.vs-btn.white{background:#fff;color:var(--ink)!important}
+.vs-btn.grad{margin-top:auto;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff!important;box-shadow:0 12px 24px -12px rgba(79,70,229,.8)}
+.vs-bars{display:flex;align-items:flex-end;gap:8px;height:90px;padding:12px;border-radius:14px;background:#fff}
+.vs-bars i{flex:1;border-radius:5px;background:rgba(79,70,229,var(--o))}
+.vs-bars i:last-child{background:linear-gradient(180deg,#7C3AED,#4F46E5)}
+.vs-roi{display:flex;justify-content:space-between;font-size:13px;color:var(--ink2)}
+.vs-roi b{color:var(--ink);font-family:'Geist Mono',monospace}
+.vs-tools{flex:2 1 520px;padding:26px;display:flex;flex-direction:column;gap:18px}
+.vs-chips{display:flex;flex-wrap:wrap;gap:6px}
+.vs-chip{border:1px solid rgba(11,21,48,.1);cursor:pointer;font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;background:#fff;color:var(--ink2);transition:all .2s}
+.vs-chip.is-active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.vs-tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:4px}
+.vs-tool{display:flex;gap:12px;align-items:center;padding:11px;border-radius:14px;transition:background .2s}
+.vs-tool:hover{background:#F3F4FA}
+.vs-tool[hidden]{display:none}
+.vs-tool .vs-ico{width:40px;height:40px;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 4px 10px -6px rgba(11,21,48,.25)}
+.vs-tool .vs-item-text{flex:1}
+.vs-tool .vs-item-text span{font-size:12.5px}
+.vs-tool > .ph-arrow-up-right{color:#9AA2BC;font-size:15px}
+.vs-panel-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding:14px 26px;background:#F6F7FB;border-top:1px solid rgba(11,21,48,.06);font-size:13.5px;color:var(--ink2)}
+.vs-panel-foot span{display:flex;align-items:center;gap:8px}
+.vs-panel-foot span i{font-size:18px}
+.vs-panel-foot a{display:flex;align-items:center;gap:6px;font-weight:500}
+.vs-panel-foot a:hover{color:var(--brand)}
+.vs-panel-foot span a{color:var(--brand)}
+@media (max-width:980px){.vs-links,.vs-lang{display:none}.vs-burger{display:flex}.vs-header.is-mobile .vs-links{display:flex;flex-direction:column;align-items:stretch;position:absolute;left:20px;right:20px;top:100%;margin-top:10px;padding:10px;border-radius:20px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 60px -24px rgba(11,21,48,.4);font-size:16px}.vs-header.is-mobile .vs-link,.vs-header.is-mobile .vs-trigger{padding:14px;justify-content:space-between}.vs-panels{position:static;padding:0}.vs-header.is-mobile .vs-panels{display:none}}
+@media (max-width:560px){.vs-cta span{display:none}}
+@media (prefers-reduced-motion:reduce){.vs-panel,.vs-backdrop{transition:none}}
 .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
 .eyebrow{font-family:'Geist Mono',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:#4F46E5}
 .eyebrow-light{color:#A5B4FC}
@@ -209,20 +279,100 @@ img{max-width:100%;display:block}
 
 <div id="progress-bar"></div>
 
-<header class="site-header">
-  <nav class="nav-wrap" id="main-nav">
-    <a href="/" class="nav-logo">
+<!-- NAV -->
+<header class="vs-header" id="vsHeader">
+  <div class="vs-backdrop" data-close></div>
+  <nav class="vs-nav" aria-label="Main">
+    <a href="/" class="vs-logo">
       <img src="/images/logo-vahid-sediqi.webp" alt="Vahid Sediqi" style="height:38px;width:auto;display:block">
     </a>
-    <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/#services" class="active">Services</a>
-      <a href="#included">What's included</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+    <div class="vs-links">
+      <button class="vs-trigger" aria-expanded="false" aria-controls="vs-services">Services <i class="ph ph-caret-down"></i></button>
+      <button class="vs-trigger" aria-expanded="false" aria-controls="vs-tools">Free Tools <i class="ph ph-caret-down"></i></button>
+      <a class="vs-link" href="/portfolio">Portfolio</a>
+      <a class="vs-link" href="/about">About</a>
+      <a class="vs-link" href="/pricing">Pricing</a>
+      <a class="vs-link" href="/contact">Contact</a>
     </div>
-    <a href="#cta" class="nav-cta">Get a free quote <i class="ph ph-arrow-up-right"></i></a>
+    <div class="vs-actions">
+      <span class="vs-lang"><a href="/" class="is-active">EN</a><a href="/de/">DE</a></span>
+      <a href="/contact" class="vs-cta"><span>Free Audit</span> <i class="ph ph-arrow-up-right"></i></a>
+      <button class="vs-burger" aria-label="Open menu" aria-expanded="false"><i class="ph ph-list"></i></button>
+    </div>
   </nav>
+  <div class="vs-panels">
+    <div class="vs-panels-inner">
+      <!-- SERVICES PANEL -->
+      <div class="vs-panel" id="vs-services" role="region" aria-label="Services">
+        <div class="vs-panel-body">
+          <div class="vs-cols">
+            <div class="vs-col" style="--c:#4F46E5;--t:linear-gradient(135deg,#EEF0FF,#E0E4FF)">
+              <span class="vs-col-title">SEO</span>
+              <a class="vs-item" href="/services/seo"><span class="vs-ico"><i class="ph-duotone ph-magnifying-glass"></i></span><span class="vs-item-text"><b>SEO Strategy <em class="vs-badge" style="font-style:normal">Popular</em></b><span>Rank higher, stay there</span></span></a>
+              <a class="vs-item" href="/services/local-seo"><span class="vs-ico"><i class="ph-duotone ph-map-pin"></i></span><span class="vs-item-text"><b>Local SEO</b><span>Own Google Maps locally</span></span></a>
+              <a class="vs-item" href="/services/ecom-seo"><span class="vs-ico"><i class="ph-duotone ph-shopping-cart"></i></span><span class="vs-item-text"><b>eCommerce SEO</b><span>More buyers, more revenue</span></span></a>
+            </div>
+            <div class="vs-col" style="--c:#0284C7;--t:linear-gradient(135deg,#E6F6FE,#D5EFFC)">
+              <span class="vs-col-title">Web Development</span>
+              <a class="vs-item" href="/services/shopify"><span class="vs-ico"><i class="ph-duotone ph-storefront"></i></span><span class="vs-item-text"><b>Shopify Stores <em class="vs-badge" style="font-style:normal">Popular</em></b><span>Fast, high-converting shops</span></span></a>
+              <a class="vs-item" href="/services/wordpress"><span class="vs-ico"><i class="ph-duotone ph-laptop"></i></span><span class="vs-item-text"><b>WordPress Development</b><span>Custom, SEO-ready sites</span></span></a>
+            </div>
+            <div class="vs-col" style="--c:#D97706;--t:linear-gradient(135deg,#FFF7E6,#FFEDC7)">
+              <span class="vs-col-title">Growth</span>
+              <a class="vs-item" href="/services/cro"><span class="vs-ico"><i class="ph-duotone ph-chart-line-up"></i></span><span class="vs-item-text"><b>Conversion Optimisation</b><span>Turn traffic into sales</span></span></a>
+            </div>
+          </div>
+          <div class="vs-side">
+            <div class="vs-feature dark">
+              <span class="vs-pill"><i class="ph-fill ph-gift"></i> Free &middot; 48h delivery</span>
+              <h4>Get a free website &amp; SEO audit</h4>
+              <p>See exactly what&rsquo;s holding your rankings and conversions back.</p>
+              <svg viewBox="0 0 240 70" aria-hidden="true"><defs><linearGradient id="vsA" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#818CF8" stop-opacity=".45"/><stop offset="1" stop-color="#818CF8" stop-opacity="0"/></linearGradient></defs><path d="M0,64 L30,60 L60,56 L90,50 L120,44 L150,34 L180,26 L210,16 L240,6 L240,70 L0,70 Z" fill="url(#vsA)"/><path d="M0,64 L30,60 L60,56 L90,50 L120,44 L150,34 L180,26 L210,16 L240,6" fill="none" stroke="#A5B4FC" stroke-width="2.4" stroke-linecap="round"/></svg>
+              <a href="/contact" class="vs-btn white">Request my audit <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="vs-panel-foot">
+          <span><i class="ph-duotone ph-chat-circle-dots" style="color:#4F46E5"></i>Not sure where to start? <a href="https://calendly.com/vahidsediqi/business-growth-session">Book a free 30-min call</a></span>
+          <a href="/services/">View all services <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- TOOLS PANEL -->
+      <div class="vs-panel" id="vs-tools" role="region" aria-label="Free tools">
+        <div class="vs-panel-body">
+          <div class="vs-side">
+            <div class="vs-feature light">
+              <span class="vs-pill"><i class="ph-fill ph-star"></i> Most used tool</span>
+              <h4>SEO ROI Calculator</h4>
+              <p>Estimate the traffic and revenue that ranking higher could bring you.</p>
+              <div class="vs-bars" aria-hidden="true"><i style="height:22%;--o:.18"></i><i style="height:30%;--o:.25"></i><i style="height:38%;--o:.32"></i><i style="height:48%;--o:.39"></i><i style="height:60%;--o:.46"></i><i style="height:74%;--o:.53"></i><i style="height:92%"></i></div>
+              <div class="vs-roi"><span>Projected 12-mo revenue</span><b>+&euro;84,200</b></div>
+              <a href="/tools/seo-roi-calculator" class="vs-btn grad">Calculate my ROI <i class="ph ph-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="vs-tools">
+            <div class="vs-chips" role="tablist">
+              <button class="vs-chip is-active" data-filter="all">All</button>
+              <button class="vs-chip" data-filter="seo">SEO</button>
+              <button class="vs-chip" data-filter="technical">Technical</button>
+              <button class="vs-chip" data-filter="marketing">Marketing</button>
+            </div>
+            <div class="vs-tool-grid">
+              <a class="vs-tool" data-cat="seo" href="/tools/seo-roi-calculator" style="--c:#4F46E5"><span class="vs-ico"><i class="ph-duotone ph-calculator"></i></span><span class="vs-item-text"><b>SEO ROI Calculator</b><span>Forecast traffic &amp; revenue</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="seo" href="/tools/onpage-seo-checker" style="--c:#4F46E5"><span class="vs-ico"><i class="ph-duotone ph-browser"></i></span><span class="vs-item-text"><b>On-Page SEO Checker</b><span>Audit any page instantly</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="seo" href="/tools/meta-tag-checker" style="--c:#7C3AED"><span class="vs-ico"><i class="ph-duotone ph-tag"></i></span><span class="vs-item-text"><b>Meta Tag Checker</b><span>Titles &amp; descriptions</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="technical" href="/tools/shopify-vs-woocommerce-calculator" style="--c:#0284C7"><span class="vs-ico"><i class="ph-duotone ph-storefront"></i></span><span class="vs-item-text"><b>Shopify vs WooCommerce</b><span>Platform cost calculator</span></span><i class="ph ph-arrow-up-right"></i></a>
+              <a class="vs-tool" data-cat="marketing" href="/tools/google-ads-budget-calculator" style="--c:#D97706"><span class="vs-ico"><i class="ph-duotone ph-google-logo"></i></span><span class="vs-item-text"><b>Google Ads Budget Calc</b><span>Plan ad spend &amp; ROAS</span></span><i class="ph ph-arrow-up-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="vs-panel-foot">
+          <span><i class="ph-duotone ph-lock-simple-open" style="color:#10B981"></i>All tools are 100% free &mdash; no signup, no credit card.</span>
+          <a href="/tools/">Browse all tools <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <!-- HERO -->
@@ -635,6 +785,28 @@ function toggleFaq(item){
   document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
   if(!wasOpen)item.classList.add('open');
 }
+</script>
+<script>
+(function(){
+  var h=document.getElementById("vsHeader");if(!h)return;
+  var triggers=h.querySelectorAll(".vs-trigger");
+  var burger=h.querySelector(".vs-burger");
+  var hoverOK=window.matchMedia("(hover:hover) and (min-width:981px)");
+  var current=null;
+  function open(id){current=id;h.classList.toggle("is-open",!!id);triggers.forEach(function(t){t.setAttribute("aria-expanded",t.getAttribute("aria-controls")===id?"true":"false");});h.querySelectorAll(".vs-panel").forEach(function(p){p.classList.toggle("is-open",p.id===id);});}
+  function close(){open(null);}
+  triggers.forEach(function(t){
+    var id=t.getAttribute("aria-controls");
+    t.addEventListener("mouseenter",function(){if(hoverOK.matches)open(id);});
+    t.addEventListener("click",function(){if(window.innerWidth<=980){location.href=id==="vs-services"?"/services/":"/tools/";return;}open(current===id?null:id);});
+  });
+  h.addEventListener("mouseleave",function(){if(hoverOK.matches)close();});
+  h.querySelector("[data-close]").addEventListener("click",close);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"){close();h.classList.remove("is-mobile");}});
+  burger.addEventListener("click",function(){var on=h.classList.toggle("is-mobile");burger.setAttribute("aria-expanded",on);burger.innerHTML=on?"<i class=\"ph ph-x\"></i>":"<i class=\"ph ph-list\"></i>";});
+  window.addEventListener("scroll",function(){h.classList.toggle("is-scrolled",window.scrollY>12);},{passive:true});
+  h.querySelectorAll(".vs-chip").forEach(function(c){c.addEventListener("click",function(){var f=c.dataset.filter;h.querySelectorAll(".vs-chip").forEach(function(x){x.classList.toggle("is-active",x===c);});h.querySelectorAll(".vs-tool").forEach(function(t){t.hidden=f!=="all"&&t.dataset.cat!==f;});});});
+})();
 </script>
 </body>
 </html>
